@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 21 — Introduction to Data and Primary Sources</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson21-intro-data.html" class="active"><i class="fas fa-chart-simple"></i> Lesson 21</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 3 · Semester 2 · Midterm
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-chart-simple"></i> Lesson 21 · Indicator 3</span>
+        <h1>Introduction to Data and Primary Sources</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            Every day, you see data all around you — the weather, your test scores, the price of snacks,
+            your heart rate. But where does all this data come from? In this lesson, you'll learn what
+            <strong>data</strong> is, what makes it <strong>primary</strong> or <strong>secondary</strong>,
+            and how to collect your own data from the real world.
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-chart-simple"></i> Data Basics</span>
+            <span class="chip sky"><i class="fas fa-magnifying-glass"></i> Primary Sources</span>
+            <span class="chip red"><i class="fas fa-pencil"></i> Hands-On Activity</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 To add your image: replace the src="" with your URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/data-around-us.png"
+            alt="Hero banner showing data around us — weather chart, tally board, thermometer, clock, and a child writing in a notebook"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — Data Around Us. A friendly illustration showing where data comes from in daily life.
+        </div>
+    </div>
+
+    <!-- ========== WHAT IS DATA ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-database"></i> What is Data?</div>
+        <p>
+            <strong>Data</strong> is a collection of raw facts and numbers. On their own, they don't mean much.
+            For example: <em>5, 10, 15, 20</em>. What do these numbers tell you? Not much — until you know what they represent.
+        </p>
+        <p>
+            <strong>Information</strong> is what you get when you <em>process</em> data and give it meaning.
+            For example: "The average score of the class is 15." Now the numbers mean something!
+        </p>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Remember:</strong> Data is raw. Information is processed. Data → Process → Information.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== PRIMARY VS SECONDARY ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-arrows-split-up-and-left"></i> Primary vs Secondary Data</div>
+        <p>
+            Data comes from different places. The most important distinction is <strong>who collected it</strong>.
+        </p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">👤</span>
+                <h3>Primary Data</h3>
+                <p>Data <strong>you collect yourself</strong>. You control how it's collected, so it's reliable for your own problem.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">🌍</span>
+                <h3>Secondary Data</h3>
+                <p>Data <strong>someone else collected</strong>. You find it in books, websites, reports, or articles.</p>
+            </div>
+        </div>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-star"></i> Point of Comparison</th>
+                    <th><i class="fas fa-user"></i> Primary Data</th>
+                    <th><i class="fas fa-globe"></i> Secondary Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Who collects it?</strong></td>
+                    <td class="primary-col">You (the student)</td>
+                    <td class="secondary-col">Someone else</td>
+                </tr>
+                <tr>
+                    <td><strong>How is it collected?</strong></td>
+                    <td class="primary-col">Survey, measurement, observation, interview</td>
+                    <td class="secondary-col">Reading books, websites, reports</td>
+                </tr>
+                <tr>
+                    <td><strong>Examples</strong></td>
+                    <td class="primary-col">Measuring your classmate's height; counting cars</td>
+                    <td class="secondary-col">Reading average height online; watching a video</td>
+                </tr>
+                <tr>
+                    <td><strong>Reliability for your problem</strong></td>
+                    <td class="primary-col">High — you control the method</td>
+                    <td class="secondary-col">Depends on the original source</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — PRIMARY VS SECONDARY VISUAL
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/primary-vs-seconday.png"
+            alt="Two-column comparison illustration: Primary Data on the left (child with clipboard and measuring tape), Secondary Data on the right (child reading book and using laptop)"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[Primary vs Secondary]</strong> — A side-by-side visual showing the difference. Left: child collecting data themselves. Right: child reading from a book/website. Recommended size: 800 × 500 px.
+        </div>
+    </div>
+
+    <!-- ========== KEY VOCABULARY ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-book-open"></i> Key Vocabulary</div>
+        <p>Here are the words you'll use throughout this lesson. Read them carefully and try to use them when you answer questions.</p>
+        <ul>
+            <li><strong>Data</strong> — raw facts and numbers (e.g., 5, 10, 15).</li>
+            <li><strong>Information</strong> — processed data with meaning (e.g., average = 10).</li>
+            <li><strong>Primary data</strong> — data collected directly by you.</li>
+            <li><strong>Secondary data</strong> — data collected by someone else.</li>
+            <li><strong>Source</strong> — where the data comes from.</li>
+            <li><strong>Collect</strong> — to gather data.</li>
+            <li><strong>Survey</strong> — asking many people the same questions.</li>
+            <li><strong>Observation</strong> — watching and recording what you see.</li>
+        </ul>
+    </div>
+
+    <!-- ========== HOW TO COLLECT PRIMARY DATA ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-clipboard-list"></i> How to Collect Primary Data</div>
+        <p>There are <strong>four main methods</strong> for collecting primary data. Each one is useful for different situations.</p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">📝</span>
+                <h3>Survey</h3>
+                <p>Ask many people the same questions. Great for getting lots of responses quickly.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">🎤</span>
+                <h3>Interview</h3>
+                <p>Ask one person in depth. Great for getting detailed answers and explanations.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">👀</span>
+                <h3>Observation</h3>
+                <p>Watch and record what happens. Great for studying behaviour and processes.</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">📏</span>
+                <h3>Measurement</h3>
+                <p>Use tools to get numbers. Great for getting precise, numerical data.</p>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Tip:</strong> When you design a survey question, keep it clear and one idea per question. For example, "How many eggs do you eat per week?" is a good question. "Do you like eggs?" only gives a yes/no answer.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — FOUR METHODS
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/four-methods-collection.png"
+            alt="Four cartoon icons showing the four methods of collecting primary data: survey, interview, observation, and measurement"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[Four Methods]</strong> — Survey, Interview, Observation, Measurement. Four friendly icons in a row.
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 1 ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Classify These Sources</h4>
+        <p>Read each example below. Decide whether it is <strong>Primary</strong> data or <strong>Secondary</strong> data. Then write your answer in your notebook.</p>
+        <ol>
+            <li>Asking your classmates about their favourite fruit. <em>(Primary / Secondary)</em></li>
+            <li>Reading a newspaper article about rainfall. <em>(Primary / Secondary)</em></li>
+            <li>Measuring the temperature in the classroom. <em>(Primary / Secondary)</em></li>
+            <li>Watching a YouTube video about BMI. <em>(Primary / Secondary)</em></li>
+            <li>Interviewing the school nurse. <em>(Primary / Secondary)</em></li>
+            <li>Reading a table from a textbook. <em>(Primary / Secondary)</em></li>
+            <li>Surveying your parents about egg consumption. <em>(Primary / Secondary)</em></li>
+            <li>Checking the school website for exam results. <em>(Primary / Secondary)</em></li>
+            <li>Counting cars passing the school gate. <em>(Primary / Secondary)</em></li>
+            <li>Reading a government report about population. <em>(Primary / Secondary)</em></li>
+        </ol>
+        <div class="tip-box" style="margin-top:1rem;">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Hint:</strong> If <strong>you</strong> collected it yourself, it's primary. If someone else collected it first, it's secondary.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — DESIGN YOUR OWN PLAN
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/two-students.png"
+            alt="Two students sitting at a desk designing a data collection plan with a clipboard and a chart showing Question, Source, Method, Data"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[Design a Plan]</strong> — Two students working together on a data collection plan. Recommended size: 800 × 450 px.
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 2 ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-lightbulb"></i> Activity — Plan Your Own Data Collection</h4>
+        <p>Choose <strong>one</strong> of the questions below. Then design a simple plan to collect primary data for it.</p>
+        <ul>
+            <li>How many hours do students sleep each night?</li>
+            <li>How many eggs does your family eat per week?</li>
+            <li>What is the average height of students in this class?</li>
+            <li>How much water do students drink per day?</li>
+        </ul>
+        <p style="margin-top:1rem;"><strong>Write your plan using these four parts:</strong></p>
+        <ol>
+            <li><strong>Question:</strong> What do you want to find out?</li>
+            <li><strong>Source:</strong> Who or what will you collect data from?</li>
+            <li><strong>Method:</strong> Survey, interview, observation, or measurement?</li>
+            <li><strong>Data to record:</strong> What exactly will you write down?</li>
+        </ol>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook to test what you've learned:</p>
+        <ol>
+            <li>What is the difference between <strong>data</strong> and <strong>information</strong>?</li>
+            <li>Give <strong>one example</strong> of primary data and <strong>one example</strong> of secondary data.</li>
+            <li>Why is primary data more reliable for solving your own problem?</li>
+            <li>Name <strong>two methods</strong> for collecting primary data.</li>
+            <li>Write <strong>one good survey question</strong> and <strong>one bad survey question</strong>. Explain why.</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            <strong>Data</strong> is all around us. When <strong>you</strong> collect it yourself, it becomes
+            <strong>primary data</strong> — the most reliable kind for solving your own problems.
+            Remember the four collection methods: <strong>survey, interview, observation, and measurement</strong>.
+            Next lesson, you'll learn how to put these methods into action!
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — HOMEWORK
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/examples-data.png"
+            alt="A cozy home scene with a child spotting examples of data: thermometer, calendar, grocery receipt, recipe book, and TV weather forecast"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Homework]</strong> — Find data at home. A cozy scene showing daily data sources. Recommended size: 700 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Homework</div>
+        <p>
+            At home, find <strong>one example of primary data</strong> and <strong>one example of secondary data</strong>.
+            Write a short paragraph explaining each one — include what the data is, how it was collected, and why it counts as primary or secondary.
+        </p>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="lesson20-programming-project.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous: Lesson 20
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="lesson22-collecting-data.html" class="next-btn">
+            Next: Lesson 22 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Indicator 3 · Lesson 21 of 40
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

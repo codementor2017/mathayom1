@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mathayom 1 (Grade 7) · Year Plan · Home</title>
+    <title>Mathayom 1 (Grade 7) · Full Year Plan · Home</title>
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Google Fonts -->
@@ -18,14 +18,38 @@
             font-family: 'Quicksand', 'Segoe UI', sans-serif;
         }
 
+        /* ===== WINNIE THE POOH THEME PALETTE =====
+           Honey gold, forest green, warm cream,
+           soft red shirt, sky blue.
+        */
+        :root {
+            --pooh-honey:      #F5A623;
+            --pooh-honey-dark: #D4881A;
+            --pooh-honey-soft: #FFF3D6;
+            --pooh-gold:       #FFC93C;
+            --pooh-forest:     #5B8C3E;
+            --pooh-forest-dark:#3D6B28;
+            --pooh-forest-soft:#E4F0D9;
+            --pooh-red:        #C0392B;
+            --pooh-red-soft:   #FDE8E6;
+            --pooh-cream:      #FFF9EC;
+            --pooh-brown:      #8B5E3C;
+            --pooh-brown-soft: #F0E4D6;
+            --pooh-sky:        #A8D5E5;
+            --pooh-sky-soft:   #E8F4F8;
+            --pooh-text:       #4A3520;
+            --pooh-text-soft:  #7A6350;
+        }
+
         body {
-            background: linear-gradient(135deg, #fef9f3 0%, #e8f4fd 50%, #f3e8ff 100%);
+            background: linear-gradient(180deg, #FFF3D6 0%, #FFF9EC 40%, #E8F4F8 100%);
             background-attachment: fixed;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
             position: relative;
             overflow-x: hidden;
+            color: var(--pooh-text);
         }
 
         /* ===== SCROLL PROGRESS BAR ===== */
@@ -35,10 +59,10 @@
             left: 0;
             height: 5px;
             width: 0%;
-            background: linear-gradient(90deg, #7C3AED, #EC4899, #F59E0B);
+            background: linear-gradient(90deg, #F5A623, #5B8C3E, #C0392B);
             z-index: 9999;
             transition: width 0.15s ease-out;
-            box-shadow: 0 0 10px rgba(124, 58, 237, 0.6);
+            box-shadow: 0 0 12px rgba(245, 166, 35, 0.7);
         }
 
         /* ===== FLOATING PARTICLES ===== */
@@ -56,45 +80,36 @@
         .particle {
             position: absolute;
             border-radius: 50%;
-            opacity: 0.35;
+            opacity: 0.5;
             animation: floatUp linear infinite;
         }
 
         @keyframes floatUp {
-            0% {
-                transform: translateY(100vh) scale(0) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.5;
-            }
-            90% {
-                opacity: 0.5;
-            }
-            100% {
-                transform: translateY(-100px) scale(1) rotate(360deg);
-                opacity: 0;
-            }
+            0%   { transform: translateY(100vh) scale(0) rotate(0deg); opacity: 0; }
+            10%  { opacity: 0.7; }
+            90%  { opacity: 0.7; }
+            100% { transform: translateY(-100px) scale(1) rotate(360deg); opacity: 0; }
         }
 
-        /* Decorative floating shapes */
+        /* Decorative honeycomb / cloud shapes */
         .bg-shape {
             position: fixed;
             border-radius: 50%;
-            opacity: 0.10;
+            opacity: 0.22;
             z-index: 0;
             pointer-events: none;
-            animation: pulse 6s ease-in-out infinite;
+            filter: blur(3px);
+            animation: drift 14s ease-in-out infinite;
         }
-        .bg-shape.s1 { width: 320px; height: 320px; background: #FF6B9D; top: -90px; left: -90px; }
-        .bg-shape.s2 { width: 220px; height: 220px; background: #4ECDC4; bottom: 8%; right: -70px; animation-delay: 1.5s; }
-        .bg-shape.s3 { width: 190px; height: 190px; background: #FFE66D; top: 35%; left: -60px; animation-delay: 3s; }
-        .bg-shape.s4 { width: 260px; height: 260px; background: #A78BFA; bottom: -90px; left: 25%; animation-delay: 0.8s; }
-        .bg-shape.s5 { width: 150px; height: 150px; background: #F472B6; top: 60%; right: 5%; animation-delay: 2.2s; }
+        .bg-shape.s1 { width: 280px; height: 280px; background: #F5A623; top: 5%; left: -90px; }
+        .bg-shape.s2 { width: 220px; height: 220px; background: #5B8C3E; top: 35%; right: -80px; animation-delay: 2s; }
+        .bg-shape.s3 { width: 320px; height: 320px; background: #FFC93C; bottom: 10%; left: 5%; animation-delay: 4s; }
+        .bg-shape.s4 { width: 200px; height: 200px; background: #A8D5E5; top: 65%; right: 8%; animation-delay: 1s; }
+        .bg-shape.s5 { width: 240px; height: 240px; background: #C0392B; bottom: 0%; right: 25%; animation-delay: 3s; }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.10; }
-            50% { transform: scale(1.15); opacity: 0.16; }
+        @keyframes drift {
+            0%, 100% { transform: translateX(0) translateY(0); }
+            50%      { transform: translateX(30px) translateY(-15px); }
         }
 
         .wrapper {
@@ -111,146 +126,146 @@
         .reveal {
             opacity: 0;
             transform: translateY(40px);
-            transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1),
-                        transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+            transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
 
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .reveal-left  { opacity: 0; transform: translateX(-60px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal-left.visible  { opacity: 1; transform: translateX(0); }
+        .reveal-right { opacity: 0; transform: translateX(60px);  transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal-right.visible { opacity: 1; transform: translateX(0); }
+        .reveal-scale { opacity: 0; transform: scale(0.85); transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .reveal-scale.visible { opacity: 1; transform: scale(1); }
 
-        .reveal-left {
-            opacity: 0;
-            transform: translateX(-60px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-
-        .reveal-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .reveal-right {
-            opacity: 0;
-            transform: translateX(60px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-
-        .reveal-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .reveal-scale {
-            opacity: 0;
-            transform: scale(0.85);
-            transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .reveal-scale.visible {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        /* Staggered children */
         .stagger > * {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.5s ease, transform 0.5s ease;
         }
+        .stagger.visible > * { opacity: 1; transform: translateY(0); }
 
-        .stagger.visible > * {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .stagger.visible > *:nth-child(1) { transition-delay: 0.05s; }
-        .stagger.visible > *:nth-child(2) { transition-delay: 0.1s; }
-        .stagger.visible > *:nth-child(3) { transition-delay: 0.15s; }
-        .stagger.visible > *:nth-child(4) { transition-delay: 0.2s; }
-        .stagger.visible > *:nth-child(5) { transition-delay: 0.25s; }
-        .stagger.visible > *:nth-child(6) { transition-delay: 0.3s; }
-        .stagger.visible > *:nth-child(7) { transition-delay: 0.35s; }
-        .stagger.visible > *:nth-child(8) { transition-delay: 0.4s; }
-        .stagger.visible > *:nth-child(9) { transition-delay: 0.45s; }
-        .stagger.visible > *:nth-child(10) { transition-delay: 0.5s; }
+        .stagger.visible > *:nth-child(1)  { transition-delay: 0.05s; }
+        .stagger.visible > *:nth-child(2)  { transition-delay: 0.10s; }
+        .stagger.visible > *:nth-child(3)  { transition-delay: 0.15s; }
+        .stagger.visible > *:nth-child(4)  { transition-delay: 0.20s; }
+        .stagger.visible > *:nth-child(5)  { transition-delay: 0.25s; }
+        .stagger.visible > *:nth-child(6)  { transition-delay: 0.30s; }
+        .stagger.visible > *:nth-child(7)  { transition-delay: 0.35s; }
+        .stagger.visible > *:nth-child(8)  { transition-delay: 0.40s; }
+        .stagger.visible > *:nth-child(9)  { transition-delay: 0.45s; }
+        .stagger.visible > *:nth-child(10) { transition-delay: 0.50s; }
 
         /* ===== TOP NAVIGATION ===== */
         .top-nav {
-            background: white;
-            border-radius: 2rem;
-            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #FFF9EC 0%, #FFF3D6 100%);
+            border-radius: 1.5rem;
+            padding: 0.9rem 1.5rem;
             margin-bottom: 2rem;
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
-            box-shadow: 0 8px 24px rgba(167, 139, 250, 0.15);
-            border: 2px solid #f0e6ff;
+            gap: 0.8rem;
+            box-shadow: 0 8px 24px rgba(245, 166, 35, 0.22), 0 0 0 3px #F5A623 inset;
+            border: 3px solid #F5A623;
             animation: slideDown 0.6s ease-out;
+            position: relative;
+        }
+
+        .top-nav::before {
+            content: '🍯';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 1.8rem;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
+            animation: float 3s ease-in-out infinite;
         }
 
         @keyframes slideDown {
             from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(-5deg); }
+            50%      { transform: translateY(-10px) rotate(5deg); }
         }
 
         .nav-links {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.4rem 0.6rem;
+            gap: 0.5rem 0.6rem;
             align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: #6B4E9B;
-            font-weight: 600;
-            padding: 0.4rem 0.9rem;
+            color: var(--pooh-brown);
+            font-weight: 700;
+            padding: 0.45rem 1.1rem;
             border-radius: 2rem;
             transition: all 0.2s;
             display: inline-flex;
             align-items: center;
-            gap: 0.35rem;
-            font-size: 0.9rem;
+            gap: 0.4rem;
+            font-size: 0.85rem;
             border: 2px solid transparent;
+            background: rgba(255, 255, 255, 0.7);
         }
 
         .nav-links a:hover {
-            background: #F3E8FF;
-            border-color: #D8B4FE;
-            transform: translateY(-2px) scale(1.05);
+            background: #FFF3D6;
+            border-color: #F5A623;
+            color: var(--pooh-brown);
+            transform: translateY(-2px) scale(1.06);
+            box-shadow: 0 6px 14px rgba(245, 166, 35, 0.3);
         }
 
         .nav-links a.active {
-            background: linear-gradient(135deg, #A78BFA, #7C3AED);
-            color: white;
-            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.35);
-            animation: glowPulse 2s ease-in-out infinite;
+            background: linear-gradient(135deg, #F5A623, #D4881A);
+            color: #FFFFFF;
+            box-shadow: 0 4px 16px rgba(245, 166, 35, 0.55);
+            animation: glowPulse 2.4s ease-in-out infinite;
+            border-color: #FFC93C;
         }
 
         @keyframes glowPulse {
-            0%, 100% { box-shadow: 0 4px 12px rgba(124, 58, 237, 0.35); }
-            50% { box-shadow: 0 4px 20px rgba(124, 58, 237, 0.65); }
+            0%, 100% { box-shadow: 0 4px 16px rgba(245, 166, 35, 0.55); }
+            50%      { box-shadow: 0 4px 24px rgba(245, 166, 35, 0.9); }
         }
 
-        .nav-links a i { font-size: 0.85rem; }
+        .nav-links a i { font-size: 0.8rem; }
 
         .home-btn {
-            background: linear-gradient(135deg, #A78BFA, #7C3AED) !important;
-            color: white !important;
-            padding: 0.4rem 1.1rem !important;
+            background: linear-gradient(135deg, #C0392B, #A02D22) !important;
+            color: #FFFFFF !important;
+            padding: 0.45rem 1.15rem !important;
+            border: 2px solid #FFC93C !important;
+        }
+
+        .home-btn:hover {
+            box-shadow: 0 6px 18px rgba(192, 57, 43, 0.5) !important;
+        }
+
+        .nav-brand {
+            font-size: 0.8rem;
+            color: var(--pooh-brown);
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
         }
 
         /* ===== HERO ===== */
         .hero {
-            background: linear-gradient(135deg, #FFFFFF 0%, #FDF4FF 100%);
-            border-radius: 2.5rem;
-            padding: 2.5rem 3rem;
+            background: linear-gradient(135deg, #FFFFFF 0%, #FFF3D6 50%, #FFE4B5 100%);
+            border-radius: 2rem;
+            padding: 2.75rem 3rem;
             margin-bottom: 2rem;
-            box-shadow: 0 16px 40px rgba(167, 139, 250, 0.2);
-            border: 3px solid #E9D5FF;
+            box-shadow: 0 24px 50px rgba(245, 166, 35, 0.28), 0 0 0 5px #FFFFFF inset, 0 0 0 8px #F5A623;
+            border: 3px solid #F5A623;
             position: relative;
             overflow: hidden;
             animation: fadeInScale 0.8s ease-out;
@@ -258,57 +273,58 @@
 
         @keyframes fadeInScale {
             from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
+            to   { opacity: 1; transform: scale(1); }
         }
 
         .hero::after {
-            content: '🎓';
+            content: '🐻';
             position: absolute;
             top: 20px;
             right: 40px;
-            font-size: 2.8rem;
-            opacity: 0.35;
-            animation: float 3s ease-in-out infinite;
+            font-size: 3.5rem;
+            animation: float 3.5s ease-in-out infinite;
+            filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.15));
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(-5deg); }
-            50% { transform: translateY(-12px) rotate(5deg); }
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(91, 140, 62, 0.25), transparent 70%);
+            pointer-events: none;
         }
 
         .hero h1 {
             font-family: 'Baloo 2', cursive;
             font-size: 2.6rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #7C3AED, #EC4899, #F59E0B, #7C3AED);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--pooh-brown);
             letter-spacing: -0.02em;
             margin-bottom: 0.5rem;
             line-height: 1.2;
-            animation: gradientShift 4s ease infinite;
-        }
-
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 0 #FFFFFF, 4px 4px 0 rgba(245, 166, 35, 0.5);
         }
 
         .hero .subhead {
             font-size: 1.1rem;
-            color: #7C3AED;
-            font-weight: 600;
+            color: var(--pooh-forest-dark);
+            font-weight: 700;
             margin-bottom: 0.75rem;
+            position: relative;
+            z-index: 1;
         }
 
-        /* Typewriter cursor */
         .typewriter-cursor {
             display: inline-block;
             width: 3px;
             height: 1.1em;
-            background: #7C3AED;
+            background: var(--pooh-honey);
             margin-left: 3px;
             vertical-align: text-bottom;
             animation: blink 0.8s step-end infinite;
@@ -316,7 +332,7 @@
 
         @keyframes blink {
             0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+            50%      { opacity: 0; }
         }
 
         .hero .badge-row {
@@ -324,71 +340,76 @@
             flex-wrap: wrap;
             gap: 0.8rem;
             margin-top: 1rem;
+            position: relative;
+            z-index: 1;
         }
 
         .badge {
-            background: #EDE9FE;
-            color: #6D28D9;
+            background: #FFFFFF;
+            color: var(--pooh-brown);
             padding: 0.4rem 1.1rem;
             border-radius: 2rem;
             font-size: 0.85rem;
-            font-weight: 600;
+            font-weight: 700;
             display: inline-flex;
             align-items: center;
             gap: 0.4rem;
-            border: 2px solid #DDD6FE;
+            border: 2px solid #F5A623;
             transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 0 rgba(212, 136, 26, 0.3);
         }
 
         .badge:hover {
             transform: translateY(-3px) scale(1.08);
-            box-shadow: 0 6px 16px rgba(124, 58, 237, 0.2);
+            box-shadow: 0 7px 0 rgba(212, 136, 26, 0.35);
         }
 
-        .badge.yellow { background: #FEF3C7; color: #B45309; border-color: #FDE68A; }
-        .badge.pink { background: #FCE7F3; color: #BE185D; border-color: #FBCFE8; }
-        .badge.teal { background: #CCFBF1; color: #0F766E; border-color: #99F6E4; }
-        .badge.blue { background: #DBEAFE; color: #1D4ED8; border-color: #BFDBFE; }
+        .badge.yellow { background: #FFF9D6; color: #8A6D00; border-color: #FFC93C; }
+        .badge.pink   { background: #FDE8E6; color: #A02D22; border-color: #C0392B; }
+        .badge.teal   { background: #E4F0D9; color: #3D6B28; border-color: #5B8C3E; }
+        .badge.blue   { background: #E8F4F8; color: #2A5D7C; border-color: #A8D5E5; }
 
         .hero p.desc {
             margin-top: 1.2rem;
-            color: #4C1D95;
+            color: var(--pooh-text);
             max-width: 720px;
             line-height: 1.7;
-            font-weight: 500;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
         }
 
         .hero p.desc strong {
-            background: #FEF3C7;
+            background: #FFC93C;
             padding: 0.1rem 0.5rem;
             border-radius: 0.5rem;
-            color: #B45309;
-            transition: background 0.2s;
-        }
-
-        .hero p.desc strong:hover {
-            background: #FDE68A;
+            color: #6B4A00;
+            border: 1px solid rgba(107, 74, 0, 0.25);
         }
 
         /* ===== YEAR AT A GLANCE ===== */
         .year-glance {
-            background: white;
-            border-radius: 2rem;
+            background: #FFFFFF;
+            border-radius: 1.75rem;
             padding: 1.8rem 2rem;
             margin-bottom: 2rem;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-            border: 3px solid #E9D5FF;
+            box-shadow: 0 12px 32px rgba(245, 166, 35, 0.18), 0 0 0 4px #FFF3D6;
+            border: 2px solid #F5A623;
         }
 
         .year-glance h2 {
             font-family: 'Baloo 2', cursive;
             font-size: 1.5rem;
-            font-weight: 700;
-            color: #4C1D95;
+            font-weight: 800;
+            color: var(--pooh-brown);
             margin-bottom: 1rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
+        }
+
+        .year-glance h2 i {
+            color: var(--pooh-forest);
         }
 
         .glance-grid {
@@ -398,60 +419,66 @@
         }
 
         .glance-card {
-            border-radius: 1.5rem;
+            border-radius: 1.25rem;
             padding: 1.2rem 1.5rem;
-            border: 2px solid #E5E7EB;
-            transition: transform 0.25s, box-shadow 0.25s;
+            border: 2px solid #FFE4B5;
+            background: linear-gradient(145deg, #FFFFFF, #FFF9EC);
+            transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
         }
 
         .glance-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+            box-shadow: 0 14px 28px rgba(245, 166, 35, 0.25);
+            border-color: #F5A623;
         }
 
         .glance-card h3 {
             font-family: 'Baloo 2', cursive;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
+            color: var(--pooh-brown);
         }
 
         .glance-card p {
             font-size: 0.85rem;
-            color: #4B5563;
+            color: var(--pooh-text-soft);
             line-height: 1.5;
+            font-weight: 500;
         }
 
         .glance-card .status {
             display: inline-block;
             margin-top: 0.6rem;
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 0.2rem 0.8rem;
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 0.25rem 0.9rem;
             border-radius: 2rem;
+            letter-spacing: 0.03em;
         }
 
-        .glance-card.done { background: #F0FDF4; border-color: #BBF7D0; }
-        .glance-card.done h3 { color: #15803D; }
-        .glance-card.done .status { background: #DCFCE7; color: #15803D; }
-
-        .glance-card.upcoming { background: #F8FAFC; border-color: #E2E8F0; }
-        .glance-card.upcoming h3 { color: #475569; }
-        .glance-card.upcoming .status { background: #F1F5F9; color: #475569; }
-
-        .glance-card.done .status i {
-            animation: checkPop 0.6s ease-out;
+        .glance-card.done {
+            background: linear-gradient(145deg, #FFF3D6, #FFFFFF);
+            border-color: #F5A623;
         }
+        .glance-card.done h3 { color: var(--pooh-brown); }
+        .glance-card.done .status {
+            background: linear-gradient(135deg, #F5A623, #D4881A);
+            color: #FFFFFF;
+            box-shadow: 0 4px 10px rgba(245, 166, 35, 0.45);
+        }
+
+        .glance-card.done .status i { animation: checkPop 0.6s ease-out; }
 
         @keyframes checkPop {
-            0% { transform: scale(0); }
-            50% { transform: scale(1.4); }
+            0%   { transform: scale(0); }
+            50%  { transform: scale(1.4); }
             100% { transform: scale(1); }
         }
 
         /* ===== SEMESTER HEADERS ===== */
         .semester-header {
-            border-radius: 2rem;
+            border-radius: 1.75rem;
             padding: 1.8rem 2.5rem;
             margin: 2.5rem 0 1.5rem;
             display: flex;
@@ -461,21 +488,21 @@
             gap: 1rem;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            color: #FFFFFF;
+            box-shadow: 0 16px 36px rgba(91, 140, 62, 0.35), 0 0 0 5px #FFFFFF inset, 0 0 0 8px #F5A623;
+            border: 3px solid #5B8C3E;
         }
 
         .semester-header.s1 {
-            background: linear-gradient(135deg, #3B82F6, #8B5CF6, #EC4899);
+            background: linear-gradient(135deg, #5B8C3E 0%, #3D6B28 60%, #2A4A1A 100%);
             background-size: 200% 200%;
-            color: white;
-            animation: gradientShift 6s ease infinite;
+            animation: gradientShift 7s ease infinite;
         }
 
         .semester-header.s2 {
-            background: linear-gradient(135deg, #10B981, #14B8A6, #0EA5E9);
+            background: linear-gradient(135deg, #F5A623 0%, #D4881A 50%, #B87514 100%);
             background-size: 200% 200%;
-            color: white;
-            animation: gradientShift 6s ease infinite;
+            animation: gradientShift 7s ease infinite;
         }
 
         .semester-header::before {
@@ -483,15 +510,20 @@
             position: absolute;
             top: -50px;
             right: -50px;
-            width: 180px;
-            height: 180px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.15);
-            animation: orbit 8s linear infinite;
+            background: radial-gradient(circle, rgba(255, 201, 60, 0.4), transparent 70%);
+            animation: orbit 10s linear infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50%      { background-position: 100% 50%; }
         }
 
         @keyframes orbit {
-            0% { transform: rotate(0deg) translateX(20px) rotate(0deg); }
+            0%   { transform: rotate(0deg) translateX(20px) rotate(0deg); }
             100% { transform: rotate(360deg) translateX(20px) rotate(-360deg); }
         }
 
@@ -501,36 +533,46 @@
             font-weight: 800;
             position: relative;
             z-index: 1;
+            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
         }
 
         .semester-header p {
             font-size: 1rem;
             opacity: 0.95;
-            font-weight: 500;
+            font-weight: 600;
             position: relative;
             z-index: 1;
+            color: #FFE4B5;
         }
 
         .semester-header .icon-big {
             font-size: 3rem;
-            opacity: 0.4;
+            opacity: 0.85;
             position: relative;
             z-index: 1;
             animation: float 4s ease-in-out infinite;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
         }
 
         /* ===== TERM SECTION ===== */
         .term-section {
-            background: white;
-            border-radius: 2rem;
+            background: #FFFFFF;
+            border-radius: 1.75rem;
             padding: 1.8rem 2rem;
             margin-bottom: 1.5rem;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-            border: 3px solid #E5E7EB;
+            box-shadow: 0 12px 30px rgba(245, 166, 35, 0.15);
+            border: 3px solid #F5A623;
         }
 
-        .term-section.midterm { border-color: #FDE68A; background: linear-gradient(145deg, #FFFFFF, #FFFBEB); }
-        .term-section.final { border-color: #FBCFE8; background: linear-gradient(145deg, #FFFFFF, #FDF2F8); }
+        .term-section.midterm {
+            border-color: #FFC93C;
+            background: linear-gradient(145deg, #FFFFFF, #FFFDF0);
+        }
+
+        .term-section.final {
+            border-color: #C0392B;
+            background: linear-gradient(145deg, #FFFFFF, #FFF5F4);
+        }
 
         .term-header {
             display: flex;
@@ -539,8 +581,11 @@
             gap: 0.8rem;
             margin-bottom: 1.4rem;
             padding-bottom: 0.8rem;
-            border-bottom: 3px dashed #E5E7EB;
+            border-bottom: 3px dashed #FFE4B5;
         }
+
+        .midterm .term-header { border-bottom-color: #FFE58A; }
+        .final .term-header   { border-bottom-color: #FFB3B0; }
 
         .term-header .term-icon {
             font-size: 1.8rem;
@@ -551,34 +596,52 @@
             justify-content: center;
             border-radius: 1rem;
             transition: transform 0.3s;
+            border: 2px solid #F5A623;
+            background: #FFF3D6;
         }
 
-        .term-header .term-icon:hover {
-            transform: rotate(15deg) scale(1.15);
+        .midterm .term-header .term-icon {
+            background: #FFF9D6;
+            border-color: #FFC93C;
         }
 
-        .midterm .term-header .term-icon { background: #FEF3C7; }
-        .final .term-header .term-icon { background: #FCE7F3; }
+        .final .term-header .term-icon {
+            background: #FDE8E6;
+            border-color: #C0392B;
+        }
+
+        .term-header .term-icon:hover { transform: rotate(15deg) scale(1.15); }
 
         .term-header h3 {
             font-family: 'Baloo 2', cursive;
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #1E1B4B;
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--pooh-brown);
         }
 
         .term-header .term-badge {
             margin-left: auto;
-            background: #F3F4F6;
-            padding: 0.25rem 1rem;
+            padding: 0.3rem 1rem;
             border-radius: 2rem;
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: #4B5563;
+            font-size: 0.78rem;
+            font-weight: 800;
+            background: #FFF3D6;
+            color: var(--pooh-brown);
+            border: 2px solid #F5A623;
+            letter-spacing: 0.02em;
         }
 
-        .midterm .term-header .term-badge { background: #FEF3C7; color: #B45309; }
-        .final .term-header .term-badge { background: #FCE7F3; color: #BE185D; }
+        .midterm .term-header .term-badge {
+            background: #FFF9D6;
+            color: #8A6D00;
+            border-color: #FFC93C;
+        }
+
+        .final .term-header .term-badge {
+            background: #FDE8E6;
+            color: #A02D22;
+            border-color: #C0392B;
+        }
 
         /* ===== LESSON GRID ===== */
         .lesson-grid {
@@ -588,100 +651,99 @@
         }
 
         .lesson-card {
-            border-radius: 1.8rem;
+            border-radius: 1.5rem;
             padding: 1.6rem 1.6rem 1.4rem;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-                        box-shadow 0.25s;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s, border-color 0.25s;
             display: flex;
             flex-direction: column;
             text-decoration: none;
             color: inherit;
             position: relative;
             overflow: hidden;
-            border: 3px solid transparent;
+            border: 3px solid #FFE4B5;
+            background: linear-gradient(145deg, #FFFFFF, #FFF9EC);
+            box-shadow: 0 8px 0 rgba(212, 136, 26, 0.15);
             transform-style: preserve-3d;
         }
 
         .lesson-card::before {
             content: '';
             position: absolute;
-            top: -30px;
-            right: -30px;
-            width: 80px;
-            height: 80px;
+            top: -40px;
+            right: -40px;
+            width: 110px;
+            height: 110px;
             border-radius: 50%;
-            opacity: 0.12;
-            transition: transform 0.4s;
+            opacity: 0.16;
+            transition: transform 0.5s;
         }
 
         .lesson-card:hover {
             transform: translateY(-8px) scale(1.03);
-            box-shadow: 0 22px 40px rgba(124, 58, 237, 0.18);
+            box-shadow: 0 22px 40px rgba(245, 166, 35, 0.32), 0 8px 0 rgba(212, 136, 26, 0.2);
+            border-color: #F5A623;
         }
 
-        .lesson-card:hover::before {
-            transform: scale(1.8);
-        }
+        .lesson-card:hover::before { transform: scale(1.8); }
 
-        /* Colorful card variants */
-        .lesson-card.c1 { background: linear-gradient(145deg, #FFFFFF, #F0F9FF); border-color: #BAE6FD; }
-        .lesson-card.c1::before { background: #38BDF8; }
-        .lesson-card.c1 .lesson-number { background: #E0F2FE; color: #0369A1; }
-        .lesson-card.c1 .card-footer { color: #0284C7; }
+        /* Color accents — Pooh palette: honey, forest, red, sky */
+        .lesson-card.c1  { border-left: 6px solid #F5A623; }
+        .lesson-card.c1::before  { background: #F5A623; }
+        .lesson-card.c1 .lesson-number { background: #FFF3D6; color: #8A6D00; border: 2px solid #F5A623; }
+        .lesson-card.c1 .card-footer { color: #D4881A; }
 
-        .lesson-card.c2 { background: linear-gradient(145deg, #FFFFFF, #FEF2F2); border-color: #FECACA; }
-        .lesson-card.c2::before { background: #F87171; }
-        .lesson-card.c2 .lesson-number { background: #FEE2E2; color: #B91C1C; }
-        .lesson-card.c2 .card-footer { color: #DC2626; }
+        .lesson-card.c2  { border-left: 6px solid #5B8C3E; }
+        .lesson-card.c2::before  { background: #5B8C3E; }
+        .lesson-card.c2 .lesson-number { background: #E4F0D9; color: #3D6B28; border: 2px solid #5B8C3E; }
+        .lesson-card.c2 .card-footer { color: #5B8C3E; }
 
-        .lesson-card.c3 { background: linear-gradient(145deg, #FFFFFF, #F0FDF4); border-color: #BBF7D0; }
-        .lesson-card.c3::before { background: #4ADE80; }
-        .lesson-card.c3 .lesson-number { background: #DCFCE7; color: #15803D; }
-        .lesson-card.c3 .card-footer { color: #16A34A; }
+        .lesson-card.c3  { border-left: 6px solid #C0392B; }
+        .lesson-card.c3::before  { background: #C0392B; }
+        .lesson-card.c3 .lesson-number { background: #FDE8E6; color: #A02D22; border: 2px solid #C0392B; }
+        .lesson-card.c3 .card-footer { color: #C0392B; }
 
-        .lesson-card.c4 { background: linear-gradient(145deg, #FFFFFF, #FFFBEB); border-color: #FDE68A; }
-        .lesson-card.c4::before { background: #FBBF24; }
-        .lesson-card.c4 .lesson-number { background: #FEF3C7; color: #B45309; }
-        .lesson-card.c4 .card-footer { color: #D97706; }
+        .lesson-card.c4  { border-left: 6px solid #A8D5E5; }
+        .lesson-card.c4::before  { background: #A8D5E5; }
+        .lesson-card.c4 .lesson-number { background: #E8F4F8; color: #2A5D7C; border: 2px solid #A8D5E5; }
+        .lesson-card.c4 .card-footer { color: #2A5D7C; }
 
-        .lesson-card.c5 { background: linear-gradient(145deg, #FFFFFF, #F5F3FF); border-color: #DDD6FE; }
-        .lesson-card.c5::before { background: #A78BFA; }
-        .lesson-card.c5 .lesson-number { background: #EDE9FE; color: #6D28D9; }
-        .lesson-card.c5 .card-footer { color: #7C3AED; }
+        .lesson-card.c5  { border-left: 6px solid #F5A623; }
+        .lesson-card.c5::before  { background: #F5A623; }
+        .lesson-card.c5 .lesson-number { background: #FFF3D6; color: #8A6D00; border: 2px solid #F5A623; }
+        .lesson-card.c5 .card-footer { color: #D4881A; }
 
-        .lesson-card.c6 { background: linear-gradient(145deg, #FFFFFF, #FDF2F8); border-color: #FBCFE8; }
-        .lesson-card.c6::before { background: #F472B6; }
-        .lesson-card.c6 .lesson-number { background: #FCE7F3; color: #BE185D; }
-        .lesson-card.c6 .card-footer { color: #DB2777; }
+        .lesson-card.c6  { border-left: 6px solid #5B8C3E; }
+        .lesson-card.c6::before  { background: #5B8C3E; }
+        .lesson-card.c6 .lesson-number { background: #E4F0D9; color: #3D6B28; border: 2px solid #5B8C3E; }
+        .lesson-card.c6 .card-footer { color: #5B8C3E; }
 
-        .lesson-card.c7 { background: linear-gradient(145deg, #FFFFFF, #ECFEFF); border-color: #A5F3FC; }
-        .lesson-card.c7::before { background: #22D3EE; }
-        .lesson-card.c7 .lesson-number { background: #CFFAFE; color: #0E7490; }
-        .lesson-card.c7 .card-footer { color: #0891B2; }
+        .lesson-card.c7  { border-left: 6px solid #C0392B; }
+        .lesson-card.c7::before  { background: #C0392B; }
+        .lesson-card.c7 .lesson-number { background: #FDE8E6; color: #A02D22; border: 2px solid #C0392B; }
+        .lesson-card.c7 .card-footer { color: #C0392B; }
 
-        .lesson-card.c8 { background: linear-gradient(145deg, #FFFFFF, #FFF7ED); border-color: #FED7AA; }
-        .lesson-card.c8::before { background: #FB923C; }
-        .lesson-card.c8 .lesson-number { background: #FFEDD5; color: #C2410C; }
-        .lesson-card.c8 .card-footer { color: #EA580C; }
+        .lesson-card.c8  { border-left: 6px solid #A8D5E5; }
+        .lesson-card.c8::before  { background: #A8D5E5; }
+        .lesson-card.c8 .lesson-number { background: #E8F4F8; color: #2A5D7C; border: 2px solid #A8D5E5; }
+        .lesson-card.c8 .card-footer { color: #2A5D7C; }
 
-        .lesson-card.c9 { background: linear-gradient(145deg, #FFFFFF, #FEFCE8); border-color: #FEF08A; }
-        .lesson-card.c9::before { background: #FACC15; }
-        .lesson-card.c9 .lesson-number { background: #FEF9C3; color: #A16207; }
-        .lesson-card.c9 .card-footer { color: #CA8A04; }
+        .lesson-card.c9  { border-left: 6px solid #F5A623; }
+        .lesson-card.c9::before  { background: #F5A623; }
+        .lesson-card.c9 .lesson-number { background: #FFF3D6; color: #8A6D00; border: 2px solid #F5A623; }
+        .lesson-card.c9 .card-footer { color: #D4881A; }
 
-        .lesson-card.c10 { background: linear-gradient(145deg, #FFFFFF, #F0FDFA); border-color: #99F6E4; }
-        .lesson-card.c10::before { background: #2DD4BF; }
-        .lesson-card.c10 .lesson-number { background: #CCFBF1; color: #0F766E; }
-        .lesson-card.c10 .card-footer { color: #0D9488; }
+        .lesson-card.c10 { border-left: 6px solid #5B8C3E; }
+        .lesson-card.c10::before { background: #5B8C3E; }
+        .lesson-card.c10 .lesson-number { background: #E4F0D9; color: #3D6B28; border: 2px solid #5B8C3E; }
+        .lesson-card.c10 .card-footer { color: #5B8C3E; }
 
         .lesson-number {
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.1em;
             display: inline-block;
-            padding: 0.25rem 0.9rem;
+            padding: 0.25rem 0.85rem;
             border-radius: 2rem;
             align-self: flex-start;
             margin-bottom: 0.7rem;
@@ -690,16 +752,16 @@
         .lesson-card h3 {
             font-family: 'Baloo 2', cursive;
             font-size: 1.15rem;
-            font-weight: 700;
-            color: #1E1B4B;
+            font-weight: 800;
+            color: var(--pooh-brown);
             margin-bottom: 0.4rem;
             line-height: 1.3;
         }
 
         .lesson-card p {
-            font-size: 0.88rem;
-            color: #4B5563;
-            line-height: 1.5;
+            font-size: 0.85rem;
+            color: var(--pooh-text-soft);
+            line-height: 1.55;
             flex: 1;
             font-weight: 500;
         }
@@ -707,58 +769,54 @@
         .lesson-card .card-footer {
             margin-top: 1rem;
             padding-top: 0.8rem;
-            border-top: 2px dashed #E5E7EB;
+            border-top: 2px dashed #FFE4B5;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.82rem;
-            font-weight: 700;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.02em;
         }
 
-        .lesson-card .card-footer i {
-            transition: transform 0.25s;
-        }
-
-        .lesson-card:hover .card-footer i {
-            transform: translateX(8px);
-        }
+        .lesson-card .card-footer i { transition: transform 0.25s; }
+        .lesson-card:hover .card-footer i { transform: translateX(8px); }
 
         .lesson-emoji {
             position: absolute;
             top: 1.2rem;
             right: 1.3rem;
             font-size: 1.5rem;
-            opacity: 0.7;
+            opacity: 0.9;
             transition: transform 0.3s;
+            filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.12));
         }
 
-        .lesson-card:hover .lesson-emoji {
-            animation: wiggle 0.5s ease-in-out;
-        }
+        .lesson-card:hover .lesson-emoji { animation: wiggle 0.5s ease-in-out; }
 
         @keyframes wiggle {
             0%, 100% { transform: rotate(0deg) scale(1); }
-            25% { transform: rotate(-14deg) scale(1.15); }
-            75% { transform: rotate(14deg) scale(1.15); }
+            25%      { transform: rotate(-14deg) scale(1.15); }
+            75%      { transform: rotate(14deg) scale(1.15); }
         }
 
-        /* ===== BREAK / PLACEHOLDER CARD ===== */
+        /* ===== BREAK CARD ===== */
         .break-card {
-            background: linear-gradient(135deg, #FEF3C7, #FDE68A);
-            border-radius: 2rem;
+            background: linear-gradient(135deg, #FFF9D6, #FFE58A);
+            border-radius: 1.5rem;
             padding: 1.5rem 2rem;
             margin: 1.5rem 0;
             display: flex;
             align-items: center;
             gap: 1rem;
-            border: 3px dashed #F59E0B;
-            color: #92400E;
-            font-weight: 600;
-            transition: transform 0.25s;
+            border: 3px dashed #FFC93C;
+            color: #8A6D00;
+            font-weight: 700;
+            transition: transform 0.25s, box-shadow 0.25s;
         }
 
         .break-card:hover {
             transform: scale(1.02);
+            box-shadow: 0 12px 28px rgba(255, 201, 60, 0.4);
         }
 
         .break-card .break-icon {
@@ -768,30 +826,31 @@
 
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
+            50%      { transform: translateY(-8px); }
         }
 
-        .break-card .break-text {
-            font-size: 1rem;
-        }
+        .break-card .break-text { font-size: 0.95rem; }
+        .break-card .break-text strong { color: #A02D22; }
 
         .break-card.teal {
-            background: linear-gradient(135deg, #CCFBF1, #99F6E4);
-            border-color: #14B8A6;
-            color: #0F766E;
+            background: linear-gradient(135deg, #E4F0D9, #C8E0B0);
+            border-color: #5B8C3E;
+            color: #3D6B28;
         }
+        .break-card.teal .break-text strong { color: #3D6B28; }
 
         .break-card.purple {
-            background: linear-gradient(135deg, #EDE9FE, #DDD6FE);
-            border-color: #8B5CF6;
-            color: #5B21B6;
+            background: linear-gradient(135deg, #FDE8E6, #F5C0BC);
+            border-color: #C0392B;
+            color: #A02D22;
         }
+        .break-card.purple .break-text strong { color: #A02D22; }
 
         /* ===== SUMMARY CARD ===== */
         .summary-card {
-            background: linear-gradient(135deg, #7C3AED 0%, #A78BFA 50%, #EC4899 100%);
+            background: linear-gradient(135deg, #F5A623 0%, #D4881A 50%, #B87514 100%);
             background-size: 200% 200%;
-            border-radius: 2.5rem;
+            border-radius: 2rem;
             padding: 2rem 2.5rem;
             margin: 2.5rem 0 1rem;
             display: flex;
@@ -799,104 +858,105 @@
             align-items: center;
             justify-content: space-between;
             gap: 1.5rem;
-            color: white;
-            box-shadow: 0 16px 40px rgba(124, 58, 237, 0.3);
+            color: #FFFFFF;
+            box-shadow: 0 20px 44px rgba(212, 136, 26, 0.45), 0 0 0 5px #FFFFFF inset, 0 0 0 8px #C0392B;
             position: relative;
             overflow: hidden;
-            animation: gradientShift 6s ease infinite;
+            animation: gradientShift 7s ease infinite;
+            border: 3px solid #F5A623;
         }
 
         .summary-card::before {
-            content: '🏆';
+            content: '🍯';
             position: absolute;
-            bottom: -20px;
+            bottom: -10px;
             right: 20px;
             font-size: 8rem;
-            opacity: 0.1;
+            opacity: 0.18;
             animation: float 5s ease-in-out infinite;
         }
 
         .summary-card h3 {
             font-family: 'Baloo 2', cursive;
             font-size: 1.4rem;
-            font-weight: 700;
+            font-weight: 800;
             margin-bottom: 0.4rem;
             position: relative;
             z-index: 1;
+            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
         }
 
         .summary-card p {
             font-size: 0.95rem;
-            opacity: 0.95;
-            font-weight: 500;
+            opacity: 0.98;
+            font-weight: 600;
             max-width: 600px;
             position: relative;
             z-index: 1;
         }
 
         .summary-card .cta {
-            background: white;
-            color: #7C3AED;
-            padding: 0.8rem 2rem;
+            background: #FFFFFF;
+            color: var(--pooh-red);
+            padding: 0.85rem 2rem;
             border-radius: 3rem;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 800;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
             white-space: nowrap;
             transition: all 0.25s;
             font-size: 0.95rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 0 rgba(0, 0, 0, 0.15);
             position: relative;
             z-index: 1;
+            border: 2px solid #FFC93C;
         }
 
         .summary-card .cta:hover {
             transform: scale(1.08) translateY(-3px);
-            box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 0 rgba(0, 0, 0, 0.2);
         }
 
-        .summary-card .cta i {
-            transition: transform 0.25s;
-        }
-
-        .summary-card .cta:hover i {
-            transform: rotate(20deg) scale(1.2);
-        }
+        .summary-card .cta i { transition: transform 0.25s; }
+        .summary-card .cta:hover i { transform: rotate(20deg) scale(1.2); }
 
         /* ===== FOOTER ===== */
         .footer-note {
             text-align: center;
             margin-top: 3rem;
-            color: #8B5CF6;
-            font-size: 0.85rem;
-            border-top: 2px dashed #DDD6FE;
+            color: var(--pooh-brown);
+            font-size: 0.82rem;
+            border-top: 3px dashed #FFE4B5;
             padding-top: 1.5rem;
-            font-weight: 600;
+            font-weight: 700;
+            letter-spacing: 0.02em;
         }
 
         .footer-note i {
             animation: float 3s ease-in-out infinite;
             display: inline-block;
+            color: var(--pooh-honey);
         }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 700px) {
             .hero { padding: 1.8rem; }
-            .hero h1 { font-size: 1.8rem; }
-            .hero::after { font-size: 1.8rem; top: 10px; right: 15px; }
+            .hero h1 { font-size: 1.6rem; text-shadow: 1px 1px 0 #FFF, 3px 3px 0 rgba(245, 166, 35, 0.5); }
+            .hero::after { font-size: 2.2rem; top: 10px; right: 15px; }
             .summary-card { padding: 1.5rem; flex-direction: column; align-items: flex-start; }
             .summary-card .cta { width: 100%; justify-content: center; }
-            .top-nav { flex-direction: column; align-items: stretch; gap: 0.8rem; }
+            .top-nav { flex-direction: column; align-items: stretch; gap: 0.8rem; padding-top: 1.4rem; }
             .nav-links { justify-content: center; }
-            .nav-links a { font-size: 0.8rem; padding: 0.35rem 0.7rem; }
+            .nav-links a { font-size: 0.72rem; padding: 0.35rem 0.75rem; }
             .semester-header { padding: 1.3rem 1.8rem; }
             .semester-header h2 { font-size: 1.5rem; }
             .semester-header .icon-big { display: none; }
             .term-section { padding: 1.2rem 1.2rem; }
             .break-card { flex-direction: column; text-align: center; }
             .glance-grid { grid-template-columns: 1fr; }
+            .term-header .term-badge { margin-left: 0; }
         }
     </style>
 </head>
@@ -905,10 +965,10 @@
     <!-- Scroll Progress Bar -->
     <div class="progress-bar" id="progressBar"></div>
 
-    <!-- Floating Particles Container -->
+    <!-- Floating Particles -->
     <div id="particles"></div>
 
-    <!-- Decorative background shapes -->
+    <!-- Decorative honeycomb / cloud shapes -->
     <div class="bg-shape s1"></div>
     <div class="bg-shape s2"></div>
     <div class="bg-shape s3"></div>
@@ -917,22 +977,12 @@
 
 <div class="wrapper">
 
-    <!-- ========== TOP NAVIGATION ========== -->
+    <!-- ========== TOP NAVIGATION (shortcut links removed) ========== -->
     <nav class="top-nav">
         <div class="nav-links">
             <a href="index.html" class="home-btn active"><i class="fas fa-home"></i> Home</a>
-            <a href="lesson1-abstraction.html"><i class="fas fa-lightbulb"></i> L1</a>
-            <a href="lesson2-essential.html"><i class="fas fa-list-check"></i> L2</a>
-            <a href="lesson3-problem.html"><i class="fas fa-pen"></i> L3</a>
-            <a href="lesson4-algorithms.html"><i class="fas fa-shoe-prints"></i> L4</a>
-            <a href="lesson5-pseudocode.html"><i class="fas fa-diagram-project"></i> L5</a>
-            <a href="lesson6-variables.html"><i class="fas fa-ruler"></i> L6</a>
-            <a href="lesson7-turf.html"><i class="fas fa-seedling"></i> L7</a>
-            <a href="lesson8-design.html"><i class="fas fa-gears"></i> L8</a>
-            <a href="lesson9-testing.html"><i class="fas fa-bug"></i> L9</a>
-            <a href="lesson10-project.html"><i class="fas fa-trophy"></i> L10</a>
         </div>
-        <div style="font-size:0.8rem; color:#7C3AED; font-weight:700;">
+        <div class="nav-brand">
             <i class="fas fa-graduation-cap"></i> Mathayom 1 · Year Plan
         </div>
     </nav>
@@ -940,7 +990,7 @@
     <!-- ========== HERO ========== -->
     <div class="hero">
         <h1 id="heroTitle">Mathayom 1 (Grade 7) · Full Year Plan</h1>
-        <div class="subhead" id="heroSub">Thailand Basic Education Core Curriculum · Indicators 1–4</div>
+        <div class="subhead" id="heroSub">Thailand Basic Education Core Curriculum · 4 Indicators · 40 Lessons</div>
         <div class="badge-row">
             <span class="badge blue"><i class="fas fa-calendar"></i> 2 Semesters</span>
             <span class="badge yellow"><i class="fas fa-clock"></i> 40 lessons total</span>
@@ -948,10 +998,9 @@
             <span class="badge teal"><i class="fas fa-star"></i> Fun &amp; Interactive</span>
         </div>
         <p class="desc">
-            <i class="fas fa-lightbulb" style="color:#F59E0B;"></i>
-            This year plan covers all four indicators. The lessons below are for
-            <strong>Indicator 1 — Abstraction and Algorithm Design</strong>, which is the
-            <strong>Midterm portion of Semester 1</strong>. The remaining sections will be added soon.
+            <i class="fas fa-lightbulb" style="color:#F5A623;"></i>
+            This year plan covers all four indicators across two semesters. Each semester is divided into
+            a <strong>Midterm</strong> and <strong>Final</strong> period. Click any lesson card to open its full page.
         </p>
     </div>
 
@@ -965,23 +1014,23 @@
                 <p style="margin-top:0.3rem;">10 lessons · 100 min each</p>
                 <span class="status"><i class="fas fa-check"></i> Complete</span>
             </div>
-            <div class="glance-card upcoming">
-                <h3><i class="fas fa-hourglass-half"></i> Semester 1 · Final</h3>
+            <div class="glance-card done">
+                <h3><i class="fas fa-check-circle"></i> Semester 1 · Final</h3>
                 <p><strong>Indicator 2:</strong> Simple Programming for Math/Science</p>
-                <p style="margin-top:0.3rem;">10 lessons · Coming Soon</p>
-                <span class="status"><i class="fas fa-clock"></i> Upcoming</span>
+                <p style="margin-top:0.3rem;">10 lessons · 100 min each</p>
+                <span class="status"><i class="fas fa-check"></i> Complete</span>
             </div>
-            <div class="glance-card upcoming">
-                <h3><i class="fas fa-hourglass-half"></i> Semester 2 · Midterm</h3>
+            <div class="glance-card done">
+                <h3><i class="fas fa-check-circle"></i> Semester 2 · Midterm</h3>
                 <p><strong>Indicator 3:</strong> Collecting, Processing, and Presenting Data</p>
-                <p style="margin-top:0.3rem;">10 lessons · Coming Soon</p>
-                <span class="status"><i class="fas fa-clock"></i> Upcoming</span>
+                <p style="margin-top:0.3rem;">10 lessons · 100 min each</p>
+                <span class="status"><i class="fas fa-check"></i> Complete</span>
             </div>
-            <div class="glance-card upcoming">
-                <h3><i class="fas fa-hourglass-half"></i> Semester 2 · Final</h3>
+            <div class="glance-card done">
+                <h3><i class="fas fa-check-circle"></i> Semester 2 · Final</h3>
                 <p><strong>Indicator 4:</strong> Safe and Responsible IT Use</p>
-                <p style="margin-top:0.3rem;">10 lessons · Coming Soon</p>
-                <span class="status"><i class="fas fa-clock"></i> Upcoming</span>
+                <p style="margin-top:0.3rem;">10 lessons · 100 min each</p>
+                <span class="status"><i class="fas fa-check"></i> Complete</span>
             </div>
         </div>
     </div>
@@ -1008,7 +1057,7 @@
         <div class="lesson-grid stagger">
 
             <a href="lesson1-abstraction.html" class="lesson-card c1">
-                <span class="lesson-emoji">🔍</span>
+                <span class="lesson-emoji">🍯</span>
                 <span class="lesson-number">Lesson 1</span>
                 <h3>What is Abstraction?</h3>
                 <p>Define abstraction as focusing on what matters for a goal. Identify essential and non-essential details in a messy room.</p>
@@ -1019,7 +1068,7 @@
             </a>
 
             <a href="lesson2-essential.html" class="lesson-card c2">
-                <span class="lesson-emoji">📋</span>
+                <span class="lesson-emoji">🐻</span>
                 <span class="lesson-number">Lesson 2</span>
                 <h3>Essential vs Non-Essential Details</h3>
                 <p>Use criteria to decide whether a detail is essential. Sort details into groups and explain how removing non-essential details clarifies a problem.</p>
@@ -1030,7 +1079,7 @@
             </a>
 
             <a href="lesson3-problem.html" class="lesson-card c3">
-                <span class="lesson-emoji">✏️</span>
+                <span class="lesson-emoji">🌳</span>
                 <span class="lesson-number">Lesson 3</span>
                 <h3>Problem Statement and Purpose</h3>
                 <p>Write a clear problem statement with goal, input, output, and constraints. Identify purpose before choosing details.</p>
@@ -1041,7 +1090,7 @@
             </a>
 
             <a href="lesson4-algorithms.html" class="lesson-card c4">
-                <span class="lesson-emoji">👣</span>
+                <span class="lesson-emoji">🍃</span>
                 <span class="lesson-number">Lesson 4</span>
                 <h3>Algorithms in Daily Life</h3>
                 <p>Explain that an algorithm is a clear sequence of steps. Represent a daily process as an ordered algorithm and identify abstraction in routines.</p>
@@ -1052,7 +1101,7 @@
             </a>
 
             <a href="lesson5-pseudocode.html" class="lesson-card c5">
-                <span class="lesson-emoji">📊</span>
+                <span class="lesson-emoji">🐝</span>
                 <span class="lesson-number">Lesson 5</span>
                 <h3>Pseudocode and Flowcharts</h3>
                 <p>Use simple pseudocode to describe an algorithm. Draw a basic flowchart with start/end, process, decision, and arrows.</p>
@@ -1063,7 +1112,7 @@
             </a>
 
             <a href="lesson6-variables.html" class="lesson-card c6">
-                <span class="lesson-emoji">📏</span>
+                <span class="lesson-emoji">🌲</span>
                 <span class="lesson-number">Lesson 6</span>
                 <h3>Variables, Constants, and Units</h3>
                 <p>Identify variables and constants in a problem. Choose appropriate units and explain why only needed data should be used.</p>
@@ -1074,7 +1123,7 @@
             </a>
 
             <a href="lesson7-turf.html" class="lesson-card c7">
-                <span class="lesson-emoji">🌱</span>
+                <span class="lesson-emoji">🌿</span>
                 <span class="lesson-number">Lesson 7</span>
                 <h3>Case Study: Turf-Laying Problem</h3>
                 <p>Solve the turf problem by identifying essential details. Calculate area and number of turf pieces, and round up when needed.</p>
@@ -1085,7 +1134,7 @@
             </a>
 
             <a href="lesson8-design.html" class="lesson-card c8">
-                <span class="lesson-emoji">⚙️</span>
+                <span class="lesson-emoji">🏡</span>
                 <span class="lesson-number">Lesson 8</span>
                 <h3>Designing the Turf Algorithm</h3>
                 <p>Create an algorithm for the turf problem. Write pseudocode and draw a flowchart. Test the algorithm with different inputs.</p>
@@ -1096,7 +1145,7 @@
             </a>
 
             <a href="lesson9-testing.html" class="lesson-card c9">
-                <span class="lesson-emoji">🐛</span>
+                <span class="lesson-emoji">🔍</span>
                 <span class="lesson-number">Lesson 9</span>
                 <h3>Testing, Edge Cases, and Improvement</h3>
                 <p>Test an algorithm with edge cases. Identify assumptions and errors. Improve the algorithm using feedback.</p>
@@ -1126,16 +1175,126 @@
         <div class="break-text"><strong>Midterm Complete!</strong> You finished all 10 lessons of Indicator 1. Take a break — the Final period of Semester 1 is next.</div>
     </div>
 
-    <!-- FINAL (Indicator 2 — placeholder) -->
+    <!-- FINAL (Indicator 2 — Lessons 11–20) -->
     <div class="term-section final reveal">
         <div class="term-header">
             <div class="term-icon">🏁</div>
             <h3>Final · Indicator 2 — Simple Programming for Math/Science</h3>
             <span class="term-badge"><i class="fas fa-clock"></i> 10 lessons</span>
         </div>
-        <div class="break-card purple" style="margin:0;">
-            <div class="break-icon">🔜</div>
-            <div class="break-text"><strong>Coming Soon!</strong> Lessons for Indicator 2 (Simple Programming for Math/Science) will be added here. Stay tuned!</div>
+
+        <div class="lesson-grid stagger">
+
+            <a href="lesson11-programming-intro.html" class="lesson-card c1">
+                <span class="lesson-emoji">💻</span>
+                <span class="lesson-number">Lesson 11</span>
+                <h3>Introduction to Programming and Algorithms</h3>
+                <p>Explain what a program and an algorithm are. Identify math/science problems that can be solved by a program.</p>
+                <div class="card-footer">
+                    <span><i class="fas fa-clock"></i> 100 min</span>
+                    <span>Open <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="lesson12-variables-datatypes.html" class="lesson-card c2">
+                <span class="lesson-emoji">📦</span>
+                <span class="lesson-number">Lesson 12</span>
+                <h3>Variables and Data Types</h3>
+                <p>Define variables and data types (integer, float, string). Use variables in a simple Python program and choose appropriate types.</p>
+                <div class="card-footer">
+                    <span><i class="fas fa-clock"></i> 100 min</span>
+                    <span>Open <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="lesson13-conditions.html" class="lesson-card c3">
+                <span class="lesson-emoji">🔀</span>
+                <span class="lesson-number">Lesson 13</span>
+                <h3>Conditions (if/else) for Decision Making</h3>
+                <p>Use if, elif, and else in Python. Write programs that make decisions based on math/science data.</p>
+                <div class="card-footer">
+                    <span><i class="fas fa-clock"></i> 100 min</span>
+                    <span>Open <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="lesson14-loops.html" class="lesson-card c4">
+                <span class="lesson-emoji">🔁</span>
+                <span class="lesson-number">Lesson 14</span>
+                <h3>Loops (for/while) for Repetition</h3>
+                <p>Use for and while loops in Python. Write programs that repeat calculations and apply loops to math/science problems.</p>
+                <div class="card-footer">
+                    <span><i class="fas fa-clock"></i> 100 min</span>
+                    <span>Open <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="lesson15-stepbystep.html" class="lesson-card c5">
+                <span class="lesson-emoji">🧩</span>
+                <span class="lesson-number">Lesson 15</span>
+                <h3>Step-by-Step Problem Solving</h3>
+                <p>Break a complex problem into smaller steps. Write an algorithm before coding and use abstraction to choose essential steps.</p>
+                <div class="card-footer">
+                    <span><i class="fas fa-clock"></i> 100 min</span>
+                    <span>Open <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="lesson16-motion-equation.html" class="lesson-card c6">
+                <span class="lesson-emoji">🚀</span>
+                <span class="lesson-number">Lesson 16</span>
+                <h3>Motion Equation Program</h3>
+                <p>Use the motion equation s = ut + ½at² in a program. Apply variables, conditions, and loops. Test and debug the program.</p>
+                <div class="card-footer">
+                    <span><i class="fas fa-clock"></i> 100 min</span>
+                    <span>Open <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="lesson17-area-calculation.html" class="lesson-card c7">
+                <span class="lesson-emoji">📐</span>
+                <span class="lesson-number">Lesson 17</span>
+                <h3>Area Calculation Program</h3>
+                <p>Write programs to calculate areas of different shapes. Use conditions to choose the shape and test with different values.</p>
+                <div class="card-footer">
+                    <span><i class="fas fa-clock"></i> 100 min</span>
+                    <span>Open <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="lesson18-bmi-calculation.html" class="lesson-card c8">
+                <span class="lesson-emoji">⚖️</span>
+                <span class="lesson-number">Lesson 18</span>
+                <h3>BMI Calculation Program</h3>
+                <p>Write a BMI calculator program. Use variables and conditions. Interpret BMI categories.</p>
+                <div class="card-footer">
+                    <span><i class="fas fa-clock"></i> 100 min</span>
+                    <span>Open <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="lesson19-testing-debugging.html" class="lesson-card c9">
+                <span class="lesson-emoji">🔧</span>
+                <span class="lesson-number">Lesson 19</span>
+                <h3>Testing and Debugging Simple Programs</h3>
+                <p>Test a program with normal inputs. Identify and fix common errors. Improve a program using feedback.</p>
+                <div class="card-footer">
+                    <span><i class="fas fa-clock"></i> 100 min</span>
+                    <span>Open <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="lesson20-programming-project.html" class="lesson-card c10">
+                <span class="lesson-emoji">🏅</span>
+                <span class="lesson-number">Lesson 20</span>
+                <h3>Final Project: Simple Program for Math/Science</h3>
+                <p>Design and write a complete simple program to solve a math/science problem. Use variables, conditions, and loops.</p>
+                <div class="card-footer">
+                    <span><i class="fas fa-clock"></i> 100 min</span>
+                    <span>Open <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
         </div>
     </div>
 
@@ -1150,44 +1309,270 @@
         <div class="icon-big">📗</div>
     </div>
 
-    <!-- MIDTERM (Indicator 3 — placeholder) -->
-    <div class="term-section midterm reveal" style="border-color:#99F6E4; background: linear-gradient(145deg, #FFFFFF, #F0FDFA);">
-        <div class="term-header" style="border-bottom-color:#99F6E4;">
-            <div class="term-icon" style="background:#CCFBF1;">📝</div>
+    <!-- MIDTERM (Indicator 3 — Lessons 21–30) -->
+    <div class="term-section midterm reveal">
+        <div class="term-header">
+            <div class="term-icon">📝</div>
             <h3>Midterm · Indicator 3 — Collecting, Processing, and Presenting Data</h3>
-            <span class="term-badge" style="background:#CCFBF1; color:#0F766E;"><i class="fas fa-clock"></i> 10 lessons</span>
+            <span class="term-badge"><i class="fas fa-clock"></i> 10 lessons</span>
         </div>
-        <div class="break-card teal" style="margin:0;">
-            <div class="break-icon">🔜</div>
-            <div class="break-text"><strong>Coming Soon!</strong> Lessons for Indicator 3 (Collecting, Processing, and Presenting Data) will be added here. Stay tuned!</div>
+
+        <div class="lesson-grid stagger">
+
+            <a href="lesson21-intro-data.html" class="lesson-card c1">
+                <span class="lesson-emoji">📊</span>
+                <span class="lesson-number">Lesson 21</span>
+                <h3>Introduction to Data and Primary Sources</h3>
+                <p>Define data, information, and primary data. Distinguish primary data from secondary data and identify primary sources.</p>
+                <div class="card-footer">
+                    <span><i class="fas fa-clock"></i> 100 min</span>
+                    <span>Open <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="lesson22-collecting-data.html" class="lesson-card c2">
+                <span class="lesson-emoji">📝</span>
+                <span class="lesson-number">Lesson 22</span>
+                <h3>Methods of Collecting Primary Data</h3>
+                <p>Use surveys, interviews, observations, and measurements to collect data. Design good survey questions and record accurately.</p>
+                <div class="card-footer">
+                    <span><i class="fas fa-clock"></i> 100 min</span>
+                    <span>Open <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="lesson23-processing-data.html" class="lesson-card c3">
+                <span class="lesson-emoji">🧮</span>
+                <span class="lesson-number">Lesson 23</span>
+                <h3>Organizing and Processing Data</h3>
+                <p>Organize raw data into tables. Calculate totals, averages, and percentages. Explain why processing makes data meaningful.</p>
+                <div class="card-footer">
+                    <span><i class="fas fa-clock"></i> 100 min</span>
+                    <span>Open <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="lesson24-evaluating-data.html" class="lesson-card c4">
+                <span class="lesson-emoji">⚖️</span>
+                <span class="lesson-number">Lesson 24</span>
+                <h3>Creating Alternatives and Evaluating Data</h3>
+                <p>Create alternative solutions from processed data. Evaluate alternatives using simple criteria and choose the best with evidence.</p>
+                <div class="card-footer">
+                    <span><i class="fas fa-clock"></i> 100 min</span>
+                    <span>Open <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="lesson25-data-presentation.html" class="lesson-card c5">
+                <span class="lesson-emoji">📈</span>
+                <span class="lesson-number">Lesson 25</span>
+                <h3>Introduction to Data Presentation</h3>
+                <p>Choose appropriate chart types for different data. Create charts using spreadsheet software and explain why visualization helps.</p>
+                <div class="card-footer">
+                    <span><i class="fas fa-clock"></i> 100 min</span>
+                    <span>Open <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="lesson26-software-tools.html" class="lesson-card c6">
+                <span class="lesson-emoji">🛠️</span>
+                <span class="lesson-number">Lesson 26</span>
+                <h3>Using Software and Internet Services</h3>
+                <p>Use software and online tools for collecting, processing, and presenting data. Use Google Forms, Google Sheets, and presentation tools.</p>
+                <div class="card-footer">
+                    <span><i class="fas fa-clock"></i> 100 min</span>
+                    <span>Open <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="lesson27-boiling-eggs.html" class="lesson-card c7">
+                <span class="lesson-emoji">🥚</span>
+                <span class="lesson-number">Lesson 27</span>
+                <h3>Case Study: Boiling Eggs</h3>
+                <p>Integrate science and data to solve a real problem. Collect data on egg boiling preferences and present findings.</p>
+                <div class="card-footer">
+                    <span><i class="fas fa-clock"></i> 100 min</span>
+                    <span>Open <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="lesson28-bmi-local.html" class="lesson-card c8">
+                <span class="lesson-emoji">🏘️</span>
+                <span class="lesson-number">Lesson 28</span>
+                <h3>Case Study: BMI of Local People</h3>
+                <p>Collect height and weight data from a sample. Calculate BMI and categorize results. Analyze trends in the local community.</p>
+                <div class="card-footer">
+                    <span><i class="fas fa-clock"></i> 100 min</span>
+                    <span>Open <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="lesson29-experimental-graphs.html" class="lesson-card c9">
+                <span class="lesson-emoji">📉</span>
+                <span class="lesson-number">Lesson 29</span>
+                <h3>Graphs from Experiments and Trends</h3>
+                <p>Record experimental data accurately. Create line graphs from experimental results. Analyze trends and make predictions.</p>
+                <div class="card-footer">
+                    <span><i class="fas fa-clock"></i> 100 min</span>
+                    <span>Open <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="lesson30-data-project.html" class="lesson-card c10">
+                <span class="lesson-emoji">🏆</span>
+                <span class="lesson-number">Lesson 30</span>
+                <h3>Final Project: Collect, Process, Evaluate, Present Data</h3>
+                <p>Design a complete data project from collection to presentation. Use software and online tools throughout the process.</p>
+                <div class="card-footer">
+                    <span><i class="fas fa-clock"></i> 100 min</span>
+                    <span>Open <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
         </div>
     </div>
 
-    <!-- FINAL (Indicator 4 — placeholder) -->
-    <div class="term-section final reveal" style="border-color:#DDD6FE; background: linear-gradient(145deg, #FFFFFF, #F5F3FF);">
-        <div class="term-header" style="border-bottom-color:#DDD6FE;">
-            <div class="term-icon" style="background:#EDE9FE;">🏁</div>
+    <!-- BREAK -->
+    <div class="break-card teal reveal-scale">
+        <div class="break-icon">🎉</div>
+        <div class="break-text"><strong>Midterm Complete!</strong> You finished all 10 lessons of Indicator 3. Take a break — the Final period of Semester 2 is next.</div>
+    </div>
+
+    <!-- FINAL (Indicator 4 — Lessons 31–40) -->
+    <div class="term-section final reveal">
+        <div class="term-header">
+            <div class="term-icon">🏁</div>
             <h3>Final · Indicator 4 — Safe and Responsible IT Use</h3>
-            <span class="term-badge" style="background:#EDE9FE; color:#6D28D9;"><i class="fas fa-clock"></i> 10 lessons</span>
+            <span class="term-badge"><i class="fas fa-clock"></i> 10 lessons</span>
         </div>
-        <div class="break-card purple" style="margin:0;">
-            <div class="break-icon">🔜</div>
-            <div class="break-text"><strong>Coming Soon!</strong> Lessons for Indicator 4 (Safe and Responsible IT Use) will be added here. Stay tuned!</div>
+
+        <div class="lesson-grid stagger">
+
+            <a href="lesson31-safe-it-intro.html" class="lesson-card c1">
+                <span class="lesson-emoji">🛡️</span>
+                <span class="lesson-number">Lesson 31</span>
+                <h3>Introduction to Safe and Responsible IT Use</h3>
+                <p>Define safe and responsible use of information technology. Identify risks of unsafe IT use and explain why digital citizenship matters.</p>
+                <div class="card-footer">
+                    <span><i class="fas fa-clock"></i> 100 min</span>
+                    <span>Open <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="lesson32-privacy-identity.html" class="lesson-card c2">
+                <span class="lesson-emoji">🔒</span>
+                <span class="lesson-number">Lesson 32</span>
+                <h3>Protecting Privacy and Identity Online</h3>
+                <p>Define privacy, personal data, and digital identity. Identify what information should be kept private and explain risks of oversharing.</p>
+                <div class="card-footer">
+                    <span><i class="fas fa-clock"></i> 100 min</span>
+                    <span>Open <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="lesson33-password-security.html" class="lesson-card c3">
+                <span class="lesson-emoji">🔑</span>
+                <span class="lesson-number">Lesson 33</span>
+                <h3>Identity Management and Password Security</h3>
+                <p>Explain what identity management means. Create strong passwords and explain why passwords should never be shared.</p>
+                <div class="card-footer">
+                    <span><i class="fas fa-clock"></i> 100 min</span>
+                    <span>Open <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="lesson34-scams.html" class="lesson-card c4">
+                <span class="lesson-emoji">🎣</span>
+                <span class="lesson-number">Lesson 34</span>
+                <h3>Protecting Personal Data and Avoiding Scams</h3>
+                <p>Identify common online scams and phishing attempts. Explain how personal data is stolen and respond safely to suspicious messages.</p>
+                <div class="card-footer">
+                    <span><i class="fas fa-clock"></i> 100 min</span>
+                    <span>Open <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="lesson35-appropriate-content.html" class="lesson-card c5">
+                <span class="lesson-emoji">✅</span>
+                <span class="lesson-number">Lesson 35</span>
+                <h3>Evaluating the Appropriateness of Content</h3>
+                <p>Define inappropriate content. Identify privacy violations, obscenity, and rude criticism. Explain the impact of harmful content.</p>
+                <div class="card-footer">
+                    <span><i class="fas fa-clock"></i> 100 min</span>
+                    <span>Open <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="lesson36-cyberbullying.html" class="lesson-card c6">
+                <span class="lesson-emoji">💬</span>
+                <span class="lesson-number">Lesson 36</span>
+                <h3>Cyberbullying and Respectful Online Communication</h3>
+                <p>Define cyberbullying and its forms. Explain the impact of cyberbullying and demonstrate respectful online communication.</p>
+                <div class="card-footer">
+                    <span><i class="fas fa-clock"></i> 100 min</span>
+                    <span>Open <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="lesson37-terms-of-use.html" class="lesson-card c7">
+                <span class="lesson-emoji">📜</span>
+                <span class="lesson-number">Lesson 37</span>
+                <h3>Agreements and Terms of Use</h3>
+                <p>Explain what terms of service and agreements are. Identify key parts of a terms of service document and why reading terms matters.</p>
+                <div class="card-footer">
+                    <span><i class="fas fa-clock"></i> 100 min</span>
+                    <span>Open <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="lesson38-creative-commons.html" class="lesson-card c8">
+                <span class="lesson-emoji">🎨</span>
+                <span class="lesson-number">Lesson 38</span>
+                <h3>Creative Commons and Using Media Legally</h3>
+                <p>Explain what Creative Commons is. Identify the different CC licenses and give proper attribution for CC content.</p>
+                <div class="card-footer">
+                    <span><i class="fas fa-clock"></i> 100 min</span>
+                    <span>Open <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="lesson39-plagiarism.html" class="lesson-card c9">
+                <span class="lesson-emoji">📚</span>
+                <span class="lesson-number">Lesson 39</span>
+                <h3>Respecting Others' Work and Avoiding Plagiarism</h3>
+                <p>Define plagiarism and its consequences. Cite sources correctly and use paraphrasing and quoting properly.</p>
+                <div class="card-footer">
+                    <span><i class="fas fa-clock"></i> 100 min</span>
+                    <span>Open <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="lesson40-digital-citizenship.html" class="lesson-card c10">
+                <span class="lesson-emoji">🏆</span>
+                <span class="lesson-number">Lesson 40</span>
+                <h3>Final Project: Digital Citizenship Guide</h3>
+                <p>Apply all unit concepts to create a digital citizenship guide. Present safe and responsible IT practices to teach others.</p>
+                <div class="card-footer">
+                    <span><i class="fas fa-clock"></i> 100 min</span>
+                    <span>Open <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
         </div>
     </div>
 
     <!-- ========== SUMMARY / CTA ========== -->
     <div class="summary-card reveal-scale">
         <div>
-            <h3><i class="fas fa-diagram-project"></i> Final Project Rubric — Indicator 1</h3>
-            <p>Assess problem statement, essential vs non-essential details, algorithm correctness, clarity, real-life connection, presentation, and reflection.</p>
+            <h3><i class="fas fa-diagram-project"></i> Complete Year · 40 Lessons · 4 Indicators</h3>
+            <p>You have the full Mathayom 1 (Grade 7) IT curriculum: Abstraction, Programming, Data, and Responsible IT Use. Click any lesson to explore.</p>
         </div>
-        <a href="lesson10-project.html" class="cta"><i class="fas fa-trophy"></i> View Final Project</a>
+        <a href="lesson1-abstraction.html" class="cta"><i class="fas fa-rocket"></i> Start Learning</a>
     </div>
 
     <!-- ========== FOOTER ========== -->
     <div class="footer-note">
-        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Full Year Plan · 4 Indicators · 40 lessons total
+        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Full Year Plan · 4 Indicators · 40 lessons · 4,000 minutes of instruction
     </div>
 
 </div>
@@ -1205,61 +1590,49 @@
     });
 
     /* ============================================================
-       2. FLOATING PARTICLES GENERATOR
+       2. FLOATING PARTICLES — Pooh honey, forest, red, cream
        ============================================================ */
     const particlesContainer = document.getElementById('particles');
-    const particleColors = ['#A78BFA', '#EC4899', '#F59E0B', '#4ECDC4', '#FF6B9D', '#7C3AED', '#38BDF8'];
+    const particleColors = ['#F5A623', '#FFC93C', '#5B8C3E', '#C0392B', '#FFF9EC', '#A8D5E5'];
 
     function createParticle() {
         const particle = document.createElement('div');
         particle.classList.add('particle');
-        const size = Math.random() * 18 + 6;
+        const size = Math.random() * 16 + 6;
         particle.style.width = size + 'px';
         particle.style.height = size + 'px';
         particle.style.left = Math.random() * 100 + '%';
         particle.style.background = particleColors[Math.floor(Math.random() * particleColors.length)];
+        particle.style.boxShadow = `0 0 ${size * 1.5}px currentColor`;
         particle.style.animationDuration = (Math.random() * 12 + 10) + 's';
         particle.style.animationDelay = Math.random() * 8 + 's';
         particlesContainer.appendChild(particle);
-
-        // Remove particle after animation ends to keep DOM clean
-        setTimeout(() => {
-            particle.remove();
-        }, 25000);
+        setTimeout(() => particle.remove(), 25000);
     }
 
-    // Create initial batch
-    for (let i = 0; i < 20; i++) {
-        setTimeout(createParticle, i * 300);
-    }
-    // Continuously create new particles
-    setInterval(createParticle, 1500);
+    for (let i = 0; i < 24; i++) setTimeout(createParticle, i * 280);
+    setInterval(createParticle, 1300);
 
     /* ============================================================
-       3. SCROLL REVEAL ANIMATIONS (Intersection Observer)
+       3. SCROLL REVEAL
        ============================================================ */
     const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger');
-
     const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                // Optionally unobserve after revealing
                 observer.unobserve(entry.target);
             }
         });
-    }, {
-        threshold: 0.12,
-        rootMargin: '0px 0px -50px 0px'
-    });
+    }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
 
     revealElements.forEach(el => revealObserver.observe(el));
 
     /* ============================================================
-       4. TYPEWRITER EFFECT FOR HERO SUBTITLE
+       4. TYPEWRITER SUBTITLE
        ============================================================ */
     const heroSub = document.getElementById('heroSub');
-    const fullText = 'Thailand Basic Education Core Curriculum · Indicators 1–4';
+    const fullText = 'Thailand Basic Education Core Curriculum · 4 Indicators · 40 Lessons';
     heroSub.textContent = '';
     let charIndex = 0;
 
@@ -1267,23 +1640,19 @@
         if (charIndex < fullText.length) {
             heroSub.textContent += fullText.charAt(charIndex);
             charIndex++;
-            setTimeout(typeWriter, 45);
+            setTimeout(typeWriter, 35);
         } else {
-            // Add blinking cursor after typing finishes
             const cursor = document.createElement('span');
             cursor.className = 'typewriter-cursor';
             heroSub.appendChild(cursor);
         }
     }
-
-    // Start typing after a short delay (after hero animates in)
     setTimeout(typeWriter, 800);
 
     /* ============================================================
-       5. CARD TILT EFFECT ON MOUSEMOVE (3D tilt)
+       5. CARD 3D TILT
        ============================================================ */
     const cards = document.querySelectorAll('.lesson-card');
-
     cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
@@ -1291,34 +1660,18 @@
             const y = e.clientY - rect.top;
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            const rotateX = ((y - centerY) / centerY) * -6; // max 6deg
+            const rotateX = ((y - centerY) / centerY) * -6;
             const rotateY = ((x - centerX) / centerX) * 6;
             card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.03)`;
         });
-
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = '';
-        });
+        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
     });
 
     /* ============================================================
-       6. SMOOTH SCROLL FOR ANCHOR LINKS (if any)
+       6. CONSOLE WELCOME
        ============================================================ */
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
-    });
-
-    /* ============================================================
-       7. CONSOLE WELCOME MESSAGE
-       ============================================================ */
-    console.log('%c🎓 Mathayom 1 · Year Plan 🎓', 'font-size: 20px; font-weight: bold; color: #7C3AED;');
-    console.log('%cWelcome! Enjoy the interactive animations.', 'font-size: 14px; color: #EC4899;');
+    console.log('%c🍯 Mathayom 1 · Full Year Plan', 'font-size: 22px; font-weight: bold; color: #F5A623; text-shadow: 2px 2px 0 #5B8C3E;');
+    console.log('%c40 lessons · 4 indicators · 2 semesters · Winnie the Pooh Edition', 'font-size: 13px; color: #C0392B;');
 </script>
 
 </body>

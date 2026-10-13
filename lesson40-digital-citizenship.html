@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 40 — Final Project: Digital Citizenship Guide</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson40-digital-citizenship.html" class="active"><i class="fas fa-trophy"></i> Lesson 40</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 4 · Semester 2 · Final
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-trophy"></i> Lesson 40 · Final Project</span>
+        <h1>Final Project: Digital Citizenship Guide</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            This is your chance to <strong>teach others</strong> what you've learned! You'll create a
+            <strong>Digital Citizenship Guide</strong> for students your age — covering everything from
+            passwords and privacy to cyberbullying and Creative Commons. Your guide will help make the online world
+            a <strong>safer, kinder place</strong> for everyone.
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-book-open"></i> Create a Guide</span>
+            <span class="chip sky"><i class="fas fa-palette"></i> Design &amp; Present</span>
+            <span class="chip red"><i class="fas fa-graduation-cap"></i> Teach Others</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/digital-citizenship-project-hero.png"
+            alt="Hero banner showing a student proudly presenting their Digital Citizenship Guide, with icons of locks, shields, hearts, and books floating around"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — A student proudly presenting a Digital Citizenship Guide, with icons of locks, shields, hearts, and books floating around. Empowering, celebratory illustration. Recommended size: 1000 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== PROJECT OVERVIEW ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-diagram-project"></i> Project Overview</div>
+        <p>
+            Your mission is to create a <strong>Digital Citizenship Guide</strong> that teaches other students
+            how to be safe, respectful, and responsible online. Think of it as a <strong>handbook</strong> or
+            <strong>friendly guide</strong> that you would want a younger student to read.
+        </p>
+
+        <p>Your guide should cover <strong>at least 5 topics</strong> from this unit:</p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">🔒</span>
+                <h3>Privacy &amp; Identity</h3>
+                <p>Protecting personal data and digital footprints.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">🔑</span>
+                <h3>Password Security</h3>
+                <p>Strong passwords and passphrases.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">🎣</span>
+                <h3>Scams &amp; Phishing</h3>
+                <p>Spotting and responding to scams.</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">✅</span>
+                <h3>Appropriate Content</h3>
+                <p>Judging content and respecting others.</p>
+            </div>
+            <div class="term-card honey">
+                <span class="term-emoji">💬</span>
+                <h3>Cyberbullying</h3>
+                <p>Standing up and supporting others.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">📜</span>
+                <h3>Terms of Use</h3>
+                <p>Reading the fine print of apps.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">🎨</span>
+                <h3>Creative Commons</h3>
+                <p>Using media legally and respectfully.</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">📚</span>
+                <h3>Plagiarism</h3>
+                <p>Citing sources and academic honesty.</p>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Key idea:</strong> Your guide should be <strong>useful, clear, and engaging</strong>.
+                Make it something a student would actually want to read.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== CHOOSING YOUR FORMAT ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-palette"></i> Choosing Your Format</div>
+        <p>
+            You can create your guide in the format that works best for you. Here are some options:
+        </p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">📄</span>
+                <h3>Poster</h3>
+                <p>A large, colorful poster with sections, images, and short tips.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">📊</span>
+                <h3>Slide Deck</h3>
+                <p>A presentation (Google Slides, PowerPoint) with one topic per slide.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">🎥</span>
+                <h3>Short Video</h3>
+                <p>A 3–5 minute video where you present your guide visually and narrate it.</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">📖</span>
+                <h3>Brochure / Booklet</h3>
+                <p>A folded brochure or small booklet with tips and illustrations.</p>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Whatever format you choose</strong>, make sure it's easy to read, has clear headings,
+                and uses images or icons to make it visually appealing.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — PROJECT FORMAT OPTIONS
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/project-format-options.png"
+            alt="Four illustrated format options for the Digital Citizenship Guide: Poster, Slide Deck, Video, and Brochure"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[Format Options]</strong> — Four options side by side: Poster, Slide Deck, Video, Brochure. Each with a small icon and label. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WHAT TO INCLUDE ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-list-check"></i> What to Include</div>
+        <p>
+            Your guide must include the following <strong>5 required elements</strong>:
+        </p>
+
+        <ol class="step-list">
+            <li>
+                <strong>Cover at least 5 topics.</strong><br>
+                Choose 5 (or more) topics from this unit that you want to teach others about.
+            </li>
+            <li>
+                <strong>Use at least 2 Creative Commons images.</strong><br>
+                Add images with proper <strong>attribution</strong> (Title, Author, Source, License).
+            </li>
+            <li>
+                <strong>Include practical tips.</strong><br>
+                Give 3–5 tips per topic. Make them concrete and easy to follow.
+            </li>
+            <li>
+                <strong>Include a "What to do if something goes wrong" section.</strong><br>
+                Give steps for what to do if someone is hacked, bullied, or sees something inappropriate.
+            </li>
+            <li>
+                <strong>Include a conclusion or call to action.</strong><br>
+                End with a positive message encouraging others to be good digital citizens.
+            </li>
+        </ol>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Extra credit (optional):</strong> Include a section on <strong>digital wellbeing</strong> —
+                balancing screen time, taking breaks, and protecting mental health.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — GUIDE STRUCTURE
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/guide-structure.png"
+            alt="A sample layout showing the structure of a Digital Citizenship Guide with sections, headings, images, and tips"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[Guide Structure]</strong> — A sample layout of a Digital Citizenship Guide showing cover, topics, tips, images, and conclusion. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== STEP-BY-STEP PROJECT PLAN ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-list-ol"></i> Step-by-Step Project Plan</div>
+        <p>
+            Follow these <strong>6 steps</strong> to complete your project in the time you have:
+        </p>
+
+        <ol class="step-list">
+            <li>
+                <strong>Choose your topics (10 min).</strong><br>
+                Pick at least 5 topics from the unit. Write them down.
+            </li>
+            <li>
+                <strong>Choose your format (5 min).</strong><br>
+                Poster, slides, video, or brochure? Choose one and commit.
+            </li>
+            <li>
+                <strong>Plan your content (15 min).</strong><br>
+                For each topic, write:
+                <ul>
+                    <li>A short definition</li>
+                    <li>3–5 practical tips</li>
+                    <li>One example</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Find CC images (10 min).</strong><br>
+                Find at least 2 Creative Commons images that match your topics.
+                Record the <strong>TASL</strong> information for each (Title, Author, Source, License).
+            </li>
+            <li>
+                <strong>Create your guide (30 min).</strong><br>
+                Design your poster, slides, video script, or brochure.
+                Keep it clean, colorful, and easy to read.
+            </li>
+            <li>
+                <strong>Prepare your presentation (10 min).</strong><br>
+                Plan a 4–5 minute presentation of your guide. Practise it once.
+            </li>
+        </ol>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Stay focused.</strong> This project is designed for one class period of 100 minutes.
+                Prioritize quality over quantity — 5 solid topics are better than 8 rushed ones.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== PRESENTATION CHECKLIST ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-person-chalkboard"></i> Presentation Checklist</div>
+        <p>
+            When you present your guide to the class, make sure you cover these <strong>5 things</strong>:
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-check"></i> Element</th>
+                    <th><i class="fas fa-lightbulb"></i> What to Say</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1. Introduction</strong></td>
+                    <td class="primary-col">What is your guide about, and who is it for?</td>
+                </tr>
+                <tr>
+                    <td><strong>2. Topics Covered</strong></td>
+                    <td class="primary-col">Name your 5 topics and give one key tip for each.</td>
+                </tr>
+                <tr>
+                    <td><strong>3. CC Images</strong></td>
+                    <td class="primary-col">Show your images and explain how you gave proper attribution.</td>
+                </tr>
+                <tr>
+                    <td><strong>4. What to Do If...</strong></td>
+                    <td class="primary-col">Share your emergency response section (hacked, bullied, etc.).</td>
+                </tr>
+                <tr>
+                    <td><strong>5. Conclusion</strong></td>
+                    <td class="primary-col">End with your call to action — what should your audience do next?</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Speak clearly. Make eye contact. Point at your images.</strong>
+                Don't read from notes — explain your ideas in your own words.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — PRESENTATION IN ACTION
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/presentation-in-action.png"
+            alt="A student confidently presenting their Digital Citizenship Guide to the class, pointing at a colorful poster"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[Presentation in Action]</strong> — A student confidently presenting their guide to the class, pointing at a colorful poster with icons. Confident, joyful energy. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== PROJECT RUBRIC ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-clipboard-check"></i> Project Rubric</div>
+        <p>
+            Your teacher will use this rubric to assess your project. Review it carefully before you present.
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-list"></i> Criteria</th>
+                    <th><i class="fas fa-star"></i> Excellent (4)</th>
+                    <th><i class="fas fa-check"></i> Good (3)</th>
+                    <th><i class="fas fa-circle"></i> Fair (2)</th>
+                    <th><i class="fas fa-times"></i> Needs Work (1)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Topics Covered</strong></td>
+                    <td class="primary-col">5+ topics, clear and detailed</td>
+                    <td class="primary-col">4–5 topics</td>
+                    <td class="primary-col">3–4 topics</td>
+                    <td class="primary-col">Fewer than 3</td>
+                </tr>
+                <tr>
+                    <td><strong>Privacy &amp; Identity</strong></td>
+                    <td class="secondary-col">Clear, detailed coverage</td>
+                    <td class="secondary-col">Mostly clear</td>
+                    <td class="secondary-col">Basic</td>
+                    <td class="secondary-col">Missing</td>
+                </tr>
+                <tr>
+                    <td><strong>Password Security</strong></td>
+                    <td class="primary-col">Clear, detailed coverage</td>
+                    <td class="primary-col">Mostly clear</td>
+                    <td class="primary-col">Basic</td>
+                    <td class="primary-col">Missing</td>
+                </tr>
+                <tr>
+                    <td><strong>Inappropriate Content</strong></td>
+                    <td class="secondary-col">Clear, detailed coverage</td>
+                    <td class="secondary-col">Mostly clear</td>
+                    <td class="secondary-col">Basic</td>
+                    <td class="secondary-col">Missing</td>
+                </tr>
+                <tr>
+                    <td><strong>Terms of Service</strong></td>
+                    <td class="primary-col">Clear, detailed coverage</td>
+                    <td class="primary-col">Mostly clear</td>
+                    <td class="primary-col">Basic</td>
+                    <td class="primary-col">Missing</td>
+                </tr>
+                <tr>
+                    <td><strong>Creative Commons</strong></td>
+                    <td class="secondary-col">Correct use &amp; attribution</td>
+                    <td class="secondary-col">Mostly correct</td>
+                    <td class="secondary-col">Some errors</td>
+                    <td class="secondary-col">Missing</td>
+                </tr>
+                <tr>
+                    <td><strong>Practical Tips</strong></td>
+                    <td class="primary-col">5+ useful tips</td>
+                    <td class="primary-col">3–4 tips</td>
+                    <td class="primary-col">1–2 tips</td>
+                    <td class="primary-col">No tips</td>
+                </tr>
+                <tr>
+                    <td><strong>Presentation</strong></td>
+                    <td class="secondary-col">Clear, confident, engaging</td>
+                    <td class="secondary-col">Clear</td>
+                    <td class="secondary-col">Somewhat clear</td>
+                    <td class="secondary-col">Difficult to follow</td>
+                </tr>
+                <tr>
+                    <td><strong>Reflection</strong></td>
+                    <td class="primary-col">Insightful and detailed</td>
+                    <td class="primary-col">Good</td>
+                    <td class="primary-col">Basic</td>
+                    <td class="primary-col">Missing</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ========== ACTIVITY — PROJECT PLANNING SHEET ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Plan Your Project</h4>
+        <p>
+            Use this planning sheet to organize your project before you start creating it.
+        </p>
+
+        <p style="margin-top:1rem;"><strong>Part 1 — Project Basics</strong></p>
+        <ol>
+            <li>What <strong>format</strong> will you use? (Poster, Slides, Video, Brochure)</li>
+            <li>Who is your <strong>audience</strong>? (Classmates, younger students, family?)</li>
+            <li>What is the <strong>title</strong> of your guide?</li>
+        </ol>
+
+        <p style="margin-top:1rem;"><strong>Part 2 — Topics</strong></p>
+        <p>List the <strong>5+ topics</strong> you'll cover:</p>
+        <ol>
+            <li>_________________________</li>
+            <li>_________________________</li>
+            <li>_________________________</li>
+            <li>_________________________</li>
+            <li>_________________________</li>
+        </ol>
+
+        <p style="margin-top:1rem;"><strong>Part 3 — Images &amp; Attribution</strong></p>
+        <ol>
+            <li>What <strong>2 CC images</strong> will you use?</li>
+            <li>For each, write the <strong>TASL</strong> information (Title, Author, Source, License).</li>
+        </ol>
+
+        <p style="margin-top:1rem;"><strong>Part 4 — Presentation</strong></p>
+        <ol>
+            <li>What is your <strong>opening line</strong>?</li>
+            <li>What is your <strong>call to action</strong> at the end?</li>
+        </ol>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook:</p>
+        <ol>
+            <li>What is <strong>digital citizenship</strong>? Why is it important?</li>
+            <li>Name <strong>three key topics</strong> you're covering in your guide and why each matters.</li>
+            <li>Why is <strong>attribution</strong> important when using Creative Commons images?</li>
+            <li>What should someone do if they're <strong>bullied online</strong>? Name three steps.</li>
+            <li>Why should you <strong>read the Terms of Service</strong> before using a new app?</li>
+            <li>How can being a good digital citizen make the online world better for everyone?</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            You've now completed the entire <strong>Mathayom 1 (Grade 7) IT curriculum</strong> — from
+            abstraction and algorithms, through programming, data handling, and now safe and responsible IT use.
+            Your <strong>Digital Citizenship Guide</strong> is your chance to share this knowledge with others and
+            make a real difference in your school and community. Remember: being a good digital citizen isn't
+            just about <em>you</em> — it's about <strong>everyone</strong> you interact with online.
+            <strong>Congratulations on finishing the course!</strong>
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — CELEBRATION
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/celebration-digital-citizenship.png"
+            alt="A group of students celebrating at the end of the course, holding their Digital Citizenship Guides proudly"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Celebration]</strong> — A group of students proudly holding their Digital Citizenship Guides, celebrating the end of the course. Warm, joyful scene. Recommended size: 700 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Final Homework &amp; Reflection</div>
+        <p><strong>Part 1 — Complete your Digital Citizenship Guide:</strong></p>
+        <ul>
+            <li>Finish your poster, slides, video, or brochure.</li>
+            <li>Make sure it includes at least 5 topics, 2 CC images with attribution, and 3–5 tips per topic.</li>
+            <li>Prepare your 4–5 minute presentation.</li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 2 — Final reflection:</strong></p>
+        <p>Write a reflective paragraph (5–6 sentences) answering:</p>
+        <ul>
+            <li><strong>What is the most important thing</strong> you learned in this entire course?</li>
+            <li><strong>How will you change your online behavior</strong> after this unit?</li>
+            <li><strong>What would you improve</strong> about your project if you had more time?</li>
+            <li>What would you <strong>teach others</strong> about being a good digital citizen?</li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 3 — Share your guide:</strong></p>
+        <ul>
+            <li>Share your Digital Citizenship Guide with a <strong>family member</strong> or a
+                <strong>younger student</strong>.</li>
+            <li>Ask them one question: <em>"What's one thing you'll do differently after reading this?"</em></li>
+            <li>Write down what they said.</li>
+        </ul>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="lesson39-plagiarism.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous: Lesson 39
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="index.html" class="next-btn">
+            <i class="fas fa-graduation-cap"></i> Back to Home
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-trophy"></i> Mathayom 1 (Grade 7) · Indicator 4 · Lesson 40 of 40 · <strong>Course Complete!</strong>
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 24 — Creating Alternatives and Evaluating Data</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson24-evaluating-data.html" class="active"><i class="fas fa-scale-balanced"></i> Lesson 24</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 3 · Semester 2 · Midterm
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-scale-balanced"></i> Lesson 24 · Indicator 3</span>
+        <h1>Creating Alternatives and Evaluating Data</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            Now that you have processed data, how do you <strong>use it to make a decision</strong>?
+            In this lesson, you'll learn how to create <strong>alternatives</strong>, evaluate them using
+            <strong>criteria</strong>, and choose the best option based on <strong>evidence</strong>.
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-lightbulb"></i> Create Alternatives</span>
+            <span class="chip sky"><i class="fas fa-list-check"></i> Evaluate with Criteria</span>
+            <span class="chip red"><i class="fas fa-check-circle"></i> Make a Decision</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/three-alternatives.png"
+            alt="Hero banner showing three alternatives being weighed on a balance scale with data supporting the decision"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — Three alternatives being evaluated side by side, with a balance scale in the middle representing the evaluation. Data charts float in the background. Recommended size: 1000 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WHAT ARE ALTERNATIVES ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-circle-question"></i> What Are Alternatives?</div>
+        <p>
+            An <strong>alternative</strong> is simply a <strong>different option</strong> you could choose.
+            Almost every decision has more than one option!
+        </p>
+        <p>
+            Think about breakfast. You could have:
+        </p>
+        <ul>
+            <li>Eggs and toast</li>
+            <li>Cereal with milk</li>
+            <li>Fruit and yogurt</li>
+        </ul>
+        <p>
+            Each is an <strong>alternative</strong>. But how do you decide which is best? You need to
+            <strong>evaluate</strong> them — compare them using <strong>criteria</strong> (things that matter to you).
+        </p>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Key idea:</strong> Alternatives + Criteria + Evidence = Better decisions.
+                Data helps us evaluate alternatives <strong>objectively</strong>, not just by feelings.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== EXAMPLE: BOILING EGGS ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-egg"></i> A Real Example — Boiling Eggs</div>
+        <p>
+            Imagine your class conducted a survey about <strong>how students like their eggs</strong>. Here's the data:
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-chart-pie"></i> Preference</th>
+                    <th><i class="fas fa-percent"></i> Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Soft-boiled</strong> (runny yolk)</td>
+                    <td class="primary-col">60%</td>
+                </tr>
+                <tr>
+                    <td><strong>Medium</strong> (jammy yolk)</td>
+                    <td class="primary-col">25%</td>
+                </tr>
+                <tr>
+                    <td><strong>Hard-boiled</strong> (solid yolk)</td>
+                    <td class="primary-col">15%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p style="margin-top:1.2rem;">
+            Now let's create three <strong>alternatives</strong> based on this data — three possible boiling times:
+        </p>
+
+        <div class="alt-grid">
+            <div class="alt-card a1">
+                <span class="alt-icon">🥚</span>
+                <h4>Alternative 1</h4>
+                <p><strong>Boil 3 minutes</strong><br>Soft-boiled<br>Loved by 60%</p>
+            </div>
+            <div class="alt-card a2">
+                <span class="alt-icon">🍳</span>
+                <h4>Alternative 2</h4>
+                <p><strong>Boil 6 minutes</strong><br>Medium-boiled<br>Loved by 25%</p>
+            </div>
+            <div class="alt-card a3">
+                <span class="alt-icon">🥚</span>
+                <h4>Alternative 3</h4>
+                <p><strong>Boil 10 minutes</strong><br>Hard-boiled<br>Loved by 15%</p>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Based on the data:</strong> Alternative 1 (3 minutes) matches the preference of the largest group
+                (60%). If we're cooking for the whole class, this is the best choice.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — THREE ALTERNATIVES VISUAL
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/three-eggs-alternatives.png"
+            alt="Three illustrated eggs showing different boiling times: soft-boiled at 3 minutes, medium at 6 minutes, and hard-boiled at 10 minutes"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[Three Alternatives]</strong> — Three eggs side by side, each cut open to show the yolk: runny, jammy, and solid. Each labeled with its boiling time and preference percentage. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== EVALUATION CRITERIA ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-list-check"></i> Evaluation Criteria — How Do We Choose?</div>
+        <p>
+            To choose the best alternative, you need <strong>criteria</strong>. Criteria are the
+            <strong>things that matter</strong> when making a decision.
+        </p>
+        <p>Here are some common criteria you might use:</p>
+
+        <div class="criteria-list" style="display: flex; flex-wrap: wrap; gap: 0.7rem; margin: 1rem 0;">
+            <span style="background:#FFFFFF; color:var(--pooh-brown); font-size:0.85rem; font-weight:700; padding:0.4rem 1rem; border-radius:2rem; border:2px solid #F5A623; display:inline-flex; align-items:center; gap:0.4rem; box-shadow:0 3px 0 rgba(212,136,26,0.2);"><i class="fas fa-coins" style="color:var(--pooh-forest);"></i> Cost</span>
+            <span style="background:#FFFFFF; color:var(--pooh-brown); font-size:0.85rem; font-weight:700; padding:0.4rem 1rem; border-radius:2rem; border:2px solid #F5A623; display:inline-flex; align-items:center; gap:0.4rem; box-shadow:0 3px 0 rgba(212,136,26,0.2);"><i class="fas fa-clock" style="color:var(--pooh-forest);"></i> Time</span>
+            <span style="background:#FFFFFF; color:var(--pooh-brown); font-size:0.85rem; font-weight:700; padding:0.4rem 1rem; border-radius:2rem; border:2px solid #F5A623; display:inline-flex; align-items:center; gap:0.4rem; box-shadow:0 3px 0 rgba(212,136,26,0.2);"><i class="fas fa-heart" style="color:var(--pooh-forest);"></i> Health</span>
+            <span style="background:#FFFFFF; color:var(--pooh-brown); font-size:0.85rem; font-weight:700; padding:0.4rem 1rem; border-radius:2rem; border:2px solid #F5A623; display:inline-flex; align-items:center; gap:0.4rem; box-shadow:0 3px 0 rgba(212,136,26,0.2);"><i class="fas fa-face-smile" style="color:var(--pooh-forest);"></i> Taste</span>
+            <span style="background:#FFFFFF; color:var(--pooh-brown); font-size:0.85rem; font-weight:700; padding:0.4rem 1rem; border-radius:2rem; border:2px solid #F5A623; display:inline-flex; align-items:center; gap:0.4rem; box-shadow:0 3px 0 rgba(212,136,26,0.2);"><i class="fas fa-truck" style="color:var(--pooh-forest);"></i> Availability</span>
+            <span style="background:#FFFFFF; color:var(--pooh-brown); font-size:0.85rem; font-weight:700; padding:0.4rem 1rem; border-radius:2rem; border:2px solid #F5A623; display:inline-flex; align-items:center; gap:0.4rem; box-shadow:0 3px 0 rgba(212,136,26,0.2);"><i class="fas fa-chart-bar" style="color:var(--pooh-forest);"></i> Data Support</span>
+            <span style="background:#FFFFFF; color:var(--pooh-brown); font-size:0.85rem; font-weight:700; padding:0.4rem 1rem; border-radius:2rem; border:2px solid #F5A623; display:inline-flex; align-items:center; gap:0.4rem; box-shadow:0 3px 0 rgba(212,136,26,0.2);"><i class="fas fa-star" style="color:var(--pooh-forest);"></i> Quality</span>
+            <span style="background:#FFFFFF; color:var(--pooh-brown); font-size:0.85rem; font-weight:700; padding:0.4rem 1rem; border-radius:2rem; border:2px solid #F5A623; display:inline-flex; align-items:center; gap:0.4rem; box-shadow:0 3px 0 rgba(212,136,26,0.2);"><i class="fas fa-leaf" style="color:var(--pooh-forest);"></i> Environmental Impact</span>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Tip:</strong> Not every criterion matters equally. For a school project, you might care more about
+                <strong>cost</strong> and <strong>time</strong>. For a family meal, you might care more about
+                <strong>taste</strong> and <strong>health</strong>.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== SCORING TABLE ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-table-cells"></i> Evaluating Alternatives — Scoring Table</div>
+        <p>
+            One way to evaluate alternatives is to <strong>score each one</strong> on each criterion.
+            Use a scale like 1–5 (1 = poor, 5 = excellent).
+        </p>
+
+        <p style="font-weight:700; margin-top:1.2rem; color:var(--pooh-brown);">
+            Example: Which boiling time is best for our school canteen?
+        </p>
+
+        <table class="score-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-egg"></i> Alternative</th>
+                    <th><i class="fas fa-coins"></i> Cost</th>
+                    <th><i class="fas fa-clock"></i> Time</th>
+                    <th><i class="fas fa-heart"></i> Health</th>
+                    <th><i class="fas fa-face-smile"></i> Taste</th>
+                    <th><i class="fas fa-star"></i> TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>3-minute (soft)</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td class="score-highlight">19</td>
+                </tr>
+                <tr>
+                    <td>6-minute (medium)</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <td>10-minute (hard)</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>12</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <span class="tip-icon">🏆</span>
+            <div class="tip-text">
+                <strong>Result:</strong> The <strong>3-minute soft-boiled egg</strong> scored highest (19 points).
+                This matches the survey data — most students prefer soft-boiled!
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — SCORING TABLE VISUAL
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/scoring-table-visual.png"
+            alt="A friendly illustration of a scoring table with checkmarks and star ratings showing three alternatives being compared"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[Scoring Table]</strong> — An illustrated scoring table showing three alternatives being compared with stars or checkmarks, and the winner highlighted. Recommended size: 800 × 450 px.
+        </div>
+    </div>
+
+    <!-- ========== HOW TO MAKE A DECISION ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-check-double"></i> How to Make an Evidence-Based Decision</div>
+        <p>
+            Follow these <strong>5 steps</strong> to make a decision that's backed by evidence, not just feelings:
+        </p>
+
+        <ol class="step-list">
+            <li>
+                <strong>State the problem clearly:</strong> What decision do you need to make?<br>
+                <em>Example: "What boiling time should the school canteen use?"</em>
+            </li>
+            <li>
+                <strong>Create at least 3 alternatives:</strong> List different possible options.<br>
+                <em>Example: 3-minute, 6-minute, or 10-minute boiling times.</em>
+            </li>
+            <li>
+                <strong>Choose your criteria:</strong> What matters most?<br>
+                <em>Example: cost, time, health, taste.</em>
+            </li>
+            <li>
+                <strong>Score each alternative:</strong> Use your processed data and criteria to rate each option.<br>
+                <em>Example: give each one a score from 1–5 on each criterion.</em>
+            </li>
+            <li>
+                <strong>Choose the winner and justify it:</strong> Pick the highest-scoring option and explain <em>why</em> using your data.<br>
+                <em>Example: "We chose 3 minutes because 60% of students preferred soft-boiled eggs, and it scored the highest overall."</em>
+            </li>
+        </ol>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — 5-STEP DECISION PROCESS
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/decision-process.png"
+            alt="A five-step flowchart showing the decision-making process: state problem, create alternatives, choose criteria, score, choose winner"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[5-Step Decision Process]</strong> — A visual flowchart with five steps, each with a small icon: lightbulb (problem), branch (alternatives), checklist (criteria), stars (scoring), and trophy (decision). Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 1 ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Evaluate These Alternatives</h4>
+        <p>
+            A school wants to buy <strong>water bottles for the sports day</strong>. They have three options.
+            Use the scoring table below to help them make a decision. Fill in your own scores (1–5) for each criterion.
+        </p>
+
+        <table class="score-table" style="margin-top:1rem;">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-bottle-water"></i> Alternative</th>
+                    <th><i class="fas fa-coins"></i> Cost</th>
+                    <th><i class="fas fa-clock"></i> Delivery Time</th>
+                    <th><i class="fas fa-leaf"></i> Eco-Friendly</th>
+                    <th><i class="fas fa-star"></i> TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Plastic bottles (500 mL)</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>___</td>
+                </tr>
+                <tr>
+                    <td>Reusable metal bottles</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>___</td>
+                </tr>
+                <tr>
+                    <td>Paper cups (single use)</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>2</td>
+                    <td>___</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p style="margin-top:1rem;"><strong>Then answer:</strong></p>
+        <ol>
+            <li>Which alternative scored the <strong>highest total</strong>?</li>
+            <li>Which alternative is best for the <strong>environment</strong>?</li>
+            <li>Write <strong>one sentence</strong> recommending which option the school should choose, and <strong>why</strong>.</li>
+        </ol>
+    </div>
+
+    <!-- ========== ACTIVITY 2 ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-lightbulb"></i> Activity — Evaluate Your Own Data</h4>
+        <p>
+            Use the <strong>processed data</strong> from your Lesson 23 homework (your survey results).
+        </p>
+        <p><strong>Complete these tasks:</strong></p>
+        <ol>
+            <li>Create <strong>3 alternatives</strong> based on your data.</li>
+            <li>Choose <strong>at least 3 criteria</strong> for evaluating them.</li>
+            <li>Create a <strong>scoring table</strong> and rate each alternative (1–5) on each criterion.</li>
+            <li>Choose the <strong>best alternative</strong> based on the scores.</li>
+            <li>Write <strong>one sentence</strong> justifying your choice using your data.</li>
+        </ol>
+        <p style="margin-top:1rem;">
+            Bring your evaluation to the next lesson — you'll use it in the final project!
+        </p>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook:</p>
+        <ol>
+            <li>What is an <strong>alternative</strong>? Give one example from your own life.</li>
+            <li>What is a <strong>criterion</strong>? Name three criteria you might use to evaluate a food choice.</li>
+            <li>Why is it important to use <strong>data</strong> when evaluating alternatives?</li>
+            <li>What is the difference between a <strong>subjective</strong> choice (based on feelings) and an <strong>objective</strong> choice (based on evidence)?</li>
+            <li>Describe the <strong>5 steps</strong> for making an evidence-based decision.</li>
+            <li>Why should you create <strong>at least 3 alternatives</strong> instead of just 2?</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            Good decisions don't happen by accident. Create <strong>alternatives</strong>,
+            choose <strong>criteria</strong>, <strong>score</strong> each option, and
+            <strong>choose the best one using evidence</strong>. This is how data helps us make
+            smarter decisions in school, at home, and in life. Next lesson, you'll learn how to
+            <strong>present your findings visually with charts and graphs</strong>!
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — DECISION IN ACTION
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/decision-in-action.png"
+            alt="A group of students looking at a scoring table and pointing at the winning alternative with confidence"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Decision in Action]</strong> — A group of students gathered around a scoring table, pointing at the winning alternative. Confident, happy expressions. Recommended size: 700 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Homework</div>
+        <p>
+            Think of a decision you need to make at home (for example: what to eat for dinner, which movie to watch,
+            or how to spend your allowance). Use the <strong>5-step process</strong> from this lesson:
+        </p>
+        <ul>
+            <li>State the problem clearly.</li>
+            <li>Create <strong>3 alternatives</strong>.</li>
+            <li>Choose <strong>3 criteria</strong>.</li>
+            <li>Create a <strong>scoring table</strong> and rate each alternative (1–5).</li>
+            <li>Choose the winner and write <strong>one sentence</strong> explaining why, using your data.</li>
+        </ul>
+        <p style="margin-top:0.8rem;">
+            Bring your evaluation to the next lesson — it will help you understand how data supports decisions!
+        </p>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="lesson23-processing-data.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous: Lesson 23
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="lesson25-data-presentation.html" class="next-btn">
+            Next: Lesson 25 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Indicator 3 · Lesson 24 of 40
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

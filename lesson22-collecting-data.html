@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 22 — Methods of Collecting Primary Data</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson22-collecting-data.html" class="active"><i class="fas fa-list-check"></i> Lesson 22</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 3 · Semester 2 · Midterm
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-list-check"></i> Lesson 22 · Indicator 3</span>
+        <h1>Methods of Collecting Primary Data</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            Now that you know what primary data is, it's time to learn <strong>how to collect it</strong>.
+            In this lesson, you'll explore four powerful methods — <strong>surveys, interviews, observations, and measurements</strong> —
+            and learn how to design good questions that give you useful data.
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-clipboard-list"></i> Survey Design</span>
+            <span class="chip sky"><i class="fas fa-magnifying-glass"></i> Data Collection</span>
+            <span class="chip red"><i class="fas fa-pencil"></i> Hands-On Practice</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/four-methods-hero.png"
+            alt="Hero banner showing four methods of collecting primary data: a survey form, an interview, an observation, and a measurement"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — Four Methods of Collecting Primary Data. A friendly illustration showing a survey form, an interview, an observation, and a measurement. Recommended size: 1000 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WHY COLLECTION METHODS MATTER ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-circle-question"></i> Why Do Collection Methods Matter?</div>
+        <p>
+            Imagine you want to know <strong>how many hours your classmates sleep each night</strong>. You could:
+        </p>
+        <ul>
+            <li>Ask them to write a number on a piece of paper — <em>survey</em></li>
+            <li>Ask one friend detailed questions about their sleep — <em>interview</em></li>
+            <li>Watch how long they sleep — <em>observation</em> (not practical!)</li>
+            <li>Measure their sleep with a device — <em>measurement</em></li>
+        </ul>
+        <p>
+            Each method gives you <strong>different types of data</strong>. Choosing the right method depends on your <strong>goal</strong>.
+        </p>
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Key idea:</strong> The best method is the one that gives you the <strong>most reliable data</strong> for your specific question.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== THE FOUR METHODS ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-toolbox"></i> The Four Methods</div>
+        <p>Here's a closer look at each method — when to use it and what kind of data it gives you.</p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">📝</span>
+                <h3>Survey</h3>
+                <p>Ask <strong>many people</strong> the same questions. Great for getting lots of responses quickly. Best for numerical or yes/no answers.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">🎤</span>
+                <h3>Interview</h3>
+                <p>Ask <strong>one person</strong> in depth. Great for detailed answers, explanations, and opinions you can't get from a survey.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">👀</span>
+                <h3>Observation</h3>
+                <p>Watch and record what happens. Great for studying <strong>behaviour</strong> and <strong>processes</strong> that people can't easily report.</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">📏</span>
+                <h3>Measurement</h3>
+                <p>Use tools (ruler, scale, thermometer, stopwatch) to get <strong>precise numbers</strong>. Best for objective, numerical data.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — FOUR METHODS DETAILED
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/four-methods-detailed.png"
+            alt="Four detailed illustrations showing each method in action: a survey form with people answering, an interview with a microphone, an observation with a magnifying glass, and a measurement with tools"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[Four Methods Detailed]</strong> — Each method shown in action. Survey, Interview, Observation, Measurement. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== COMPARING THE METHODS ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-scale-balanced"></i> Comparing the Four Methods</div>
+        <p>Use this table to help you choose the right method for your data collection plan.</p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-star"></i> Method</th>
+                    <th><i class="fas fa-users"></i> Best For</th>
+                    <th><i class="fas fa-clock"></i> Speed</th>
+                    <th><i class="fas fa-chart-bar"></i> Data Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>📝 Survey</strong></td>
+                    <td class="primary-col">Many people, same questions</td>
+                    <td class="primary-col">Fast</td>
+                    <td class="secondary-col">Numbers, yes/no, categories</td>
+                </tr>
+                <tr>
+                    <td><strong>🎤 Interview</strong></td>
+                    <td class="primary-col">Deep understanding of one person</td>
+                    <td class="primary-col">Slow</td>
+                    <td class="secondary-col">Quotes, opinions, stories</td>
+                </tr>
+                <tr>
+                    <td><strong>👀 Observation</strong></td>
+                    <td class="primary-col">Behaviour and processes</td>
+                    <td class="primary-col">Medium</td>
+                    <td class="secondary-col">Descriptions, counts, times</td>
+                </tr>
+                <tr>
+                    <td><strong>📏 Measurement</strong></td>
+                    <td class="primary-col">Precise numerical data</td>
+                    <td class="primary-col">Medium</td>
+                    <td class="secondary-col">Exact numbers with units</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — CHOOSING THE RIGHT METHOD
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/choose-method-flowchart.png"
+            alt="A decision-flowchart illustration showing how to choose the right data collection method based on the question"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[Choosing a Method]</strong> — A decision flowchart: "What do you want to know?" → "How many people?" → "What kind of answer?" → Best method. Recommended size: 800 × 500 px.
+        </div>
+    </div>
+
+    <!-- ========== DESIGNING GOOD SURVEY QUESTIONS ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-pen-fancy"></i> Designing Good Survey Questions</div>
+        <p>
+            A survey is only as good as its questions. If your questions are confusing or unclear, your data will be useless.
+            Here are the <strong>5 rules for great survey questions</strong>:
+        </p>
+        <ol>
+            <li><strong>Be clear</strong> — Use simple words everyone understands.</li>
+            <li><strong>One idea per question</strong> — Don't ask two things at once.</li>
+            <li><strong>Avoid leading questions</strong> — Don't push people to answer a certain way.</li>
+            <li><strong>Include units</strong> — "How many hours?" not just "How much?"</li>
+            <li><strong>Give clear options</strong> — Especially for multiple choice.</li>
+        </ol>
+    </div>
+
+    <!-- ========== GOOD VS BAD QUESTIONS ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-thumbs-up"></i> Good vs Bad Questions</div>
+        <p>Let's compare. The good question gives clear, useful data. The bad question gives confusing or useless data.</p>
+
+        <div class="question-compare">
+            <div class="q-card good">
+                <span class="q-label">✅ Good Question</span>
+                <h4>"How many eggs do you eat per week?"</h4>
+                <p>Clear, uses units (eggs/week), and gives a number you can average. <strong>Why it's good:</strong> One idea, easy to answer, gives numerical data.</p>
+            </div>
+            <div class="q-card bad">
+                <span class="q-label">❌ Bad Question</span>
+                <h4>"Do you like eggs?"</h4>
+                <p>Only gives yes/no, doesn't tell you how many or why. <strong>Why it's bad:</strong> Too vague, no useful number, doesn't measure behaviour.</p>
+            </div>
+            <div class="q-card good">
+                <span class="q-label">✅ Good Question</span>
+                <h4>"How many minutes do you usually boil an egg?"</h4>
+                <p>Clear unit (minutes), specific action (boil an egg), gives a number you can average.</p>
+            </div>
+            <div class="q-card bad">
+                <span class="q-label">❌ Bad Question</span>
+                <h4>"Don't you think eggs are the best breakfast?"</h4>
+                <p>Leading question — it pushes people to agree. Not objective, gives biased data.</p>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Test:</strong> Read your question out loud. If it's confusing to you, it will be confusing to your survey takers too!
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — GOOD VS BAD SURVEY QUESTIONS
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/good-vs-bad-questions.png"
+            alt="Two side-by-side survey forms showing good questions on the left with green checkmarks and bad questions on the right with red X marks"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[Good vs Bad Questions]</strong> — Two survey forms side by side. Left: green checkmarks. Right: red X marks. Recommended size: 800 × 450 px.
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 1 ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Fix the Bad Questions</h4>
+        <p>Each of these survey questions has a problem. Rewrite each one to make it a <strong>good question</strong>. Write your improved version in your notebook.</p>
+        <ol>
+            <li>"Do you like fruit?"</li>
+            <li>"How much do you sleep?"</li>
+            <li>"Don't you agree that exercise is important?"</li>
+            <li>"Do you eat healthy food and exercise often?"</li>
+            <li>"How many times do you eat in a week?"</li>
+        </ol>
+        <div class="tip-box" style="margin-top:1rem;">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Hint:</strong> Make each question <strong>clear</strong>, give it <strong>units</strong>, ask <strong>one thing at a time</strong>, and avoid <strong>leading</strong> language.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== HOW TO RECORD DATA ACCURATELY ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-table"></i> Recording Your Data Accurately</div>
+        <p>
+            Once you've collected your data, you need to <strong>record it clearly</strong>. Otherwise, you'll forget what you found or make mistakes.
+        </p>
+        <p><strong>Tips for accurate recording:</strong></p>
+        <ul>
+            <li>Use a <strong>table</strong> with clear column headings.</li>
+            <li>Write the <strong>units</strong> next to your numbers (kg, cm, minutes, etc.).</li>
+            <li>Record the data <strong>immediately</strong> — don't rely on memory.</li>
+            <li>Double-check your numbers.</li>
+            <li>Note the <strong>date and source</strong> of your data.</li>
+        </ul>
+
+        <div class="tip-box">
+            <span class="tip-icon">📋</span>
+            <div class="tip-text">
+                <strong>Example table for a survey on egg consumption:</strong>
+                <br><br>
+                <table class="compare-table" style="margin-top:0.5rem;">
+                    <thead>
+                        <tr>
+                            <th>Student</th>
+                            <th>Eggs per week</th>
+                            <th>Preferred style</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Student A</td><td>5</td><td>Soft-boiled</td></tr>
+                        <tr><td>Student B</td><td>3</td><td>Hard-boiled</td></tr>
+                        <tr><td>Student C</td><td>7</td><td>Fried</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — DATA RECORDING TABLE
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/data-recording-table.png"
+            alt="An illustration of a well-organized data recording table with column headings, units, and clear rows of data"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Data Recording Table]</strong> — An example of a clear, well-organized data table with headings and units. Recommended size: 800 × 450 px.
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 2 — DESIGN YOUR SURVEY ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-lightbulb"></i> Activity — Design Your Own Survey</h4>
+        <p>Your task is to design a survey about <strong>egg consumption in your school</strong>. Write 5 clear survey questions.</p>
+        <p style="margin-top:1rem;"><strong>Your 5 questions should include:</strong></p>
+        <ul>
+            <li>At least <strong>2 questions with numbers</strong> (like "How many…")</li>
+            <li>At least <strong>1 multiple choice question</strong></li>
+            <li>At least <strong>1 question that gives categories</strong> (like soft-boiled, hard-boiled)</li>
+        </ul>
+        <p style="margin-top:1rem;"><strong>Example questions you could use:</strong></p>
+        <ol>
+            <li>How many eggs do you eat per week?</li>
+            <li>How do you usually eat eggs? (boiled, fried, scrambled, other)</li>
+            <li>How long do you boil an egg? (minutes)</li>
+            <li>Do you prefer soft-boiled or hard-boiled eggs?</li>
+            <li>Would you change your habit if you knew the perfect boiling time?</li>
+        </ol>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook:</p>
+        <ol>
+            <li>Name the <strong>four methods</strong> for collecting primary data.</li>
+            <li>Which method is best for getting <strong>deep, detailed answers</strong> from one person?</li>
+            <li>Which method is best for getting <strong>precise numerical data</strong>?</li>
+            <li>Write <strong>one good survey question</strong> and explain why it's good.</li>
+            <li>Write <strong>one bad survey question</strong> and explain how to fix it.</li>
+            <li>Why is it important to record the <strong>units</strong> (kg, cm, etc.) in your data?</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            The <strong>four methods</strong> for collecting primary data are <strong>surveys, interviews, observations, and measurements</strong>.
+            Each one is best for a different type of question. When you design a survey, remember the rules:
+            <strong>be clear, use units, ask one thing at a time, and avoid leading questions</strong>.
+            Next lesson, you'll learn how to <strong>organize and process</strong> the data you collect!
+        </p>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Homework</div>
+        <p>
+            Use the survey you designed in <strong>Activity 2</strong> to collect data from at least
+            <strong>10 classmates or family members</strong>. Record their answers in a table like the one shown above.
+            Bring your data to the next lesson — you'll use it to practice organizing and processing data!
+        </p>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="lesson21-intro-data.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous: Lesson 21
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="lesson23-processing-data.html" class="next-btn">
+            Next: Lesson 23 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Indicator 3 · Lesson 22 of 40
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

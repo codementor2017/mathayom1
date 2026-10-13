@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 32 — Protecting Privacy and Identity Online</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson32-privacy-identity.html" class="active"><i class="fas fa-lock"></i> Lesson 32</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 4 · Semester 2 · Final
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-lock"></i> Lesson 32 · Indicator 4</span>
+        <h1>Protecting Privacy and Identity Online</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            Every time you go online, you leave a <strong>trail of information</strong> behind you. Some of it is safe to share,
+            but some of it should stay <strong>private forever</strong>. In this lesson, you'll learn the difference between
+            public and private information, how your <strong>digital footprint</strong> works, and how to protect your
+            <strong>identity online</strong>.
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-user-lock"></i> Personal Data</span>
+            <span class="chip sky"><i class="fas fa-shoe-prints"></i> Digital Footprint</span>
+            <span class="chip red"><i class="fas fa-shield-halved"></i> Privacy Settings</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/privacy-hero.png"
+            alt="Hero banner showing a student protecting their personal data with a shield and lock, while online icons float around them"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — A student protecting their personal data with a shield and lock. Digital icons (camera, envelope, chat bubble) float around them. Friendly, empowering illustration. Recommended size: 1000 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WHAT IS PERSONAL DATA ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-id-card"></i> What is Personal Data?</div>
+        <p>
+            <strong>Personal data</strong> (also called <strong>personal information</strong>) is any information that can
+            identify you or be used to contact you. It's <em>yours</em> — and you have the right to decide who sees it.
+        </p>
+        <p>
+            Here are some examples:
+        </p>
+        <ul>
+            <li>Your <strong>full name</strong></li>
+            <li>Your <strong>home address</strong></li>
+            <li>Your <strong>phone number</strong></li>
+            <li>Your <strong>birthday</strong></li>
+            <li>Your <strong>school name</strong></li>
+            <li>Your <strong>email address</strong></li>
+            <li>Your <strong>photos</strong></li>
+            <li>Your <strong>passwords</strong></li>
+            <li>Your <strong>family details</strong></li>
+            <li>Your <strong>national ID number</strong></li>
+        </ul>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Think of it this way:</strong> If a stranger knowing this information could find you,
+                contact you, or pretend to be you — it's <strong>personal data</strong>.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== PUBLIC VS PRIVATE ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-eye"></i> Public vs Friends-Only vs Private</div>
+        <p>
+            Not all information needs to be kept secret. Some things are fine to share publicly. The key is knowing
+            <strong>which is which</strong>. Think of it as three levels:
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-globe"></i> Public</th>
+                    <th><i class="fas fa-user-group"></i> Friends Only</th>
+                    <th><i class="fas fa-lock"></i> Private (Never Share)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="primary-col">Your favourite colour</td>
+                    <td class="secondary-col">Photos with friends</td>
+                    <td class="primary-col">Your full home address</td>
+                </tr>
+                <tr>
+                    <td class="primary-col">Your hobbies</td>
+                    <td class="secondary-col">Your school name</td>
+                    <td class="primary-col">Your passwords</td>
+                </tr>
+                <tr>
+                    <td class="primary-col">Your favourite food</td>
+                    <td class="secondary-col">Your class schedule</td>
+                    <td class="primary-col">Your ID number</td>
+                </tr>
+                <tr>
+                    <td class="primary-col">A nickname</td>
+                    <td class="secondary-col">A group chat with friends</td>
+                    <td class="primary-col">Your bank details</td>
+                </tr>
+                <tr>
+                    <td class="primary-col">A drawing you made</td>
+                    <td class="secondary-col">A photo you took of a project</td>
+                    <td class="primary-col">Your email password</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Golden rule:</strong> When in doubt, keep it <strong>private</strong>.
+                You can always share more later — but once something is online, you can't take it back.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — THREE PRIVACY LEVELS
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/three-privacy-levels.png"
+            alt="Three columns showing Public (globe icon), Friends Only (people icon), and Private (lock icon) with example content in each"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[Three Privacy Levels]</strong> — Three columns side by side: Public (globe), Friends Only (people), Private (lock). Each column shows example content. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== DIGITAL IDENTITY AND FOOTPRINT ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-shoe-prints"></i> Digital Identity and Footprint</div>
+        <p>
+            Your <strong>digital identity</strong> is <strong>who you are online</strong> — your usernames, your posts,
+            your comments, your photos, and your behavior across all platforms.
+        </p>
+        <p>
+            Your <strong>digital footprint</strong> is the <strong>trail of data you leave</strong> behind as you use the
+            internet. Every post, like, comment, search, and click adds to it.
+        </p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">📸</span>
+                <h3>What You Post</h3>
+                <p>Photos, videos, comments, and messages you create. These are <strong>permanent</strong> — even if you delete them.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">👣</span>
+                <h3>What Others Post</h3>
+                <p>When friends tag you or mention you, they add to your footprint — sometimes without asking.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">🔍</span>
+                <h3>What Gets Tracked</h3>
+                <p>Websites and apps track what you search, watch, and buy. This creates a <strong>profile</strong> of you.</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">🎓</span>
+                <h3>Who Can See It</h3>
+                <p>Schools, employers, and even future friends can look you up. Your footprint <strong>follows you forever</strong>.</p>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Remember:</strong> The internet has a <strong>long memory</strong>. Even "deleted" posts can be
+                saved in screenshots or archives. Always think before you post.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — DIGITAL FOOTPRINT
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/digital-footprint.png"
+            alt="A visual showing a student walking, with digital footprints behind them marked by posts, comments, and likes"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[Digital Footprint]</strong> — A student walking with digital footprints trailing behind, each footprint labeled with a type of online activity (post, comment, like, search). Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== RISKS OF OVERSHARING ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-triangle-exclamation"></i> Risks of Oversharing</div>
+        <p>
+            <strong>Oversharing</strong> means sharing <strong>more personal information than you should</strong>. It's
+            one of the most common mistakes people make online — and the consequences can be serious.
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-triangle-exclamation"></i> What You Share</th>
+                    <th><i class="fas fa-user-secret"></i> Who Might Misuse It</th>
+                    <th><i class="fas fa-shield-halved"></i> The Risk</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Your school and class schedule</strong></td>
+                    <td class="primary-col">Strangers, stalkers</td>
+                    <td class="secondary-col">They know where to find you</td>
+                </tr>
+                <tr>
+                    <td><strong>Photos with your house number</strong></td>
+                    <td class="primary-col">Thieves, strangers</td>
+                    <td class="secondary-col">They know where you live</td>
+                </tr>
+                <tr>
+                    <td><strong>Your birthday and pet's name</strong></td>
+                    <td class="primary-col">Hackers</td>
+                    <td class="secondary-col">They can guess your passwords</td>
+                </tr>
+                <tr>
+                    <td><strong>Vacation photos while away</strong></td>
+                    <td class="primary-col">Burglars</td>
+                    <td class="secondary-col">They know your house is empty</td>
+                </tr>
+                <tr>
+                    <td><strong>Angry or emotional posts</strong></td>
+                    <td class="primary-col">Anyone (forever)</td>
+                    <td class="secondary-col">Damages your reputation permanently</td>
+                </tr>
+                <tr>
+                    <td><strong>Your live location</strong></td>
+                    <td class="primary-col">Anyone watching</td>
+                    <td class="secondary-col">They know exactly where you are</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Remember:</strong> You can't "un-share" something online. Once it's out, it's out.
+                Always ask yourself: <em>"Who could see this? What could they do with it?"</em>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== HOW TO PROTECT YOUR PRIVACY ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-user-shield"></i> How to Protect Your Privacy</div>
+        <p>
+            Here are <strong>6 practical steps</strong> you can take <em>today</em> to protect your privacy online:
+        </p>
+
+        <ol class="step-list">
+            <li>
+                <strong>Check your privacy settings.</strong><br>
+                On every social media app, go to Settings → Privacy and set your account to <strong>Friends Only</strong> or
+                <strong>Private</strong>. Review who can see your posts, tag you, and message you.
+            </li>
+            <li>
+                <strong>Use a nickname or first name only.</strong><br>
+                You don't need to use your full name online. A nickname is safer and just as fun.
+            </li>
+            <li>
+                <strong>Never share your location in real time.</strong><br>
+                Turn off location sharing on posts, stories, and apps unless you really need it.
+            </li>
+            <li>
+                <strong>Think before you post.</strong><br>
+                Ask yourself: <em>"Will I be happy with this in 5 years?"</em> If the answer is "no," don't post it.
+            </li>
+            <li>
+                <strong>Ask before posting about others.</strong><br>
+                Your friends have the right to privacy too. Always ask permission before posting photos or info about them.
+            </li>
+            <li>
+                <strong>Regularly review your digital footprint.</strong><br>
+                Search your own name online. Look at your old posts. Clean up anything you wouldn't want a teacher or
+                future employer to see.
+            </li>
+        </ol>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — PRIVACY SETTINGS
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/privacy-settings.png"
+            alt="A screenshot-style illustration of a phone showing privacy settings, with 'Friends Only' highlighted"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[Privacy Settings]</strong> — A phone screen showing the privacy settings menu with "Friends Only" highlighted. Friendly, easy-to-read interface. Recommended size: 800 × 450 px.
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 1 — PUBLIC OR PRIVATE ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Public, Friends Only, or Private?</h4>
+        <p>
+            Read each item below. Decide whether it should be <strong>Public</strong>, <strong>Friends Only</strong>,
+            or <strong>Private (never share)</strong>. Write your answer in your notebook.
+        </p>
+        <ol>
+            <li>Your favourite colour</li>
+            <li>Your full name</li>
+            <li>A funny video of your cat</li>
+            <li>Your home address</li>
+            <li>Your phone number</li>
+            <li>Your hobby</li>
+            <li>Your birthday</li>
+            <li>A photo with friends</li>
+            <li>Your password</li>
+            <li>Your school name</li>
+            <li>Your favourite song</li>
+            <li>Your national ID number</li>
+        </ol>
+        <div class="tip-box" style="margin-top:1rem;">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Hint:</strong> If a stranger knowing this could hurt you, find you, or pretend to be you —
+                it's <strong>Private</strong>.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 2 — DIGITAL FOOTPRINT AUDIT ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-lightbulb"></i> Activity — Digital Footprint Audit</h4>
+        <p>
+            Imagine a fictional student named <strong>Alex</strong>. Here's what Alex does online:
+        </p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">📸</span>
+                <h3>Alex's Habit 1</h3>
+                <p>Posts daily selfies with a public account.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">🏫</span>
+                <h3>Alex's Habit 2</h3>
+                <p>Shares school name, class schedule, and teacher names.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">🔑</span>
+                <h3>Alex's Habit 3</h3>
+                <p>Uses the same username and password everywhere.</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">👥</span>
+                <h3>Alex's Habit 4</h3>
+                <p>Accepts friend requests from strangers.</p>
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>In your notebook, answer these questions:</strong></p>
+        <ol>
+            <li>What are the <strong>risks</strong> in Alex's digital footprint?</li>
+            <li>Which habit is the <strong>most dangerous</strong>? Why?</li>
+            <li>Write <strong>5 improvements</strong> Alex could make to be safer online.</li>
+            <li>What could Alex's digital footprint look like to a <strong>future employer</strong>?</li>
+        </ol>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook:</p>
+        <ol>
+            <li>What is <strong>personal data</strong>? Give three examples.</li>
+            <li>What is the difference between <strong>Public</strong>, <strong>Friends Only</strong>, and <strong>Private</strong>?</li>
+            <li>What is a <strong>digital footprint</strong>? Name three things that add to it.</li>
+            <li>Why is it dangerous to share your <strong>real-time location</strong>?</li>
+            <li>Name <strong>three steps</strong> you can take to protect your privacy online.</li>
+            <li>Why should you <strong>ask permission</strong> before posting about your friends?</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            Your <strong>privacy</strong> and <strong>identity</strong> are two of your most valuable possessions online.
+            You have the right to control who sees your personal data. Remember: <strong>think before you share</strong>,
+            <strong>check your privacy settings</strong>, and <strong>review your digital footprint regularly</strong>.
+            Next lesson, you'll learn how to create <strong>strong passwords</strong> and manage your online identity
+            even more effectively!
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — PRIVACY REVIEW
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/privacy-review.png"
+            alt="A student checking their phone's privacy settings with a satisfied smile, locking their profile down"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Privacy Review]</strong> — A student confidently checking their privacy settings, locking their profile down. Recommended size: 700 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Homework</div>
+        <p><strong>Part 1 — Audit your own accounts:</strong></p>
+        <ul>
+            <li>Open <strong>one social media account</strong> you use.</li>
+            <li>Go to <strong>Settings → Privacy</strong>.</li>
+            <li>Write down what you find:
+                <ul>
+                    <li>Who can see your posts?</li>
+                    <li>Who can send you messages?</li>
+                    <li>Who can tag you?</li>
+                </ul>
+            </li>
+            <li>Change any setting you're not comfortable with.</li>
+            <li>Write <strong>one paragraph</strong> explaining what you changed and why.</li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 2 — Digital footprint check:</strong></p>
+        <ul>
+            <li>Search your own name online.</li>
+            <li>Write down what you find (public posts, tagged photos, mentions).</li>
+            <li>Reflect: Is there anything you'd want to remove? Why?</li>
+        </ul>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="lesson31-safe-it-intro.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous: Lesson 31
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="lesson33-password-security.html" class="next-btn">
+            Next: Lesson 33 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Indicator 4 · Lesson 32 of 40
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

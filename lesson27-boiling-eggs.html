@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 27 — Case Study: Boiling Eggs</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson27-boiling-eggs.html" class="active"><i class="fas fa-egg"></i> Lesson 27</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 3 · Semester 2 · Midterm
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-egg"></i> Lesson 27 · Indicator 3</span>
+        <h1>Case Study: Boiling Eggs</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            How do you like your eggs — soft, medium, or hard-boiled? In this lesson, you'll use
+            <strong>real data</strong> to solve a real problem: <strong>What's the best boiling time
+            for our school?</strong> You'll collect data, process it, create alternatives, and make
+            a <strong>recommendation backed by evidence</strong>.
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-flask"></i> Science + Data</span>
+            <span class="chip sky"><i class="fas fa-chart-bar"></i> Real Data</span>
+            <span class="chip red"><i class="fas fa-bullhorn"></i> Recommendation</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/boiling-eggs-hero.png"
+            alt="Hero banner showing three eggs in a pot of boiling water, each labeled with a different boiling time"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — Three eggs in a pot of boiling water, each labeled with a different boiling time (3 min, 6 min, 10 min). A friendly illustration with a curious student scientist. Recommended size: 1000 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== THE PROBLEM ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-circle-question"></i> The Problem We're Solving</div>
+        <p>
+            Imagine your school is hosting a <strong>Healthy Breakfast Day</strong>. The canteen wants to serve
+            <strong>boiled eggs</strong>, but there's a problem: <strong>how long should they boil the eggs</strong>?
+        </p>
+        <p>
+            Boil them <strong>too short</strong> and they'll be runny. Boil them <strong>too long</strong> and they'll be
+            dry and rubbery. The canteen needs to know: <strong>which boiling time will make most students happy?</strong>
+        </p>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Our goal:</strong> Use data to recommend a boiling time that matches what most students prefer.
+                This is how real decisions are made — with <strong>evidence</strong>, not guesses.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== THE SCIENCE OF BOILING EGGS ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-flask"></i> The Science Behind It</div>
+        <p>
+            Why do eggs change when you boil them? It's all about <strong>protein coagulation</strong> — a fancy way of saying
+            the egg white and yolk "set" as they heat up.
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-clock"></i> Boiling Time</th>
+                    <th><i class="fas fa-egg"></i> Result</th>
+                    <th><i class="fas fa-heart"></i> Texture</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>3–4 minutes</strong></td>
+                    <td class="primary-col">Soft-boiled</td>
+                    <td class="secondary-col">Runny yolk, soft white</td>
+                </tr>
+                <tr>
+                    <td><strong>5–6 minutes</strong></td>
+                    <td class="primary-col">Medium-boiled</td>
+                    <td class="secondary-col">Jammy yolk, firm white</td>
+                </tr>
+                <tr>
+                    <td><strong>8–10 minutes</strong></td>
+                    <td class="primary-col">Hard-boiled</td>
+                    <td class="secondary-col">Solid yolk, firm white</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p style="margin-top:1.2rem;">
+            So the boiling time <strong>directly affects</strong> what the egg looks and tastes like. Now let's see
+            what <strong>students actually prefer</strong>.
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — SCIENCE OF BOILING EGGS
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/egg-science-timeline.png"
+            alt="A timeline illustration showing three eggs cut open at different boiling times: 3 minutes (runny), 6 minutes (jammy), and 10 minutes (solid)"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[The Science of Boiling]</strong> — Three eggs cut in half at different boiling times. Show the yolk changing from runny to solid. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== COLLECT THE DATA ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-clipboard-list"></i> Step 1 — Collect the Data</div>
+        <p>
+            Your class surveyed students to find out how they like their eggs. Here are the results from
+            <strong>40 students</strong>:
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-egg"></i> Preference</th>
+                    <th><i class="fas fa-users"></i> Number of Students</th>
+                    <th><i class="fas fa-percent"></i> Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Soft-boiled</strong></td>
+                    <td class="primary-col">24</td>
+                    <td class="secondary-col">60%</td>
+                </tr>
+                <tr>
+                    <td><strong>Medium-boiled</strong></td>
+                    <td class="primary-col">10</td>
+                    <td class="secondary-col">25%</td>
+                </tr>
+                <tr>
+                    <td><strong>Hard-boiled</strong></td>
+                    <td class="primary-col">6</td>
+                    <td class="secondary-col">15%</td>
+                </tr>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td class="primary-col"><strong>40 students</strong></td>
+                    <td class="secondary-col"><strong>100%</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Check:</strong> The percentages add up to 100%. The counts add up to 40 — our sample size.
+                This confirms our data is complete.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== CREATE ALTERNATIVES ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-lightbulb"></i> Step 2 — Create Alternatives</div>
+        <p>
+            Now let's turn these preferences into <strong>three alternatives</strong> — three possible boiling times
+            the canteen could use:
+        </p>
+
+        <div class="alt-grid">
+            <div class="alt-card a1">
+                <span class="alt-icon">🥚</span>
+                <h4>Alternative 1</h4>
+                <p><strong>Boil 3 minutes</strong><br>Soft-boiled<br>Matches 60% of students</p>
+            </div>
+            <div class="alt-card a2">
+                <span class="alt-icon">🍳</span>
+                <h4>Alternative 2</h4>
+                <p><strong>Boil 6 minutes</strong><br>Medium-boiled<br>Matches 25% of students</p>
+            </div>
+            <div class="alt-card a3">
+                <span class="alt-icon">🥚</span>
+                <h4>Alternative 3</h4>
+                <p><strong>Boil 10 minutes</strong><br>Hard-boiled<br>Matches 15% of students</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — THREE ALTERNATIVES
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/three-egg-alternatives.png"
+            alt="Three eggs shown side by side, each with a different boiling time and yolk consistency, plus the percentage of students who prefer each"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[Three Alternatives]</strong> — Three illustrated eggs side by side: soft, medium, and hard-boiled. Each labeled with its boiling time and preference percentage. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== EVALUATE THE ALTERNATIVES ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-scale-balanced"></i> Step 3 — Evaluate the Alternatives</div>
+        <p>
+            We could just pick the alternative with the highest preference — <strong>Alternative 1 (soft-boiled, 60%)</strong>.
+            But let's be more thorough! Let's score each alternative on <strong>4 criteria</strong>:
+        </p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">📊</span>
+                <h3>Data Support</h3>
+                <p>How many students prefer this option?</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">⏱️</span>
+                <h3>Time</h3>
+                <p>How quickly can the canteen prepare it?</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">🥚</span>
+                <h3>Ease</h3>
+                <p>Is it easy to get consistent results?</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">❤️</span>
+                <h3>Health</h3>
+                <p>Which is healthiest overall?</p>
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem; font-weight:700; color:var(--pooh-brown);">
+            Scoring each alternative (1 = poor, 5 = excellent):
+        </p>
+
+        <table class="score-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-egg"></i> Alternative</th>
+                    <th><i class="fas fa-chart-bar"></i> Data</th>
+                    <th><i class="fas fa-clock"></i> Time</th>
+                    <th><i class="fas fa-wrench"></i> Ease</th>
+                    <th><i class="fas fa-heart"></i> Health</th>
+                    <th><i class="fas fa-star"></i> TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>3 min (soft)</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td class="score-highlight">17</td>
+                </tr>
+                <tr>
+                    <td>6 min (medium)</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td>10 min (hard)</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>13</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <span class="tip-icon">🏆</span>
+            <div class="tip-text">
+                <strong>Result:</strong> Alternative 1 (soft-boiled, 3 minutes) scored the highest with <strong>17 points</strong>.
+                But notice — it wasn't a landslide. The difference between 3 and 6 minutes is only 1 point, so the canteen
+                might also consider cooking both options to satisfy more students.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — SCORING TABLE
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/egg-scoring-table.png"
+            alt="A scoring table comparing three egg boiling alternatives across four criteria with the winner highlighted"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[Scoring Table]</strong> — A colorful scoring table showing three alternatives compared across Data, Time, Ease, and Health criteria. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== MAKE A RECOMMENDATION ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-bullhorn"></i> Step 4 — Make a Recommendation</div>
+        <p>
+            Now we use <strong>all our evidence</strong> to write a clear recommendation. A good recommendation has
+            <strong>4 parts</strong>:
+        </p>
+
+        <ol class="step-list">
+            <li>
+                <strong>State the recommendation clearly.</strong><br>
+                <em>"We recommend that the canteen boil eggs for <strong>3 minutes</strong>."</em>
+            </li>
+            <li>
+                <strong>Support it with data.</strong><br>
+                <em>"This matches the preference of <strong>60% of students</strong> (24 out of 40)."</em>
+            </li>
+            <li>
+                <strong>Acknowledge other options.</strong><br>
+                <em>"However, since 25% of students prefer medium-boiled eggs, the canteen could also offer a 6-minute option."</em>
+            </li>
+            <li>
+                <strong>Mention limitations.</strong><br>
+                <em>"Our survey only included 40 students, so the results might not represent the entire school."</em>
+            </li>
+        </ol>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Why mention limitations?</strong> Good scientists and data analysts are <strong>honest</strong> about
+                what their data can and can't prove. It builds trust and shows critical thinking.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 1 ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Analyze a Different Scenario</h4>
+        <p>
+            Imagine a different school surveyed <strong>50 students</strong> and got these results:
+        </p>
+        <ul>
+            <li><strong>Soft-boiled:</strong> 10 students (20%)</li>
+            <li><strong>Medium-boiled:</strong> 15 students (30%)</li>
+            <li><strong>Hard-boiled:</strong> 25 students (50%)</li>
+        </ul>
+        <p><strong>Answer these questions in your notebook:</strong></p>
+        <ol>
+            <li>Which boiling time matches the <strong>most students' preference</strong>?</li>
+            <li>Would your recommendation be the <strong>same or different</strong> from the original case study? Why?</li>
+            <li>Write a <strong>one-sentence recommendation</strong> for this school's canteen, using the data as evidence.</li>
+        </ol>
+        <div class="tip-box" style="margin-top:1rem;">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Hint:</strong> The most popular option here is different from the first case study.
+                This shows how important it is to <strong>use data</strong> rather than guess!
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 2 ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-lightbulb"></i> Activity — Design Your Own Case Study</h4>
+        <p>
+            Choose <strong>one</strong> of these real-world questions. Then design a mini case study:
+        </p>
+        <ul>
+            <li>What's the best time to start school in the morning?</li>
+            <li>What's the most popular after-school activity?</li>
+            <li>How much homework is the right amount each night?</li>
+            <li>What's the healthiest snack for the school canteen?</li>
+        </ul>
+        <p><strong>Your case study should include:</strong></p>
+        <ol>
+            <li>A <strong>clear problem statement</strong> — what are you trying to decide?</li>
+            <li>At least <strong>3 alternatives</strong> to consider.</li>
+            <li>At least <strong>3 criteria</strong> for evaluating them.</li>
+            <li>A <strong>scoring table</strong> with your ratings (1–5).</li>
+            <li>A <strong>final recommendation</strong> with one sentence of justification.</li>
+        </ol>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook:</p>
+        <ol>
+            <li>Why does <strong>boiling time</strong> affect the texture of an egg?</li>
+            <li>In the case study, which alternative matched the most students' preferences?</li>
+            <li>What are the <strong>4 parts</strong> of a good recommendation?</li>
+            <li>Why is it important to acknowledge <strong>limitations</strong> in your data?</li>
+            <li>If a new survey showed that most students preferred hard-boiled eggs, would your recommendation change? Why or why not?</li>
+            <li>Name <strong>two other real-world decisions</strong> that could be made using the same process.</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            This case study showed you how to use <strong>data to solve a real problem</strong>. You collected
+            preferences, processed them into percentages, created <strong>alternatives</strong>, evaluated them with
+            <strong>criteria</strong>, and made an <strong>evidence-based recommendation</strong>. Next lesson, you'll
+            apply the same process to a bigger problem — studying the <strong>BMI of people in your community</strong>!
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — RECOMMENDATION POSTER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/recommendation-poster.png"
+            alt="A colorful recommendation poster showing the winning boiling time with data support and justification"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Recommendation Poster]</strong> — A sample poster showing the recommended boiling time with data support and justification. Recommended size: 700 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Homework</div>
+        <p>
+            Ask <strong>10 family members or friends</strong> how they prefer their eggs (soft, medium, or hard-boiled).
+        </p>
+        <p><strong>Then complete these tasks:</strong></p>
+        <ul>
+            <li>Create a <strong>table</strong> with three columns: Preference, Count, Percentage.</li>
+            <li>Calculate the <strong>percentages</strong> for each preference.</li>
+            <li>Write <strong>one sentence</strong> recommending which boiling time best matches your family/friends' preferences.</li>
+            <li>Bring your findings to the next lesson — we'll compare your results to the class!</li>
+        </ul>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="lesson26-software-tools.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous: Lesson 26
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="lesson28-bmi-local.html" class="next-btn">
+            Next: Lesson 28 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Indicator 3 · Lesson 27 of 40
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

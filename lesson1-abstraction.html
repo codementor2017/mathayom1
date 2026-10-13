@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1 — What is Abstraction?</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson1-abstraction.html" class="active"><i class="fas fa-lightbulb"></i> Lesson 1</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 1 · Semester 1 · Midterm
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-lightbulb"></i> Lesson 1 · Indicator 1</span>
+        <h1>What is Abstraction?</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            When you're solving a problem, not every detail matters. Some details are <strong>essential</strong>
+            — they help you reach your goal. Others are <strong>non-essential</strong> — they're interesting,
+            but they don't help you solve the problem. In this lesson, you'll learn how to focus on what matters
+            and ignore what doesn't. That skill is called <strong>abstraction</strong>.
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-magnifying-glass"></i> Essential Details</span>
+            <span class="chip sky"><i class="fas fa-eye-slash"></i> Non-Essential Details</span>
+            <span class="chip red"><i class="fas fa-bullseye"></i> Goals &amp; Purpose</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/abstraction-hero.png"
+            alt="Hero banner showing a messy room with a magnifying glass focusing on a few important details while others fade into the background"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — A messy room with a magnifying glass focusing on a few important details, while other objects fade into the background. Friendly, investigative illustration. Recommended size: 1000 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WARM-UP: THE MESSY ROOM ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-door-open"></i> Warm-Up: The Messy Room</div>
+        <p>
+            Imagine you walk into a very messy room. On the floor and furniture, you see:
+        </p>
+        <ul>
+            <li>Clothes scattered everywhere</li>
+            <li>Books piled on the desk</li>
+            <li>Toys on the bed</li>
+            <li>A closed <strong>door</strong> on one wall</li>
+            <li>A <strong>window</strong> on another wall</li>
+            <li>A <strong>clock</strong> ticking on the wall</li>
+            <li>A <strong>lamp</strong> glowing in the corner</li>
+            <li>A <strong>cat</strong> sleeping on a chair</li>
+            <li>A <strong>cup</strong> of water on the nightstand</li>
+            <li>A <strong>phone</strong> buzzing on the bed</li>
+            <li>A pair of <strong>shoes</strong> near the door</li>
+        </ul>
+
+        <p>Now imagine your goal is: <strong>"Find the exit as fast as possible."</strong></p>
+        <p>
+            Which details matter for <em>this</em> goal? Which don't?
+        </p>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Key idea:</strong> The details that matter depend on the <strong>goal</strong>.
+                If your goal changes, the important details change too.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== MINI-LESSON: WHAT IS ABSTRACTION ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-lightbulb"></i> What is Abstraction?</div>
+
+        <div class="formula-box">
+            <span class="formula-label">Definition</span>
+            <div class="formula-text">
+                Abstraction = focusing on <em>important details</em><br>
+                and ignoring <em>unimportant ones</em> for a specific goal.
+            </div>
+        </div>
+
+        <p>
+            Abstraction does <strong>NOT</strong> mean removing everything. It means <strong>choosing the right
+            details</strong> for the problem you're trying to solve.
+        </p>
+
+        <p><strong>Example 1 — Telling a friend how to walk to the school gate</strong></p>
+        <ul>
+            <li><strong>Essential:</strong> "Turn left, walk 100 meters, cross the road."</li>
+            <li><strong>Non-essential:</strong> The color of the houses, the names of the shops, the weather.</li>
+        </ul>
+
+        <p><strong>Example 2 — Buying a birthday cake</strong></p>
+        <ul>
+            <li><strong>Essential:</strong> Number of people, flavor, budget, date.</li>
+            <li><strong>Non-essential:</strong> The color of the box, the name of the baker, the music playing in the shop.</li>
+        </ul>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Why is abstraction useful?</strong> It makes problems <strong>simpler</strong>,
+                <strong>clearer</strong>, and <strong>easier to solve</strong>.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — ESSENTIAL VS NON-ESSENTIAL
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/essential-vs-nonessential.png"
+            alt="A side-by-side illustration showing essential details on the left and non-essential details on the right for a specific goal"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[Essential vs Non-Essential]</strong> — A two-column visual with important details on the left (with checkmarks) and unimportant details on the right (faded). Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== GUIDED PRACTICE: PACKING A SCHOOL BAG ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-bag-shopping"></i> Guided Practice: Packing a School Bag</div>
+        <p>
+            <strong>Scenario:</strong> You are packing your school bag for a <strong>swimming lesson</strong>.
+        </p>
+        <p>Here are possible items you could bring:</p>
+        <ul>
+            <li>Swimsuit</li>
+            <li>Towel</li>
+            <li>Goggles</li>
+            <li>Shampoo</li>
+            <li>Homework</li>
+            <li>Pencil case</li>
+            <li>Lunch box</li>
+            <li>Phone</li>
+            <li>Book</li>
+            <li>Hat</li>
+            <li>Sunscreen</li>
+            <li>Flip-flops</li>
+        </ul>
+
+        <p><strong>Let's sort them:</strong></p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-check-circle"></i> Essential (for swimming)</th>
+                    <th><i class="fas fa-times-circle"></i> Non-Essential (for swimming)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="primary-col">Swimsuit</td>
+                    <td class="secondary-col">Homework</td>
+                </tr>
+                <tr>
+                    <td class="primary-col">Towel</td>
+                    <td class="secondary-col">Pencil case</td>
+                </tr>
+                <tr>
+                    <td class="primary-col">Goggles</td>
+                    <td class="secondary-col">Book</td>
+                </tr>
+                <tr>
+                    <td class="primary-col">Shampoo</td>
+                    <td class="secondary-col">Lunch box</td>
+                </tr>
+                <tr>
+                    <td class="primary-col">Flip-flops</td>
+                    <td class="secondary-col">Phone</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p style="margin-top:1.2rem;">
+            <strong>Now change the goal:</strong> <em>"Pack for a full school day with swimming after class."</em>
+        </p>
+
+        <p>
+            What happens? Now homework, pencil case, and lunch box <strong>become essential</strong> too!
+        </p>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Key idea:</strong> The <strong>goal decides</strong> what is essential.
+                Change the goal, and the important details change too.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — PACKING THE BAG
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/packing-bag-tchart.png"
+            alt="A T-chart illustration showing essential items on one side and non-essential items on the other, with a school bag in the middle"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[Packing the Bag]</strong> — A T-chart with essential items on the left and non-essential items on the right, with a school bag in the center. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== GROUP ACTIVITY: ROBOT TOUR GUIDE ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-robot"></i> Group Activity: Robot Tour Guide</div>
+        <p>
+            Work in groups of <strong>3–4 students</strong>.
+        </p>
+        <p>
+            <strong>Your task:</strong> A robot needs to travel from our classroom to the library.
+            Write step-by-step instructions for the robot. The robot <strong>only understands clear directions</strong>.
+            Include only essential details.
+        </p>
+
+        <p><strong>Remember:</strong> The robot cannot understand:</p>
+        <ul>
+            <li>"Walk a bit"</li>
+            <li>"Go past the pretty tree"</li>
+            <li>"Turn when you feel like it"</li>
+        </ul>
+
+        <p><strong>The robot CAN understand:</strong></p>
+        <ul>
+            <li>"Walk 5 meters forward"</li>
+            <li>"Turn left 90 degrees"</li>
+            <li>"Stop at the red door"</li>
+        </ul>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Think about it:</strong> Does the robot need to know the color of the walls?
+                Does it need to know who painted them? Why or why not?
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — ROBOT TOUR
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/robot-tour-guide.png"
+            alt="A friendly robot following a path from a classroom to a library, with directional arrows showing the route"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[Robot Tour Guide]</strong> — A friendly robot walking along a simple map from a classroom to a library, with directional arrows. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 1 — IDENTIFY THE DETAILS ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Identify the Details</h4>
+        <p>
+            For each goal below, write <strong>3 essential details</strong> and <strong>3 non-essential details</strong>
+            in your notebook.
+        </p>
+        <ol>
+            <li>Goal: <strong>Prepare for a test tomorrow</strong></li>
+            <li>Goal: <strong>Cook rice for dinner</strong></li>
+            <li>Goal: <strong>Find a book in the library</strong></li>
+            <li>Goal: <strong>Choose a birthday present for a friend</strong></li>
+        </ol>
+        <div class="tip-box" style="margin-top:1rem;">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Ask yourself:</strong> "Does this detail help me reach my goal? If I removed it,
+                would the goal still be clear?"
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 2 — CHANGE THE GOAL ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-lightbulb"></i> Activity — Change the Goal</h4>
+        <p>
+            Choose <strong>one scenario</strong> below. Write down what's essential for <em>both</em> goals,
+            and explain how the important details changed when the goal changed.
+        </p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">🎒</span>
+                <h3>Scenario A</h3>
+                <p><strong>Goal 1:</strong> Pack for a school day.<br>
+                <strong>Goal 2:</strong> Pack for a beach trip.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">🍳</span>
+                <h3>Scenario B</h3>
+                <p><strong>Goal 1:</strong> Cook breakfast for yourself.<br>
+                <strong>Goal 2:</strong> Cook breakfast for 10 people.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">📚</span>
+                <h3>Scenario C</h3>
+                <p><strong>Goal 1:</strong> Study for a math test.<br>
+                <strong>Goal 2:</strong> Study for a history test.</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">🛒</span>
+                <h3>Scenario D</h3>
+                <p><strong>Goal 1:</strong> Buy snacks for yourself.<br>
+                <strong>Goal 2:</strong> Buy snacks for a class party.</p>
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>For your chosen scenario, answer:</strong></p>
+        <ol>
+            <li>What are the essential details for <strong>Goal 1</strong>?</li>
+            <li>What are the essential details for <strong>Goal 2</strong>?</li>
+            <li>Which details are <strong>different</strong> between the two goals? Why?</li>
+            <li>Which details stayed the same? Why?</li>
+        </ol>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook:</p>
+        <ol>
+            <li>What is <strong>abstraction</strong>? Write your own definition.</li>
+            <li>Does abstraction mean "removing everything"? Explain why or why not.</li>
+            <li>Why do different goals need <strong>different details</strong>?</li>
+            <li>Give one example of a detail that is essential in <strong>one situation</strong> but
+                non-essential in <strong>another</strong>.</li>
+            <li>Why is abstraction useful when solving problems?</li>
+            <li>What would happen if you tried to solve a problem while focusing on <em>every</em> detail?</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            <strong>Abstraction</strong> means focusing on what matters for a specific goal and ignoring
+            what doesn't. The goal decides what's essential — and if the goal changes, the important details
+            change too. Abstraction makes problems <strong>simpler, clearer, and easier to solve</strong>.
+            Next lesson, you'll learn how to use <strong>criteria</strong> to decide whether a detail is
+            truly essential or not.
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — FOCUS ON WHAT MATTERS
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/focus-on-what-matters.png"
+            alt="A student looking through a magnifying glass at a target, with distracting details faded out behind them"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Focus on What Matters]</strong> — A student looking through a magnifying glass at a target, with distracting details faded out behind them. Empowering, focused illustration. Recommended size: 700 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Homework</div>
+        <p>
+            Find one real-life situation at home (for example: cooking rice, washing dishes, going to the market).
+        </p>
+        <ul>
+            <li>Write down <strong>5 essential details</strong> for that situation.</li>
+            <li>Write down <strong>5 non-essential details</strong>.</li>
+            <li>Write <strong>one sentence</strong> explaining your goal.</li>
+            <li>Then reflect: <em>"Why did I choose these details as essential?"</em></li>
+        </ul>
+        <p style="margin-top:0.8rem;">
+            Bring your work to the next lesson — we'll compare different situations and see how the goal
+            shapes what matters.
+        </p>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="index.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Home
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="lesson2-essential.html" class="next-btn">
+            Next: Lesson 2 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Indicator 1 · Lesson 1 of 40
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

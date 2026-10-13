@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2 — Essential vs Non-Essential Details</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson2-essential.html" class="active"><i class="fas fa-list-check"></i> Lesson 2</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 1 · Semester 1 · Midterm
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-list-check"></i> Lesson 2 · Indicator 1</span>
+        <h1>Essential vs Non-Essential Details</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            In Lesson 1, you learned that abstraction means focusing on the <strong>important details</strong>
+            for a goal. But how do you actually decide if a detail is important? In this lesson, you'll learn
+            <strong>three simple questions</strong> that help you sort details into <strong>essential</strong>
+            and <strong>non-essential</strong> — no more guessing!
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-circle-question"></i> 3 Key Questions</span>
+            <span class="chip sky"><i class="fas fa-layer-group"></i> Sorting Details</span>
+            <span class="chip red"><i class="fas fa-bullseye"></i> Evidence &amp; Clarity</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/essential-hero.png"
+            alt="Hero banner showing two columns of details — one with checkmarks (essential) and one with faded items (non-essential)"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — Two columns side by side: essential details on the left with checkmarks, and non-essential details on the right faded out. Friendly, clear illustration. Recommended size: 1000 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== REVIEW ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-rotate-left"></i> Quick Review from Lesson 1</div>
+        <p>
+            Before we dive deeper, let's remind ourselves of the big idea:
+        </p>
+        <ul>
+            <li><strong>Abstraction</strong> = focusing on important details and ignoring unimportant ones for a specific goal.</li>
+            <li>Abstraction <strong>does not</strong> mean removing everything.</li>
+            <li>The <strong>goal decides</strong> what is essential.</li>
+            <li>If the goal changes, the important details change too.</li>
+        </ul>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Today's focus:</strong> How do we decide <em>which</em> details are essential?
+                Is there a way to test each detail instead of guessing?
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== THE THREE QUESTIONS ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-circle-question"></i> The Three Questions for Essential Details</div>
+        <p>
+            Ask these <strong>three questions</strong> about any detail. If the answer to <strong>any</strong>
+            question is "yes," the detail is <strong>essential</strong>.
+        </p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">1️⃣</span>
+                <h3>Does it change the goal?</h3>
+                <p>If removing this detail changes the <strong>goal</strong>, it's essential.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">2️⃣</span>
+                <h3>Does it change the steps?</h3>
+                <p>If removing this detail changes the <strong>steps</strong> you need to take, it's essential.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">3️⃣</span>
+                <h3>Does it change the answer?</h3>
+                <p>If removing this detail changes the <strong>final answer</strong> or result, it's essential.</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">❌</span>
+                <h3>If "no" to all three…</h3>
+                <p>…the detail is <strong>non-essential</strong>. You can safely ignore it.</p>
+            </div>
+        </div>
+
+        <div class="formula-box" style="margin-top:1.5rem;">
+            <span class="formula-label">The Rule</span>
+            <div class="formula-text">
+                Essential = changes <em>goal</em>, <em>steps</em>, or <em>answer</em>.<br>
+                Non-essential = changes <em>nothing</em>.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — THE THREE QUESTIONS
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/three-questions.png"
+            alt="Three numbered question cards showing the three tests: Does it change the goal? Does it change the steps? Does it change the answer?"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[The Three Questions]</strong> — Three illustrated question cards with icons: a target (goal), a staircase (steps), and a lightbulb (answer). Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WORKED EXAMPLE: CLASS PARTY SNACKS ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-cake-candles"></i> Worked Example: Class Party Snacks</div>
+        <p>
+            <strong>Scenario:</strong> You're buying snacks for a class party for <strong>30 students</strong>.
+            The <strong>budget is 1,500 baht</strong>. <strong>Two students are allergic to peanuts.</strong>
+        </p>
+        <p>Let's apply the three questions to each detail:</p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-tag"></i> Detail</th>
+                    <th><i class="fas fa-bullseye"></i> Changes goal?</th>
+                    <th><i class="fas fa-stairs"></i> Changes steps?</th>
+                    <th><i class="fas fa-lightbulb"></i> Changes answer?</th>
+                    <th><i class="fas fa-star"></i> Essential?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Number of students (30)</strong></td>
+                    <td class="primary-col">No</td>
+                    <td class="secondary-col">No</td>
+                    <td class="primary-col">Yes — how much to buy</td>
+                    <td class="secondary-col">✅ Essential</td>
+                </tr>
+                <tr>
+                    <td><strong>Budget (1,500 baht)</strong></td>
+                    <td class="primary-col">No</td>
+                    <td class="secondary-col">No</td>
+                    <td class="primary-col">Yes — what you can afford</td>
+                    <td class="secondary-col">✅ Essential</td>
+                </tr>
+                <tr>
+                    <td><strong>Peanut allergy</strong></td>
+                    <td class="primary-col">No</td>
+                    <td class="secondary-col">Yes — avoid certain snacks</td>
+                    <td class="primary-col">Yes — safety of students</td>
+                    <td class="secondary-col">✅ Essential</td>
+                </tr>
+                <tr>
+                    <td><strong>Snack color</strong></td>
+                    <td class="primary-col">No</td>
+                    <td class="secondary-col">No</td>
+                    <td class="primary-col">No</td>
+                    <td class="secondary-col">❌ Non-Essential</td>
+                </tr>
+                <tr>
+                    <td><strong>Snack brand</strong></td>
+                    <td class="primary-col">No</td>
+                    <td class="secondary-col">No</td>
+                    <td class="primary-col">No</td>
+                    <td class="secondary-col">❌ Non-Essential</td>
+                </tr>
+                <tr>
+                    <td><strong>Weather</strong></td>
+                    <td class="primary-col">No</td>
+                    <td class="secondary-col">No</td>
+                    <td class="primary-col">No</td>
+                    <td class="secondary-col">❌ Non-Essential</td>
+                </tr>
+                <tr>
+                    <td><strong>Type of snack</strong></td>
+                    <td class="primary-col">No</td>
+                    <td class="secondary-col">No</td>
+                    <td class="primary-col">Yes — students need to enjoy it</td>
+                    <td class="secondary-col">✅ Essential</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Notice:</strong> "Snack color" and "snack brand" don't change anything important.
+                They're just details we can <strong>safely ignore</strong>.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — CLASS PARTY SNACKS
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/class-party-snacks.png"
+            alt="A colorful illustration of snacks arranged on a table for a class party, with a budget note and a peanut allergy warning sign"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[Class Party Snacks]</strong> — Snacks arranged on a table with a budget note and a peanut allergy warning sign. Friendly, clear illustration. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== MORE EXAMPLES ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-graduation-cap"></i> More Examples to Practice</div>
+        <p>
+            Here are more scenarios. For each one, think about which details are essential.
+        </p>
+
+        <p><strong>Scenario 1 — Packing for a school trip</strong></p>
+        <ul>
+            <li><strong>Essential:</strong> Number of days, weather, activities planned</li>
+            <li><strong>Non-essential:</strong> Color of your suitcase, brand of your shoes</li>
+        </ul>
+
+        <p><strong>Scenario 2 — Planning a birthday party</strong></p>
+        <ul>
+            <li><strong>Essential:</strong> Number of guests, budget, location, date</li>
+            <li><strong>Non-essential:</strong> Color of the napkins, type of music playing</li>
+        </ul>
+
+        <p><strong>Scenario 3 — Buying a phone</strong></p>
+        <ul>
+            <li><strong>Essential:</strong> Budget, needs (camera, storage, battery), phone size</li>
+            <li><strong>Non-essential:</strong> Color of the case, brand of the charger</li>
+        </ul>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Watch out:</strong> "Store location" might be non-essential — unless
+                <strong>delivery time matters</strong>. That's why we always come back to the <strong>goal</strong>.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 1 — CARD SORT ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Card Sort</h4>
+        <p>
+            Imagine you're planning a <strong>school garden</strong>. You have a <strong>4 m × 3 m space</strong>.
+            You need to buy <strong>soil, seeds, and tools</strong>.
+        </p>
+        <p>
+            Sort these 10 details into <strong>Essential</strong>, <strong>Non-Essential</strong>, or
+            <strong>Depends on the goal</strong>. Write your answers in your notebook.
+        </p>
+
+        <div class="term-grid" style="margin-top:1rem;">
+            <div class="term-card honey">
+                <span class="term-emoji">📐</span>
+                <h3>Size of the garden</h3>
+                <p>Essential / Non-Essential / Depends?</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">🌱</span>
+                <h3>Type of seeds</h3>
+                <p>Essential / Non-Essential / Depends?</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">🎨</span>
+                <h3>Color of the watering can</h3>
+                <p>Essential / Non-Essential / Depends?</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">👥</span>
+                <h3>Number of students helping</h3>
+                <p>Essential / Non-Essential / Depends?</p>
+            </div>
+            <div class="term-card honey">
+                <span class="term-emoji">💧</span>
+                <h3>Price of soil</h3>
+                <p>Essential / Non-Essential / Depends?</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">🔧</span>
+                <h3>Brand of tools</h3>
+                <p>Essential / Non-Essential / Depends?</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">🌤️</span>
+                <h3>Weather</h3>
+                <p>Essential / Non-Essential / Depends?</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">☀️</span>
+                <h3>Sunlight</h3>
+                <p>Essential / Non-Essential / Depends?</p>
+            </div>
+            <div class="term-card honey">
+                <span class="term-emoji">📝</span>
+                <h3>Name of the garden</h3>
+                <p>Essential / Non-Essential / Depends?</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">💰</span>
+                <h3>Budget</h3>
+                <p>Essential / Non-Essential / Depends?</p>
+            </div>
+        </div>
+
+        <div class="tip-box" style="margin-top:1.5rem;">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Hint:</strong> Ask the <strong>three questions</strong> for each detail.
+                For "Depends" cards, think: <em>When would this detail become essential?</em>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — SCHOOL GARDEN
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/school-garden-plan.png"
+            alt="A school garden with a 4x3 meter plot, seeds, tools, soil, and a small sign — with a checklist of details beside it"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[School Garden Plan]</strong> — A garden plan with soil, seeds, tools, and space dimensions, with a checklist of details beside it. Friendly, colorful. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 2 — ESSENTIAL IN ONE, NON-ESSENTIAL IN ANOTHER ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-lightbulb"></i> Activity — Same Detail, Different Problem</h4>
+        <p>
+            A detail can be <strong>essential in one problem</strong> and <strong>non-essential in another</strong>.
+            Let's explore this idea with the examples below.
+        </p>
+
+        <table class="compare-table" style="margin-top:1rem;">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-tag"></i> Detail</th>
+                    <th><i class="fas fa-check"></i> Essential When…</th>
+                    <th><i class="fas fa-times"></i> Non-Essential When…</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Store location</strong></td>
+                    <td class="primary-col">You need the snacks delivered quickly</td>
+                    <td class="secondary-col">You can pick them up anytime</td>
+                </tr>
+                <tr>
+                    <td><strong>Weather</strong></td>
+                    <td class="primary-col">You're planning an outdoor event</td>
+                    <td class="secondary-col">The event is indoors</td>
+                </tr>
+                <tr>
+                    <td><strong>Color of napkins</strong></td>
+                    <td class="primary-col">You're decorating for a themed party</td>
+                    <td class="secondary-col">Guests only care about the food</td>
+                </tr>
+                <tr>
+                    <td><strong>Number of helpers</strong></td>
+                    <td class="primary-col">The task is big and time is short</td>
+                    <td class="secondary-col">The task is small and one person can do it</td>
+                </tr>
+                <tr>
+                    <td><strong>Brand of tools</strong></td>
+                    <td class="primary-col">You need professional quality for a long project</td>
+                    <td class="secondary-col">Any working tool will do</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p style="margin-top:1.5rem;"><strong>Now answer these questions in your notebook:</strong></p>
+        <ol>
+            <li>Pick <strong>one detail</strong> from the table above. Write two different scenarios where it's essential vs non-essential.</li>
+            <li>Think of <strong>your own example</strong> of a detail that is essential in one situation but non-essential in another.</li>
+            <li>Explain why using the <strong>three questions</strong>.</li>
+        </ol>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook:</p>
+        <ol>
+            <li>What are the <strong>three questions</strong> for testing if a detail is essential?</li>
+            <li>If a detail doesn't change the goal, steps, or answer — is it essential? Why or why not?</li>
+            <li>Give <strong>one example</strong> of a non-essential detail for a class party, and explain why.</li>
+            <li>Can a detail be essential in <strong>one problem</strong> but non-essential in <strong>another</strong>?
+                Give one example.</li>
+            <li>Why does removing non-essential details make a problem <strong>easier to solve</strong>?</li>
+            <li>Why is abstraction <strong>not permanent</strong> — why does it depend on the goal?</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            Use the <strong>three questions</strong> to decide if a detail is essential:
+            <strong>Does it change the goal, the steps, or the answer?</strong> If yes, keep it.
+            If no, you can safely ignore it. Remember — abstraction isn't permanent. The same detail
+            can be essential in one problem and non-essential in another. The <strong>goal</strong> decides.
+            Next lesson, you'll learn how to write a <strong>clear problem statement</strong> that captures
+            the goal, input, output, and constraints.
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — SORTING DETAILS
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/sorting-details.png"
+            alt="A student sorting cards labeled with different details into two boxes: Essential and Non-Essential"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Sorting Details]</strong> — A student sorting labeled cards into two boxes: Essential and Non-Essential. Friendly, focused illustration. Recommended size: 700 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Homework</div>
+        <p><strong>Part 1 — Rewrite a messy problem:</strong></p>
+        <p>Here's a messy problem statement with lots of non-essential details:</p>
+
+        <div class="tip-box">
+            <span class="tip-icon">📄</span>
+            <div class="tip-text">
+                <em>"I want to buy a new pencil. The pencil is blue. The shop is far away. The pencil costs 10 baht.
+                The shop has a cat. I need it for writing."</em>
+            </div>
+        </div>
+
+        <p>Your task:</p>
+        <ul>
+            <li>Identify the <strong>non-essential details</strong> and cross them out.</li>
+            <li>Rewrite the problem using <strong>only the essential details</strong>.</li>
+            <li>Write one sentence explaining <strong>why</strong> you kept the details you kept.</li>
+        </ul>
+
+        <p style="margin-top:0.8rem;"><strong>Part 2 — Find your own example:</strong></p>
+        <ul>
+            <li>Write a short paragraph about a real-life decision (choosing a snack, planning a trip, etc.).</li>
+            <li>Include <strong>3 essential details</strong> and <strong>3 non-essential details</strong>.</li>
+            <li>Use the three questions to justify each choice.</li>
+        </ul>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="lesson1-abstraction.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous: Lesson 1
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="lesson3-problem.html" class="next-btn">
+            Next: Lesson 3 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Indicator 1 · Lesson 2 of 40
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

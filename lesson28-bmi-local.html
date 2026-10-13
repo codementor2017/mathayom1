@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 28 — Case Study: BMI of Local People</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson28-bmi-local.html" class="active"><i class="fas fa-weight-scale"></i> Lesson 28</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 3 · Semester 2 · Midterm
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-weight-scale"></i> Lesson 28 · Indicator 3</span>
+        <h1>Case Study: BMI of Local People</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            How healthy is your community? In this lesson, you'll become a <strong>community health researcher</strong>.
+            You'll collect height and weight data, calculate <strong>BMI (Body Mass Index)</strong>,
+            categorize results, and use charts to <strong>analyze trends</strong> in your local area.
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-heart-pulse"></i> Health Data</span>
+            <span class="chip sky"><i class="fas fa-calculator"></i> BMI Calculation</span>
+            <span class="chip red"><i class="fas fa-chart-pie"></i> Trend Analysis</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/bmi-hero.png"
+            alt="Hero banner showing a student measuring height and weight, with a BMI chart in the background"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — A student health researcher measuring height and weight, with a colorful BMI chart in the background. Friendly, science-y illustration. Recommended size: 1000 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WHAT IS BMI ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-heart-pulse"></i> What is BMI?</div>
+        <p>
+            <strong>BMI</strong> stands for <strong>Body Mass Index</strong>. It's a simple number that helps us understand
+            whether a person's weight is healthy for their height. It's used by doctors, schools, and health organizations
+            around the world.
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">BMI Formula</span>
+            <div class="formula-text">
+                BMI = <em>Weight (kg)</em> ÷ <em>Height² (m²)</em>
+            </div>
+        </div>
+
+        <p>
+            Don't let the formula scare you! It simply means: <strong>divide the weight by the height, then divide by the height again</strong>.
+        </p>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Example:</strong> A student who weighs <strong>50 kg</strong> and is <strong>1.5 m tall</strong>:<br>
+                BMI = 50 ÷ (1.5 × 1.5) = 50 ÷ 2.25 = <strong>22.2</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== BMI CATEGORIES ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-list-check"></i> BMI Categories</div>
+        <p>
+            Once you calculate someone's BMI, you compare it to a range of categories. Here are the standard
+            categories used for adults and older teens:
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-hashtag"></i> BMI Range</th>
+                    <th><i class="fas fa-tag"></i> Category</th>
+                    <th><i class="fas fa-info-circle"></i> What It Means</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Below 18.5</strong></td>
+                    <td class="primary-col">Underweight</td>
+                    <td class="secondary-col">Below healthy weight range</td>
+                </tr>
+                <tr>
+                    <td><strong>18.5 – 24.9</strong></td>
+                    <td class="primary-col">Normal</td>
+                    <td class="secondary-col">Healthy weight range</td>
+                </tr>
+                <tr>
+                    <td><strong>25.0 – 29.9</strong></td>
+                    <td class="primary-col">Overweight</td>
+                    <td class="secondary-col">Above healthy weight range</td>
+                </tr>
+                <tr>
+                    <td><strong>30.0 and above</strong></td>
+                    <td class="primary-col">Obese</td>
+                    <td class="secondary-col">Well above healthy range</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Important:</strong> BMI is a helpful <em>guideline</em>, not a perfect measure. Athletes with lots of muscle
+                can have a high BMI but still be very healthy. BMI is just one tool — always talk to a doctor for a real health check.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — BMI CATEGORIES
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/bmi-categories.png"
+            alt="A colorful diagram showing four BMI categories with stick figures: Underweight, Normal, Overweight, Obese"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[BMI Categories]</strong> — Four categories shown with friendly stick figures: Underweight, Normal, Overweight, Obese. Each labeled with its BMI range. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== SAMPLING AND ETHICS ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-users"></i> Sampling &amp; Ethics</div>
+        <p>
+            When collecting BMI data from a community, we can't measure everyone. Instead, we take a
+            <strong>sample</strong> — a small group that represents the larger group.
+        </p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">👥</span>
+                <h3>Sample</h3>
+                <p>A small group of people chosen to represent a larger group. Good samples are <strong>random</strong> and <strong>large enough</strong>.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">🔒</span>
+                <h3>Privacy</h3>
+                <p>Personal data must be kept <strong>anonymous</strong>. Don't share names, photos, or individual measurements.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">✋</span>
+                <h3>Consent</h3>
+                <p>Always <strong>ask permission</strong> before measuring someone. Explain what you're doing and why.</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">🤝</span>
+                <h3>Respect</h3>
+                <p>Never force participation. Never joke about someone's results. Health is personal.</p>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Good science starts with good ethics.</strong> Respect people's privacy and dignity at every step.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== STEP 1 — COLLECT THE DATA ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-clipboard-list"></i> Step 1 — Collect the Data</div>
+        <p>
+            Imagine your class surveyed <strong>10 volunteers</strong> from your community. Here's the data:
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-user"></i> Person</th>
+                    <th><i class="fas fa-ruler-vertical"></i> Height (m)</th>
+                    <th><i class="fas fa-weight-scale"></i> Weight (kg)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Person 1</td><td class="primary-col">1.60</td><td class="secondary-col">55</td></tr>
+                <tr><td>Person 2</td><td class="primary-col">1.75</td><td class="secondary-col">85</td></tr>
+                <tr><td>Person 3</td><td class="primary-col">1.50</td><td class="secondary-col">42</td></tr>
+                <tr><td>Person 4</td><td class="primary-col">1.68</td><td class="secondary-col">72</td></tr>
+                <tr><td>Person 5</td><td class="primary-col">1.55</td><td class="secondary-col">48</td></tr>
+                <tr><td>Person 6</td><td class="primary-col">1.80</td><td class="secondary-col">95</td></tr>
+                <tr><td>Person 7</td><td class="primary-col">1.62</td><td class="secondary-col">58</td></tr>
+                <tr><td>Person 8</td><td class="primary-col">1.70</td><td class="secondary-col">78</td></tr>
+                <tr><td>Person 9</td><td class="primary-col">1.58</td><td class="secondary-col">52</td></tr>
+                <tr><td>Person 10</td><td class="primary-col">1.72</td><td class="secondary-col">70</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ========== STEP 2 — CALCULATE BMI ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-calculator"></i> Step 2 — Calculate the BMI</div>
+        <p>
+            Now use the BMI formula on each person. Let's walk through the first one together:
+        </p>
+
+        <ol class="step-list">
+            <li>
+                <strong>Person 1 — Height 1.60 m, Weight 55 kg</strong><br>
+                Step A: Height² = 1.60 × 1.60 = 2.56<br>
+                Step B: BMI = 55 ÷ 2.56 = <strong>21.5</strong> → <strong>Normal</strong>
+            </li>
+            <li>
+                <strong>Person 2 — Height 1.75 m, Weight 85 kg</strong><br>
+                Step A: Height² = 1.75 × 1.75 = 3.06<br>
+                Step B: BMI = 85 ÷ 3.06 = <strong>27.8</strong> → <strong>Overweight</strong>
+            </li>
+            <li>
+                <strong>Person 3 — Height 1.50 m, Weight 42 kg</strong><br>
+                Step A: Height² = 1.50 × 1.50 = 2.25<br>
+                Step B: BMI = 42 ÷ 2.25 = <strong>18.7</strong> → <strong>Normal</strong>
+            </li>
+        </ol>
+
+        <p style="margin-top:1.5rem;">
+            Let's see all 10 results:
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-user"></i> Person</th>
+                    <th><i class="fas fa-calculator"></i> BMI</th>
+                    <th><i class="fas fa-tag"></i> Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Person 1</td><td class="primary-col">21.5</td><td class="secondary-col">Normal</td></tr>
+                <tr><td>Person 2</td><td class="primary-col">27.8</td><td class="secondary-col">Overweight</td></tr>
+                <tr><td>Person 3</td><td class="primary-col">18.7</td><td class="secondary-col">Normal</td></tr>
+                <tr><td>Person 4</td><td class="primary-col">25.5</td><td class="secondary-col">Overweight</td></tr>
+                <tr><td>Person 5</td><td class="primary-col">20.0</td><td class="secondary-col">Normal</td></tr>
+                <tr><td>Person 6</td><td class="primary-col">29.3</td><td class="secondary-col">Overweight</td></tr>
+                <tr><td>Person 7</td><td class="primary-col">22.1</td><td class="secondary-col">Normal</td></tr>
+                <tr><td>Person 8</td><td class="primary-col">27.0</td><td class="secondary-col">Overweight</td></tr>
+                <tr><td>Person 9</td><td class="primary-col">20.8</td><td class="secondary-col">Normal</td></tr>
+                <tr><td>Person 10</td><td class="primary-col">23.7</td><td class="secondary-col">Normal</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — BMI CALCULATION WORKED EXAMPLE
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/bmi-calculation-worked.png"
+            alt="A worked example showing how to calculate BMI with height and weight measurements"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[Worked Example]</strong> — A step-by-step visual showing how to plug height and weight into the BMI formula. Recommended size: 800 × 450 px.
+        </div>
+    </div>
+
+    <!-- ========== STEP 3 — ANALYZE THE DATA ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-chart-pie"></i> Step 3 — Analyze the Data</div>
+        <p>
+            Now let's turn our results into <strong>useful information</strong>. Let's count how many people fall into each category:
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-tag"></i> Category</th>
+                    <th><i class="fas fa-users"></i> Count</th>
+                    <th><i class="fas fa-percent"></i> Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Underweight</td><td class="primary-col">0</td><td class="secondary-col">0%</td></tr>
+                <tr><td>Normal</td><td class="primary-col">6</td><td class="secondary-col">60%</td></tr>
+                <tr><td>Overweight</td><td class="primary-col">4</td><td class="secondary-col">40%</td></tr>
+                <tr><td>Obese</td><td class="primary-col">0</td><td class="secondary-col">0%</td></tr>
+                <tr><td><strong>Total</strong></td><td class="primary-col"><strong>10</strong></td><td class="secondary-col"><strong>100%</strong></td></tr>
+            </tbody>
+        </table>
+
+        <p style="margin-top:1.2rem;">
+            Now let's find the <strong>average BMI</strong> of our sample:
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">Average BMI</span>
+            <div class="formula-text">
+                (21.5 + 27.8 + 18.7 + 25.5 + 20.0 + 29.3 + 22.1 + 27.0 + 20.8 + 23.7) ÷ 10 = <em>23.6</em>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Interpretation:</strong> Our community sample has an <strong>average BMI of 23.6</strong>, which is
+                in the <strong>Normal</strong> range. However, <strong>40% of people are overweight</strong> — a notable trend
+                worth paying attention to.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== STEP 4 — VISUALIZE AND INTERPRET ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-chart-bar"></i> Step 4 — Visualize and Interpret</div>
+        <p>
+            Charts make trends easier to see. Here are two charts that work well for BMI data:
+        </p>
+
+        <div class="chart-grid">
+            <div class="chart-card bar">
+                <span class="chart-icon">📊</span>
+                <h4>Bar Chart</h4>
+                <p>Compares the <strong>count</strong> of people in each BMI category. Easy to see which category is largest.</p>
+            </div>
+            <div class="chart-card pie">
+                <span class="chart-icon">🥧</span>
+                <h4>Pie Chart</h4>
+                <p>Shows the <strong>percentage</strong> of each category. Great for showing "parts of a whole."</p>
+            </div>
+            <div class="chart-card line">
+                <span class="chart-icon">📈</span>
+                <h4>Line Graph</h4>
+                <p>Shows BMI <strong>over time</strong> — perfect if you measure the same people again next year.</p>
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>What trends do we notice?</strong></p>
+        <ul>
+            <li>Most people (60%) fall into the <strong>Normal</strong> category — a positive sign.</li>
+            <li>But <strong>40% are Overweight</strong> — this is a significant trend.</li>
+            <li><strong>No one was Underweight or Obese</strong> in our sample.</li>
+        </ul>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Remember:</strong> Our sample is small (only 10 people). These trends are <strong>interesting</strong>,
+                but we can't say they represent the whole community. A larger sample would give stronger evidence.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — BMI CHARTS
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/bmi-charts.png"
+            alt="A bar chart and pie chart side by side showing BMI category distribution: 0% Underweight, 60% Normal, 40% Overweight, 0% Obese"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[BMI Charts]</strong> — A bar chart and a pie chart side by side showing the BMI distribution across categories. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== STEP 5 — WRITE FINDINGS ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-pen-fancy"></i> Step 5 — Write Your Findings</div>
+        <p>
+            A good data scientist doesn't just show numbers — they <strong>explain what the numbers mean</strong>.
+            Here's an example of how to write your findings:
+        </p>
+
+        <div class="tip-box">
+            <span class="tip-icon">📝</span>
+            <div class="tip-text">
+                <strong>Sample findings paragraph:</strong><br><br>
+                "Our community sample of 10 people had an average BMI of 23.6, which falls into the Normal range.
+                However, 40% of people were classified as Overweight, while 60% were Normal. No one was Underweight or Obese.
+                These results suggest that while most people in our sample are at a healthy weight, a notable portion are
+                above the healthy range. Because our sample was small, we recommend collecting more data before making
+                strong conclusions. If the trend continues, it might be worth organizing health education activities in
+                our community."
+            </div>
+        </div>
+
+        <p style="margin-top:1rem;">
+            Notice how the paragraph:
+        </p>
+        <ul>
+            <li>Uses <strong>numbers</strong> to support claims</li>
+            <li>Explains <strong>what the numbers mean</strong> in plain language</li>
+            <li>Mentions <strong>limitations</strong> (small sample size)</li>
+            <li>Makes a <strong>recommendation</strong> for next steps</li>
+        </ul>
+    </div>
+
+    <!-- ========== ACTIVITY 1 ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Calculate BMI</h4>
+        <p>Calculate the BMI and category for each of these people. Write your answers in your notebook.</p>
+
+        <table class="compare-table" style="margin-top:1rem;">
+            <thead>
+                <tr>
+                    <th>Person</th>
+                    <th>Height (m)</th>
+                    <th>Weight (kg)</th>
+                    <th>BMI</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Person A</td><td>1.55</td><td>45</td><td>___</td><td>___</td></tr>
+                <tr><td>Person B</td><td>1.70</td><td>65</td><td>___</td><td>___</td></tr>
+                <tr><td>Person C</td><td>1.62</td><td>78</td><td>___</td><td>___</td></tr>
+                <tr><td>Person D</td><td>1.48</td><td>40</td><td>___</td><td>___</td></tr>
+                <tr><td>Person E</td><td>1.85</td><td>100</td><td>___</td><td>___</td></tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box" style="margin-top:1rem;">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Reminder:</strong> BMI = Weight ÷ (Height × Height). Then compare the result to the categories.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 2 ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-lightbulb"></i> Activity — Design Your Own Community Study</h4>
+        <p>
+            Imagine you want to study the health of your own community (school, family, or neighborhood).
+        </p>
+        <p><strong>Plan your study using these questions:</strong></p>
+        <ol>
+            <li><strong>Research question:</strong> What do you want to find out?</li>
+            <li><strong>Sample:</strong> Who will you measure? How many people?</li>
+            <li><strong>Ethics:</strong> How will you get permission? How will you keep data anonymous?</li>
+            <li><strong>Data to collect:</strong> Height, weight, age, gender, or anything else?</li>
+            <li><strong>Analysis plan:</strong> How will you categorize and visualize the results?</li>
+            <li><strong>Limitations:</strong> What might make your data less reliable?</li>
+        </ol>
+        <p style="margin-top:1rem;">
+            Bring your plan to the next lesson — we'll use it in the final project!
+        </p>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook:</p>
+        <ol>
+            <li>What does <strong>BMI</strong> stand for, and what does it measure?</li>
+            <li>Write the <strong>formula</strong> for calculating BMI.</li>
+            <li>What are the <strong>four BMI categories</strong> and their ranges?</li>
+            <li>What is a <strong>sample</strong>? Why do we use a sample instead of measuring everyone?</li>
+            <li>Name <strong>three important ethical rules</strong> when collecting health data.</li>
+            <li>Why is it important to include <strong>limitations</strong> when writing about your findings?</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            In this lesson, you became a <strong>community health researcher</strong>. You collected height and weight data,
+            calculated <strong>BMI</strong>, categorized the results, visualized trends with charts, and wrote
+            <strong>findings backed by evidence</strong>. Always remember: <strong>respect privacy</strong>,
+            <strong>be honest about limitations</strong>, and use data to <strong>help people</strong>.
+            Next lesson, you'll learn how to create <strong>line graphs from experiments</strong> and analyze trends over time!
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — COMMUNITY HEALTH RESEARCH
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/community-health-research.png"
+            alt="A group of students working together as health researchers, measuring, calculating, and discussing their data"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Community Health Research]</strong> — A group of students acting as health researchers — one measuring, one calculating, one plotting a chart. Warm, collaborative scene. Recommended size: 700 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Homework</div>
+        <p>
+            <strong>Part 1 — Practice BMI calculations:</strong>
+        </p>
+        <ul>
+            <li>Calculate the BMI for the 5 people in Activity 1.</li>
+            <li>Determine each person's BMI category.</li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 2 — Reflect on the case study:</strong></p>
+        <ul>
+            <li>Write a <strong>short paragraph</strong> (3–4 sentences) explaining what your results show.</li>
+            <li>Mention <strong>one trend</strong> and <strong>one limitation</strong>.</li>
+            <li>Suggest <strong>one action</strong> the community could take based on the data.</li>
+        </ul>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="lesson27-boiling-eggs.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous: Lesson 27
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="lesson29-experimental-graphs.html" class="next-btn">
+            Next: Lesson 29 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Indicator 3 · Lesson 28 of 40
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

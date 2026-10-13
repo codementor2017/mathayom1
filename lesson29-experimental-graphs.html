@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 29 — Graphs from Experiments and Trends</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson29-experimental-graphs.html" class="active"><i class="fas fa-flask"></i> Lesson 29</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 3 · Semester 2 · Midterm
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-flask"></i> Lesson 29 · Indicator 3</span>
+        <h1>Graphs from Experiments and Trends</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            Science is all about <strong>experiments</strong> — changing one thing and measuring what happens.
+            In this lesson, you'll learn how to <strong>record experimental data</strong>, turn it into a
+            <strong>line graph</strong>, and use that graph to <strong>spot trends and make predictions</strong>
+            about the future.
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-flask"></i> Experiments</span>
+            <span class="chip sky"><i class="fas fa-chart-line"></i> Line Graphs</span>
+            <span class="chip red"><i class="fas fa-crystal-ball"></i> Predictions</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/experiment-hero.png"
+            alt="Hero banner showing a student conducting a science experiment with a line graph appearing next to them"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — A student scientist conducting an experiment (measuring temperature, plant growth, or a pendulum) with a colorful line graph appearing next to them. Recommended size: 1000 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WHAT IS A TREND ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-chart-line"></i> What is a Trend?</div>
+        <p>
+            A <strong>trend</strong> is a <strong>pattern in data over time</strong>. When you look at a line graph,
+            you can quickly see whether something is:
+        </p>
+        <ul>
+            <li>Going <strong>up</strong> — increasing</li>
+            <li>Going <strong>down</strong> — decreasing</li>
+            <li>Staying <strong>the same</strong> — flat/stable</li>
+            <li>Changing <strong>fast or slowly</strong> — steep or gentle slope</li>
+        </ul>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Key idea:</strong> Line graphs are the best tool for showing trends because they connect data points
+                over time, revealing the <strong>shape of change</strong>.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== EXPERIMENTS AND VARIABLES ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-flask"></i> Experiments and Variables</div>
+        <p>
+            A good experiment changes <strong>only one thing at a time</strong>. We call these "variables."
+            Here are the three types:
+        </p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">🔄</span>
+                <h3>Independent Variable</h3>
+                <p>What <strong>you change</strong> on purpose. Example: the time you leave the water to cool (0, 2, 4, 6, 8, 10 minutes).</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">📏</span>
+                <h3>Dependent Variable</h3>
+                <p>What <strong>you measure</strong>. It "depends" on the independent variable. Example: the temperature of the water.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">🔒</span>
+                <h3>Control Variable</h3>
+                <p>What <strong>stays the same</strong>. Example: the amount of water, the starting temperature, the type of container.</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">📊</span>
+                <h3>Result</h3>
+                <p>The <strong>data you collect</strong>. These become the points on your line graph.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — EXPERIMENT VARIABLES
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/experiment-variables.png"
+            alt="A diagram showing an experiment with labeled variables: independent (time changed), dependent (temperature measured), and control (same water and container)"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[Experiment Variables]</strong> — A diagram of an experiment showing which variable is changed (Independent), which is measured (Dependent), and which stays the same (Control). Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== EXAMPLE EXPERIMENT ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-temperature-half"></i> Example Experiment — Cooling Water</div>
+        <p>
+            Let's look at a simple experiment: <strong>How does water temperature change as it cools?</strong>
+        </p>
+        <p>
+            We boil water to 100°C, then measure its temperature every 2 minutes for 10 minutes.
+        </p>
+
+        <p><strong>Our variables:</strong></p>
+        <ul>
+            <li><strong>Independent:</strong> Time (0, 2, 4, 6, 8, 10 minutes)</li>
+            <li><strong>Dependent:</strong> Water temperature (°C)</li>
+            <li><strong>Control:</strong> Same amount of water, same container, same room temperature</li>
+        </ul>
+
+        <p><strong>Our data:</strong></p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-clock"></i> Time (min)</th>
+                    <th><i class="fas fa-temperature-half"></i> Temperature (°C)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>0</td><td class="primary-col">100</td></tr>
+                <tr><td>2</td><td class="primary-col">85</td></tr>
+                <tr><td>4</td><td class="primary-col">72</td></tr>
+                <tr><td>6</td><td class="primary-col">62</td></tr>
+                <tr><td>8</td><td class="primary-col">55</td></tr>
+                <tr><td>10</td><td class="primary-col">50</td></tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Notice:</strong> The temperature drops quickly at first (100 → 85 = 15°C drop) and then more
+                slowly (55 → 50 = 5°C drop). The trend is <strong>not linear</strong> — it curves.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — COOLING WATER LINE GRAPH
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/cooling-water-graph.png"
+            alt="A line graph showing water temperature decreasing over 10 minutes, with the curve becoming less steep over time"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[Cooling Water Graph]</strong> — A line graph with Time (min) on the x-axis and Temperature (°C) on the y-axis. The curve shows rapid cooling at first, then slowing down. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOW TO MAKE A LINE GRAPH ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-pen-ruler"></i> How to Make a Line Graph</div>
+        <p>
+            Follow these <strong>6 steps</strong> to turn your experimental data into a clear line graph:
+        </p>
+
+        <ol class="step-list">
+            <li>
+                <strong>Draw the axes.</strong><br>
+                The <strong>x-axis</strong> (horizontal) usually shows time. The <strong>y-axis</strong> (vertical) shows the measurement.
+            </li>
+            <li>
+                <strong>Label the axes.</strong><br>
+                Write what each axis shows, and include <strong>units</strong> (minutes, °C, cm, etc.).
+            </li>
+            <li>
+                <strong>Choose the scale.</strong><br>
+                Make sure your numbers fit evenly on the axis. Example: 0, 20, 40, 60, 80, 100.
+            </li>
+            <li>
+                <strong>Plot the points.</strong><br>
+                For each pair of values, place a dot at the correct position.
+            </li>
+            <li>
+                <strong>Connect the dots.</strong><br>
+                Draw a smooth line (or straight segments) through the points. Don't connect them with a zig-zag.
+            </li>
+            <li>
+                <strong>Add a title.</strong><br>
+                Give the graph a clear, descriptive title like "Water Temperature Over Time."
+            </li>
+        </ol>
+    </div>
+
+    <!-- ========== ANALYZING TRENDS ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-magnifying-glass-chart"></i> Analyzing Trends</div>
+        <p>
+            Once you have a line graph, you can <strong>describe the trend</strong> in words. Here's how:
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-shapes"></i> Trend Shape</th>
+                    <th><i class="fas fa-comment"></i> How to Describe It</th>
+                    <th><i class="fas fa-lightbulb"></i> Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Steady rise</strong></td>
+                    <td class="primary-col">"Increasing steadily"</td>
+                    <td class="secondary-col">Plant growing taller each week</td>
+                </tr>
+                <tr>
+                    <td><strong>Steady fall</strong></td>
+                    <td class="primary-col">"Decreasing steadily"</td>
+                    <td class="secondary-col">Water temperature cooling</td>
+                </tr>
+                <tr>
+                    <td><strong>Fast then slow</strong></td>
+                    <td class="primary-col">"Rapid change, then slowing down"</td>
+                    <td class="secondary-col">Water cooling quickly at first</td>
+                </tr>
+                <tr>
+                    <td><strong>Slow then fast</strong></td>
+                    <td class="primary-col">"Slow start, then accelerating"</td>
+                    <td class="secondary-col">Bacteria growth in a culture</td>
+                </tr>
+                <tr>
+                    <td><strong>Flat</strong></td>
+                    <td class="primary-col">"Staying the same"</td>
+                    <td class="secondary-col">Temperature of ice melting (0°C)</td>
+                </tr>
+                <tr>
+                    <td><strong>Going up and down</strong></td>
+                    <td class="primary-col">"Fluctuating" or "oscillating"</td>
+                    <td class="secondary-col">Pendulum swing height</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — TREND PATTERNS
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/trend-patterns.png"
+            alt="Six small line graphs showing different trend patterns: steady rise, steady fall, fast-then-slow, slow-then-fast, flat, and fluctuating"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[Trend Patterns]</strong> — Six mini line graphs showing different trend shapes, each with a short label. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== MAKING PREDICTIONS ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-crystal-ball"></i> Making Predictions</div>
+        <p>
+            Once you've identified a trend, you can <strong>predict what happens next</strong>. Here's how:
+        </p>
+
+        <ol class="step-list">
+            <li>
+                <strong>Look at the pattern.</strong><br>
+                Is the temperature falling by a consistent amount? Or is the rate slowing?
+            </li>
+            <li>
+                <strong>Extend the graph.</strong><br>
+                If the water cools 5°C every 2 minutes, what will the temperature be at 12 minutes?
+            </li>
+            <li>
+                <strong>Make a clear statement.</strong><br>
+                <em>"We predict the temperature will be about 47°C at 12 minutes."</em>
+            </li>
+            <li>
+                <strong>Explain your reasoning.</strong><br>
+                <em>"Because the cooling rate has been slowing, we expect the next drop to be smaller than previous ones."</em>
+            </li>
+        </ol>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Remember:</strong> Predictions are <em>educated guesses</em>, not certainties. That's why scientists always
+                say "we predict" or "we expect" — not "it will definitely happen."
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 1 ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Analyze This Graph</h4>
+        <p>
+            A student measured the <strong>height of a plant</strong> every week for 6 weeks. Here's the data:
+        </p>
+
+        <table class="compare-table" style="margin-top:1rem;">
+            <thead>
+                <tr>
+                    <th>Week</th>
+                    <th>Height (cm)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>2</td></tr>
+                <tr><td>2</td><td>5</td></tr>
+                <tr><td>3</td><td>9</td></tr>
+                <tr><td>4</td><td>14</td></tr>
+                <tr><td>5</td><td>20</td></tr>
+                <tr><td>6</td><td>27</td></tr>
+            </tbody>
+        </table>
+
+        <p style="margin-top:1rem;"><strong>In your notebook:</strong></p>
+        <ol>
+            <li>Draw a <strong>line graph</strong> for this data.</li>
+            <li>Describe the <strong>trend</strong> in one sentence.</li>
+            <li>Predict the <strong>height at week 7</strong>. Explain your reasoning.</li>
+            <li>Is the trend <strong>linear</strong> (straight) or <strong>curved</strong>? How do you know?</li>
+        </ol>
+
+        <div class="tip-box" style="margin-top:1rem;">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Hint:</strong> Look at the difference between each week: +3, +4, +5, +6, +7. Is the growth getting faster? What's the pattern?
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 2 ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-lightbulb"></i> Activity — Conduct Your Own Experiment</h4>
+        <p>
+            Choose <strong>one</strong> of these simple experiments (or come up with your own):
+        </p>
+        <ul>
+            <li>Measure how quickly water cools in a cup (every 2 minutes for 10 minutes).</li>
+            <li>Measure the length of a rubber band when different weights are hung on it.</li>
+            <li>Measure the temperature of ice melting (every minute until it's fully melted).</li>
+            <li>Count how many times a pendulum swings in 15 seconds, with different string lengths.</li>
+        </ul>
+        <p><strong>Follow these steps:</strong></p>
+        <ol>
+            <li>Identify your <strong>independent, dependent, and control variables</strong>.</li>
+            <li>Collect at least <strong>6 data points</strong>.</li>
+            <li>Create a <strong>data table</strong> with units.</li>
+            <li>Draw a <strong>line graph</strong> with a title, labels, and units.</li>
+            <li>Describe the <strong>trend</strong> in one sentence.</li>
+            <li>Make a <strong>prediction</strong> about what happens next.</li>
+        </ol>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook:</p>
+        <ol>
+            <li>What is a <strong>trend</strong> in data?</li>
+            <li>What are the three types of <strong>variables</strong> in an experiment? Give an example of each.</li>
+            <li>Why is a <strong>line graph</strong> the best choice for showing change over time?</li>
+            <li>What are the <strong>6 steps</strong> for making a good line graph?</li>
+            <li>Name <strong>two trend patterns</strong> and describe how they look on a graph.</li>
+            <li>Why do scientists say "we predict" instead of "it will happen"?</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            Experiments produce <strong>data over time</strong>, and <strong>line graphs</strong> are the best way to show trends.
+            Remember the three variables: <strong>independent</strong> (what you change), <strong>dependent</strong>
+            (what you measure), and <strong>control</strong> (what stays the same). When you analyze a graph,
+            describe the <strong>shape of the trend</strong> and use it to <strong>make predictions</strong> —
+            always explaining your reasoning. Next lesson, you'll bring everything together in your <strong>final project</strong>!
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — STUDENT PREDICTING FROM GRAPH
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/predicting-trend.png"
+            alt="A student looking at a line graph on paper and pointing at the point where they predict the trend will continue"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Predicting from a Graph]</strong> — A student pointing at the end of a line graph and imagining where the trend will continue. Recommended size: 700 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Homework</div>
+        <p><strong>Part 1 — Analyze a real graph:</strong></p>
+        <ul>
+            <li>Find a <strong>line graph</strong> in a newspaper, magazine, or online (weather, population, sports, etc.).</li>
+            <li>Answer these questions:
+                <ul>
+                    <li>What is the graph showing?</li>
+                    <li>What is the trend? (Increasing, decreasing, fluctuating?)</li>
+                    <li>Make one <strong>prediction</strong> based on the trend.</li>
+                </ul>
+            </li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 2 — Complete your experiment:</strong></p>
+        <ul>
+            <li>Finish the experiment you started in Activity 2.</li>
+            <li>Bring your data table, line graph, and prediction to the next lesson.</li>
+        </ul>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="lesson28-bmi-local.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous: Lesson 28
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="lesson30-data-project.html" class="next-btn">
+            Next: Lesson 30 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Indicator 3 · Lesson 29 of 40
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

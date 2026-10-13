@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 26 — Using Software and Internet Services</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson26-software-tools.html" class="active"><i class="fas fa-cloud"></i> Lesson 26</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 3 · Semester 2 · Midterm
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-cloud"></i> Lesson 26 · Indicator 3</span>
+        <h1>Using Software and Internet Services</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            Why do everything by hand when powerful tools can help? In this lesson, you'll discover how
+            <strong>online software</strong> like <strong>Google Forms, Google Sheets, and Google Slides</strong>
+            can help you collect, process, and present data faster, more accurately, and more collaboratively.
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-clipboard-list"></i> Google Forms</span>
+            <span class="chip sky"><i class="fas fa-table"></i> Google Sheets</span>
+            <span class="chip red"><i class="fas fa-person-chalkboard"></i> Google Slides</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/three-tools-hero.png"
+            alt="Hero banner showing three online tools — a form, a spreadsheet, and a presentation — connected by cloud icons"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — Three tools (Form, Sheet, Slides) connected by a cloud, representing the workflow of collecting, processing, and presenting data. Recommended size: 1000 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WHY USE ONLINE TOOLS ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-circle-question"></i> Why Use Online Tools?</div>
+        <p>
+            Imagine asking <strong>100 students</strong> a survey question. If you use paper, you'd have to:
+        </p>
+        <ul>
+            <li>Print 100 copies</li>
+            <li>Hand them out and collect them</li>
+            <li>Type every answer into a spreadsheet by hand</li>
+            <li>Calculate the totals and averages yourself</li>
+        </ul>
+        <p>
+            That could take <strong>hours</strong>! But with <strong>Google Forms + Google Sheets</strong>, all of that
+            happens <strong>automatically</strong> in <strong>minutes</strong>. Your answers go straight into a spreadsheet
+            where formulas do the calculations for you.
+        </p>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Key idea:</strong> Online tools save <strong>time</strong>, reduce <strong>errors</strong>,
+                and let you <strong>collaborate</strong> with classmates in real time.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== THE THREE TOOLS ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-toolbox"></i> The Three Main Tools</div>
+        <p>
+            These three Google tools work together as a team. Each one handles a different stage of working with data.
+        </p>
+
+        <div class="tool-grid">
+            <div class="tool-card form">
+                <span class="tool-icon">📝</span>
+                <h4>Google Forms</h4>
+                <p><strong>Collect data.</strong> Create surveys with different question types and share the link.</p>
+            </div>
+            <div class="tool-card sheets">
+                <span class="tool-icon">📊</span>
+                <h4>Google Sheets</h4>
+                <p><strong>Process data.</strong> Use formulas to calculate totals, averages, and percentages.</p>
+            </div>
+            <div class="tool-card slides">
+                <span class="tool-icon">🎤</span>
+                <h4>Google Slides</h4>
+                <p><strong>Present findings.</strong> Add charts and text to share your results with others.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — THE THREE TOOLS TOGETHER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/three-tools-workflow.png"
+            alt="Three tool icons side by side with arrows between them: Form → Sheet → Slides"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[The Three Tools Together]</strong> — Google Forms (collect) → Google Sheets (process) → Google Slides (present). Show arrows or a workflow connecting them. Recommended size: 900 × 350 px.
+        </div>
+    </div>
+
+    <!-- ========== HOW THEY CONNECT ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-arrows-split-up-and-left"></i> How They Connect</div>
+        <p>Here's the magic: these tools are <strong>linked automatically</strong>. Watch the workflow:</p>
+
+        <ol class="step-list">
+            <li>
+                <strong>Create a survey in Google Forms.</strong><br>
+                Add questions like "How many eggs do you eat per week?" or "How do you prefer your eggs?"
+            </li>
+            <li>
+                <strong>Share the form link</strong> with your classmates (or their parents).<br>
+                Each person opens the form on their phone, tablet, or computer and answers.
+            </li>
+            <li>
+                <strong>Responses appear in Google Sheets automatically.</strong><br>
+                Every time someone submits the form, a new row is added to your spreadsheet. No typing needed!
+            </li>
+            <li>
+                <strong>Use formulas in Sheets to process the data.</strong><br>
+                <code>=AVERAGE(B2:B20)</code> finds the average. <code>=SUM(B2:B20)</code> finds the total.
+            </li>
+            <li>
+                <strong>Create charts and paste them into Google Slides.</strong><br>
+                Present your findings clearly and confidently.
+            </li>
+        </ol>
+    </div>
+
+    <!-- ========== FORMULA REFERENCE ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-function"></i> Handy Formulas in Google Sheets</div>
+        <p>Here are the formulas you'll use most often in Sheets:</p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-calculator"></i> What You Want</th>
+                    <th><i class="fas fa-keyboard"></i> Formula</th>
+                    <th><i class="fas fa-lightbulb"></i> Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Total (sum)</strong></td>
+                    <td class="primary-col"><code>=SUM(B2:B20)</code></td>
+                    <td class="secondary-col">Total eggs eaten by all students</td>
+                </tr>
+                <tr>
+                    <td><strong>Average (mean)</strong></td>
+                    <td class="primary-col"><code>=AVERAGE(B2:B20)</code></td>
+                    <td class="secondary-col">Average eggs per student</td>
+                </tr>
+                <tr>
+                    <td><strong>Count</strong></td>
+                    <td class="primary-col"><code>=COUNT(B2:B20)</code></td>
+                    <td class="secondary-col">How many responses</td>
+                </tr>
+                <tr>
+                    <td><strong>Max value</strong></td>
+                    <td class="primary-col"><code>=MAX(B2:B20)</code></td>
+                    <td class="secondary-col">Highest number of eggs</td>
+                </tr>
+                <tr>
+                    <td><strong>Min value</strong></td>
+                    <td class="primary-col"><code>=MIN(B2:B20)</code></td>
+                    <td class="secondary-col">Lowest number of eggs</td>
+                </tr>
+                <tr>
+                    <td><strong>Percentage</strong></td>
+                    <td class="primary-col"><code>=B2/$B$21*100</code></td>
+                    <td class="secondary-col">Each response as % of total</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Tip:</strong> The <code>$</code> symbol locks a cell. In <code>$B$21</code>, when you drag the
+                formula down, it keeps pointing to <strong>B21</strong> — perfect for percentage calculations!
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — FORMULA REFERENCE VISUAL
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/sheets-formulas.png"
+            alt="Screenshot-style illustration of Google Sheets with a formula bar showing =AVERAGE(B2:B20), and the result appearing in a cell"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[Formulas in Action]</strong> — A friendly screenshot-style illustration of Google Sheets showing the formula bar with =AVERAGE(B2:B20) and the result. Recommended size: 800 × 450 px.
+        </div>
+    </div>
+
+    <!-- ========== ADVANTAGES AND LIMITATIONS ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-scale-balanced"></i> Advantages and Limitations</div>
+        <p>
+            Online tools are powerful, but it's important to know their <strong>strengths</strong> and <strong>weaknesses</strong>.
+        </p>
+
+        <div class="pros-cons">
+            <div class="pc-card pros">
+                <h4><i class="fas fa-thumbs-up"></i> Advantages</h4>
+                <ul>
+                    <li><strong>Fast:</strong> Data is collected instantly</li>
+                    <li><strong>Accurate:</strong> No typing errors from paper</li>
+                    <li><strong>Automatic:</strong> Formulas calculate for you</li>
+                    <li><strong>Collaborative:</strong> Multiple people can work together</li>
+                    <li><strong>Accessible:</strong> Works on phone, tablet, or computer</li>
+                    <li><strong>Shareable:</strong> Send a link with one click</li>
+                    <li><strong>Free:</strong> Google tools are free to use</li>
+                </ul>
+            </div>
+            <div class="pc-card cons">
+                <h4><i class="fas fa-triangle-exclamation"></i> Limitations</h4>
+                <ul>
+                    <li><strong>Needs internet:</strong> Can't work offline easily</li>
+                    <li><strong>Privacy concerns:</strong> Data is stored online</li>
+                    <li><strong>Learning curve:</strong> Takes time to learn formulas</li>
+                    <li><strong>Relies on technology:</strong> Power cuts or wifi issues can interrupt</li>
+                    <li><strong>Not everyone has access:</strong> Some classmates might not have devices</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — PROS AND CONS
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/advantages-limitations.png"
+            alt="Two-column illustration comparing advantages (green checkmarks) with limitations (orange warning signs) of using online data tools"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[Advantages vs Limitations]</strong> — Left: green checkmarks for advantages. Right: orange warning signs for limitations. Friendly icon style. Recommended size: 800 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 1 ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Match the Tool</h4>
+        <p>For each task, decide which tool is best: <strong>Google Forms</strong>, <strong>Google Sheets</strong>, or <strong>Google Slides</strong>.</p>
+        <ol>
+            <li>Ask 30 students what their favourite fruit is. <em>(______)</em></li>
+            <li>Find the average number of hours students sleep. <em>(______)</em></li>
+            <li>Show your findings to the class with colorful charts. <em>(______)</em></li>
+            <li>Calculate what percentage of students chose "apple" as their favourite. <em>(______)</em></li>
+            <li>Create a multiple-choice question about egg preference. <em>(______)</em></li>
+            <li>Add a bar chart to a presentation. <em>(______)</em></li>
+        </ol>
+        <div class="tip-box" style="margin-top:1rem;">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Hint:</strong> Forms = collect, Sheets = process, Slides = present.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 2 ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-lightbulb"></i> Activity — Design a Google Form</h4>
+        <p>Your task is to design a <strong>Google Form survey</strong> about <strong>egg consumption in your school</strong>.</p>
+        <p><strong>Your form should include:</strong></p>
+        <ol>
+            <li>A clear <strong>title</strong> and <strong>description</strong>.</li>
+            <li>At least <strong>5 questions</strong>, including:
+                <ul>
+                    <li>A short-answer question (for a number, like "How many eggs per week?")</li>
+                    <li>A multiple-choice question (like "How do you prefer your eggs?")</li>
+                    <li>A question with a linear scale (1–5, for opinions)</li>
+                </ul>
+            </li>
+            <li>A clean, colorful design (Google Forms has themes!).</li>
+            <li>Click "Send" and copy the link — you'll share it with classmates.</li>
+        </ol>
+        <p style="margin-top:1rem;">
+            <strong>Bonus:</strong> Once responses come in, open them in Google Sheets and use
+            <code>=AVERAGE()</code> to find the average number of eggs eaten per week!
+        </p>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook:</p>
+        <ol>
+            <li>Name <strong>three Google tools</strong> we discussed and explain what each one does.</li>
+            <li>What happens automatically when someone submits a Google Form? Where does the data go?</li>
+            <li>Write the formula for finding the <strong>average</strong> of cells B2 through B20.</li>
+            <li>Write the formula for finding the <strong>total</strong> of cells B2 through B20.</li>
+            <li>Name <strong>two advantages</strong> of using online tools instead of paper surveys.</li>
+            <li>Name <strong>two limitations</strong> of using online tools.</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            Online tools like <strong>Google Forms, Google Sheets, and Google Slides</strong> make working with data
+            faster, easier, and more accurate. Forms collect data, Sheets process it with formulas, and Slides present
+            it beautifully. But remember — online tools have <strong>limitations</strong> too, like needing internet
+            access and raising privacy concerns. Next lesson, you'll put everything into practice with a
+            <strong>real case study about boiling eggs</strong>!
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — WORKFLOW IN ACTION
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/workflow-in-action.png"
+            alt="A student sharing a Google Form link on their phone, and responses appearing live in a Google Sheet on a laptop"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Workflow in Action]</strong> — A student shares a Google Form link, and responses flow into a live Google Sheet on a laptop. Recommended size: 700 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Homework</div>
+        <p><strong>Part 1 — Create a Google Form:</strong></p>
+        <ul>
+            <li>Design a survey with at least <strong>5 questions</strong> about a topic of your choice
+                (school lunch, sleep, screen time, exercise, etc.).</li>
+            <li>Include at least one <strong>short-answer</strong>, one <strong>multiple-choice</strong>,
+                and one <strong>linear scale</strong> question.</li>
+            <li>Share the link with at least <strong>5 friends or family members</strong>.</li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 2 — Process the responses:</strong></p>
+        <ul>
+            <li>Open the responses in Google Sheets.</li>
+            <li>Use <code>=AVERAGE()</code> and <code>=COUNT()</code> to process your data.</li>
+            <li>Bring your results to the next lesson!</li>
+        </ul>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="lesson25-data-presentation.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous: Lesson 25
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="lesson27-boiling-eggs.html" class="next-btn">
+            Next: Lesson 27 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Indicator 3 · Lesson 26 of 40
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

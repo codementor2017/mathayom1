@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 25 — Introduction to Data Presentation and Visualization</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson25-data-presentation.html" class="active"><i class="fas fa-chart-pie"></i> Lesson 25</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 3 · Semester 2 · Midterm
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-chart-pie"></i> Lesson 25 · Indicator 3</span>
+        <h1>Introduction to Data Presentation &amp; Visualization</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            A picture is worth a thousand numbers! In this lesson, you'll learn how to turn your
+            processed data into <strong>charts and graphs</strong> that make your findings
+            <strong>easy to understand at a glance</strong>. You'll discover which chart type
+            works best for different kinds of data.
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-chart-bar"></i> Bar Charts</span>
+            <span class="chip sky"><i class="fas fa-chart-pie"></i> Pie Charts</span>
+            <span class="chip red"><i class="fas fa-chart-line"></i> Line Graphs</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/chart-types-hero.png"
+            alt="Hero banner showing different chart types: bar chart, pie chart, and line graph, with a student presenting them"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — A colorful illustration showing a bar chart, a pie chart, and a line graph side by side, with a student proudly presenting their findings. Recommended size: 1000 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WHY VISUALIZE DATA ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-circle-question"></i> Why Do We Visualize Data?</div>
+        <p>
+            Imagine you have a table with 100 numbers. Now imagine the same data shown as a colorful chart.
+            Which is easier to understand?
+        </p>
+        <p>
+            <strong>Charts and graphs help us:</strong>
+        </p>
+        <ul>
+            <li><strong>See patterns</strong> quickly (trends, peaks, drops)</li>
+            <li><strong>Compare values</strong> side by side</li>
+            <li><strong>Communicate findings</strong> to others clearly</li>
+            <li><strong>Make decisions</strong> faster based on visible evidence</li>
+        </ul>
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Key idea:</strong> A good chart tells a story. Before you make a chart, ask yourself:
+                <strong>"What do I want my reader to notice?"</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== THE THREE MAIN CHART TYPES ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-shapes"></i> The Three Main Chart Types</div>
+        <p>
+            There are three chart types you'll use most often. Each one is best for a specific
+            kind of data.
+        </p>
+
+        <div class="chart-grid">
+            <div class="chart-card bar">
+                <span class="chart-icon">📊</span>
+                <h4>Bar Chart</h4>
+                <p>Best for <strong>comparing categories</strong>. Each bar shows the value for a different group.</p>
+            </div>
+            <div class="chart-card pie">
+                <span class="chart-icon">🥧</span>
+                <h4>Pie Chart</h4>
+                <p>Best for showing <strong>parts of a whole</strong>. Each slice is a percentage of the total.</p>
+            </div>
+            <div class="chart-card line">
+                <span class="chart-icon">📈</span>
+                <h4>Line Graph</h4>
+                <p>Best for showing <strong>change over time</strong>. Points are connected to show a trend.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — THREE CHART TYPES
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/three-chart-types.png"
+            alt="Three large chart examples side by side: a bar chart comparing fruit preferences, a pie chart showing percentages, and a line graph showing temperature over time"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[Three Chart Types]</strong> — Bar chart (comparing fruit), Pie chart (percentages), Line graph (temperature over time). Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WHEN TO USE EACH CHART ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-list-check"></i> When to Use Each Chart Type</div>
+        <p>Use this table to help you choose the right chart for your data.</p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-chart-simple"></i> Chart Type</th>
+                    <th><i class="fas fa-bullseye"></i> Best For</th>
+                    <th><i class="fas fa-lightbulb"></i> Example Question</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>📊 Bar Chart</strong></td>
+                    <td class="primary-col">Comparing categories or groups</td>
+                    <td class="secondary-col">"Which fruit is the most popular?"</td>
+                </tr>
+                <tr>
+                    <td><strong>🥧 Pie Chart</strong></td>
+                    <td class="primary-col">Showing parts of a whole (100%)</td>
+                    <td class="secondary-col">"What percentage of students prefer each fruit?"</td>
+                </tr>
+                <tr>
+                    <td><strong>📈 Line Graph</strong></td>
+                    <td class="primary-col">Showing change over time</td>
+                    <td class="secondary-col">"How did the temperature change during the day?"</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Tip:</strong> Don't mix them up! A bar chart is NOT the same as a line graph.
+                If your data is about <strong>categories</strong>, use a bar chart.
+                If your data is about <strong>time</strong>, use a line graph.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== RULES FOR GREAT CHARTS ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-star"></i> Rules for Great Charts</div>
+        <p>
+            A chart with missing labels or confusing colors won't help anyone. Follow these
+            <strong>5 rules</strong> for every chart you make:
+        </p>
+
+        <ol class="rules-list">
+            <li>
+                <strong>Give your chart a clear title.</strong><br>
+                <em>Example: "Favourite Fruits in Class 7A" — not just "Chart 1".</em>
+            </li>
+            <li>
+                <strong>Label your axes.</strong><br>
+                The horizontal axis (x-axis) and vertical axis (y-axis) both need labels so we know what the numbers mean.
+            </li>
+            <li>
+                <strong>Include units.</strong><br>
+                If your chart shows temperature, write "°C". If it shows hours, write "hours".
+            </li>
+            <li>
+                <strong>Use a legend if needed.</strong><br>
+                For pie charts or multi-series charts, a legend explains what each color or symbol means.
+            </li>
+            <li>
+                <strong>Choose clear colors.</strong><br>
+                Use distinct colors so categories don't blend together. Avoid using too many colors.
+            </li>
+        </ol>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — GOOD VS BAD CHART
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/good-vs-bad-chart.png"
+            alt="A side-by-side illustration comparing a bad chart (no title, no labels, confusing colors) with a good chart (clear title, labeled axes, clean design)"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[Good vs Bad Chart]</strong> — Left: a messy chart with no title or labels. Right: a clean, well-labeled chart with a clear title and legend. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOW TO CREATE A CHART ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-desktop"></i> Creating a Chart with a Spreadsheet</div>
+        <p>
+            You can draw charts by hand, but spreadsheets (like Google Sheets or Excel) make it easy.
+            Here's the simple <strong>5-step process</strong>:
+        </p>
+
+        <ol class="step-list">
+            <li>
+                <strong>Enter your data</strong> into the spreadsheet — one column for labels, one column for values.
+            </li>
+            <li>
+                <strong>Select the data</strong> with your mouse (highlight the cells).
+            </li>
+            <li>
+                <strong>Insert → Chart</strong> from the menu (or click the chart icon).
+            </li>
+            <li>
+                <strong>Choose the chart type</strong> — bar, pie, or line.
+            </li>
+            <li>
+                <strong>Add a title, labels, and legend</strong> — then preview and adjust the colors if needed.
+            </li>
+        </ol>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Try it:</strong> Open Google Sheets, type in a few numbers, select them, and insert a chart.
+                Play with the different chart types to see which one fits best!
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — SPREADSHEET CHART CREATION
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/spreadsheet-chart-creation.png"
+            alt="A screenshot-style illustration of a spreadsheet with data and a chart being created, showing the Insert Chart menu"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[Create a Chart]</strong> — A friendly screenshot showing a spreadsheet with data in two columns, and a chart being inserted next to it. Recommended size: 800 × 450 px.
+        </div>
+    </div>
+
+    <!-- ========== WORKED EXAMPLE ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-lightbulb"></i> Worked Example — From Data to Chart</div>
+        <p>
+            Let's say your class surveyed <strong>20 students</strong> about their favourite fruit. Here are the results:
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-apple-whole"></i> Fruit</th>
+                    <th><i class="fas fa-users"></i> Number of Students</th>
+                    <th><i class="fas fa-percent"></i> Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>🍎 Apple</td><td class="primary-col">6</td><td class="secondary-col">30%</td></tr>
+                <tr><td>🍌 Banana</td><td class="primary-col">4</td><td class="secondary-col">20%</td></tr>
+                <tr><td>🍇 Grapes</td><td class="primary-col">7</td><td class="secondary-col">35%</td></tr>
+                <tr><td>🥭 Mango</td><td class="primary-col">3</td><td class="secondary-col">15%</td></tr>
+            </tbody>
+        </table>
+
+        <p style="margin-top:1.2rem;"><strong>Which chart should we use?</strong></p>
+        <ul>
+            <li>We want to <strong>compare categories</strong> (fruits) → <strong>Bar Chart</strong> works great!</li>
+            <li>We want to show <strong>parts of a whole</strong> (percentages that add to 100%) → <strong>Pie Chart</strong> is perfect!</li>
+        </ul>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Notice:</strong> Both charts use the <strong>same data</strong>, but they tell the story differently.
+                A bar chart compares; a pie chart shows proportion.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 1 ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Choose the Right Chart</h4>
+        <p>For each situation below, decide which chart type is <strong>best</strong>: Bar, Pie, or Line.</p>
+        <ol>
+            <li>The number of books read by each student in your class. <em>(______)</em></li>
+            <li>The percentage of students who walk, cycle, or ride the bus to school. <em>(______)</em></li>
+            <li>The temperature in the classroom every hour from 8 AM to 4 PM. <em>(______)</em></li>
+            <li>The number of goals scored by each player on the football team this season. <em>(______)</em></li>
+            <li>The percentage of time spent on homework, sleep, eating, and play in a day. <em>(______)</em></li>
+            <li>The height of a plant measured each week for 6 weeks. <em>(______)</em></li>
+        </ol>
+        <div class="tip-box" style="margin-top:1rem;">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Hint:</strong> Ask yourself: Am I <em>comparing categories</em> (Bar), showing <em>parts of a whole</em> (Pie),
+                or showing <em>change over time</em> (Line)?
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 2 ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-lightbulb"></i> Activity — Chart Your Own Data</h4>
+        <p>
+            Use the <strong>processed data</strong> from your Lesson 23 homework (your survey results).
+        </p>
+        <p><strong>Complete these tasks:</strong></p>
+        <ol>
+            <li>Choose <strong>two different charts</strong> to represent your data.</li>
+            <li>Create the charts by hand or using a spreadsheet.</li>
+            <li>Each chart must have:
+                <ul>
+                    <li>A <strong>clear title</strong></li>
+                    <li><strong>Labeled axes</strong> (for bar or line charts)</li>
+                    <li>A <strong>legend</strong> (for pie charts or multi-series)</li>
+                    <li>Proper <strong>units</strong> if applicable</li>
+                </ul>
+            </li>
+            <li>Write <strong>one sentence</strong> explaining what each chart shows about your data.</li>
+        </ol>
+        <p style="margin-top:1rem;">
+            Bring both charts to the next lesson — you'll use them in your final project!
+        </p>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook:</p>
+        <ol>
+            <li>Why are charts and graphs useful when presenting data?</li>
+            <li>Which chart type is best for showing <strong>change over time</strong>?</li>
+            <li>Which chart type is best for showing <strong>parts of a whole</strong>?</li>
+            <li>Which chart type is best for <strong>comparing categories</strong>?</li>
+            <li>Name <strong>three rules</strong> for making a good chart.</li>
+            <li>Why is it important to include a <strong>title</strong> and <strong>axis labels</strong> on every chart?</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            Charts turn <strong>numbers into stories</strong>. Use a <strong>bar chart</strong> to compare categories,
+            a <strong>pie chart</strong> to show parts of a whole, and a <strong>line graph</strong> to show change
+            over time. Always include a <strong>title, labels, units, and a legend</strong> so your reader understands
+            your data at a glance. Next lesson, you'll learn how to use <strong>online tools</strong> like Google Forms
+            and Google Sheets to work with data more efficiently!
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — DATA STORYTELLING
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/telling-the-story.png"
+            alt="A student presenting a chart to their class, pointing at the key finding with a smile"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Telling the Story]</strong> — A student confidently presenting a colorful chart to the class, pointing at the most important finding. Recommended size: 700 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Homework</div>
+        <p>
+            Find <strong>one chart or graph</strong> in a newspaper, magazine, or website. Then answer these questions:
+        </p>
+        <ul>
+            <li>What type of chart is it? (Bar, Pie, or Line)</li>
+            <li>What is the chart's <strong>title</strong>?</li>
+            <li>What does the <strong>x-axis</strong> and <strong>y-axis</strong> show?</li>
+            <li>What <strong>units</strong> are used?</li>
+            <li>What does the chart tell you? Write <strong>one sentence</strong> explaining the main finding.</li>
+        </ul>
+        <p style="margin-top:0.8rem;">
+            Bring your findings to the next lesson — we'll compare the different charts you found!
+        </p>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="lesson24-evaluating-data.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous: Lesson 24
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="lesson26-software-tools.html" class="next-btn">
+            Next: Lesson 26 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Indicator 3 · Lesson 25 of 40
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 23 — Organizing and Processing Data</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson23-processing-data.html" class="active"><i class="fas fa-calculator"></i> Lesson 23</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 3 · Semester 2 · Midterm
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-calculator"></i> Lesson 23 · Indicator 3</span>
+        <h1>Organizing and Processing Data</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            You've collected your data — now what? Raw numbers on a page don't tell you much on their own.
+            In this lesson, you'll learn how to <strong>organize data into tables</strong> and
+            <strong>process it</strong> to find totals, averages, and percentages that reveal the real story.
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-table"></i> Frequency Tables</span>
+            <span class="chip sky"><i class="fas fa-divide"></i> Totals &amp; Averages</span>
+            <span class="chip red"><i class="fas fa-percent"></i> Percentages</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/raw-to-organized.png"
+            alt="Hero banner showing raw data transforming into an organized table with totals and averages"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — From Raw Data to Meaningful Information. A friendly illustration showing numbers being organized into a table with totals, averages, and percentages. Recommended size: 1000 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WHY PROCESS DATA ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-circle-question"></i> Why Do We Process Data?</div>
+        <p>
+            Imagine you collected these numbers from a survey asking classmates how many eggs they eat per week:
+        </p>
+        <p style="text-align:center; font-size:1.3rem; font-weight:800; color:var(--pooh-honey-dark); letter-spacing:0.1em; margin:1rem 0;">
+            5, 3, 4, 6, 5, 2, 4, 5, 6, 3
+        </p>
+        <p>
+            Looking at these numbers, what do you actually learn? Not much at a glance.
+            But if you <strong>process</strong> them, you can find:
+        </p>
+        <ul>
+            <li>The <strong>total</strong> (how many eggs everyone eats altogether)</li>
+            <li>The <strong>average</strong> (how many eggs a typical student eats)</li>
+            <li>The <strong>percentage</strong> (what fraction of students eat more than 4 eggs)</li>
+        </ul>
+        <p>
+            Processing turns <strong>raw data</strong> into <strong>useful information</strong> that helps us answer questions and make decisions.
+        </p>
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Remember:</strong> Data → Process → Information. Processing is what gives data <strong>meaning</strong>.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ORGANIZING DATA ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-table"></i> Step 1: Organize Your Data</div>
+        <p>
+            The first step in processing is to <strong>organize your data into a clear table</strong>. A well-organized
+            table makes it easy to see patterns and do calculations.
+        </p>
+        <p>
+            The simplest way is a <strong>frequency table</strong>. "Frequency" just means "how many times each value appears."
+        </p>
+
+        <p><strong>Example: Egg consumption survey results</strong></p>
+        <p style="font-size:0.92rem; font-style:italic; color:var(--pooh-text-soft);">
+            Values from 10 students: 5, 3, 4, 6, 5, 2, 4, 5, 6, 3
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-list-ol"></i> Value (eggs per week)</th>
+                    <th><i class="fas fa-hashtag"></i> Frequency (how many students)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>2</td><td class="primary-col">1 student</td></tr>
+                <tr><td>3</td><td class="primary-col">2 students</td></tr>
+                <tr><td>4</td><td class="primary-col">2 students</td></tr>
+                <tr><td>5</td><td class="primary-col">3 students</td></tr>
+                <tr><td>6</td><td class="primary-col">2 students</td></tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <span class="tip-icon">📋</span>
+            <div class="tip-text">
+                <strong>Check:</strong> The frequency column should add up to your total number of responses.
+                Here: 1 + 2 + 2 + 3 + 2 = <strong>10 students</strong>. ✅
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — FREQUENCY TABLE
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/frequency-table-example.png"
+            alt="An illustration of a frequency table showing egg consumption values and their frequencies, with a checkmark showing the total adds up"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[Frequency Table]</strong> — A clear, colorful frequency table with values in one column and frequencies in another. Show a checkmark at the bottom confirming the total. Recommended size: 800 × 450 px.
+        </div>
+    </div>
+
+    <!-- ========== STEP 2: PROCESS ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-calculator"></i> Step 2: Process the Data</div>
+        <p>
+            Once your data is organized, you can process it in three main ways:
+            <strong>totals</strong>, <strong>averages</strong>, and <strong>percentages</strong>.
+        </p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">➕</span>
+                <h3>Total</h3>
+                <p>The <strong>sum of all values</strong>. Add every number together to find the total.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">⚖️</span>
+                <h3>Average (Mean)</h3>
+                <p>The <strong>typical value</strong>. Divide the total by the number of values.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">📊</span>
+                <h3>Percentage</h3>
+                <p>A <strong>ratio out of 100</strong>. Part ÷ whole × 100.</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">⚖️</span>
+                <h3>Ratio</h3>
+                <p>A <strong>comparison</strong> between two amounts. Part ÷ whole.</p>
+            </div>
+        </div>
+
+        <div class="formula-box">
+            <span class="formula-label">Formula</span>
+            <div class="formula-text">
+                Average = <em>Total</em> ÷ <em>Number of Values</em>
+            </div>
+        </div>
+
+        <div class="formula-box" style="border-color: #5B8C3E;">
+            <span class="formula-label" style="background: linear-gradient(135deg, #5B8C3E, #3D6B28);">Formula</span>
+            <div class="formula-text">
+                Percentage = <em>Part</em> ÷ <em>Whole</em> × 100
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — THREE PROCESSING METHODS
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/three-processing-methods.png"
+            alt="Three illustrated icons showing total (adding), average (dividing), and percentage (part of 100)"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[Three Processing Methods]</strong> — Three icons side by side: a plus sign for Total, a balance scale for Average, and a percentage sign for Percentage. Recommended size: 800 × 350 px.
+        </div>
+    </div>
+
+    <!-- ========== WORKED EXAMPLE ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-lightbulb"></i> Worked Example — Let's Process!</div>
+        <p>
+            Using the egg survey data (5, 3, 4, 6, 5, 2, 4, 5, 6, 3), let's walk through all three processing methods.
+        </p>
+
+        <ol class="step-list">
+            <li>
+                <strong>Find the Total:</strong> Add all values together.<br>
+                5 + 3 + 4 + 6 + 5 + 2 + 4 + 5 + 6 + 3 = <strong>43 eggs</strong>
+            </li>
+            <li>
+                <strong>Count the Values:</strong> How many numbers do we have?<br>
+                There are <strong>10 students</strong> (10 numbers total).
+            </li>
+            <li>
+                <strong>Find the Average:</strong> Total ÷ Number of Values.<br>
+                43 ÷ 10 = <strong>4.3 eggs per student</strong>
+            </li>
+            <li>
+                <strong>Find a Percentage:</strong> How many students eat more than 4 eggs?<br>
+                Values > 4: 5, 6, 5, 5, 6 = 5 students<br>
+                Percentage = 5 ÷ 10 × 100 = <strong>50%</strong>
+            </li>
+            <li>
+                <strong>Interpret Your Results:</strong> What does the data tell you?<br>
+                "On average, students eat about <strong>4.3 eggs per week</strong>, and <strong>half of them</strong> (50%) eat more than 4 eggs per week."
+            </li>
+        </ol>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Always write the meaning</strong> of your numbers, not just the numbers themselves.
+                "The average is 4.3" is meaningless without "…eggs per student per week."
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== PROCESSING WITH SOFTWARE ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-desktop"></i> Processing with a Spreadsheet</div>
+        <p>
+            You can do all these calculations by hand, but spreadsheets (like Google Sheets or Excel)
+            can do them for you in <strong>seconds</strong>. Here are the key formulas:
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-function"></i> What You Want</th>
+                    <th><i class="fas fa-keyboard"></i> Spreadsheet Formula</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Total (sum)</strong></td>
+                    <td class="primary-col"><code>=SUM(B2:B11)</code></td>
+                </tr>
+                <tr>
+                    <td><strong>Average (mean)</strong></td>
+                    <td class="primary-col"><code>=AVERAGE(B2:B11)</code></td>
+                </tr>
+                <tr>
+                    <td><strong>Count of items</strong></td>
+                    <td class="primary-col"><code>=COUNT(B2:B11)</code></td>
+                </tr>
+                <tr>
+                    <td><strong>Percentage</strong></td>
+                    <td class="primary-col"><code>=B2/$B$12*100</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Tip:</strong> The <strong>$</strong> sign in <code>$B$12</code> "locks" the cell so that when you
+                copy the formula down, it keeps referencing the same total cell.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — SPREADSHEET IN ACTION
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/spreadsheet-formulas.png"
+            alt="A screenshot-style illustration of a spreadsheet with formulas showing SUM, AVERAGE, and percentage calculations"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[Spreadsheet in Action]</strong> — A friendly screenshot-style illustration of a spreadsheet showing data and formulas for SUM, AVERAGE, and percentage. Recommended size: 800 × 450 px.
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 1 ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Process This Data</h4>
+        <p>
+            A teacher asked 8 students how many hours they sleep each night. Here are the results:
+        </p>
+        <p style="text-align:center; font-size:1.3rem; font-weight:800; color:#3D6B28; letter-spacing:0.1em; margin:1rem 0;">
+            7, 8, 6, 9, 7, 8, 7, 6
+        </p>
+        <p><strong>Calculate the following in your notebook:</strong></p>
+        <ol>
+            <li>The <strong>total</strong> hours of sleep.</li>
+            <li>The <strong>average</strong> hours of sleep.</li>
+            <li>The <strong>percentage</strong> of students who sleep 7 hours or more.</li>
+            <li>Write <strong>one sentence</strong> that explains what your results mean.</li>
+        </ol>
+        <div class="tip-box" style="margin-top:1rem;">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Hint:</strong> Total = 7 + 8 + 6 + 9 + 7 + 8 + 7 + 6. Count = 8 students.
+                Then Average = Total ÷ 8. Students who sleep ≥ 7 hours: count them, then divide by 8 and multiply by 100.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 2 ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-lightbulb"></i> Activity — Process Your Own Survey Data</h4>
+        <p>
+            Use the survey data you collected for <strong>Lesson 22 homework</strong> (at least 10 responses).
+        </p>
+        <p><strong>Complete these tasks:</strong></p>
+        <ol>
+            <li>Create a <strong>frequency table</strong> from your raw data.</li>
+            <li>Calculate the <strong>total</strong> of your values.</li>
+            <li>Calculate the <strong>average</strong> (mean) of your values.</li>
+            <li>Calculate <strong>at least one percentage</strong> (for example, "What % of people chose X?").</li>
+            <li>Write a <strong>short paragraph</strong> (3–4 sentences) explaining what your processed data tells you.</li>
+        </ol>
+        <p style="margin-top:1rem;">
+            You will use this processed data in <strong>Lesson 24</strong> to create alternatives and make decisions!
+        </p>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook:</p>
+        <ol>
+            <li>What is the difference between <strong>raw data</strong> and <strong>processed information</strong>?</li>
+            <li>What is a <strong>frequency table</strong>? Why is it useful?</li>
+            <li>Write the <strong>formula</strong> for finding the average of a set of numbers.</li>
+            <li>Write the <strong>formula</strong> for finding the percentage of a part.</li>
+            <li>Why do we <strong>round</strong> the average in some situations but not others?</li>
+            <li>Name <strong>one advantage</strong> of using a spreadsheet instead of calculating by hand.</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            Processing data turns <strong>raw numbers into meaningful information</strong>. First, organize your
+            data into a <strong>frequency table</strong>. Then, calculate the <strong>total</strong>,
+            <strong>average</strong>, and <strong>percentage</strong>. Always remember to
+            <strong>interpret your results</strong> — explain what the numbers actually mean.
+            Next lesson, you'll use processed data to <strong>create alternatives and make decisions</strong>!
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — INTERPRETATION
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/interpret-results.png"
+            alt="An illustration of a student looking at a processed data table and writing an interpretation sentence in their notebook"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Interpret Your Results]</strong> — A student looking at processed data (a table with averages and percentages) and writing what it means in their notebook. Recommended size: 700 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Homework</div>
+        <p>
+            Finish processing your survey data from Lesson 22 (if you haven't already):
+        </p>
+        <ul>
+            <li>Create a <strong>frequency table</strong> of all your responses.</li>
+            <li>Calculate the <strong>total</strong> and the <strong>average</strong>.</li>
+            <li>Calculate <strong>at least two percentages</strong> from your data.</li>
+            <li>Write a <strong>3–4 sentence interpretation</strong> explaining what you learned.</li>
+        </ul>
+        <p style="margin-top:0.8rem;">
+            Bring your processed data to the next lesson — you'll use it to create alternatives and make a decision!
+        </p>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="lesson22-collecting-data.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous: Lesson 22
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="lesson24-evaluating-data.html" class="next-btn">
+            Next: Lesson 24 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Indicator 3 · Lesson 23 of 40
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

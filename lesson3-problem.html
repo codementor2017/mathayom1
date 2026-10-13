@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3 — Problem Statement and Purpose</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson3-problem.html" class="active"><i class="fas fa-pen"></i> Lesson 3</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 1 · Semester 1 · Midterm
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-pen"></i> Lesson 3 · Indicator 1</span>
+        <h1>Problem Statement and Purpose</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            Before you can solve a problem, you need to <strong>understand it clearly</strong>. A well-written
+            <strong>problem statement</strong> tells you exactly what you're trying to do, what information you have,
+            what result you want, and what limits you're working within. In this lesson, you'll learn how to write
+            one like a pro.
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-bullseye"></i> Goal &amp; Purpose</span>
+            <span class="chip sky"><i class="fas fa-arrows-spin"></i> Input &amp; Output</span>
+            <span class="chip red"><i class="fas fa-triangle-exclamation"></i> Constraints</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/problem-statement-hero.png"
+            alt="Hero banner showing a student writing a clear problem statement on a whiteboard with the four parts labeled: Goal, Input, Output, Constraints"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — A student writing a clear problem statement on a whiteboard, with the four parts labeled: Goal, Input, Output, Constraints. Friendly, focused illustration. Recommended size: 1000 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WARM-UP: VAGUE VS CLEAR ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-circle-question"></i> Warm-Up: Vague vs Clear</div>
+        <p>Look at these two instructions:</p>
+
+        <div class="term-grid">
+            <div class="term-card red">
+                <span class="term-emoji">❌</span>
+                <h3>Instruction A</h3>
+                <p><em>"Make food."</em></p>
+                <p style="margin-top:0.5rem; font-size:0.85rem;">Too vague! What food? For whom? How much? Using what?</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">✅</span>
+                <h3>Instruction B</h3>
+                <p><em>"Make a sandwich using bread, tuna, and mayonnaise."</em></p>
+                <p style="margin-top:0.5rem; font-size:0.85rem;">Clear! We know the ingredients and the goal.</p>
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;">
+            <strong>Which one is clearer? Why?</strong>
+        </p>
+        <ul>
+            <li>Instruction A has <strong>no goal</strong>, <strong>no input</strong>, and <strong>no output</strong>.</li>
+            <li>Instruction B tells us the <strong>goal</strong> (make a sandwich), the <strong>input</strong> (bread, tuna, mayonnaise), and the <strong>output</strong> (a sandwich).</li>
+        </ul>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Key idea:</strong> A clear problem statement helps us know <strong>which details are essential</strong>.
+                Without one, we waste time on things that don't matter.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== THE FOUR PARTS OF A PROBLEM STATEMENT ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-list-check"></i> The Four Parts of a Problem Statement</div>
+        <p>
+            Every clear problem statement has <strong>four parts</strong>. Think of them like the four corners of a
+            strong table — if one is missing, the table wobbles.
+        </p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">🎯</span>
+                <h3>1. Goal</h3>
+                <p>What do we want to achieve? The purpose of the problem.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">📥</span>
+                <h3>2. Input</h3>
+                <p>What information do we have? Numbers, measurements, data, or rules.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">📤</span>
+                <h3>3. Output</h3>
+                <p>What do we want to produce? A plan, a number, a chart, an answer.</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">🚧</span>
+                <h3>4. Constraints</h3>
+                <p>What limits do we have? Time, money, size, safety, or rules.</p>
+            </div>
+        </div>
+
+        <div class="formula-box" style="margin-top:1.5rem;">
+            <span class="formula-label">Problem Statement Formula</span>
+            <div class="formula-text">
+                We need to <em>GOAL</em> using <em>INPUT</em> to produce <em>OUTPUT</em> while <em>CONSTRAINTS</em>.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — THE FOUR PARTS
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/four-parts-problem.png"
+            alt="Four illustrated icons showing the four parts of a problem statement: Goal (target), Input (arrow in), Output (arrow out), Constraints (barrier)"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[Four Parts]</strong> — Four colorful icons: Target (Goal), Arrow-in (Input), Arrow-out (Output), Barrier (Constraints). Each with a short label. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WORKED EXAMPLE: ARRANGING CHAIRS ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-chair"></i> Worked Example: Arranging Chairs</div>
+        <p>
+            Let's write a problem statement together. Here's the scenario:
+        </p>
+        <p>
+            Our school is holding an assembly. We have <strong>200 students</strong> and <strong>250 chairs</strong>.
+            The hall is <strong>20 m × 15 m</strong>. The fire exit must remain clear, and teachers need seats at the front.
+        </p>
+
+        <p><strong>Let's identify the four parts:</strong></p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">🎯</span>
+                <h3>Goal</h3>
+                <p>Arrange chairs for a school assembly.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">📥</span>
+                <h3>Input</h3>
+                <p>200 students, 250 chairs, hall size 20 m × 15 m.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">📤</span>
+                <h3>Output</h3>
+                <p>A seating plan.</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">🚧</span>
+                <h3>Constraints</h3>
+                <p>Fire exit must be clear. Teachers need seats at the front.</p>
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>Now let's write the problem statement:</strong></p>
+
+        <div class="formula-box">
+            <span class="formula-label">Problem Statement</span>
+            <div class="formula-text">
+                We need to <em>arrange chairs in a 20 m × 15 m hall</em> using
+                <em>200 students, 250 chairs, and hall dimensions</em> to produce
+                <em>a seating plan</em> while <em>keeping the fire exit clear and reserving front seats for teachers</em>.
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Notice:</strong> A clear problem statement helps us know exactly
+                <strong>which details are essential</strong>. The color of the chairs, for example, isn't even mentioned —
+                because it doesn't matter.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — ARRANGING CHAIRS
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/arranging-chairs.png"
+            alt="A top-down view of a hall with chairs arranged in rows, a clear fire exit, and reserved seats at the front for teachers"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[Arranging Chairs]</strong> — A top-down view of a hall with chairs in rows, a clear fire exit, and reserved front seats. Friendly, clear illustration. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WHY PURPOSE MATTERS ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-bullseye"></i> Why Purpose Matters</div>
+        <p>
+            The <strong>purpose</strong> (or goal) is the most important part of a problem statement.
+            If you don't know <em>why</em> you're doing something, you can't decide what details matter.
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-bullseye"></i> Purpose</th>
+                    <th><i class="fas fa-check"></i> Essential Details</th>
+                    <th><i class="fas fa-times"></i> Non-Essential Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Arrange chairs for an assembly</strong></td>
+                    <td class="primary-col">Number of students, hall size, fire exit</td>
+                    <td class="secondary-col">Chair color, room temperature</td>
+                </tr>
+                <tr>
+                    <td><strong>Buy snacks for a class party</strong></td>
+                    <td class="primary-col">Number of students, budget, allergies</td>
+                    <td class="secondary-col">Snack brand, packaging color</td>
+                </tr>
+                <tr>
+                    <td><strong>Plan a school garden</strong></td>
+                    <td class="primary-col">Plot size, sunlight, seed type</td>
+                    <td class="secondary-col">Color of the watering can</td>
+                </tr>
+                <tr>
+                    <td><strong>Pack for a school trip</strong></td>
+                    <td class="primary-col">Days, weather, activities</td>
+                    <td class="secondary-col">Suitcase color, brand of shoes</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Remember:</strong> Different purposes need different details.
+                That's why it's so important to <strong>identify the purpose first</strong> — before you decide anything else.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 1 — IDENTIFY THE FOUR PARTS ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Identify the Four Parts</h4>
+        <p>
+            Read each scenario below. In your notebook, identify the <strong>Goal</strong>,
+            <strong>Input</strong>, <strong>Output</strong>, and <strong>Constraints</strong>.
+        </p>
+
+        <div class="term-grid" style="margin-top:1rem;">
+            <div class="term-card honey">
+                <span class="term-emoji">🎉</span>
+                <h3>Scenario A</h3>
+                <p>You're planning a class party for 30 students. The budget is 1,500 baht. Two students are allergic to peanuts.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">🌱</span>
+                <h3>Scenario B</h3>
+                <p>You're planning a school garden in a 4 m × 3 m space. You need to buy soil, seeds, and tools.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">📚</span>
+                <h3>Scenario C</h3>
+                <p>You're organizing a book fair. You have 500 books and a hall that can hold 100 people at a time.</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">📦</span>
+                <h3>Scenario D</h3>
+                <p>You're packing boxes for a school move. There are 200 items and 30 boxes available.</p>
+            </div>
+        </div>
+
+        <div class="tip-box" style="margin-top:1.5rem;">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Hint:</strong> For Constraints, ask: <em>"What limits do I have? What rules must I follow?"</em>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — FOUR SCENARIOS
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/four-scenarios.png"
+            alt="Four illustrated scenario cards: a class party, a school garden, a book fair, and packing boxes"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[Four Scenarios]</strong> — Four illustrated scenario cards, each with a small icon and a short description. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 2 — WRITE YOUR OWN PROBLEM STATEMENT ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-lightbulb"></i> Activity — Write Your Own Problem Statement</h4>
+        <p>
+            Work with a partner. Choose <strong>one</strong> of the scenarios below (or create your own),
+            then write a <strong>complete problem statement</strong> with all four parts.
+        </p>
+
+        <ul>
+            <li>Painting a classroom wall</li>
+            <li>Packing boxes for a school move</li>
+            <li>Planning a school garden</li>
+            <li>Buying supplies for a science experiment</li>
+            <li>Organizing a book fair</li>
+        </ul>
+
+        <p style="margin-top:1rem;"><strong>Your problem statement must include:</strong></p>
+        <ol>
+            <li><strong>Goal</strong> — What do you want to achieve?</li>
+            <li><strong>Input</strong> — What information do you have?</li>
+            <li><strong>Output</strong> — What do you want to produce?</li>
+            <li><strong>Constraints</strong> — What limits do you have?</li>
+        </ol>
+
+        <p style="margin-top:1rem;">
+            Write your problem statement in the formula:
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">Your Template</span>
+            <div class="formula-text">
+                We need to <em>_____</em> using <em>_____</em> to produce <em>_____</em> while <em>_____</em>.
+            </div>
+        </div>
+
+        <p style="margin-top:1rem;">
+            Then, list <strong>5 essential details</strong> and <strong>5 non-essential details</strong> for your problem.
+            Explain why each is essential or not, using the <strong>three questions</strong> from Lesson 2.
+        </p>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook:</p>
+        <ol>
+            <li>What are the <strong>four parts</strong> of a problem statement?</li>
+            <li>What is the <strong>goal</strong>? Give an example.</li>
+            <li>What is the difference between <strong>input</strong> and <strong>output</strong>?</li>
+            <li>What is a <strong>constraint</strong>? Give three examples of constraints.</li>
+            <li>Why does the <strong>purpose</strong> affect what details are essential?</li>
+            <li>What happens if a problem statement is missing one of the four parts?</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            A clear <strong>problem statement</strong> has <strong>four parts</strong>:
+            <strong>Goal</strong>, <strong>Input</strong>, <strong>Output</strong>, and <strong>Constraints</strong>.
+            The <strong>purpose</strong> (goal) tells you what's important — and what you can ignore.
+            Writing a clear problem statement is the <strong>first step</strong> to solving any problem well.
+            Next lesson, you'll learn how to break problems down into <strong>step-by-step algorithms</strong>
+            that anyone can follow.
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — WRITING A CLEAR STATEMENT
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/writing-clear-statement.png"
+            alt="A student confidently writing a clear problem statement in their notebook, with the four parts clearly labeled"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Writing a Clear Statement]</strong> — A student confidently writing a clear problem statement, with the four parts labeled nearby. Focused, positive illustration. Recommended size: 700 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Homework</div>
+        <p><strong>Part 1 — Write a problem statement for a home task:</strong></p>
+        <ul>
+            <li>Choose a task at home (for example: cooking rice, cleaning your room, organizing your desk,
+                or planning a family meal).</li>
+            <li>Write a <strong>complete problem statement</strong> with all four parts:
+                Goal, Input, Output, Constraints.</li>
+            <li>Use the formula: <em>"We need to ___ using ___ to produce ___ while ___."</em></li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 2 — List details:</strong></p>
+        <ul>
+            <li>Write <strong>5 essential details</strong> for your task.</li>
+            <li>Write <strong>5 non-essential details</strong>.</li>
+            <li>Use the <strong>three questions</strong> from Lesson 2 to justify your choices.</li>
+        </ul>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="lesson2-essential.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous: Lesson 2
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="lesson4-algorithms.html" class="next-btn">
+            Next: Lesson 4 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Indicator 1 · Lesson 3 of 40
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

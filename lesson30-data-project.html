@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 30 — Final Project: Collect, Process, Evaluate, Present Data</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson30-data-project.html" class="active"><i class="fas fa-trophy"></i> Lesson 30</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 3 · Semester 2 · Midterm
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-trophy"></i> Lesson 30 · Final Project</span>
+        <h1>Final Project: Collect, Process, Evaluate, Present Data</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            This is your chance to <strong>become a data scientist</strong>! You'll design your own
+            <strong>complete data project</strong> — from asking a question, collecting primary data,
+            processing it, evaluating alternatives, to presenting your findings. Everything you've
+            learned in Lessons 21–29 comes together here.
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-clipboard-list"></i> Collect Data</span>
+            <span class="chip sky"><i class="fas fa-calculator"></i> Process &amp; Evaluate</span>
+            <span class="chip red"><i class="fas fa-person-chalkboard"></i> Present Findings</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/final-project-hero.png"
+            alt="Hero banner showing students proudly presenting their data project, with charts and graphs displayed on a screen"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — Students proudly presenting their data project to the class, with colorful charts and graphs on a screen. Recommended size: 1000 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== PROJECT OVERVIEW ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-diagram-project"></i> Project Overview</div>
+        <p>
+            Your final project brings together <strong>all the skills</strong> you've built in this unit.
+            You'll follow the <strong>complete data workflow</strong>:
+        </p>
+
+        <ol class="step-list">
+            <li>
+                <strong>Ask a clear question.</strong> What do you want to find out?
+            </li>
+            <li>
+                <strong>Collect primary data.</strong> Use a survey, interview, observation, or measurement.
+            </li>
+            <li>
+                <strong>Organize and process the data.</strong> Create tables, totals, averages, and percentages.
+            </li>
+            <li>
+                <strong>Create alternatives and evaluate.</strong> Use criteria and scoring to compare options.
+            </li>
+            <li>
+                <strong>Visualize the data.</strong> Create at least two charts (bar, pie, or line).
+            </li>
+            <li>
+                <strong>Recommend a decision.</strong> Choose the best option, backed by evidence.
+            </li>
+            <li>
+                <strong>Present your findings.</strong> Share your results clearly with the class.
+            </li>
+        </ol>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Remember:</strong> Good projects don't just show numbers — they tell a <strong>story</strong>.
+                Your project should answer a real question and offer a useful recommendation.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== CHOOSING YOUR TOPIC ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-lightbulb"></i> Choosing Your Topic</div>
+        <p>
+            Here are <strong>8 project ideas</strong> to choose from. You can also propose your own topic —
+            just make sure it can be answered with <strong>primary data</strong>.
+        </p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">🥚</span>
+                <h3>Egg Boiling Time</h3>
+                <p>What boiling time matches most students' preferences?</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">💤</span>
+                <h3>Sleep Habits</h3>
+                <p>How many hours do students in our school sleep each night?</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">💧</span>
+                <h3>Water Consumption</h3>
+                <p>How much water do students drink per day?</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">🏃</span>
+                <h3>Exercise Habits</h3>
+                <p>How often do students exercise each week?</p>
+            </div>
+            <div class="term-card honey">
+                <span class="term-emoji">📱</span>
+                <h3>Screen Time</h3>
+                <p>How many hours per day do students spend on screens?</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">♻️</span>
+                <h3>Recycling Habits</h3>
+                <p>How often do families recycle at home?</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">🍎</span>
+                <h3>Snack Choices</h3>
+                <p>What are the healthiest and most popular snacks in school?</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">🍽️</span>
+                <h3>Food Waste</h3>
+                <p>How much food is wasted in the cafeteria each day?</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — PROJECT TOPIC BRAINSTORM
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/project-topics.png"
+            alt="A colorful brainstorm board with eight project topic cards, each showing an icon and a title"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[Project Topics]</strong> — Eight colorful cards showing the different project topic options. Friendly icons for each. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== STEP 1 — PLAN ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-pen-ruler"></i> Step 1 — Plan Your Project</div>
+        <p>
+            Before you collect any data, plan carefully. Write your plan with these <strong>5 parts</strong>:
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-list"></i> Part</th>
+                    <th><i class="fas fa-lightbulb"></i> What to Write</th>
+                    <th><i class="fas fa-check"></i> Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1. Question</strong></td>
+                    <td class="primary-col">A clear question you want to answer</td>
+                    <td class="secondary-col">"How many hours do students sleep each night?"</td>
+                </tr>
+                <tr>
+                    <td><strong>2. Sample</strong></td>
+                    <td class="primary-col">Who will you collect data from, and how many?</td>
+                    <td class="secondary-col">"At least 15 classmates"</td>
+                </tr>
+                <tr>
+                    <td><strong>3. Method</strong></td>
+                    <td class="primary-col">Survey, interview, observation, or measurement?</td>
+                    <td class="secondary-col">"Survey with 3 questions"</td>
+                </tr>
+                <tr>
+                    <td><strong>4. Ethics</strong></td>
+                    <td class="primary-col">How will you protect privacy and get permission?</td>
+                    <td class="secondary-col">"Anonymous, optional participation"</td>
+                </tr>
+                <tr>
+                    <td><strong>5. Alternatives</strong></td>
+                    <td class="primary-col">What decision will your data support?</td>
+                    <td class="secondary-col">"Recommend the ideal bedtime"</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Get approval first.</strong> Show your plan to your teacher before you start collecting data.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== STEP 2 — COLLECT DATA ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-clipboard-list"></i> Step 2 — Collect Primary Data</div>
+        <p>
+            Now it's time to gather your data. Remember the methods from <strong>Lesson 22</strong>:
+        </p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">📝</span>
+                <h3>Survey</h3>
+                <p>Ask many people the same clear questions. Best for numerical data.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">🎤</span>
+                <h3>Interview</h3>
+                <p>Ask one person detailed questions. Best for explanations and opinions.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">👀</span>
+                <h3>Observation</h3>
+                <p>Watch and record behaviour. Best for studying processes.</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">📏</span>
+                <h3>Measurement</h3>
+                <p>Use tools to get precise numbers. Best for objective data.</p>
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>Collect data from at least 15 people.</strong></p>
+        <p>
+            Record everything in a clear table with column headings and units.
+        </p>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Online option:</strong> Use <strong>Google Forms</strong> to collect data quickly. Responses will
+                appear automatically in <strong>Google Sheets</strong>, where you can process them instantly.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== STEP 3 — PROCESS DATA ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-calculator"></i> Step 3 — Process Your Data</div>
+        <p>
+            Once you've collected your data, process it into <strong>useful information</strong>. You must calculate:
+        </p>
+
+        <ol class="step-list">
+            <li>
+                <strong>Total</strong> — Add up all your values.<br>
+                <em>Example: Total hours of sleep across all students = 120</em>
+            </li>
+            <li>
+                <strong>Average</strong> — Divide the total by the number of responses.<br>
+                <em>Example: 120 ÷ 15 = 8 hours of sleep on average</em>
+            </li>
+            <li>
+                <strong>Percentage</strong> — For each category, calculate part ÷ whole × 100.<br>
+                <em>Example: 9 out of 15 students sleep 8+ hours → 60%</em>
+            </li>
+            <li>
+                <strong>At least one ratio</strong> — A comparison between two groups.<br>
+                <em>Example: Ratio of students who sleep enough vs. those who don't = 9:6</em>
+            </li>
+        </ol>
+
+        <div class="formula-box">
+            <span class="formula-label">Key Formulas</span>
+            <div class="formula-text">
+                Average = <em>Total</em> ÷ <em>Count</em> &nbsp;|&nbsp; Percentage = <em>Part</em> ÷ <em>Whole</em> × 100
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — DATA PROCESSING WORKFLOW
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/data-workflow.png"
+            alt="A workflow diagram showing: Collect → Organize → Process → Evaluate → Visualize → Present"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[Data Workflow]</strong> — The complete six-step data workflow shown as a flowing diagram with icons. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== STEP 4 — CREATE ALTERNATIVES & EVALUATE ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-scale-balanced"></i> Step 4 — Create Alternatives and Evaluate</div>
+        <p>
+            Use your processed data to <strong>create at least 3 alternatives</strong> and evaluate them with
+            <strong>at least 3 criteria</strong>. Remember the scoring process from <strong>Lesson 24</strong>:
+        </p>
+
+        <ol class="step-list">
+            <li>Create <strong>at least 3 alternatives</strong> based on your data.</li>
+            <li>Choose <strong>at least 3 criteria</strong> (cost, time, health, taste, etc.).</li>
+            <li>Create a <strong>scoring table</strong> and rate each alternative from 1–5 on each criterion.</li>
+            <li>Add up the scores to find the <strong>best alternative</strong>.</li>
+            <li>Write <strong>one sentence</strong> justifying your choice with data.</li>
+        </ol>
+
+        <table class="score-table" style="margin-top:1.5rem;">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-lightbulb"></i> Alternative</th>
+                    <th><i class="fas fa-star"></i> Criterion 1</th>
+                    <th><i class="fas fa-star"></i> Criterion 2</th>
+                    <th><i class="fas fa-star"></i> Criterion 3</th>
+                    <th><i class="fas fa-trophy"></i> TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Alternative A</td><td>___</td><td>___</td><td>___</td><td>___</td></tr>
+                <tr><td>Alternative B</td><td>___</td><td>___</td><td>___</td><td>___</td></tr>
+                <tr><td>Alternative C</td><td>___</td><td>___</td><td>___</td><td>___</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ========== STEP 5 — VISUALIZE ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-chart-pie"></i> Step 5 — Visualize Your Data</div>
+        <p>
+            Create <strong>at least two charts</strong> to present your findings. Remember the rules from
+            <strong>Lesson 25</strong>:
+        </p>
+
+        <div class="chart-grid">
+            <div class="chart-card bar">
+                <span class="chart-icon">📊</span>
+                <h4>Bar Chart</h4>
+                <p>Compare categories. Each bar shows the value for a group.</p>
+            </div>
+            <div class="chart-card pie">
+                <span class="chart-icon">🥧</span>
+                <h4>Pie Chart</h4>
+                <p>Show parts of a whole. Each slice is a percentage.</p>
+            </div>
+            <div class="chart-card line">
+                <span class="chart-icon">📈</span>
+                <h4>Line Graph</h4>
+                <p>Show change over time. Connect data points.</p>
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>Every chart must include:</strong></p>
+        <ul>
+            <li>A clear <strong>title</strong></li>
+            <li>Labeled <strong>axes</strong> (for bar and line charts)</li>
+            <li>Proper <strong>units</strong></li>
+            <li>A <strong>legend</strong> if needed</li>
+        </ul>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — EXAMPLE STUDENT PRESENTATION
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/student-presentation.png"
+            alt="An example student presentation slide showing a title, a chart, and a recommendation backed by data"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[Sample Presentation]</strong> — An example presentation slide showing a clear title, a chart, and a recommendation backed by data. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== STEP 6 — PRESENT ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-person-chalkboard"></i> Step 6 — Present Your Findings</div>
+        <p>
+            Your presentation should last <strong>4–5 minutes</strong> and include these <strong>6 parts</strong>:
+        </p>
+
+        <ol class="step-list">
+            <li>
+                <strong>Your question.</strong> What did you want to find out, and why?
+            </li>
+            <li>
+                <strong>Your method.</strong> How did you collect your data, and from whom?
+            </li>
+            <li>
+                <strong>Your processed results.</strong> Share the total, average, and percentages.
+            </li>
+            <li>
+                <strong>Your charts.</strong> Show at least two charts and explain what they reveal.
+            </li>
+            <li>
+                <strong>Your recommendation.</strong> State the best alternative and justify it with data.
+            </li>
+            <li>
+                <strong>Your limitations.</strong> Be honest about what your data can and can't prove.
+            </li>
+        </ol>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Presentation tips:</strong> Speak clearly. Point at the chart when you explain it.
+                Don't read from notes — explain the story behind your data.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== PROJECT RUBRIC ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-clipboard-check"></i> Project Rubric</div>
+        <p>
+            Your teacher will use this rubric to assess your project. Review it carefully before you present.
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-list"></i> Criteria</th>
+                    <th><i class="fas fa-star"></i> Excellent (4)</th>
+                    <th><i class="fas fa-check"></i> Good (3)</th>
+                    <th><i class="fas fa-circle"></i> Fair (2)</th>
+                    <th><i class="fas fa-times"></i> Needs Work (1)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Question</strong></td>
+                    <td class="primary-col">Clear and focused</td>
+                    <td class="primary-col">Mostly clear</td>
+                    <td class="primary-col">Somewhat unclear</td>
+                    <td class="primary-col">Unclear</td>
+                </tr>
+                <tr>
+                    <td><strong>Data Collection</strong></td>
+                    <td class="secondary-col">15+ responses, ethical</td>
+                    <td class="secondary-col">10–14 responses</td>
+                    <td class="secondary-col">5–9 responses</td>
+                    <td class="secondary-col">Fewer than 5</td>
+                </tr>
+                <tr>
+                    <td><strong>Processing</strong></td>
+                    <td class="primary-col">Correct total, average, %</td>
+                    <td class="primary-col">Mostly correct</td>
+                    <td class="primary-col">Some errors</td>
+                    <td class="primary-col">Missing or wrong</td>
+                </tr>
+                <tr>
+                    <td><strong>Charts</strong></td>
+                    <td class="secondary-col">2+ correct, labeled</td>
+                    <td class="secondary-col">1–2 charts</td>
+                    <td class="secondary-col">1 chart with errors</td>
+                    <td class="secondary-col">No chart</td>
+                </tr>
+                <tr>
+                    <td><strong>Alternatives</strong></td>
+                    <td class="primary-col">3+ evaluated</td>
+                    <td class="primary-col">2–3 evaluated</td>
+                    <td class="primary-col">1–2 evaluated</td>
+                    <td class="primary-col">None</td>
+                </tr>
+                <tr>
+                    <td><strong>Recommendation</strong></td>
+                    <td class="secondary-col">Clear, evidence-based</td>
+                    <td class="secondary-col">Mostly clear</td>
+                    <td class="secondary-col">Weak evidence</td>
+                    <td class="secondary-col">Missing</td>
+                </tr>
+                <tr>
+                    <td><strong>Presentation</strong></td>
+                    <td class="primary-col">Clear, confident, engaging</td>
+                    <td class="primary-col">Clear</td>
+                    <td class="primary-col">Somewhat clear</td>
+                    <td class="primary-col">Difficult to follow</td>
+                </tr>
+                <tr>
+                    <td><strong>Reflection</strong></td>
+                    <td class="secondary-col">Insightful and detailed</td>
+                    <td class="secondary-col">Good</td>
+                    <td class="secondary-col">Basic</td>
+                    <td class="secondary-col">Missing</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ========== ACTIVITY — PROJECT PLANNING SHEET ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Plan Your Project</h4>
+        <p>
+            Use this planning sheet to organize your project before you start. Write your answers in your notebook.
+        </p>
+
+        <p style="margin-top:1rem;"><strong>Part 1 — Project Basics</strong></p>
+        <ol>
+            <li>What is your <strong>project question</strong>?</li>
+            <li>Why did you choose this topic?</li>
+            <li>Who is your <strong>audience</strong>? (class, school, family, community?)</li>
+        </ol>
+
+        <p style="margin-top:1rem;"><strong>Part 2 — Data Plan</strong></p>
+        <ol>
+            <li>What <strong>method</strong> will you use? (survey, interview, observation, measurement)</li>
+            <li>Who will you collect data from? How many people?</li>
+            <li>How will you keep the data <strong>anonymous</strong>?</li>
+            <li>What <strong>questions</strong> will you ask (if survey)?</li>
+        </ol>
+
+        <p style="margin-top:1rem;"><strong>Part 3 — Processing Plan</strong></p>
+        <ol>
+            <li>What <strong>totals</strong> and <strong>averages</strong> will you calculate?</li>
+            <li>What <strong>percentages</strong> will you find?</li>
+            <li>What <strong>alternatives</strong> will you compare?</li>
+            <li>What <strong>criteria</strong> will you use to evaluate?</li>
+        </ol>
+
+        <p style="margin-top:1rem;"><strong>Part 4 — Presentation Plan</strong></p>
+        <ol>
+            <li>What <strong>two charts</strong> will you create?</li>
+            <li>How will you <strong>present</strong> your findings? (slides, poster, video, spoken)</li>
+            <li>What is your <strong>recommendation</strong> based on your data?</li>
+        </ol>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook:</p>
+        <ol>
+            <li>Why is it important to have a <strong>clear question</strong> before collecting data?</li>
+            <li>Why must you get <strong>permission</strong> from people before collecting data from them?</li>
+            <li>What is the difference between <strong>primary data</strong> and <strong>secondary data</strong>?</li>
+            <li>Which chart type would you use to show <strong>change over time</strong>? Why?</li>
+            <li>Why is it important to include <strong>at least 3 alternatives</strong> in your evaluation?</li>
+            <li>What does it mean to make a <strong>recommendation backed by evidence</strong>?</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            Data projects are <strong>powerful tools</strong> for understanding the world and making better decisions.
+            You've learned the full workflow: <strong>ask a question, collect data, process it, evaluate alternatives,
+            visualize your findings, and recommend a decision</strong>. Remember: good data work is <strong>ethical</strong>,
+            <strong>evidence-based</strong>, and always told as a <strong>story</strong>.
+            Congratulations — you're now a junior data scientist!
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — CELEBRATION
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/celebration.png"
+            alt="A group of students celebrating at the end of their data project, with charts displayed proudly"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Celebration]</strong> — Students celebrating the completion of their project with charts displayed proudly. Recommended size: 700 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Homework</div>
+        <p><strong>Part 1 — Complete Your Project:</strong></p>
+        <ul>
+            <li>Finish collecting, processing, and evaluating your data.</li>
+            <li>Create your two charts.</li>
+            <li>Prepare your 4–5 minute presentation.</li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 2 — Write a Reflection:</strong></p>
+        <ul>
+            <li>How did <strong>data</strong> help you make a better decision?</li>
+            <li>What was the <strong>hardest part</strong> of your project?</li>
+            <li>What would you <strong>improve</strong> next time?</li>
+            <li>What did you <strong>learn</strong> about yourself as a data scientist?</li>
+        </ul>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="lesson29-experimental-graphs.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous: Lesson 29
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="lesson31-safe-it-intro.html" class="next-btn">
+            Next: Lesson 31 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Indicator 3 · Lesson 30 of 40
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

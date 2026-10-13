@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 35 — Evaluating the Appropriateness of Content</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson35-appropriate-content.html" class="active"><i class="fas fa-check-double"></i> Lesson 35</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 4 · Semester 2 · Final
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-check-double"></i> Lesson 35 · Indicator 4</span>
+        <h1>Evaluating the Appropriateness of Content</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            Not everything online is good for you — or good for others. In this lesson, you'll learn how to
+            <strong>judge what's appropriate and what isn't</strong>. You'll explore privacy violations,
+            rude criticism, and harmful content — and discover what to do when you see something wrong online.
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-scale-balanced"></i> Appropriate vs Not</span>
+            <span class="chip sky"><i class="fas fa-user-shield"></i> Privacy &amp; Respect</span>
+            <span class="chip red"><i class="fas fa-flag"></i> Report &amp; Respond</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/appropriate-content-hero.png"
+            alt="Hero banner showing a student sorting online content into appropriate and inappropriate categories with a balance scale"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — A student carefully sorting online content into two piles (appropriate vs. inappropriate) with a balance scale in the middle. Friendly, thoughtful illustration. Recommended size: 1000 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WARM-UP ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-circle-question"></i> What Does "Appropriate" Mean?</div>
+        <p>
+            When we say content is <strong>appropriate</strong>, we mean it's <strong>respectful, safe, and suitable</strong>
+            for the situation. When it's <strong>inappropriate</strong>, it might hurt someone, break the rules, or
+            just be wrong for the place where it's shared.
+        </p>
+
+        <p><strong>Let's compare:</strong></p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">✅</span>
+                <h3>Appropriate Content</h3>
+                <p>Congratulating a friend on their post. Sharing educational videos. Asking a respectful question.</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">❌</span>
+                <h3>Inappropriate Content</h3>
+                <p>Making fun of someone's appearance. Sharing someone's private photo without permission. Posting mean comments.</p>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Key idea:</strong> Appropriate content <strong>respects others</strong> and follows the
+                <strong>rules of the platform</strong>. Inappropriate content breaks one or both of these.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== FOUR TYPES OF INAPPROPRIATE CONTENT ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-triangle-exclamation"></i> Four Types of Inappropriate Content</div>
+        <p>
+            When you're online, you might see four main types of inappropriate content. Let's look at each one:
+        </p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">🔒</span>
+                <h3>1. Privacy Violation</h3>
+                <p>Sharing someone's <strong>personal information or private photos</strong> without their permission.</p>
+                <p><em>Example: Posting a friend's address without asking.</em></p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">🚫</span>
+                <h3>2. Obscenity</h3>
+                <p>Sexual, violent, or <strong>offensive material</strong> that isn't suitable for all audiences.</p>
+                <p><em>Example: Posting inappropriate images in a school group chat.</em></p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">💢</span>
+                <h3>3. Rude Criticism</h3>
+                <p>Insulting, mocking, or <strong>humiliating others</strong> — even if meant as a "joke."</p>
+                <p><em>Example: Leaving a mean comment about someone's photo.</em></p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">😢</span>
+                <h3>4. Cyberbullying</h3>
+                <p><strong>Repeated harmful behavior</strong> online, meant to hurt or scare someone.</p>
+                <p><em>Example: Sending mean messages to a classmate every day.</em></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — FOUR TYPES OF INAPPROPRIATE CONTENT
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/four-types-inappropriate.png"
+            alt="Four cards showing types of inappropriate content: privacy violation, obscenity, rude criticism, cyberbullying"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[Four Types]</strong> — Four illustrated cards, each representing a type of inappropriate content with a distinct icon. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== THE IMPACT OF INAPPROPRIATE CONTENT ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-heart-crack"></i> Why Does It Matter? The Impact</div>
+        <p>
+            Inappropriate content isn't just "rude" — it has <strong>real consequences</strong> for the people involved.
+            Here's what can happen:
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-users"></i> Who Is Affected</th>
+                    <th><i class="fas fa-heart-crack"></i> How They're Affected</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>The Target</strong></td>
+                    <td class="primary-col">Emotional harm, anxiety, depression, fear, lowered self-esteem</td>
+                </tr>
+                <tr>
+                    <td><strong>The Person Posting</strong></td>
+                    <td class="primary-col">Damaged reputation, loss of trust, school discipline, future consequences</td>
+                </tr>
+                <tr>
+                    <td><strong>Friends &amp; Family</strong></td>
+                    <td class="primary-col">Worry, embarrassment, conflict, broken relationships</td>
+                </tr>
+                <tr>
+                    <td><strong>The Community</strong></td>
+                    <td class="primary-col">A toxic online culture, more fear, less trust among peers</td>
+                </tr>
+                <tr>
+                    <td><strong>The Poster's Future</strong></td>
+                    <td class="primary-col">Colleges, employers, and future friends can see it — forever</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Remember:</strong> Online actions have <strong>real-world consequences</strong>. A single post can
+                affect someone for years — or affect <em>your own</em> future. Think twice before you post.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — IMPACT OF INAPPROPRIATE CONTENT
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/impact-content.png"
+            alt="A diagram showing how inappropriate content affects the target, the poster, friends, family, and community"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[The Ripple Effect]</strong> — A ripple diagram showing how one inappropriate post affects many people: the target, the poster, family, friends, and the community. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== THE THREE-QUESTION TEST ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-question"></i> The Three-Question Test</div>
+        <p>
+            Before you post, share, or react to something online, ask yourself these
+            <strong>three simple questions</strong>:
+        </p>
+
+        <ol class="step-list">
+            <li>
+                <strong>Is it respectful?</strong><br>
+                Would you say this to the person's face? Would you want it said about you?
+            </li>
+            <li>
+                <strong>Is it true?</strong><br>
+                Are you sharing facts or rumors? Is it accurate?
+            </li>
+            <li>
+                <strong>Is it helpful?</strong><br>
+                Does it add something positive, or does it just hurt, embarrass, or stir up trouble?
+            </li>
+        </ol>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>If the answer to any of these is "no" — don't post it.</strong>
+                This simple test prevents most bad online decisions.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== HOW TO RESPOND TO INAPPROPRIATE CONTENT ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-flag"></i> How to Respond to Inappropriate Content</div>
+        <p>
+            What should you do if you see something inappropriate online? Follow these
+            <strong>6 steps</strong>:
+        </p>
+
+        <ol class="step-list">
+            <li>
+                <strong>Don't share or like it.</strong><br>
+                Sharing or liking a bad post makes it spread faster and shows you agree with it.
+            </li>
+            <li>
+                <strong>Don't argue publicly.</strong><br>
+                Responding angrily in the comments often makes things worse. Stay calm.
+            </li>
+            <li>
+                <strong>Support the target privately.</strong><br>
+                Send a kind message to the person being hurt. Let them know they're not alone.
+            </li>
+            <li>
+                <strong>Screenshot the evidence.</strong><br>
+                Before reporting, save a screenshot. It's proof if you need it later.
+            </li>
+            <li>
+                <strong>Report to the platform.</strong><br>
+                Use the "Report" button. Most platforms have rules against harassment and privacy violations.
+            </li>
+            <li>
+                <strong>Tell a trusted adult.</strong><br>
+                If someone is being hurt badly, tell a parent, teacher, or school counselor. Don't try to handle it alone.
+            </li>
+        </ol>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — HOW TO RESPOND
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/respond-to-content.png"
+            alt="Six icons showing how to respond to inappropriate content: don't share, don't argue, support, screenshot, report, tell adult"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[How to Respond]</strong> — Six sequential icons showing safe responses to inappropriate content. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 1 — APPROPRIATE OR INAPPROPRIATE ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Appropriate or Inappropriate?</h4>
+        <p>
+            Read each of these 10 scenarios. Decide: <strong>Appropriate</strong> or <strong>Inappropriate</strong>?
+            If inappropriate, name the type (Privacy, Obscenity, Rude Criticism, or Cyberbullying) and explain why
+            in your notebook.
+        </p>
+        <ol>
+            <li>Posting a funny video of a friend falling down — without asking.</li>
+            <li>Sharing a classmate's test score without permission.</li>
+            <li>Writing a mean comment on someone's photo.</li>
+            <li>Sharing educational content about science.</li>
+            <li>Posting a photo of someone without asking.</li>
+            <li>Using offensive language in a class group chat.</li>
+            <li>Complimenting someone's artwork.</li>
+            <li>Sharing a rumor about a teacher.</li>
+            <li>Reporting a harmful post to the platform.</li>
+            <li>Sending a threatening message to someone.</li>
+        </ol>
+        <div class="tip-box" style="margin-top:1rem;">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Use the Three-Question Test:</strong> Is it respectful? Is it true? Is it helpful?
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 2 — RESPONSE PLAN ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-lightbulb"></i> Activity — Create a Response Plan</h4>
+        <p>
+            Work in a group of <strong>3–4 students</strong>. Choose <strong>one</strong> of the scenarios below and
+            create a <strong>response plan</strong>. Present it to the class.
+        </p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">😢</span>
+                <h3>Scenario A</h3>
+                <p>A classmate is being cyberbullied in a group chat.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">📸</span>
+                <h3>Scenario B</h3>
+                <p>Someone posted your photo without your permission.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">😠</span>
+                <h3>Scenario C</h3>
+                <p>A friend shared offensive content online.</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">🗣️</span>
+                <h3>Scenario D</h3>
+                <p>You see a rumor about a teacher spreading online.</p>
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>Your response plan should include:</strong></p>
+        <ol>
+            <li>Is this <strong>appropriate or inappropriate</strong>? Why?</li>
+            <li><strong>Who is affected?</strong> (Target, poster, friends, school, community)</li>
+            <li><strong>What should you do?</strong> (List at least 4 actions.)</li>
+            <li><strong>What should the school do?</strong> (If applicable.)</li>
+            <li><strong>What could prevent this in the future?</strong></li>
+        </ol>
+        <p style="margin-top:1rem;">
+            Create a poster, a slide, or a short skit to present your plan.
+        </p>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook:</p>
+        <ol>
+            <li>What does <strong>"appropriate content"</strong> mean?</li>
+            <li>Name the <strong>four types</strong> of inappropriate content, with a short definition of each.</li>
+            <li>Why is it harmful to share someone's photo without permission?</li>
+            <li>What are the <strong>three questions</strong> in the Three-Question Test?</li>
+            <li>Name <strong>four steps</strong> for responding to inappropriate content.</li>
+            <li>Why is it important to <strong>tell a trusted adult</strong> if someone is being badly hurt online?</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            Good digital citizens <strong>evaluate content carefully</strong>. Before you post, ask:
+            <strong>Is it respectful? Is it true? Is it helpful?</strong> When you see inappropriate content,
+            <strong>don't share it, support the target, report it, and tell a trusted adult</strong>. Your choices online
+            shape your community — make them count. Next lesson, you'll dive deeper into
+            <strong>cyberbullying and respectful online communication</strong>!
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — THINK BEFORE YOU POST
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/think-before-post.png"
+            alt="A student thoughtfully pausing before tapping the post button, with the three questions floating in thought bubbles"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Think Before You Post]</strong> — A student pausing thoughtfully before posting, with thought bubbles showing the three questions (Respectful? True? Helpful?). Recommended size: 700 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Homework</div>
+        <p><strong>Part 1 — Content evaluation practice:</strong></p>
+        <ul>
+            <li>Look at your own social media feed or the feed of a family member (with permission).</li>
+            <li>Find <strong>three posts</strong> and evaluate each one:
+                <ul>
+                    <li>Is it appropriate? Why or why not?</li>
+                    <li>Does it pass the Three-Question Test?</li>
+                </ul>
+            </li>
+            <li>Write your analysis in your notebook.</li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 2 — Write a personal pledge:</strong></p>
+        <ul>
+            <li>Write a short pledge: <em>"I will be respectful online by…"</em></li>
+            <li>Include at least <strong>three specific promises</strong> you're making to yourself.</li>
+            <li>Sign and date it.</li>
+        </ul>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="lesson34-scams.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous: Lesson 34
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="lesson36-cyberbullying.html" class="next-btn">
+            Next: Lesson 36 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Indicator 4 · Lesson 35 of 40
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

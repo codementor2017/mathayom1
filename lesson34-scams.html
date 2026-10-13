@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 34 — Protecting Personal Data and Avoiding Scams</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson34-scams.html" class="active"><i class="fas fa-fish-fins"></i> Lesson 34</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 4 · Semester 2 · Final
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-fish-fins"></i> Lesson 34 · Indicator 4</span>
+        <h1>Protecting Personal Data and Avoiding Scams</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            "Congratulations! You've won 50,000 baht!" — Have you ever seen a message like that?
+            It's probably a <strong>scam</strong>. Scammers are clever and they try to trick you into giving away your
+            <strong>personal data or money</strong>. In this lesson, you'll learn how to <strong>spot the signs</strong>
+            of scams and how to <strong>respond safely</strong>.
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-fish-fins"></i> Phishing</span>
+            <span class="chip sky"><i class="fas fa-magnifying-glass"></i> Spot the Signs</span>
+            <span class="chip red"><i class="fas fa-ban"></i> Respond Safely</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/scam-hero.png"
+            alt="Hero banner showing a suspicious email or message with a warning sign and a shield protecting the user"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — A suspicious message with a warning sign on one side, and a protective shield on the other. Friendly but serious illustration. Recommended size: 1000 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WARM-UP ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-circle-question"></i> Have You Seen This?</div>
+        <p>
+            Imagine you receive this message on your phone:
+        </p>
+
+        <div class="tip-box">
+            <span class="tip-icon">📱</span>
+            <div class="tip-text">
+                <strong>"🎉 CONGRATULATIONS! You have won 50,000 baht! Click this link to claim your prize NOW before it expires in 24 hours!"</strong>
+            </div>
+        </div>
+
+        <p>
+            What would you do? Would you click the link? Would you give your personal information?
+        </p>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>The truth:</strong> This is a classic <strong>phishing scam</strong>. There is no prize. The scammer
+                wants you to click the link so they can steal your data or install malware on your device.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== TYPES OF SCAMS ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-fish-fins"></i> Common Types of Scams</div>
+        <p>
+            Scammers use different methods to trick you. Here are the most common ones:
+        </p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">🎣</span>
+                <h3>Phishing</h3>
+                <p>Fake <strong>emails</strong> that look real — they ask you to "log in" or "confirm your account." The page is fake and steals your password.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">📱</span>
+                <h3>Smishing</h3>
+                <p>Phishing via <strong>SMS text messages</strong>. Usually says your "package is delayed" or you "won a prize."</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">📞</span>
+                <h3>Vishing</h3>
+                <p>Phishing via <strong>phone calls</strong>. The caller pretends to be from your bank or a government office.</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">🌐</span>
+                <h3>Fake Websites</h3>
+                <p>Websites that look <strong>almost identical</strong> to real ones — but they steal your login details.</p>
+            </div>
+        </div>
+
+        <div class="term-grid" style="margin-top:1.5rem;">
+            <div class="term-card honey">
+                <span class="term-emoji">🦠</span>
+                <h3>Malware</h3>
+                <p>Harmful software that gets installed when you click a bad link or download a fake app. Includes viruses, spyware, and ransomware.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">💸</span>
+                <h3>Fake Shopping</h3>
+                <p>Online stores that take your money but <strong>never send the product</strong>. Very common on social media ads.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">❤️</span>
+                <h3>Romance Scams</h3>
+                <p>Strangers who pretend to be your friend or romantic interest to gain your trust, then ask for money.</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">💼</span>
+                <h3>Job Scams</h3>
+                <p>"Easy work from home — earn 5,000 baht/day!" Usually asks you to pay a "registration fee" first.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — TYPES OF SCAMS
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/types-of-scams.png"
+            alt="Eight illustrated cards showing different types of scams: phishing, smishing, vishing, fake websites, malware, fake shopping, romance scams, job scams"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[Types of Scams]</strong> — Eight illustrated cards, each representing a different type of scam with a unique icon. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WARNING SIGNS ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-triangle-exclamation"></i> Warning Signs of a Scam</div>
+        <p>
+            Scammers are good at sounding believable. But they always leave <strong>clues</strong>. Learn these
+            <strong>6 warning signs</strong>:
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-triangle-exclamation"></i> Warning Sign</th>
+                    <th><i class="fas fa-lightbulb"></i> Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>🚨 Urgent language</strong></td>
+                    <td class="primary-col">"ACT NOW!" or "Expires in 24 hours!" or "Your account will be locked!"</td>
+                </tr>
+                <tr>
+                    <td><strong>❌ Spelling &amp; grammar errors</strong></td>
+                    <td class="primary-col">Messages full of typos that a real company wouldn't make</td>
+                </tr>
+                <tr>
+                    <td><strong>❓ Unknown sender</strong></td>
+                    <td class="primary-col">An email or message from someone you don't know</td>
+                </tr>
+                <tr>
+                    <td><strong>🔑 Asks for password or money</strong></td>
+                    <td class="primary-col">"Please confirm your password" or "Send 500 baht to unlock your prize"</td>
+                </tr>
+                <tr>
+                    <td><strong>🔗 Suspicious links</strong></td>
+                    <td class="primary-col">Links that look wrong, like <em>amaz0n.com</em> instead of <em>amazon.com</em></td>
+                </tr>
+                <tr>
+                    <td><strong>🎁 Too good to be true</strong></td>
+                    <td class="primary-col">"You won 1 million baht!" or "Get a free iPhone!"</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Golden rule:</strong> If it feels suspicious — it probably is.
+                <strong>Never click, never reply, always report.</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — WARNING SIGNS
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/warning-signs.png"
+            alt="Six illustrated warning signs of a scam, each with an icon: urgent, spelling, unknown sender, asks for password, suspicious link, too good to be true"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[Warning Signs]</strong> — Six icons representing the key scam warning signs. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOW DATA IS STOLEN ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-user-secret"></i> How Scammers Steal Your Data</div>
+        <p>
+            Scammers have many tricks. Here are the most common ways they get your data:
+        </p>
+
+        <ol class="step-list">
+            <li>
+                <strong>Fake login pages.</strong><br>
+                The link takes you to a page that looks identical to a real login page, but it's controlled by the scammer.
+                When you type your password, they capture it.
+            </li>
+            <li>
+                <strong>Malicious downloads.</strong><br>
+                You download a "free" app or file, but it contains malware that spies on you.
+            </li>
+            <li>
+                <strong>Data breaches.</strong><br>
+                A legitimate company you use gets hacked, and your data leaks online. This is why you should use different
+                passwords everywhere.
+            </li>
+            <li>
+                <strong>Social engineering.</strong><br>
+                The scammer pretends to be someone you trust — a friend, teacher, or family member — to trick you into giving data.
+            </li>
+            <li>
+                <strong>Fake prize or refund offers.</strong><br>
+                "You've won!" or "You're owed a refund!" — all they need is your bank info to "send" the money.
+            </li>
+        </ol>
+    </div>
+
+    <!-- ========== HOW TO RESPOND SAFELY ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-shield-halved"></i> How to Respond Safely</div>
+        <p>
+            If you suspect a scam, follow these <strong>5 steps</strong>. It's the same every time:
+        </p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">🚫</span>
+                <h3>1. Do NOT Click</h3>
+                <p>Don't click any links in the message. Don't open attachments.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">💬</span>
+                <h3>2. Do NOT Reply</h3>
+                <p>Replying confirms your number or email is active — you'll get more scams.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">🚩</span>
+                <h3>3. Report It</h3>
+                <p>Use the "Report" or "Mark as Spam" button in your email or messaging app.</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">⛔</span>
+                <h3>4. Block the Sender</h3>
+                <p>Block the number or email address so you don't hear from them again.</p>
+            </div>
+        </div>
+
+        <div class="tip-box" style="margin-top:1.5rem;">
+            <span class="tip-icon">🗑️</span>
+            <div class="tip-text">
+                <strong>5. Delete the Message.</strong> Once you've reported and blocked, delete the message to keep
+                your inbox clean and avoid accidentally clicking later.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — SAFE RESPONSE STEPS
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/safe-response.png"
+            alt="Five icons showing the safe response steps: Don't Click, Don't Reply, Report, Block, Delete"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[Safe Response Steps]</strong> — Five icons in a row: no-click, no-reply, report-flag, block, trash. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 1 — SPOT THE SCAM ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Spot the Scam</h4>
+        <p>
+            Read each of these 5 messages carefully. For each one, decide:
+        </p>
+        <ul>
+            <li>Is it a <strong>scam</strong> or <strong>legitimate</strong>?</li>
+            <li>What are the <strong>warning signs</strong>? (Name at least two.)</li>
+            <li>What should you <strong>do</strong> about it?</li>
+        </ul>
+
+        <p style="margin-top:1.5rem;"><strong>Message 1 — Email</strong></p>
+        <div class="tip-box">
+            <span class="tip-icon">📧</span>
+            <div class="tip-text">
+                "Dear Valued Customer, Your bank account will be LOCKED in 24 hours unless you verify your details.
+                <strong>Click here NOW</strong> to confirm your password and PIN."
+            </div>
+        </div>
+
+        <p><strong>Message 2 — SMS</strong></p>
+        <div class="tip-box">
+            <span class="tip-icon">📱</span>
+            <div class="tip-text">
+                "Your parcel is delayed. Please pay 50 baht delivery fee at: <em>thai-post-delivery.xyz</em>"
+            </div>
+        </div>
+
+        <p><strong>Message 3 — Social Media Message</strong></p>
+        <div class="tip-box">
+            <span class="tip-icon">💬</span>
+            <div class="tip-text">
+                "Hi! I saw your profile — you're so pretty/handsome! Want to be friends? Send me your phone number
+                so we can chat on WhatsApp."
+            </div>
+        </div>
+
+        <p><strong>Message 4 — Email (Legitimate)</strong></p>
+        <div class="tip-box">
+            <span class="tip-icon">📧</span>
+            <div class="tip-text">
+                "Hi Somsak, your order #1234 has been shipped. You can track it in your account at <em>shopee.co.th</em>.
+                Thank you for shopping with us!"
+            </div>
+        </div>
+
+        <p><strong>Message 5 — Game Chat</strong></p>
+        <div class="tip-box">
+            <span class="tip-icon">🎮</span>
+            <div class="tip-text">
+                "FREE GEMS! Click this link to get 10,000 free gems. Hurry, only 10 players can claim!"
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 2 — CREATE A SCAM AWARENESS GUIDE ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-lightbulb"></i> Activity — Create a Scam Awareness Guide</h4>
+        <p>
+            Work with a partner to create a <strong>one-page guide</strong> that teaches others how to spot and avoid scams.
+        </p>
+        <p><strong>Your guide must include:</strong></p>
+        <ol>
+            <li>A clear <strong>title</strong> — something catchy like "Don't Take the Bait!" or "Spot the Scam!"</li>
+            <li>A short <strong>definition</strong> of what a scam is (in your own words).</li>
+            <li><strong>5 warning signs</strong> — with a small icon for each.</li>
+            <li><strong>5 safe responses</strong> — what to do if you spot a scam.</li>
+            <li>A section on <strong>who to report to</strong>:
+                <ul>
+                    <li>A trusted adult (parent, teacher)</li>
+                    <li>The platform (email, app, etc.)</li>
+                    <li>In serious cases — the police (in Thailand: 1441 hotline)</li>
+                </ul>
+            </li>
+            <li><strong>One example scam message</strong> you write yourself, with the warning signs labeled.</li>
+        </ol>
+        <p style="margin-top:1rem;">
+            Design your guide visually. You can include drawings, colors, and icons. Present it to the class.
+        </p>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook:</p>
+        <ol>
+            <li>What is <strong>phishing</strong>? How is it different from smishing and vishing?</li>
+            <li>Name <strong>three warning signs</strong> that a message might be a scam.</li>
+            <li>Why is "urgent language" a common trick used by scammers?</li>
+            <li>What are the <strong>5 safe response steps</strong> if you receive a suspicious message?</li>
+            <li>What is <strong>social engineering</strong>? Why is it dangerous?</li>
+            <li>Why should you <strong>never</strong> give your password to someone who asks for it — even if they claim to be from your bank?</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            Scammers use <strong>urgency, fear, and greed</strong> to trick you. But you can outsmart them by remembering:
+            <strong>never click</strong>, <strong>never reply</strong>, <strong>always report</strong>,
+            <strong>always block</strong>, and <strong>always delete</strong>. If something feels "too good to be true" —
+            it is. Trust your instincts and always ask a trusted adult if you're unsure.
+            Next lesson, you'll learn how to <strong>evaluate the appropriateness of content</strong> — another essential skill
+            for staying safe online!
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — SPOT THE SCAM
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/spot-the-scam.png"
+            alt="A student confidently spotting a scam message on their phone and tapping the report button"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Spot the Scam]</strong> — A student confidently spotting a suspicious message and tapping the "Report" button. Confident, empowered expression. Recommended size: 700 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Homework</div>
+        <p><strong>Part 1 — Family conversation:</strong></p>
+        <ul>
+            <li>Ask a family member: <em>"Have you ever received a scam message? What did you do?"</em></li>
+            <li>Write a short paragraph about what you learned.</li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 2 — Scam analysis:</strong></p>
+        <ul>
+            <li>Find a real example of a scam message online (screenshot or copy the text — never click the links).</li>
+            <li>Identify the <strong>warning signs</strong> in it.</li>
+            <li>Write down what you would do if you received it.</li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 3 — Spread the word:</strong></p>
+        <ul>
+            <li>Share one <strong>scam warning tip</strong> with a friend or family member who might not know about it.</li>
+            <li>Write one sentence about their reaction.</li>
+        </ul>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="lesson33-password-security.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous: Lesson 33
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="lesson35-appropriate-content.html" class="next-btn">
+            Next: Lesson 35 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Indicator 4 · Lesson 34 of 40
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
