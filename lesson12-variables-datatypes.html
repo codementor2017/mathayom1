@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 12 — Variables and Data Types</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson12-variables-datatypes.html" class="active"><i class="fas fa-box"></i> Lesson 12</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 2 · Semester 1 · Final
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-box"></i> Lesson 12 · Indicator 2</span>
+        <h1>Variables and Data Types</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            In Lesson 11, you learned that every program has <strong>input</strong>, <strong>process</strong>,
+            and <strong>output</strong>. But where does the data go in between? That's where
+            <strong>variables</strong> come in! In this lesson, you'll learn what variables are,
+            what <strong>data types</strong> they can store, and how to use them in Python.
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-box"></i> Variables</span>
+            <span class="chip sky"><i class="fas fa-tags"></i> Data Types</span>
+            <span class="chip red"><i class="fas fa-laptop-code"></i> Python Basics</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/variables-datatypes-hero.png"
+            alt="Hero banner showing three labeled boxes representing variables, each holding a different data type: a number, a decimal, and a word"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — Three labeled boxes representing variables. Each box holds a different data type: an integer (5), a float (3.14), and a string ("hello"). Friendly, clear illustration. Recommended size: 1000 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WARM-UP: WHAT IS A VARIABLE ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-circle-question"></i> Warm-Up: What is a Variable?</div>
+        <p>
+            In math class, you learned that a <strong>variable</strong> is a letter that represents a number —
+            like <em>x = 5</em>. In programming, a variable is similar but more powerful.
+        </p>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>In programming, a variable is a named storage location for a value.</strong>
+                You give it a name, and it stores a value that you can use later.
+            </div>
+        </div>
+
+        <p>
+            Think of a variable as a <strong>labeled box</strong>. You write a name on the box
+            (like <em>radius</em>), and you put a value inside (like <em>5</em>).
+        </p>
+    </div>
+
+    <!-- ========== WHAT IS A VARIABLE (PYTHON) ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-box"></i> Variables in Python</div>
+        <p>
+            In Python, you create a variable by giving it a name and assigning a value with the
+            <strong>=</strong> sign.
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">Python Example</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 1rem; text-align: left; line-height: 1.8;">
+                radius = 5<br>
+                pi = 3.14<br>
+                name = "Somsak"
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;">Here's what each line does:</p>
+        <ul>
+            <li><strong>radius = 5</strong> — creates a variable called <em>radius</em> and stores the value <strong>5</strong>.</li>
+            <li><strong>pi = 3.14</strong> — creates a variable called <em>pi</em> and stores the value <strong>3.14</strong>.</li>
+            <li><strong>name = "Somsak"</strong> — creates a variable called <em>name</em> and stores the text <strong>"Somsak"</strong>.</li>
+        </ul>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Tip:</strong> Choose clear variable names! <em>radius</em> is much better than
+                <em>r</em> or <em>x</em>. Future-you will thank present-you.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — VARIABLES AS LABELED BOXES
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/variables-as-boxes.png"
+            alt="Three labeled boxes representing variables: 'radius' holding 5, 'pi' holding 3.14, and 'name' holding 'Somsak'"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[Variables as Boxes]</strong> — Three labeled boxes, each showing a variable name on the outside and its value inside. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== DATA TYPES ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-tags"></i> The Three Data Types You Need to Know</div>
+        <p>
+            A <strong>data type</strong> tells the computer what <em>kind</em> of value a variable holds.
+            In Python, there are three main data types you'll use in math and science:
+        </p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">🔢</span>
+                <h3>Integer (int)</h3>
+                <p><strong>Whole numbers</strong> — no decimal point.</p>
+                <p style="margin-top:0.5rem;"><em>Examples:</em> 5, -3, 100, 0, 42</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">🔟</span>
+                <h3>Float</h3>
+                <p><strong>Decimal numbers</strong> — with a decimal point.</p>
+                <p style="margin-top:0.5rem;"><em>Examples:</em> 3.14, 0.5, -2.7, 100.0</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">💬</span>
+                <h3>String (str)</h3>
+                <p><strong>Text</strong> — letters, words, or sentences.</p>
+                <p style="margin-top:0.5rem;"><em>Examples:</em> "hello", "cm", "Somsak", "5 apples"</p>
+            </div>
+        </div>
+
+        <div class="formula-box" style="margin-top:1.5rem;">
+            <span class="formula-label">Python Examples</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 1rem; text-align: left; line-height: 1.8;">
+                length = 10           <em style="color:var(--pooh-honey-dark);"># integer</em><br>
+                width = 2.5           <em style="color:var(--pooh-honey-dark);"># float</em><br>
+                unit = "cm"           <em style="color:var(--pooh-honey-dark);"># string</em>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — THREE DATA TYPES
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/three-data-types.png"
+            alt="Three illustrated cards showing integer, float, and string data types with example values"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[Three Data Types]</strong> — Three cards: integer (with whole numbers), float (with decimals), and string (with quoted text). Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WHY DATA TYPES MATTER ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-triangle-exclamation"></i> Why Do Data Types Matter?</div>
+        <p>
+            Choosing the right data type is important because you can only do certain operations with certain types.
+        </p>
+
+        <p>
+            <strong>Example — What happens if we mix types?</strong>
+        </p>
+
+        <div class="formula-box" style="border-color:#C0392B;">
+            <span class="formula-label" style="background: linear-gradient(135deg, #C0392B, #A02D22);">❌ Wrong</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 1rem; text-align: left; line-height: 1.8;">
+                area = "10" * 2.5<br>
+                <em style="color:#C0392B;"># Error! Can't multiply a string by a float.</em>
+            </div>
+        </div>
+
+        <div class="formula-box" style="border-color:#5B8C3E;">
+            <span class="formula-label" style="background: linear-gradient(135deg, #5B8C3E, #3D6B28);">✅ Correct</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 1rem; text-align: left; line-height: 1.8;">
+                area = 10 * 2.5<br>
+                <em style="color:#5B8C3E;"># Works! 10 is an integer, 2.5 is a float.</em><br>
+                <em style="color:#5B8C3E;"># Result: 25.0 (a float)</em>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Rule of thumb:</strong> If you're doing math, use <strong>int</strong> or
+                <strong>float</strong>. Use <strong>str</strong> only for text — like labels or units.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== CHOOSING THE RIGHT DATA TYPE ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-circle-question"></i> Choosing the Right Data Type</div>
+        <p>
+            Here's a table to help you choose the right data type for a math or science problem:
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-tag"></i> What You're Storing</th>
+                    <th><i class="fas fa-box"></i> Data Type</th>
+                    <th><i class="fas fa-lightbulb"></i> Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Number of students</td>
+                    <td class="primary-col">integer (int)</td>
+                    <td class="secondary-col">students = 30</td>
+                </tr>
+                <tr>
+                    <td>Length of a table</td>
+                    <td class="primary-col">float</td>
+                    <td class="secondary-col">length = 2.5</td>
+                </tr>
+                <tr>
+                    <td>Unit of measurement</td>
+                    <td class="primary-col">string (str)</td>
+                    <td class="secondary-col">unit = "cm"</td>
+                </tr>
+                <tr>
+                    <td>Name of a student</td>
+                    <td class="primary-col">string (str)</td>
+                    <td class="secondary-col">name = "Somsak"</td>
+                </tr>
+                <tr>
+                    <td>Weight in kilograms</td>
+                    <td class="primary-col">float</td>
+                    <td class="secondary-col">weight = 45.5</td>
+                </tr>
+                <tr>
+                    <td>Number of books</td>
+                    <td class="primary-col">integer (int)</td>
+                    <td class="secondary-col">books = 12</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Ask yourself:</strong> "Is this a whole number, a decimal, or text?"
+                That tells you which data type to use.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — CHOOSING DATA TYPES
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/choosing-data-types.png"
+            alt="A flowchart showing how to choose the right data type: whole number → int, decimal → float, text → string"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[Choosing Data Types]</strong> — A simple decision flowchart: "Is it a whole number? → int. A decimal? → float. Text? → string." Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== GUIDED PRACTICE: VARIABLES FOR AREA ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-graduation-cap"></i> Guided Practice: Variables for Area</div>
+        <p>
+            Let's write a Python program together to calculate the <strong>area of a rectangle</strong>:
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">Python Program</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 1rem; text-align: left; line-height: 1.8;">
+                length = float(input("Enter length: "))<br>
+                width = float(input("Enter width: "))<br>
+                area = length * width<br>
+                print("Area =", area)
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;">
+            <strong>Let's break it down:</strong>
+        </p>
+
+        <ul>
+            <li><strong>length = float(input("Enter length: "))</strong><br>
+                Ask the user for the length, convert it to a float (so we can use decimals), and store it in <em>length</em>.</li>
+            <li><strong>width = float(input("Enter width: "))</strong><br>
+                Ask the user for the width, convert it to a float, and store it in <em>width</em>.</li>
+            <li><strong>area = length * width</strong><br>
+                Multiply length × width, and store the result in <em>area</em>.</li>
+            <li><strong>print("Area =", area)</strong><br>
+                Display "Area = " followed by the value of <em>area</em>.</li>
+        </ul>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Why <em>float</em> and not <em>int</em>?</strong> Because length and width could be decimals
+                (like 2.5 m). Using <em>float</em> makes the program work for both whole numbers and decimals.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 1 — VARIABLES FOR SCIENCE ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Variables for Science</h4>
+        <p>
+            Work with a partner. Choose <strong>one</strong> of the science formulas below and write a Python
+            program using variables.
+        </p>
+
+        <div class="term-grid" style="margin-top:1rem;">
+            <div class="term-card honey">
+                <span class="term-emoji">🏃</span>
+                <h3>Speed</h3>
+                <p>Speed = distance ÷ time</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">🧪</span>
+                <h3>Density</h3>
+                <p>Density = mass ÷ volume</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">⚙️</span>
+                <h3>Force</h3>
+                <p>Force = mass × acceleration</p>
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>Your program must:</strong></p>
+        <ol>
+            <li>Use <strong>clear variable names</strong> (like <em>distance</em>, not <em>d</em>).</li>
+            <li>Use <strong>float</strong> for all inputs (because they can be decimals).</li>
+            <li>Print the result with <strong>units</strong> (like "Speed = 5 m/s").</li>
+        </ol>
+
+        <p style="margin-top:1rem;">
+            <strong>Example template for speed:</strong>
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">Template</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 1rem; text-align: left; line-height: 1.8;">
+                distance = float(input("Enter distance (m): "))<br>
+                time = float(input("Enter time (s): "))<br>
+                speed = distance / time<br>
+                print("Speed =", speed, "m/s")
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 2 — CHANGE THE PROGRAM ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-lightbulb"></i> Activity — Change the Program</h4>
+        <p>
+            Now take the rectangle area program from the Guided Practice section and
+            <strong>change it</strong> to calculate the <strong>perimeter</strong> instead.
+        </p>
+
+        <p><strong>Perimeter of a rectangle:</strong></p>
+        <div class="formula-box">
+            <span class="formula-label">Formula</span>
+            <div class="formula-text">
+                Perimeter = 2 × (length + width)
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>Then answer these questions:</strong></p>
+        <ol>
+            <li>What <strong>variables</strong> do we need?</li>
+            <li>What <strong>data types</strong> should we use? Why?</li>
+            <li>What is the <strong>output</strong> of your program?</li>
+        </ol>
+
+        <p style="margin-top:1rem;">
+            Try running both programs (area and perimeter) with the same inputs. Compare the results.
+        </p>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook:</p>
+        <ol>
+            <li>What is a <strong>variable</strong>? Give an example.</li>
+            <li>What are the <strong>three data types</strong> we learned? Give an example of each.</li>
+            <li>What is the difference between <strong>integer</strong> and <strong>float</strong>?</li>
+            <li>When would you use a <strong>string</strong>?</li>
+            <li>Why do we use <strong>float</strong> instead of <strong>int</strong> when the value can be a decimal?</li>
+            <li>What happens if you try to multiply a string by a float? Why?</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            A <strong>variable</strong> is a named storage location for a value. Every variable has a
+            <strong>data type</strong>: <strong>integer</strong> (whole numbers), <strong>float</strong>
+            (decimals), or <strong>string</strong> (text). Choosing the right data type matters because
+            you can only do certain operations with certain types. For math and science, use
+            <strong>int</strong> or <strong>float</strong> — <em>float</em> if decimals are possible.
+            Next lesson, you'll learn about <strong>conditions (if/else)</strong> — how programs make decisions!
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — VARIABLES IN ACTION
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/variables-in-action.png"
+            alt="A student typing Python code into a computer, with variables appearing as labeled boxes on the screen"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Variables in Action]</strong> — A student typing Python code into a computer, with the variables shown as labeled boxes on the screen. Friendly, focused illustration. Recommended size: 700 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Homework</div>
+        <p><strong>Part 1 — Write a Python program:</strong></p>
+        <ul>
+            <li>Write a Python program that calculates the <strong>average of three numbers</strong>.</li>
+            <li>Ask the user for three numbers (use <em>float(input(...))</em>).</li>
+            <li>Calculate the average: <em>(n1 + n2 + n3) / 3</em></li>
+            <li>Print the result.</li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 2 — Identify data types:</strong></p>
+        <ul>
+            <li>Write down 5 variables you would use in a math or science program.</li>
+            <li>For each one, write down the correct data type (int, float, or str).</li>
+            <li>Explain why you chose each one.</li>
+        </ul>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="lesson11-programming-intro.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous: Lesson 11
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="lesson13-conditions.html" class="next-btn">
+            Next: Lesson 13 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Indicator 2 · Lesson 12 of 40
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

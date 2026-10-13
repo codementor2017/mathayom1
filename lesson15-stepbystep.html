@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 15 — Step-by-Step Problem Solving with Algorithms</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson15-stepbystep.html" class="active"><i class="fas fa-puzzle-piece"></i> Lesson 15</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 2 · Semester 1 · Final
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-puzzle-piece"></i> Lesson 15 · Indicator 2</span>
+        <h1>Step-by-Step Problem Solving with Algorithms</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            Big problems can feel overwhelming — but if you <strong>break them into smaller steps</strong>,
+            they become easy to solve! In this lesson, you'll learn the skill of <strong>decomposition</strong>:
+            breaking a complex problem into input, process, and output — then solving it one step at a time.
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-puzzle-piece"></i> Decomposition</span>
+            <span class="chip sky"><i class="fas fa-list-ol"></i> Step-by-Step</span>
+            <span class="chip red"><i class="fas fa-lightbulb"></i> Abstraction</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/stepbystep-hero.png"
+            alt="Hero banner showing a large puzzle being broken into smaller pieces, with a student solving them one at a time"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — A large puzzle being broken into smaller pieces, with a student solving them one at a time. Friendly, focused illustration. Recommended size: 1000 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WARM-UP: THE BIG PROBLEM ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-circle-question"></i> Warm-Up: The Big Problem</div>
+        <p>
+            Here's a problem that sounds complicated at first:
+        </p>
+
+        <div class="tip-box">
+            <span class="tip-icon">🤔</span>
+            <div class="tip-text">
+                <strong>"Calculate the average speed of a car that travels 3 different distances in 3 different times."</strong>
+            </div>
+        </div>
+
+        <p>
+            Where do we even start? Well — we don't solve it all at once.
+            We break it into <strong>smaller steps</strong>.
+        </p>
+
+        <p>Let's list the steps:</p>
+        <ol>
+            <li>What information do we <strong>input</strong>?</li>
+            <li>What do we <strong>process</strong> with that information?</li>
+            <li>What do we <strong>output</strong>?</li>
+        </ol>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Key idea:</strong> Step-by-step problem solving means breaking a big problem into
+                small, manageable steps. This is called <strong>decomposition</strong>.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== WHAT IS DECOMPOSITION ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-puzzle-piece"></i> What is Decomposition?</div>
+
+        <div class="formula-box">
+            <span class="formula-label">Definition</span>
+            <div class="formula-text">
+                <em>Decomposition</em> = breaking a big problem into smaller steps, each of which is easier to solve.
+            </div>
+        </div>
+
+        <p>
+            Every problem we solve with a program has <strong>three parts</strong>:
+        </p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">📥</span>
+                <h3>Input</h3>
+                <p>What information do we have?</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">⚙️</span>
+                <h3>Process</h3>
+                <p>What steps do we take with that information?</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">📤</span>
+                <h3>Output</h3>
+                <p>What do we want to produce?</p>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Abstraction helps us here too.</strong> When breaking a problem into steps, we ignore
+                non-essential details (like the car's color) and focus on what matters.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — DECOMPOSITION
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/decomposition.png"
+            alt="A big problem being split into three parts: Input, Process, and Output"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[Decomposition]</strong> — A large problem split into three sections: Input, Process, Output. Each section shows small steps. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== THE AVERAGE SPEED EXAMPLE ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-car"></i> Example: Average Speed</div>
+        <p>
+            Let's break down the "average speed" problem step by step.
+        </p>
+
+        <p><strong>Step 1 — Identify the input</strong></p>
+        <ul>
+            <li>distance1, time1</li>
+            <li>distance2, time2</li>
+            <li>distance3, time3</li>
+        </ul>
+
+        <p><strong>Step 2 — Identify the process</strong></p>
+        <ul>
+            <li>total_distance = distance1 + distance2 + distance3</li>
+            <li>total_time = time1 + time2 + time3</li>
+            <li>average_speed = total_distance ÷ total_time</li>
+        </ul>
+
+        <p><strong>Step 3 — Identify the output</strong></p>
+        <ul>
+            <li>Print average_speed</li>
+        </ul>
+
+        <p style="margin-top:1.5rem;"><strong>All together as pseudocode:</strong></p>
+
+        <div class="formula-box">
+            <span class="formula-label">Pseudocode</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 0.95rem; text-align: left; line-height: 1.8;">
+                START<br>
+                &nbsp;&nbsp;INPUT d1, t1, d2, t2, d3, t3<br>
+                &nbsp;&nbsp;total_d = d1 + d2 + d3<br>
+                &nbsp;&nbsp;total_t = t1 + t2 + t3<br>
+                &nbsp;&nbsp;avg_speed = total_d / total_t<br>
+                &nbsp;&nbsp;PRINT avg_speed<br>
+                END
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Abstraction in action:</strong> We ignored non-essential details like the car's color
+                or the driver's name. We only kept the numbers that matter.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== FROM PSEUDOCODE TO PYTHON ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-code"></i> From Pseudocode to Python</div>
+        <p>
+            Now let's convert the pseudocode into real Python code:
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">Python Program</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 0.95rem; text-align: left; line-height: 1.8;">
+                d1 = float(input("Distance 1: "))<br>
+                t1 = float(input("Time 1: "))<br>
+                d2 = float(input("Distance 2: "))<br>
+                t2 = float(input("Time 2: "))<br>
+                d3 = float(input("Distance 3: "))<br>
+                t3 = float(input("Time 3: "))<br><br>
+                total_d = d1 + d2 + d3<br>
+                total_t = t1 + t2 + t3<br>
+                avg_speed = total_d / total_t<br><br>
+                print("Average speed =", avg_speed)
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>What if one time is zero?</strong></p>
+        <p>
+            If <em>total_t = 0</em>, the program will crash with a "division by zero" error. This is an
+            <strong>edge case</strong> we need to handle.
+        </p>
+
+        <p><strong>Adding a check:</strong></p>
+
+        <div class="formula-box">
+            <span class="formula-label">Improved Python</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 0.95rem; text-align: left; line-height: 1.8;">
+                # (input the values)<br><br>
+                total_d = d1 + d2 + d3<br>
+                total_t = t1 + t2 + t3<br><br>
+                if total_t == 0:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Time cannot be zero!")<br>
+                else:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;avg_speed = total_d / total_t<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Average speed =", avg_speed)
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — PSEUDOCODE TO PYTHON
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/pseudocode-to-python.png"
+            alt="A side-by-side comparison showing pseudocode on the left and the equivalent Python code on the right"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[Pseudocode to Python]</strong> — A clear side-by-side showing how pseudocode translates into real Python code. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== GUIDED PRACTICE: FROM PROBLEM TO CODE ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-graduation-cap"></i> Guided Practice: From Problem to Code</div>
+        <p>
+            Let's solve a new problem together: <strong>"Calculate the total resistance of three resistors in series."</strong>
+        </p>
+
+        <p><strong>Step 1 — Identify the input:</strong></p>
+        <ul>
+            <li>r1, r2, r3 (resistances in ohms)</li>
+        </ul>
+
+        <p><strong>Step 2 — Identify the process:</strong></p>
+        <ul>
+            <li>total_r = r1 + r2 + r3 (in a series circuit, resistances add up)</li>
+        </ul>
+
+        <p><strong>Step 3 — Identify the output:</strong></p>
+        <ul>
+            <li>Print total_r</li>
+        </ul>
+
+        <p style="margin-top:1.5rem;"><strong>Pseudocode:</strong></p>
+
+        <div class="formula-box">
+            <span class="formula-label">Pseudocode</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 0.95rem; text-align: left; line-height: 1.8;">
+                START<br>
+                &nbsp;&nbsp;INPUT r1, r2, r3<br>
+                &nbsp;&nbsp;total_r = r1 + r2 + r3<br>
+                &nbsp;&nbsp;PRINT total_r<br>
+                END
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>Python code:</strong></p>
+
+        <div class="formula-box">
+            <span class="formula-label">Python Program</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 0.95rem; text-align: left; line-height: 1.8;">
+                r1 = float(input("Resistor 1 (ohms): "))<br>
+                r2 = float(input("Resistor 2 (ohms): "))<br>
+                r3 = float(input("Resistor 3 (ohms): "))<br>
+                total_r = r1 + r2 + r3<br>
+                print("Total resistance =", total_r, "ohms")
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — SOLVING STEP BY STEP
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/solving-step-by-step.png"
+            alt="A student writing out a problem step by step in three columns labeled Input, Process, and Output"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[Solving Step by Step]</strong> — A student solving a problem in a notebook, with three labeled columns: Input, Process, Output. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== THE STEP-BY-STEP METHOD ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-list-ol"></i> The Step-by-Step Method</div>
+        <p>
+            Use these <strong>5 steps</strong> for every math or science problem:
+        </p>
+
+        <ol class="step-list">
+            <li>
+                <strong>Read the problem carefully.</strong><br>
+                What is it really asking? What is the goal?
+            </li>
+            <li>
+                <strong>Identify the input.</strong><br>
+                What information do you have? What variables do you need?
+            </li>
+            <li>
+                <strong>Identify the process.</strong><br>
+                What calculations or comparisons do you need to make?
+            </li>
+            <li>
+                <strong>Identify the output.</strong><br>
+                What do you want to produce? A number? A decision? A chart?
+            </li>
+            <li>
+                <strong>Write the algorithm.</strong><br>
+                Use pseudocode first, then write the Python program.
+            </li>
+        </ol>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Why this method works:</strong> It takes a big, scary problem and turns it into
+                small, clear steps. Each step is easy on its own — together they solve the whole problem.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 1 — SOLVE A PROBLEM ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Solve a Math or Science Problem</h4>
+        <p>
+            Work with a partner. Choose <strong>one</strong> of the problems below. Then follow
+            the <strong>5-step method</strong>:
+        </p>
+
+        <div class="term-grid" style="margin-top:1rem;">
+            <div class="term-card honey">
+                <span class="term-emoji">⚡</span>
+                <h3>Final Velocity</h3>
+                <p>v = u + a × t<br>(u = initial velocity, a = acceleration, t = time)</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">📊</span>
+                <h3>Average of 5 Quiz Scores</h3>
+                <p>Average = (score1 + score2 + score3 + score4 + score5) ÷ 5</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">🔺</span>
+                <h3>Area of a Triangle</h3>
+                <p>Area = 0.5 × base × height</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">📦</span>
+                <h3>Volume of a Box</h3>
+                <p>Volume = length × width × height</p>
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>For your chosen problem, write:</strong></p>
+        <ol>
+            <li><strong>Input</strong> — what information do you have?</li>
+            <li><strong>Process</strong> — what steps do you take?</li>
+            <li><strong>Output</strong> — what do you produce?</li>
+            <li><strong>Pseudocode</strong> — with START and END.</li>
+            <li><strong>Python code</strong> — that runs and prints the answer.</li>
+        </ol>
+
+        <p style="margin-top:1rem;">
+            Test your program with <strong>at least 2 different examples</strong>. Does it work for both?
+        </p>
+    </div>
+
+    <!-- ========== ACTIVITY 2 — FIND THE MISSING STEP ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-lightbulb"></i> Activity — Find the Missing Step</h4>
+        <p>
+            Look at this incomplete Python program. It's supposed to calculate the area of a triangle, but
+            something is <strong>missing</strong>.
+        </p>
+
+        <div class="formula-box" style="border-color:#C0392B;">
+            <span class="formula-label" style="background: linear-gradient(135deg, #C0392B, #A02D22);">Missing Something</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 0.95rem; text-align: left; line-height: 1.8;">
+                base = float(input("Base: "))<br>
+                height = float(input("Height: "))<br>
+                # ???<br>
+                print("Area =", area)
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>Answer these questions in your notebook:</strong></p>
+        <ol>
+            <li>What <strong>line of code</strong> is missing?</li>
+            <li>What <strong>variable</strong> should we create?</li>
+            <li>What <strong>formula</strong> should we use?</li>
+            <li>Write the complete corrected program.</li>
+        </ol>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook:</p>
+        <ol>
+            <li>What is <strong>decomposition</strong>? Why is it useful?</li>
+            <li>What are the <strong>three parts</strong> of every program?</li>
+            <li>What are the <strong>5 steps</strong> of the step-by-step method?</li>
+            <li>Why should we write pseudocode <strong>before</strong> writing Python code?</li>
+            <li>What is an <strong>edge case</strong>, and how do we handle it in a program?</li>
+            <li>How does <strong>abstraction</strong> help us solve problems step by step?</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            <strong>Decomposition</strong> — breaking a big problem into smaller steps — is one of the most
+            powerful skills in programming. Every problem has <strong>three parts</strong>:
+            <strong>Input, Process, Output</strong>. Follow the <strong>5-step method</strong>: read carefully,
+            identify input, identify process, identify output, then write the algorithm. Always test with
+            different inputs and <strong>handle edge cases</strong> like division by zero. Next lesson, you'll
+            use everything you've learned to solve a real motion equation program!
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — STEP-BY-STEP SUCCESS
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/step-by-step-success.png"
+            alt="A student proudly looking at their completed Python program with the correct answer on screen, with steps checked off on a checklist"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Step-by-Step Success]</strong> — A student proudly looking at their completed Python program with a checklist of steps completed. Warm, celebratory illustration. Recommended size: 700 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Homework</div>
+        <p><strong>Part 1 — Write a program for the final velocity formula:</strong></p>
+        <ul>
+            <li>Formula: <strong>v = u + a × t</strong></li>
+            <li>Ask the user for initial velocity (u), acceleration (a), and time (t).</li>
+            <li>Calculate the final velocity (v) and print the result.</li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 2 — Solve a new problem:</strong></p>
+        <ul>
+            <li>Choose a formula from math or science (for example, "area of a circle" = π × r²).</li>
+            <li>Write the <strong>5-step plan</strong>: input, process, output.</li>
+            <li>Write the <strong>pseudocode</strong> and <strong>Python code</strong>.</li>
+            <li>Test with <strong>2 different inputs</strong>.</li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 3 — Reflect:</strong></p>
+        <ul>
+            <li>Write a short paragraph: <em>"Why is it helpful to break a problem into steps before writing code?"</em></li>
+        </ul>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="lesson14-loops.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous: Lesson 14
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="lesson16-motion-equation.html" class="next-btn">
+            Next: Lesson 16 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Indicator 2 · Lesson 15 of 40
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

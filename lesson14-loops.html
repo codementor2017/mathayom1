@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 14 — Loops (for/while) for Repetition</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson14-loops.html" class="active"><i class="fas fa-rotate"></i> Lesson 14</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 2 · Semester 1 · Final
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-rotate"></i> Lesson 14 · Indicator 2</span>
+        <h1>Loops (for/while) for Repetition</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            Imagine printing the numbers 1 to 100. Would you write <strong>100 print statements</strong>?
+            Of course not! In this lesson, you'll learn how to use <strong>for</strong> and <strong>while</strong>
+            loops to make your programs repeat steps automatically — saving time and preventing mistakes.
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-rotate"></i> for loops</span>
+            <span class="chip sky"><i class="fas fa-infinity"></i> while loops</span>
+            <span class="chip red"><i class="fas fa-calculator"></i> Math &amp; Science</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/loops-hero.png"
+            alt="Hero banner showing a circular arrow looping around, with numbers 1 through 5 along the loop"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — A circular arrow looping around, with numbers 1 through 5 along the loop showing repetition. Friendly, clear illustration. Recommended size: 1000 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WARM-UP: REPETITION IN DAILY LIFE ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-circle-question"></i> Warm-Up: Repetition in Daily Life</div>
+        <p>
+            What do you repeat every day? Think about it:
+        </p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">🦷</span>
+                <h3>Brushing Teeth</h3>
+                <p>You brush for 2 minutes — the same motion again and again.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">👣</span>
+                <h3>Walking</h3>
+                <p>You take step after step after step to get somewhere.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">📚</span>
+                <h3>Studying</h3>
+                <p>You read the same page 3 times to remember it.</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">🍳</span>
+                <h3>Stirring</h3>
+                <p>You stir the soup in circles until it's ready.</p>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Loops let programs repeat steps</strong> — without writing the same instructions
+                over and over again.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== WHY LOOPS MATTER ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-triangle-exclamation"></i> Why Do We Need Loops?</div>
+        <p>
+            Imagine you want to print the numbers 1 to 5. You could write this:
+        </p>
+
+        <div class="formula-box" style="border-color:#C0392B;">
+            <span class="formula-label" style="background: linear-gradient(135deg, #C0392B, #A02D22);">❌ Without Loops</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 1rem; text-align: left; line-height: 1.8;">
+                print(1)<br>
+                print(2)<br>
+                print(3)<br>
+                print(4)<br>
+                print(5)
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;">
+            That works for 5 numbers. But what if you wanted to print <strong>1 to 1,000</strong>?
+            You'd have to write 1,000 lines! That's not practical.
+        </p>
+
+        <p>
+            With a loop, we can do the same thing in <strong>2 lines</strong>:
+        </p>
+
+        <div class="formula-box" style="border-color:#5B8C3E;">
+            <span class="formula-label" style="background: linear-gradient(135deg, #5B8C3E, #3D6B28);">✅ With a Loop</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 1rem; text-align: left; line-height: 1.8;">
+                for i in range(1, 6):<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print(i)
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Loops save time, reduce mistakes, and make code easier to read.</strong>
+                That's why they're one of the most powerful tools in programming.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — WITH VS WITHOUT LOOPS
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/with-vs-without-loops.png"
+            alt="Side-by-side comparison: on the left, 5 separate print statements; on the right, a for loop that does the same thing in 2 lines"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[With vs Without Loops]</strong> — Left: 5 print statements. Right: 1 for loop that does the same job. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== THE FOR LOOP ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-rotate"></i> The for Loop</div>
+        <p>
+            A <strong>for loop</strong> is used when you know <strong>exactly how many times</strong>
+            you want to repeat something.
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">Python Syntax</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 1rem; text-align: left; line-height: 1.8;">
+                for i in range(<em>start</em>, <em>stop</em>):<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;# do something with i
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>Example 1 — Print 0 to 4:</strong></p>
+        <div class="formula-box">
+            <span class="formula-label">Python</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 1rem; text-align: left; line-height: 1.8;">
+                for i in range(5):<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print(i)<br>
+                <em style="color:var(--pooh-honey-dark);"># Output: 0, 1, 2, 3, 4</em>
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>Example 2 — Print 1 to 5:</strong></p>
+        <div class="formula-box">
+            <span class="formula-label">Python</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 1rem; text-align: left; line-height: 1.8;">
+                for i in range(1, 6):<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print(i)<br>
+                <em style="color:var(--pooh-honey-dark);"># Output: 1, 2, 3, 4, 5</em>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Important:</strong> <code>range(5)</code> stops <em>before</em> 5 — it goes 0, 1, 2, 3, 4.
+                <code>range(1, 6)</code> starts at 1 and stops <em>before</em> 6 — it goes 1, 2, 3, 4, 5.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== THE WHILE LOOP ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-infinity"></i> The while Loop</div>
+        <p>
+            A <strong>while loop</strong> is used when you want to repeat something
+            <strong>until a condition changes</strong>. You might not know in advance how many times it will run.
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">Python Syntax</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 1rem; text-align: left; line-height: 1.8;">
+                while <em>condition</em>:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;# do something<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;# (change the condition, or you'll loop forever!)
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>Example — Count from 0 to 4:</strong></p>
+        <div class="formula-box">
+            <span class="formula-label">Python</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 1rem; text-align: left; line-height: 1.8;">
+                count = 0<br>
+                while count &lt; 5:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print(count)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;count = count + 1<br>
+                <em style="color:var(--pooh-honey-dark);"># Output: 0, 1, 2, 3, 4</em>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">⚠️</span>
+            <div class="tip-text">
+                <strong>Warning:</strong> If you forget to change the condition (like
+                <code>count = count + 1</code>), the loop runs <strong>forever</strong>. This is called an
+                <em>infinite loop</em>!
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — FOR VS WHILE
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/for-vs-while.png"
+            alt="Side-by-side comparison of a for loop and a while loop, showing when to use each"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[for vs while]</strong> — A visual comparison: for loop on the left (known count), while loop on the right (unknown count, condition-based). Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WHEN TO USE WHICH ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-list-check"></i> When to Use Which Loop</div>
+        <p>
+            Both loops can do the same job, but one is often clearer than the other. Here's a guide:
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-rotate"></i> Use a for loop when…</th>
+                    <th><i class="fas fa-infinity"></i> Use a while loop when…</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="primary-col">You know exactly how many times to repeat</td>
+                    <td class="secondary-col">You repeat <em>until</em> a condition changes</td>
+                </tr>
+                <tr>
+                    <td class="primary-col">Example: "Do this 10 times"</td>
+                    <td class="secondary-col">Example: "Keep going until the user says stop"</td>
+                </tr>
+                <tr>
+                    <td class="primary-col">Example: "Sum numbers from 1 to 100"</td>
+                    <td class="secondary-col">Example: "Keep asking for input until the user types 'done'"</td>
+                </tr>
+                <tr>
+                    <td class="primary-col">Example: "Print the multiplication table for 7"</td>
+                    <td class="secondary-col">Example: "Keep simulating a bouncing ball until it stops"</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Rule of thumb:</strong> If you can count the repetitions in advance, use
+                <strong>for</strong>. If not, use <strong>while</strong>.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== MATH EXAMPLE: SUM 1 TO 10 ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-calculator"></i> Math Example: Sum of 1 to 10</div>
+        <p>
+            Let's use a for loop to add up the numbers 1 through 10:
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">Python Program</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 1rem; text-align: left; line-height: 1.8;">
+                total = 0<br>
+                for i in range(1, 11):<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;total = total + i<br>
+                print("Sum =", total)<br>
+                <em style="color:var(--pooh-honey-dark);"># Output: Sum = 55</em>
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>Let's trace through the loop:</strong></p>
+        <ul>
+            <li>Start: total = 0</li>
+            <li>i = 1: total = 0 + 1 = 1</li>
+            <li>i = 2: total = 1 + 2 = 3</li>
+            <li>i = 3: total = 3 + 3 = 6</li>
+            <li>i = 4: total = 6 + 4 = 10</li>
+            <li>… continues until i = 10</li>
+            <li>Final total = <strong>55</strong></li>
+        </ul>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                This is much easier than writing 55 + 45 + 36 + 28 + 21 + 15 + 10 + 6 + 3 + 1 by hand!
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — SUM 1 TO 10 TRACE
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/sum-loop-trace.png"
+            alt="A trace table showing how the variable total changes as the for loop runs from 1 to 10"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[Loop Trace]</strong> — A trace table showing how the variable total changes with each iteration of the loop. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== GUIDED PRACTICE: AVERAGE OF SCORES ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-graduation-cap"></i> Guided Practice: Average of 5 Scores</div>
+        <p>
+            Let's use a for loop to find the average of 5 test scores:
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">Python Program</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 1rem; text-align: left; line-height: 1.8;">
+                total = 0<br>
+                for i in range(5):<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;score = float(input("Enter score: "))<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;total = total + score<br>
+                average = total / 5<br>
+                print("Average =", average)
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>How it works:</strong></p>
+        <ul>
+            <li>The loop runs <strong>5 times</strong>.</li>
+            <li>Each time, it asks the user for a score and adds it to <em>total</em>.</li>
+            <li>After the loop, we divide total by 5 to find the average.</li>
+        </ul>
+
+        <p style="margin-top:1.5rem;">
+            <strong>What if we don't know how many scores?</strong> Use a while loop:
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">While Loop Version</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 1rem; text-align: left; line-height: 1.8;">
+                total = 0<br>
+                count = 0<br>
+                while True:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;score = input("Enter score (or 'done'): ")<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;if score == "done":<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;total = total + float(score)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;count = count + 1<br>
+                print("Average =", total / count)
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>The <code>break</code> statement</strong> stops the loop immediately.
+                Here, it stops when the user types "done".
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 1 — LOOPS IN SCIENCE ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Loops in Science &amp; Math</h4>
+        <p>
+            Work with a partner. Choose <strong>one</strong> problem below and write a Python program using a loop.
+        </p>
+
+        <div class="term-grid" style="margin-top:1rem;">
+            <div class="term-card honey">
+                <span class="term-emoji">➕</span>
+                <h3>Sum of 1 to 100</h3>
+                <p>Use a for loop to find the sum of all numbers from 1 to 100.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">✖️</span>
+                <h3>Multiplication Table</h3>
+                <p>Ask for a number, then print its multiplication table for 1 to 12.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">🏀</span>
+                <h3>Bouncing Ball</h3>
+                <p>Start at 100 cm. Each bounce loses 10%. Simulate 5 bounces.</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">🔢</span>
+                <h3>Factorial</h3>
+                <p>Ask for a number n, then find n! (n × (n-1) × … × 1).</p>
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>Your program must:</strong></p>
+        <ul>
+            <li>Use the correct type of loop (for or while).</li>
+            <li>Print the result clearly.</li>
+            <li>Work for <strong>at least 2 different inputs</strong>.</li>
+        </ul>
+    </div>
+
+    <!-- ========== ACTIVITY 2 — NESTED LOOPS (CHALLENGE) ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-lightbulb"></i> Challenge — Nested Loops</h4>
+        <p>
+            A <strong>nested loop</strong> is a loop inside another loop. This is useful for working with tables,
+            grids, or patterns.
+        </p>
+
+        <p><strong>Example — print a triangle of stars:</strong></p>
+
+        <div class="formula-box">
+            <span class="formula-label">Python</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 1rem; text-align: left; line-height: 1.8;">
+                for i in range(1, 6):<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;for j in range(i):<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("*", end="")<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print()
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>What does it print?</strong></p>
+        <div class="tip-box">
+            <span class="tip-icon">⭐</span>
+            <div class="tip-text">
+                *<br>
+                **<br>
+                ***<br>
+                ****<br>
+                *****
+            </div>
+        </div>
+
+        <p style="margin-top:1rem;">
+            Try modifying this code to print different patterns, or to print a square of stars.
+        </p>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook:</p>
+        <ol>
+            <li>What is a <strong>loop</strong>? Why do we use loops?</li>
+            <li>What is the difference between a <strong>for loop</strong> and a <strong>while loop</strong>?</li>
+            <li>What does <code>range(3, 8)</code> produce?</li>
+            <li>Why do we need to change the condition inside a while loop?</li>
+            <li>What is a <strong>nested loop</strong>? Give an example.</li>
+            <li>What does the <code>break</code> statement do?</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            <strong>Loops</strong> let programs repeat steps without writing them many times. Use a
+            <strong>for loop</strong> when you know the number of repetitions (like <code>range(5)</code>), and a
+            <strong>while loop</strong> when you repeat until a condition changes. Always remember to
+            <strong>change the condition</strong> inside a while loop, or you'll create an infinite loop.
+            Loops are one of the most powerful tools in programming — they save time, reduce errors,
+            and make code elegant. Next lesson, you'll learn about <strong>step-by-step problem solving</strong>
+            — breaking a big problem into smaller steps!
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — LOOPS IN ACTION
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/loops-in-action.png"
+            alt="A student watching their Python loop run through multiple iterations on the screen, with numbers counting up"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Loops in Action]</strong> — A student watching their Python loop run through multiple iterations, with numbers counting up on the screen. Focused, positive illustration. Recommended size: 700 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Homework</div>
+        <p><strong>Part 1 — Sum of even numbers:</strong></p>
+        <ul>
+            <li>Write a Python program that finds the sum of all <strong>even numbers</strong> from 1 to 100.</li>
+            <li>Use a for loop and an if statement inside.</li>
+            <li>Test your program and write down the result.</li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 2 — Multiplication table:</strong></p>
+        <ul>
+            <li>Write a Python program that asks the user for a number.</li>
+            <li>Print its <strong>multiplication table</strong> for 1 to 10.</li>
+            <li>Example output for 5: <br>5 × 1 = 5<br>5 × 2 = 10<br>…<br>5 × 10 = 50</li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 3 — Reflect:</strong></p>
+        <ul>
+            <li>Write a short paragraph: <em>"Why are loops useful in programming?"</em></li>
+            <li>Give one example where a loop saves time compared to writing code without a loop.</li>
+        </ul>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="lesson13-conditions.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous: Lesson 13
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="lesson15-stepbystep.html" class="next-btn">
+            Next: Lesson 15 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Indicator 2 · Lesson 14 of 40
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

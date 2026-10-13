@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 17 — Area Calculation Program</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson17-area-calculation.html" class="active"><i class="fas fa-shapes"></i> Lesson 17</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 2 · Semester 1 · Final
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-shapes"></i> Lesson 17 · Indicator 2</span>
+        <h1>Area Calculation Program</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            In the last lesson, you built a program for one formula. Now, let's build a program that
+            handles <strong>many formulas</strong> — one for each shape! You'll learn how to use
+            <strong>conditions (if/elif/else)</strong> to let the user choose the shape, and how to
+            calculate areas of rectangles, triangles, circles, and more.
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-shapes"></i> Multiple Shapes</span>
+            <span class="chip sky"><i class="fas fa-code-branch"></i> if/elif/else</span>
+            <span class="chip red"><i class="fas fa-calculator"></i> Area Formulas</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/area-calculation-hero.png"
+            alt="Hero banner showing different shapes (rectangle, triangle, circle, square) with their area formulas displayed"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — A colorful collection of shapes (rectangle, triangle, circle, square) with their area formulas displayed alongside them. Friendly, geometry-themed illustration. Recommended size: 1000 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WARM-UP: AREA FORMULAS REVIEW ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-rotate-left"></i> Warm-Up: Area Formulas Review</div>
+        <p>
+            Let's review the area formulas we'll be using:
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-shape"></i> Shape</th>
+                    <th><i class="fas fa-calculator"></i> Formula</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Rectangle</strong></td>
+                    <td class="primary-col">Area = length × width</td>
+                </tr>
+                <tr>
+                    <td><strong>Triangle</strong></td>
+                    <td class="primary-col">Area = 0.5 × base × height</td>
+                </tr>
+                <tr>
+                    <td><strong>Circle</strong></td>
+                    <td class="primary-col">Area = π × radius²</td>
+                </tr>
+                <tr>
+                    <td><strong>Square</strong></td>
+                    <td class="primary-col">Area = side × side</td>
+                </tr>
+                <tr>
+                    <td><strong>Parallelogram</strong></td>
+                    <td class="primary-col">Area = base × height</td>
+                </tr>
+                <tr>
+                    <td><strong>Trapezoid</strong></td>
+                    <td class="primary-col">Area = 0.5 × (a + b) × height</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Challenge:</strong> Can we write <em>one</em> program that calculates areas for
+                <strong>all</strong> of these shapes? Yes — with <strong>if/elif/else</strong>!
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== BUILD THE PROGRAM ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-code"></i> Build the Program — Step by Step</div>
+        <p>
+            Let's build a program that asks the user which shape they want, then calculates the correct area.
+        </p>
+
+        <p><strong>Step 1 — Ask the user to choose a shape:</strong></p>
+        <div class="formula-box">
+            <span class="formula-label">Python</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 0.95rem; text-align: left; line-height: 1.8;">
+                choice = input("Shape (rectangle/triangle/circle): ")
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>Step 2 — Use if/elif/else to handle each shape:</strong></p>
+        <div class="formula-box">
+            <span class="formula-label">Python</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 0.95rem; text-align: left; line-height: 1.8;">
+                if choice == "rectangle":<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;l = float(input("Length: "))<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;w = float(input("Width: "))<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Area =", l * w)<br><br>
+                elif choice == "triangle":<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;b = float(input("Base: "))<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;h = float(input("Height: "))<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Area =", 0.5 * b * h)<br><br>
+                elif choice == "circle":<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;r = float(input("Radius: "))<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Area =", 3.14159 * r * r)<br><br>
+                else:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Unknown shape")
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>How it works:</strong></p>
+        <ul>
+            <li>If the user types <strong>"rectangle"</strong>, the program asks for length and width, then calculates.</li>
+            <li>If the user types <strong>"triangle"</strong>, it asks for base and height.</li>
+            <li>If the user types <strong>"circle"</strong>, it asks for radius.</li>
+            <li>If the user types something else, it prints <strong>"Unknown shape"</strong>.</li>
+        </ul>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>The magic of if/elif/else:</strong> The user chooses the path, and the program
+                follows the right one. This is how one program can handle many different cases!
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — THE SHAPE-CHOOSING PROGRAM
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/shape-choosing-program.png"
+            alt="A flowchart showing how the program branches depending on which shape the user selects: rectangle, triangle, or circle"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[Shape-Choosing Program]</strong> — A flowchart showing the branching logic: user chooses shape → program follows the correct branch. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== USING MATH.PI FOR PRECISION ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-function"></i> Using the Math Library for Precision</div>
+        <p>
+            In the circle example, we wrote <code>3.14159</code> for π (pi). That's a decent approximation,
+            but Python has a built-in <strong>math module</strong> that gives us the exact value of π:
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">Python with math module</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 0.95rem; text-align: left; line-height: 1.8;">
+                import math<br><br>
+                r = float(input("Radius: "))<br>
+                area = math.pi * r * r<br>
+                print("Area =", area)
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>What's happening?</strong></p>
+        <ul>
+            <li><strong>import math</strong> — brings the math library into our program.</li>
+            <li><strong>math.pi</strong> — gives us the value of π (about 3.14159265…).</li>
+            <li>The result is more precise than using 3.14 or 3.14159.</li>
+        </ul>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Tip:</strong> For real-world calculations, always use <code>math.pi</code> — not
+                <code>3.14</code>. Small differences can add up!
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ADDING MORE SHAPES ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-plus-circle"></i> Adding More Shapes</div>
+        <p>
+            Now let's add <strong>more shapes</strong> to our program. Just add more <em>elif</em> branches!
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">Python — Extended Program</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 0.9rem; text-align: left; line-height: 1.8;">
+                import math<br><br>
+                choice = input("Shape (rectangle/triangle/circle/square/parallelogram/trapezoid): ")<br><br>
+                if choice == "rectangle":<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;l = float(input("Length: "))<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;w = float(input("Width: "))<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Area =", l * w)<br><br>
+                elif choice == "triangle":<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;b = float(input("Base: "))<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;h = float(input("Height: "))<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Area =", 0.5 * b * h)<br><br>
+                elif choice == "circle":<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;r = float(input("Radius: "))<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Area =", math.pi * r * r)<br><br>
+                elif choice == "square":<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;s = float(input("Side: "))<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Area =", s * s)<br><br>
+                elif choice == "parallelogram":<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;b = float(input("Base: "))<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;h = float(input("Height: "))<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Area =", b * h)<br><br>
+                elif choice == "trapezoid":<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;a = float(input("Side a: "))<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;b = float(input("Side b: "))<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;h = float(input("Height: "))<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Area =", 0.5 * (a + b) * h)<br><br>
+                else:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Unknown shape")
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Notice the pattern:</strong> Each branch has the same structure —
+                ask for inputs, calculate, print the result. Only the <em>formula</em> changes.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — SIX SHAPES
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/six-shapes-areas.png"
+            alt="Six illustrated shapes side by side (rectangle, triangle, circle, square, parallelogram, trapezoid) with their area formulas"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[Six Shapes]</strong> — Six illustrated shapes with their area formulas displayed below each. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 1 — ADD VALIDATION ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Add Input Validation</h4>
+        <p>
+            Our program works, but what if the user enters a <strong>negative number</strong>?
+            For example, a length of <strong>-5</strong> doesn't make sense for a rectangle!
+        </p>
+
+        <p><strong>Let's fix that with input validation:</strong></p>
+
+        <div class="formula-box">
+            <span class="formula-label">Example — Rectangle with Validation</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 0.9rem; text-align: left; line-height: 1.8;">
+                if choice == "rectangle":<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;l = float(input("Length: "))<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;w = float(input("Width: "))<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;if l &lt;= 0 or w &lt;= 0:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Length and width must be positive!")<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Area =", l * w)
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>Your task:</strong></p>
+        <ol>
+            <li>Add the same validation to the <strong>triangle</strong> branch.</li>
+            <li>Add the same validation to the <strong>circle</strong> branch.</li>
+            <li>Add the same validation to the <strong>square</strong> branch.</li>
+            <li>Test your program with negative numbers. Does it print the warning?</li>
+        </ol>
+
+        <div class="tip-box" style="margin-top:1rem;">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Why validate?</strong> Because a good program handles bad input gracefully —
+                it doesn't just crash or give a wrong answer.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 2 — ADD A LOOP FOR MULTIPLE CALCULATIONS ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-lightbulb"></i> Activity — Loop for Multiple Calculations</h4>
+        <p>
+            Right now, the user can only calculate <strong>one</strong> area per run. Let's change that!
+            Wrap the whole thing in a <strong>while loop</strong> so the user can calculate multiple areas.
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">Structure</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 0.9rem; text-align: left; line-height: 1.8;">
+                while True:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;choice = input("Shape (or 'quit'): ")<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;if choice == "quit":<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;if choice == "rectangle":<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# ... rest of the branches
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>Your task:</strong></p>
+        <ol>
+            <li>Wrap the entire program in a <strong>while True</strong> loop.</li>
+            <li>Allow the user to type <strong>"quit"</strong> to exit.</li>
+            <li>Add a <strong>loop counter</strong> that shows how many areas they've calculated.</li>
+            <li>Print <strong>"Thanks for using the Area Calculator!"</strong> when they quit.</li>
+        </ol>
+
+        <p style="margin-top:1rem;">
+            Test it by calculating the areas of several different shapes in one session.
+        </p>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook:</p>
+        <ol>
+            <li>What are the <strong>area formulas</strong> for rectangle, triangle, and circle?</li>
+            <li>Why do we use <strong>if/elif/else</strong> in the area calculator program?</li>
+            <li>What does the <code>else</code> branch handle?</li>
+            <li>Why should we use <code>math.pi</code> instead of <code>3.14</code> for the circle?</li>
+            <li>What is <strong>input validation</strong>? Why is it important?</li>
+            <li>How does adding a <strong>loop</strong> make the program more useful?</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            The <strong>Area Calculation Program</strong> shows how one program can handle
+            <strong>many different cases</strong> using <strong>if/elif/else</strong>. Each branch asks for
+            the right inputs and applies the right formula. Adding <strong>input validation</strong>
+            makes the program more robust, and adding a <strong>loop</strong> makes it reusable.
+            This pattern — <em>choose the branch, apply the right formula</em> — appears in many real programs.
+            Next lesson, you'll build a <strong>BMI calculator</strong> using the same ideas!
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — AREA CALCULATOR IN ACTION
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/area-calculator-in-action.png"
+            alt="A student running the area calculator program, trying different shapes and seeing results on the screen"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[Area Calculator in Action]</strong> — A student running the area calculator program, trying different shapes and seeing results on the screen. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — GEOMETRY IN CODE
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/geometry-in-code.png"
+            alt="A visual showing geometry shapes on one side and Python code on the other, connected by an equals sign showing math equals programming"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Geometry in Code]</strong> — A visual showing geometry shapes connected to Python code, illustrating how math and programming work together. Recommended size: 700 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Homework</div>
+        <p><strong>Part 1 — Write a program for a trapezoid:</strong></p>
+        <ul>
+            <li>Formula: <strong>Area = 0.5 × (a + b) × height</strong></li>
+            <li>Ask the user for side a, side b, and height.</li>
+            <li>Validate that all inputs are positive.</li>
+            <li>Print the result with units (cm² or m²).</li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 2 — Add more shapes:</strong></p>
+        <ul>
+            <li>Add at least <strong>2 more shapes</strong> to your program (like pentagon or hexagon — research their formulas).</li>
+            <li>Add <strong>input validation</strong> to every branch.</li>
+            <li>Test your program with different values.</li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 3 — Reflect:</strong></p>
+        <ul>
+            <li>Write a short paragraph: <em>"Why is using if/elif/else more useful than writing separate programs for each shape?"</em></li>
+        </ul>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="lesson16-motion-equation.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous: Lesson 16
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="lesson18-bmi-calculation.html" class="next-btn">
+            Next: Lesson 18 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Indicator 2 · Lesson 17 of 40
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

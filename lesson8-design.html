@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 8 — Designing the Turf Algorithm</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson8-design.html" class="active"><i class="fas fa-gears"></i> Lesson 8</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 1 · Semester 1 · Midterm
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-gears"></i> Lesson 8 · Indicator 1</span>
+        <h1>Designing the Turf Algorithm</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            You solved the turf problem by hand in Lesson 7. Now it's time to turn that solution into a
+            <strong>real algorithm</strong> — one that works for <strong>any lawn size</strong>, not just
+            the one we started with. You'll write <strong>pseudocode</strong>, draw a <strong>flowchart</strong>,
+            and <strong>test</strong> your algorithm with different inputs.
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-code"></i> Pseudocode</span>
+            <span class="chip sky"><i class="fas fa-diagram-project"></i> Flowchart</span>
+            <span class="chip red"><i class="fas fa-flask"></i> Test with Inputs</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/turf-algorithm-hero.png"
+            alt="Hero banner showing a student designing a turf algorithm with pseudocode on one side and a flowchart on the other"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — A student designing a turf algorithm with pseudocode on the left and a flowchart on the right. Friendly, focused illustration. Recommended size: 1000 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== REVIEW FROM LESSON 7 ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-rotate-left"></i> Quick Review from Lesson 7</div>
+        <p>
+            In Lesson 7, we solved the turf problem in <strong>5 steps</strong>:
+        </p>
+        <ol>
+            <li><strong>Convert units:</strong> 50 cm = 0.5 m</li>
+            <li><strong>Lawn area:</strong> 5 m × 4 m = 20 m²</li>
+            <li><strong>Piece area:</strong> 0.5 m × 0.5 m = 0.25 m²</li>
+            <li><strong>Divide:</strong> 20 ÷ 0.25 = 80 pieces</li>
+            <li><strong>Round up</strong> if needed (not needed here)</li>
+        </ol>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Today's goal:</strong> Turn these 5 steps into a <strong>general algorithm</strong>
+                that works for <em>any</em> lawn size — not just 5 m × 4 m. That's the power of
+                <strong>abstraction</strong>!
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== THINKING IN VARIABLES ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-arrow-right-arrow-left"></i> Thinking in Variables</div>
+        <p>
+            To make our algorithm work for <strong>any lawn</strong>, we need to use <strong>variables</strong>
+            instead of fixed numbers.
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-tag"></i> What It Represents</th>
+                    <th><i class="fas fa-lock"></i> Fixed Value (Lesson 7)</th>
+                    <th><i class="fas fa-arrow-right-arrow-left"></i> Variable (Lesson 8)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Lawn width</strong></td>
+                    <td class="primary-col">5 m</td>
+                    <td class="secondary-col"><em>width</em></td>
+                </tr>
+                <tr>
+                    <td><strong>Lawn length</strong></td>
+                    <td class="primary-col">4 m</td>
+                    <td class="secondary-col"><em>length</em></td>
+                </tr>
+                <tr>
+                    <td><strong>Turf piece size</strong></td>
+                    <td class="primary-col">0.5 m × 0.5 m</td>
+                    <td class="secondary-col"><em>0.5</em> (constant)</td>
+                </tr>
+                <tr>
+                    <td><strong>Lawn area</strong></td>
+                    <td class="primary-col">20 m²</td>
+                    <td class="secondary-col"><em>lawn_area</em></td>
+                </tr>
+                <tr>
+                    <td><strong>Piece area</strong></td>
+                    <td class="primary-col">0.25 m²</td>
+                    <td class="secondary-col"><em>piece_area</em></td>
+                </tr>
+                <tr>
+                    <td><strong>Pieces needed</strong></td>
+                    <td class="primary-col">80</td>
+                    <td class="secondary-col"><em>pieces</em></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Key idea:</strong> The variable <em>width</em> can be <strong>any number</strong> —
+                5, 6, 7, or 10. Our algorithm will work for all of them!
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — VARIABLES IN THE ALGORITHM
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/turf-variables.png"
+            alt="A visual showing how a lawn's width and length become variables that can take on any value"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[Variables in the Algorithm]</strong> — The lawn shown with <em>width</em> and <em>length</em> as variable labels, with arrows showing they can take any value. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== THE ALGORITHM STEPS ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-list-ol"></i> The Algorithm Steps (General Version)</div>
+        <p>
+            Here's the algorithm written in plain language — for <strong>any</strong> lawn:
+        </p>
+
+        <ol class="step-list">
+            <li>
+                <strong>Input</strong> the lawn width and length (in meters).
+            </li>
+            <li>
+                <strong>Calculate</strong> the lawn area: <em>lawn_area = width × length</em>
+            </li>
+            <li>
+                <strong>Calculate</strong> the piece area: <em>piece_area = 0.5 × 0.5</em>
+            </li>
+            <li>
+                <strong>Calculate</strong> the number of pieces: <em>pieces = lawn_area ÷ piece_area</em>
+            </li>
+            <li>
+                <strong>Round up</strong> to the nearest whole number.
+            </li>
+            <li>
+                <strong>Output</strong> the number of pieces needed.
+            </li>
+        </ol>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Notice:</strong> The algorithm uses <strong>variables</strong> (like <em>width</em>)
+                instead of fixed numbers. This is why it works for <strong>any lawn</strong> — that's the
+                power of abstraction.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== PSEUDOCODE ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-code"></i> Writing the Pseudocode</div>
+        <p>
+            Now let's write the algorithm in <strong>pseudocode</strong>. Remember the format from Lesson 5:
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">Pseudocode</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 1rem; text-align: left; line-height: 1.8;">
+                START<br>
+                &nbsp;&nbsp;INPUT width, length<br>
+                &nbsp;&nbsp;lawn_area = width × length<br>
+                &nbsp;&nbsp;piece_area = 0.5 × 0.5<br>
+                &nbsp;&nbsp;pieces = lawn_area ÷ piece_area<br>
+                &nbsp;&nbsp;ROUND UP pieces<br>
+                &nbsp;&nbsp;PRINT pieces<br>
+                END
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;">
+            Let's read through it:
+        </p>
+        <ul>
+            <li><strong>START</strong> — begin the algorithm</li>
+            <li><strong>INPUT width, length</strong> — ask the user for the lawn dimensions</li>
+            <li><strong>lawn_area = width × length</strong> — compute the total lawn area</li>
+            <li><strong>piece_area = 0.5 × 0.5</strong> — compute the area of one turf piece</li>
+            <li><strong>pieces = lawn_area ÷ piece_area</strong> — divide to find how many pieces</li>
+            <li><strong>ROUND UP pieces</strong> — we can't buy partial pieces</li>
+            <li><strong>PRINT pieces</strong> — output the answer</li>
+            <li><strong>END</strong> — done!</li>
+        </ul>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — PSEUDOCODE FOR TURF
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/turf-pseudocode.png"
+            alt="A visual of the turf problem pseudocode with each line highlighted and labeled, showing the logic step by step"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[Turf Pseudocode]</strong> — A clean visual of the pseudocode with each line highlighted and labeled. Key words (INPUT, ROUND UP, PRINT) in different colors. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== DRAWING THE FLOWCHART ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-diagram-project"></i> Drawing the Flowchart</div>
+        <p>
+            Now let's turn the pseudocode into a <strong>flowchart</strong>. Remember the <strong>5 symbols</strong>
+            from Lesson 5:
+        </p>
+
+        <ul>
+            <li><strong>Oval</strong> — Start / End</li>
+            <li><strong>Parallelogram</strong> — Input / Output</li>
+            <li><strong>Rectangle</strong> — Process</li>
+            <li><strong>Diamond</strong> — Decision</li>
+            <li><strong>Arrow</strong> — Flow</li>
+        </ul>
+
+        <p style="margin-top:1.5rem;">
+            Here's how our flowchart would look, step by step:
+        </p>
+
+        <ol class="step-list">
+            <li><strong>START</strong> — Oval</li>
+            <li><strong>INPUT width, length</strong> — Parallelogram</li>
+            <li><strong>lawn_area = width × length</strong> — Rectangle</li>
+            <li><strong>piece_area = 0.5 × 0.5</strong> — Rectangle</li>
+            <li><strong>pieces = lawn_area ÷ piece_area</strong> — Rectangle</li>
+            <li><strong>ROUND UP pieces</strong> — Rectangle</li>
+            <li><strong>PRINT pieces</strong> — Parallelogram</li>
+            <li><strong>END</strong> — Oval</li>
+        </ol>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Notice:</strong> Our turf algorithm has <strong>no decision step</strong>.
+                That's okay! Not every algorithm needs a diamond. The rounding step acts like a simple decision
+                internally, but we don't need a diamond shape for it.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — TURF FLOWCHART
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/turf-flowchart.png"
+            alt="A complete flowchart for the turf algorithm: START oval → INPUT parallelogram → process rectangles → PRINT parallelogram → END oval"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[Turf Flowchart]</strong> — A complete flowchart for the turf problem, using ovals for start/end, parallelograms for input/output, and rectangles for processes. Recommended size: 900 × 500 px.
+        </div>
+    </div>
+
+    <!-- ========== TESTING THE ALGORITHM ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-flask"></i> Testing the Algorithm with Different Inputs</div>
+        <p>
+            A good algorithm works for <strong>many different inputs</strong> — not just one.
+            Let's test our algorithm with two different lawn sizes:
+        </p>
+
+        <p><strong>Test 1 — Lawn 4 m × 3 m</strong></p>
+        <ol class="step-list">
+            <li>width = 4, length = 3</li>
+            <li>lawn_area = 4 × 3 = 12 m²</li>
+            <li>piece_area = 0.5 × 0.5 = 0.25 m²</li>
+            <li>pieces = 12 ÷ 0.25 = 48</li>
+            <li>ROUND UP = 48</li>
+            <li><strong>Output: 48 pieces</strong></li>
+        </ol>
+
+        <p style="margin-top:1.5rem;"><strong>Test 2 — Lawn 6 m × 5 m</strong></p>
+        <ol class="step-list">
+            <li>width = 6, length = 5</li>
+            <li>lawn_area = 6 × 5 = 30 m²</li>
+            <li>piece_area = 0.5 × 0.5 = 0.25 m²</li>
+            <li>pieces = 30 ÷ 0.25 = 120</li>
+            <li>ROUND UP = 120</li>
+            <li><strong>Output: 120 pieces</strong></li>
+        </ol>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Great algorithms work for any input.</strong> Our algorithm gave correct answers for
+                both 4 m × 3 m (48 pieces) and 6 m × 5 m (120 pieces).
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 1 — WRITE AND DRAW ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Write and Draw</h4>
+        <p>
+            Work with a partner. Your task is to write the <strong>pseudocode</strong> and draw the
+            <strong>flowchart</strong> for the turf problem.
+        </p>
+
+        <p><strong>Then, test your algorithm with these two lawn sizes:</strong></p>
+        <ul>
+            <li>Test A: <strong>3 m × 3 m</strong></li>
+            <li>Test B: <strong>7 m × 5 m</strong></li>
+        </ul>
+
+        <p style="margin-top:1rem;"><strong>Your work should include:</strong></p>
+        <ol>
+            <li>The <strong>pseudocode</strong> (with START and END, INPUT, calculations, ROUND UP, and PRINT).</li>
+            <li>The <strong>flowchart</strong> (with ovals, rectangles, parallelograms, and arrows).</li>
+            <li><strong>Two test results</strong> — showing all your calculations for both lawn sizes.</li>
+            <li>The <strong>final output</strong> for each test.</li>
+        </ol>
+
+        <div class="tip-box" style="margin-top:1rem;">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Check your work:</strong> Is the order correct? Is rounding included? Are units correct?
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 2 — TEST AND SHARE ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-lightbulb"></i> Activity — Test and Share</h4>
+        <p>
+            After you finish, swap your work with another pair. Review their work carefully.
+        </p>
+
+        <p><strong>Ask each other:</strong></p>
+        <ol>
+            <li>Did their algorithm work for <strong>both test inputs</strong>?</li>
+            <li>Is there a step that <strong>should come before</strong> another?</li>
+            <li>Did they remember to <strong>round up</strong>?</li>
+            <li>Are the <strong>flowchart symbols</strong> correct?</li>
+            <li>Is anything <strong>missing</strong>?</li>
+        </ol>
+
+        <p style="margin-top:1rem;">
+            Write <strong>one suggestion</strong> to improve their algorithm, then apply any good suggestions
+            to your own work.
+        </p>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook:</p>
+        <ol>
+            <li>Why do we use <strong>variables</strong> in an algorithm instead of fixed numbers?</li>
+            <li>Write the <strong>pseudocode</strong> for the turf problem from memory.</li>
+            <li>Which <strong>flowchart symbols</strong> did we use in the turf algorithm?</li>
+            <li>Why is <strong>rounding up</strong> so important in this algorithm?</li>
+            <li>What does it mean for an algorithm to work for <strong>"any input"</strong>?</li>
+            <li>Test the algorithm with a lawn of <strong>10 m × 6 m</strong>. What's the output?</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            A <strong>great algorithm</strong> works for <strong>any input</strong>, not just one specific case.
+            By using <strong>variables</strong> instead of fixed numbers, our turf algorithm works for any lawn
+            size. We write the algorithm in <strong>pseudocode</strong> for clarity, and draw a
+            <strong>flowchart</strong> to visualize the flow. Always <strong>test</strong> your algorithm with
+            different inputs to make sure it works. Next lesson, you'll learn about <strong>edge cases</strong> —
+            special situations that can break an algorithm — and how to fix them.
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — TESTING THE ALGORITHM
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/testing-turf-algorithm.png"
+            alt="A student testing their turf algorithm with two different lawn sizes, checking the results against their calculations"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Testing the Algorithm]</strong> — A student testing their turf algorithm with two different lawn sizes, checking results against calculations. Focused, positive illustration. Recommended size: 700 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Homework</div>
+        <p><strong>Part 1 — Improve the algorithm for a new case:</strong></p>
+        <ul>
+            <li>Imagine a lawn with a <strong>hole in the middle</strong> (for example, a flower bed).</li>
+            <li>How would you change your algorithm to handle this?</li>
+            <li>Write the new steps (in pseudocode).</li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 2 — Apply to a different problem:</strong></p>
+        <ul>
+            <li>Choose a new problem using the same method (tiles on a floor, paint for a wall, pavers for a path).</li>
+            <li>Write the <strong>pseudocode</strong> and draw the <strong>flowchart</strong>.</li>
+            <li>Test it with <strong>two different inputs</strong>.</li>
+            <li>Bring your work to the next lesson — we'll use it to explore edge cases!</li>
+        </ul>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="lesson7-turf.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous: Lesson 7
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="lesson9-testing.html" class="next-btn">
+            Next: Lesson 9 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Indicator 1 · Lesson 8 of 40
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

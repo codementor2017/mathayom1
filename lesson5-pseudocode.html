@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 5 — Pseudocode and Flowcharts</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson5-pseudocode.html" class="active"><i class="fas fa-diagram-project"></i> Lesson 5</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 1 · Semester 1 · Midterm
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-diagram-project"></i> Lesson 5 · Indicator 1</span>
+        <h1>Pseudocode and Flowcharts</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            In Lesson 4, you learned to write algorithms as simple step lists. But there are <strong>two other
+            powerful ways</strong> to write algorithms: <strong>pseudocode</strong> (code-like language) and
+            <strong>flowcharts</strong> (pictures with symbols). Both help you <strong>communicate</strong> your
+            algorithm clearly to anyone — including future programmers.
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-code"></i> Pseudocode</span>
+            <span class="chip sky"><i class="fas fa-shapes"></i> Flowchart Symbols</span>
+            <span class="chip red"><i class="fas fa-arrow-right"></i> Decisions &amp; Arrows</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/pseudocode-flowchart-hero.png"
+            alt="Hero banner showing a split screen: pseudocode on the left and a flowchart on the right, both representing the same algorithm"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — A split-screen image: pseudocode on the left, a flowchart on the right, both representing the same algorithm. Friendly, clear illustration. Recommended size: 1000 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== REVIEW ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-rotate-left"></i> Quick Review from Lesson 4</div>
+        <p>
+            Remember: an <strong>algorithm</strong> is a clear, ordered set of steps to solve a problem.
+        </p>
+        <p>Every good algorithm has <strong>four properties</strong>:</p>
+        <ul>
+            <li><strong>Clear steps</strong> — no vague language</li>
+            <li><strong>Finite</strong> — has a clear end</li>
+            <li><strong>Ordered</strong> — steps in the right sequence</li>
+            <li><strong>Produces a result</strong> — solves the problem</li>
+        </ul>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Today's focus:</strong> How do we <em>write down</em> an algorithm so it's easy to
+                understand, share, and turn into code?
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== WHAT IS PSEUDOCODE ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-code"></i> What is Pseudocode?</div>
+        <p>
+            <strong>Pseudocode</strong> is a way of writing an algorithm using <strong>plain language with
+            code-like keywords</strong>. It's not real programming — but it looks like it. That's why it's called
+            "pseudo" (fake) code.
+        </p>
+
+        <p>
+            Pseudocode uses special words written in <strong>CAPITAL LETTERS</strong> to show important actions:
+        </p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">▶️</span>
+                <h3>START / END</h3>
+                <p>Mark the beginning and end of the algorithm.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">📥</span>
+                <h3>INPUT</h3>
+                <p>Ask the user for information.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">📤</span>
+                <h3>PRINT</h3>
+                <p>Show a result to the user.</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">🤔</span>
+                <h3>IF / ELSE</h3>
+                <p>Make a decision — do one thing or another.</p>
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>Example — Check if a number is positive:</strong></p>
+
+        <div class="formula-box">
+            <span class="formula-label">Pseudocode</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 1rem; text-align: left; line-height: 1.8;">
+                START<br>
+                &nbsp;&nbsp;INPUT number<br>
+                &nbsp;&nbsp;IF number &gt; 0 THEN<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;PRINT "Positive"<br>
+                &nbsp;&nbsp;ELSE<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;PRINT "Not positive"<br>
+                &nbsp;&nbsp;END IF<br>
+                END
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Pseudocode is not tied to any programming language.</strong> You can translate it into
+                Python, Java, C++, or any other language later. It focuses on the <strong>logic</strong>.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — PSEUDOCODE EXAMPLE
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/pseudocode-example.png"
+            alt="A visual showing pseudocode for a simple positive-or-negative number checker, with the key words highlighted"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[Pseudocode Example]</strong> — A clean visual of pseudocode with the key words (START, INPUT, IF, ELSE, PRINT, END) highlighted in different colors. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WHAT IS A FLOWCHART ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-shapes"></i> What is a Flowchart?</div>
+        <p>
+            A <strong>flowchart</strong> is a <strong>picture of an algorithm</strong>. It uses <strong>special
+            shapes</strong> connected by <strong>arrows</strong> to show the flow of steps.
+        </p>
+        <p>
+            Flowcharts are great because you can <strong>see the whole process at a glance</strong>.
+        </p>
+
+        <p><strong>The five key symbols of a flowchart:</strong></p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-shapes"></i> Symbol Shape</th>
+                    <th><i class="fas fa-tag"></i> Name</th>
+                    <th><i class="fas fa-lightbulb"></i> What It Means</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>🔵 Oval</strong></td>
+                    <td class="primary-col">Start / End</td>
+                    <td class="secondary-col">Where the algorithm begins or ends</td>
+                </tr>
+                <tr>
+                    <td><strong>🟦 Rectangle</strong></td>
+                    <td class="primary-col">Process</td>
+                    <td class="secondary-col">A step or action</td>
+                </tr>
+                <tr>
+                    <td><strong>🔷 Diamond</strong></td>
+                    <td class="primary-col">Decision</td>
+                    <td class="secondary-col">A yes/no question</td>
+                </tr>
+                <tr>
+                    <td><strong>🟨 Parallelogram</strong></td>
+                    <td class="primary-col">Input / Output</td>
+                    <td class="secondary-col">Data going in or coming out</td>
+                </tr>
+                <tr>
+                    <td><strong>➡️ Arrow</strong></td>
+                    <td class="primary-col">Flow</td>
+                    <td class="secondary-col">Direction — shows what comes next</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — FLOWCHART SYMBOLS
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/flowchart-symbols.png"
+            alt="The five flowchart symbols: Oval (Start/End), Rectangle (Process), Diamond (Decision), Parallelogram (Input/Output), Arrow (Flow)"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[Flowchart Symbols]</strong> — The five standard flowchart symbols, each with its name and a short description. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== EXAMPLE FLOWCHART ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-lightbulb"></i> Example Flowchart — Rain or Shine?</div>
+        <p>
+            Here's a simple decision: <strong>"If it rains, take an umbrella; otherwise, wear a hat."</strong>
+        </p>
+
+        <p>The flowchart would look like this:</p>
+
+        <ol class="step-list">
+            <li><strong>START</strong> (Oval)</li>
+            <li><strong>Is it raining?</strong> (Diamond — Decision)</li>
+            <li><strong>YES</strong> → <strong>Take an umbrella</strong> (Rectangle — Process)</li>
+            <li><strong>NO</strong> → <strong>Wear a hat</strong> (Rectangle — Process)</li>
+            <li><strong>END</strong> (Oval)</li>
+        </ol>
+
+        <p style="margin-top:1.5rem;"><strong>The same algorithm in pseudocode:</strong></p>
+
+        <div class="formula-box">
+            <span class="formula-label">Pseudocode</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 1rem; text-align: left; line-height: 1.8;">
+                START<br>
+                &nbsp;&nbsp;IF it is raining THEN<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;take an umbrella<br>
+                &nbsp;&nbsp;ELSE<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;wear a hat<br>
+                &nbsp;&nbsp;END IF<br>
+                END
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Notice:</strong> Both formats describe the <em>same algorithm</em>.
+                Pseudocode uses <strong>words</strong>; a flowchart uses <strong>shapes and arrows</strong>.
+                Use whichever is clearer for your audience.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — FLOWCHART EXAMPLE
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/flowchart-rain-example.png"
+            alt="A flowchart showing: START → Is it raining? → YES (take umbrella) or NO (wear hat) → END"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[Flowchart Example]</strong> — A simple flowchart for "If it rains, take an umbrella; otherwise, wear a hat." Using oval, diamond, and rectangle shapes. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== GUIDED PRACTICE: CROSSING THE ROAD ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-road"></i> Guided Practice: Crossing the Road Safely</div>
+        <p>
+            Let's write an algorithm for the task <strong>"Cross the road safely"</strong>.
+        </p>
+
+        <p><strong>First, let's list the steps:</strong></p>
+        <ol>
+            <li>Stop at the edge of the road.</li>
+            <li>Look left.</li>
+            <li>Look right.</li>
+            <li>Look left again.</li>
+            <li>If no cars, walk across.</li>
+            <li>If cars, wait.</li>
+        </ol>
+
+        <p style="margin-top:1.5rem;"><strong>Now, as pseudocode:</strong></p>
+
+        <div class="formula-box">
+            <span class="formula-label">Pseudocode</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 1rem; text-align: left; line-height: 1.8;">
+                START<br>
+                &nbsp;&nbsp;STOP at road edge<br>
+                &nbsp;&nbsp;LOOK left<br>
+                &nbsp;&nbsp;LOOK right<br>
+                &nbsp;&nbsp;LOOK left again<br>
+                &nbsp;&nbsp;IF no cars THEN<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;WALK across<br>
+                &nbsp;&nbsp;ELSE<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;WAIT<br>
+                &nbsp;&nbsp;END IF<br>
+                END
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;">
+            <strong>Which details did we ignore?</strong>
+        </p>
+        <ul>
+            <li>The <strong>color of cars</strong></li>
+            <li>The <strong>number of people</strong> nearby</li>
+            <li>The <strong>weather</strong> (unless it affects safety)</li>
+        </ul>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Abstraction in action:</strong> We focused only on the steps needed to cross safely.
+                Everything else is non-essential.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 1 — WRITE PSEUDOCODE AND FLOWCHART ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Write Pseudocode and a Flowchart</h4>
+        <p>
+            Work with a partner. Choose <strong>one</strong> process from the list below. Then write
+            <strong>both</strong> the pseudocode <em>and</em> draw the flowchart.
+        </p>
+
+        <div class="term-grid" style="margin-top:1rem;">
+            <div class="term-card honey">
+                <span class="term-emoji">🔐</span>
+                <h3>Option A</h3>
+                <p>Logging into a computer</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">🌱</span>
+                <h3>Option B</h3>
+                <p>Watering a plant</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">📚</span>
+                <h3>Option C</h3>
+                <p>Borrowing a library book</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">☕</span>
+                <h3>Option D</h3>
+                <p>Making a cup of tea</p>
+            </div>
+            <div class="term-card honey">
+                <span class="term-emoji">👕</span>
+                <h3>Option E</h3>
+                <p>Choosing what to wear</p>
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>Checklist for your work:</strong></p>
+        <ul>
+            <li>✅ Starts with <strong>START</strong> and ends with <strong>END</strong></li>
+            <li>✅ Has at least <strong>one decision</strong> (IF/ELSE or Diamond shape)</li>
+            <li>✅ Uses correct <strong>shapes</strong> in your flowchart (oval, rectangle, diamond, parallelogram, arrow)</li>
+            <li>✅ Arrows go in the <strong>right direction</strong></li>
+            <li>✅ Steps are in the <strong>correct order</strong></li>
+        </ul>
+    </div>
+
+    <!-- ========== ACTIVITY 2 — PEER REVIEW ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-lightbulb"></i> Activity — Peer Review</h4>
+        <p>
+            Swap your pseudocode and flowchart with another pair. Review their work carefully.
+        </p>
+        <p><strong>Write down:</strong></p>
+        <ol>
+            <li>One thing you <strong>liked</strong> about their work.</li>
+            <li>One thing they could <strong>improve</strong>.</li>
+            <li>Any missing <strong>START</strong> or <strong>END</strong> shapes.</li>
+            <li>Any decisions that aren't in <strong>diamond shape</strong>.</li>
+            <li>Any <strong>missing arrows</strong> or arrows going the wrong way.</li>
+        </ol>
+
+        <p style="margin-top:1rem;"><strong>Common mistakes to watch for:</strong></p>
+        <ul>
+            <li>Missing <strong>START</strong> or <strong>END</strong></li>
+            <li>Decisions drawn in <strong>rectangles</strong> instead of <strong>diamonds</strong></li>
+            <li><strong>Arrows</strong> pointing in the wrong direction</li>
+            <li>Steps that are <strong>out of order</strong></li>
+            <li><strong>Missing</strong> a decision when one is needed</li>
+        </ul>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook:</p>
+        <ol>
+            <li>What is <strong>pseudocode</strong>? Why is it useful?</li>
+            <li>What is a <strong>flowchart</strong>? How is it different from pseudocode?</li>
+            <li>Name the <strong>five flowchart symbols</strong> and what each one means.</li>
+            <li>Which symbol is used for a <strong>decision</strong>?</li>
+            <li>Why do we use <strong>diamonds</strong> for decisions and <strong>rectangles</strong> for processes?</li>
+            <li>Which format — pseudocode or flowchart — do you find easier to understand?
+                Why?</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            There are <strong>two powerful ways</strong> to write algorithms: <strong>pseudocode</strong>
+            (plain language with code-like words) and <strong>flowcharts</strong> (pictures with special shapes).
+            Both use <strong>abstraction</strong> — they show only the essential steps. Flowcharts use
+            <strong>five symbols</strong>: oval for start/end, rectangle for process, diamond for decision,
+            parallelogram for input/output, and arrows for direction. Next lesson, you'll learn about
+            <strong>variables, constants, and units</strong> — the building blocks of math and science problems.
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — COMPARING FORMATS
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/comparing-formats.png"
+            alt="A side-by-side visual showing the same algorithm written as pseudocode on the left and as a flowchart on the right"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Comparing Formats]</strong> — The same algorithm shown side by side: pseudocode on the left, flowchart on the right. Recommended size: 700 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Homework</div>
+        <p><strong>Part 1 — Convert a daily routine to pseudocode:</strong></p>
+        <ul>
+            <li>Choose a daily routine (getting ready for bed, making breakfast, walking the dog, etc.).</li>
+            <li>Write the algorithm as <strong>pseudocode</strong>.</li>
+            <li>Make sure it starts with <strong>START</strong> and ends with <strong>END</strong>.</li>
+            <li>Include at least <strong>one decision</strong> (IF/ELSE).</li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 2 — Draw a flowchart:</strong></p>
+        <ul>
+            <li>Convert your pseudocode into a <strong>flowchart</strong> using the correct symbols:
+                oval, rectangle, diamond, parallelogram, arrows.</li>
+            <li>Use a ruler for clean lines. Use a pencil so you can fix mistakes.</li>
+            <li>Bring both the pseudocode and the flowchart to the next lesson.</li>
+        </ul>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="lesson4-algorithms.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous: Lesson 4
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="lesson6-variables.html" class="next-btn">
+            Next: Lesson 6 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Indicator 1 · Lesson 5 of 40
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

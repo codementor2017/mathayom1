@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 6 — Variables, Constants, and Units</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson6-variables.html" class="active"><i class="fas fa-ruler"></i> Lesson 6</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 1 · Semester 1 · Midterm
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-ruler"></i> Lesson 6 · Indicator 1</span>
+        <h1>Variables, Constants, and Units</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            In every problem, some things <strong>change</strong> and some things <strong>stay the same</strong>.
+            Knowing the difference is a superpower! In this lesson, you'll learn about
+            <strong>variables</strong>, <strong>constants</strong>, and <strong>units</strong> —
+            three tools that help you solve problems accurately.
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-arrow-right-arrow-left"></i> Variables</span>
+            <span class="chip sky"><i class="fas fa-lock"></i> Constants</span>
+            <span class="chip red"><i class="fas fa-ruler-combined"></i> Units</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/variables-constants-hero.png"
+            alt="Hero banner showing a growing plant with a height ruler next to it, illustrating what changes (variable) and what stays the same (constant)"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — A growing plant with a height ruler next to it. The height changes (variable) but the type of plant stays the same (constant). Friendly, science-y illustration. Recommended size: 1000 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WARM-UP: WHAT CHANGES? ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-seedling"></i> Warm-Up: What Changes?</div>
+        <p>
+            Look at a growing plant. Over time, what changes? And what stays the same?
+        </p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">📏</span>
+                <h3>What CHANGES</h3>
+                <ul style="margin-left:1.2rem; margin-top:0.5rem;">
+                    <li>The plant's <strong>height</strong></li>
+                    <li>The <strong>number of leaves</strong></li>
+                    <li>The <strong>color</strong> of the leaves</li>
+                    <li>The <strong>size</strong> of the stem</li>
+                </ul>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">🔒</span>
+                <h3>What STAYS THE SAME</h3>
+                <ul style="margin-left:1.2rem; margin-top:0.5rem;">
+                    <li>The <strong>type of plant</strong></li>
+                    <li>The <strong>pot</strong> it grows in</li>
+                    <li>The <strong>species</strong> (e.g., tomato, sunflower)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Key idea:</strong> Things that <strong>change</strong> are called <strong>variables</strong>.
+                Things that <strong>stay the same</strong> are called <strong>constants</strong>.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== VARIABLES ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-arrow-right-arrow-left"></i> What is a Variable?</div>
+        <p>
+            A <strong>variable</strong> is a value that <strong>can change</strong> from problem to problem or
+            over time. In math, we often use letters like <em>x</em> or <em>y</em> to represent variables.
+        </p>
+
+        <p><strong>Examples of variables:</strong></p>
+        <ul>
+            <li>The <strong>length</strong> of a lawn (could be 4 m, 6 m, or 10 m)</li>
+            <li>The <strong>number of students</strong> in a class (could be 25, 30, or 35)</li>
+            <li>The <strong>weight</strong> of a package (could be 2 kg, 5 kg, or 10 kg)</li>
+            <li>The <strong>time</strong> a car travels (could be 1 hour, 2 hours, or 5 hours)</li>
+        </ul>
+
+        <div class="formula-box">
+            <span class="formula-label">Variable Notation</span>
+            <div class="formula-text">
+                Length = <em>L</em> &nbsp;|&nbsp; Width = <em>W</em> &nbsp;|&nbsp; Time = <em>t</em> &nbsp;|&nbsp; Area = <em>A</em>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== CONSTANTS ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-lock"></i> What is a Constant?</div>
+        <p>
+            A <strong>constant</strong> is a value that <strong>stays the same</strong> in a given problem.
+            Even if the problem changes, the constant stays fixed.
+        </p>
+
+        <p><strong>Examples of constants:</strong></p>
+        <ul>
+            <li>The size of one turf piece (<strong>50 cm × 50 cm</strong>) — always the same</li>
+            <li>The value of π (pi) — always <strong>3.14159…</strong></li>
+            <li>The speed of light — always <strong>300,000,000 m/s</strong></li>
+            <li>The number of days in a week — always <strong>7</strong></li>
+        </ul>
+
+        <div class="formula-box">
+            <span class="formula-label">Constant Notation</span>
+            <div class="formula-text">
+                π ≈ <em>3.14</em> &nbsp;|&nbsp; Turf piece = <em>50 cm × 50 cm</em> &nbsp;|&nbsp; Days per week = <em>7</em>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — VARIABLES VS CONSTANTS
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/variables-vs-constants.png"
+            alt="A side-by-side illustration showing variables (changing values) on the left and constants (fixed values) on the right"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[Variables vs Constants]</strong> — Left: variables shown as an arrow with different values (4 m, 6 m, 10 m). Right: constants shown as a fixed lock with the same value. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== REAL-WORLD EXAMPLES ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-lightbulb"></i> Real-World Examples</div>
+        <p>
+            Let's look at three problems and identify the variables and constants in each:
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-tag"></i> Problem</th>
+                    <th><i class="fas fa-arrow-right-arrow-left"></i> Variable</th>
+                    <th><i class="fas fa-lock"></i> Constant</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Buying paint for a wall</strong></td>
+                    <td class="primary-col">Wall area (changes with each room)</td>
+                    <td class="secondary-col">Paint coverage per can (fixed)</td>
+                </tr>
+                <tr>
+                    <td><strong>Packing books into boxes</strong></td>
+                    <td class="primary-col">Number of books (changes)</td>
+                    <td class="secondary-col">Box size (fixed)</td>
+                </tr>
+                <tr>
+                    <td><strong>Laying turf in a lawn</strong></td>
+                    <td class="primary-col">Lawn size (changes)</td>
+                    <td class="secondary-col">Turf piece size — 50 cm × 50 cm (fixed)</td>
+                </tr>
+                <tr>
+                    <td><strong>Filling a water tank</strong></td>
+                    <td class="primary-col">Tank size (changes)</td>
+                    <td class="secondary-col">Water flow rate (fixed)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Key idea:</strong> In every problem, the <strong>variable</strong> is what you're solving
+                for, and the <strong>constant</strong> is what you already know.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== WHY UNITS MATTER ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-ruler-combined"></i> Why Units Matter</div>
+        <p>
+            A number without a <strong>unit</strong> is meaningless. If I say "The lawn is 5" — 5 what?
+            <strong>5 cm? 5 m? 5 km?</strong> Each one is a very different lawn!
+        </p>
+
+        <p>
+            <strong>Units</strong> tell us <em>what</em> we're measuring. Common units:
+        </p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">📏</span>
+                <h3>Length</h3>
+                <p>Millimeters (mm), centimeters (cm), meters (m), kilometers (km)</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">🟦</span>
+                <h3>Area</h3>
+                <p>Square centimeters (cm²), square meters (m²), square kilometers (km²)</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">⚖️</span>
+                <h3>Weight / Mass</h3>
+                <p>Grams (g), kilograms (kg), tons (t)</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">⏱️</span>
+                <h3>Time</h3>
+                <p>Seconds (s), minutes (min), hours (h), days</p>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Always include units</strong> in your answers. "The area is 20 m²" is much clearer than
+                "The area is 20."
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — UNITS MATTER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/units-matter.png"
+            alt="An illustration showing three different lawns — one 5 cm, one 5 m, and one 5 km — to show how much the unit matters"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[Units Matter]</strong> — Three visuals showing the difference between 5 cm, 5 m, and 5 km. The same number means very different things depending on the unit! Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== UNIT CONVERSIONS ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-arrows-turn-to-dots"></i> Unit Conversions</div>
+        <p>
+            Sometimes you need to <strong>convert</strong> from one unit to another. Here are the most common
+            conversions:
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">Length</span>
+            <div class="formula-text">
+                1 m = <em>100 cm</em> &nbsp;|&nbsp; 1 km = <em>1000 m</em>
+            </div>
+        </div>
+
+        <div class="formula-box" style="border-color:#5B8C3E;">
+            <span class="formula-label" style="background: linear-gradient(135deg, #5B8C3E, #3D6B28);">Area</span>
+            <div class="formula-text">
+                1 m² = <em>10,000 cm²</em>
+            </div>
+        </div>
+
+        <div class="formula-box" style="border-color:#A8D5E5;">
+            <span class="formula-label" style="background: linear-gradient(135deg, #A8D5E5, #7AB8D0);">Volume</span>
+            <div class="formula-text">
+                1 L = <em>1000 mL</em>
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>Example conversion:</strong></p>
+        <ul>
+            <li>50 cm = <strong>0.5 m</strong> (divide by 100)</li>
+            <li>2.5 m = <strong>250 cm</strong> (multiply by 100)</li>
+            <li>1 m² = <strong>10,000 cm²</strong></li>
+        </ul>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Golden rule:</strong> When solving a problem, all measurements must be in the
+                <strong>same unit</strong>. Convert first, then calculate.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== GUIDED PRACTICE ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-graduation-cap"></i> Guided Practice: Identify and Convert</div>
+        <p>
+            Let's work through a problem together: <strong>"Laying turf in a lawn."</strong>
+        </p>
+
+        <p><strong>The problem:</strong> A lawn is 5 m long and 4 m wide. Each turf piece is 50 cm × 50 cm.
+            How many pieces do we need?</p>
+
+        <ol class="step-list">
+            <li>
+                <strong>Identify variables.</strong><br>
+                The lawn size (5 m × 4 m) — it can change if we have a different lawn.
+            </li>
+            <li>
+                <strong>Identify constants.</strong><br>
+                The turf piece size (50 cm × 50 cm) — every piece is the same.
+            </li>
+            <li>
+                <strong>Check the units.</strong><br>
+                The lawn is in <strong>meters</strong>. The turf is in <strong>centimeters</strong>.
+                We need to convert!
+            </li>
+            <li>
+                <strong>Convert units.</strong><br>
+                50 cm = <strong>0.5 m</strong>. So one turf piece is <strong>0.5 m × 0.5 m</strong>.
+            </li>
+            <li>
+                <strong>Now the units match</strong> — we can do the math.
+            </li>
+        </ol>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Notice:</strong> We ignored non-essential details like the color of the grass,
+                the brand of the turf, and the weather. <strong>Abstraction in action!</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 1 — IDENTIFY VARIABLES AND CONSTANTS ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Identify Variables and Constants</h4>
+        <p>
+            For each problem below, identify the <strong>variables</strong>, <strong>constants</strong>,
+            and <strong>units</strong> needed. Write your answers in your notebook.
+        </p>
+
+        <div class="term-grid" style="margin-top:1rem;">
+            <div class="term-card honey">
+                <span class="term-emoji">🎨</span>
+                <h3>Problem 1</h3>
+                <p>Buying paint for a wall. Paint covers 10 m² per can.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">📦</span>
+                <h3>Problem 2</h3>
+                <p>Packing 30 books into boxes. Each box holds 5 books.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">🌱</span>
+                <h3>Problem 3</h3>
+                <p>Laying turf in a lawn. One turf piece is 50 cm × 50 cm.</p>
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>For each problem, write:</strong></p>
+        <ul>
+            <li><strong>Variables:</strong> What can change?</li>
+            <li><strong>Constants:</strong> What stays the same?</li>
+            <li><strong>Units:</strong> What units do we need? (m, cm, m², kg, etc.)</li>
+        </ul>
+    </div>
+
+    <!-- ========== ACTIVITY 2 — MEASUREMENT ACTIVITY ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-lightbulb"></i> Activity — Measurement Around the Classroom</h4>
+        <p>
+            Work in groups of <strong>4 students</strong>. You'll need a <strong>measuring tape</strong>.
+        </p>
+
+        <p><strong>Your task:</strong> Measure each object below and record the values <em>with units</em>.</p>
+
+        <table class="score-table" style="margin-top:1rem;">
+            <thead>
+                <tr>
+                    <th>Object</th>
+                    <th>What to Measure</th>
+                    <th>Record Value (with unit)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Your desk</td>
+                    <td>Length &amp; width (cm)</td>
+                    <td>___ cm × ___ cm</td>
+                </tr>
+                <tr>
+                    <td>Your classroom</td>
+                    <td>Length &amp; width (m)</td>
+                    <td>___ m × ___ m</td>
+                </tr>
+                <tr>
+                    <td>Door</td>
+                    <td>Height (m)</td>
+                    <td>___ m</td>
+                </tr>
+                <tr>
+                    <td>Your book</td>
+                    <td>Width (cm)</td>
+                    <td>___ cm</td>
+                </tr>
+                <tr>
+                    <td>Chalkboard / Whiteboard</td>
+                    <td>Length (m)</td>
+                    <td>___ m</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p style="margin-top:1.5rem;"><strong>Then answer:</strong></p>
+        <ol>
+            <li>Convert one of your measurements from <strong>cm to m</strong> (or m to cm).</li>
+            <li>Which objects had the <strong>same units</strong>? Which had different units?</li>
+            <li>Why is it important to <strong>always include units</strong> in your answers?</li>
+        </ol>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — MEASURING THE CLASSROOM
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/measuring-classroom.png"
+            alt="Students measuring a desk and classroom with a measuring tape, recording values in a notebook with units"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[Measuring the Classroom]</strong> — Students measuring a desk and classroom with a measuring tape, writing values with units in a notebook. Friendly, hands-on illustration. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook:</p>
+        <ol>
+            <li>What is a <strong>variable</strong>? Give two examples.</li>
+            <li>What is a <strong>constant</strong>? Give two examples.</li>
+            <li>Why is it important to include <strong>units</strong> when writing measurements?</li>
+            <li>Convert <strong>1.5 m to cm</strong>.</li>
+            <li>Convert <strong>200 cm to m</strong>.</li>
+            <li>In the turf problem, why do we need to convert the turf piece size from cm to m before calculating?</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            Every problem has <strong>variables</strong> (what changes) and <strong>constants</strong> (what stays
+            the same). Always include <strong>units</strong> when writing measurements — a number without a unit
+            is meaningless. When solving problems, remember to <strong>convert all measurements to the same unit</strong>
+            before calculating. Next lesson, you'll use everything you've learned to solve a real
+            <strong>turf-laying problem</strong> step by step!
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — CONVERTING UNITS
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/converting-units.png"
+            alt="An illustration showing the conversion between meters and centimeters, with a visual arrow showing ÷ 100 and × 100"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Converting Units]</strong> — A visual showing how to convert between meters and centimeters (÷ 100 to go from cm to m, × 100 to go from m to cm). Recommended size: 700 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Homework</div>
+        <p><strong>Part 1 — Measure at home:</strong></p>
+        <ul>
+            <li>Find <strong>three objects</strong> at home and measure them (with permission).</li>
+            <li>Record each measurement <strong>with its unit</strong> (cm, m, kg, etc.).</li>
+            <li>For example: the length of your bed, the width of your table, the height of your door.</li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 2 — Convert one measurement:</strong></p>
+        <ul>
+            <li>Choose <strong>one</strong> of your measurements.</li>
+            <li>Convert it to a <strong>different unit</strong> (for example, cm to m).</li>
+            <li>Show your work.</li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 3 — Think about variables and constants:</strong></p>
+        <ul>
+            <li>Find one real-life situation with variables and constants (cooking, shopping, etc.).</li>
+            <li>Write down <strong>2 variables</strong> and <strong>2 constants</strong>.</li>
+            <li>Explain why each is a variable or a constant.</li>
+        </ul>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="lesson5-pseudocode.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous: Lesson 5
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="lesson7-turf.html" class="next-btn">
+            Next: Lesson 7 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Indicator 1 · Lesson 6 of 40
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

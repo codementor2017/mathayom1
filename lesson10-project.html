@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 10 — Final Project: Real-Life Algorithm with Abstraction</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson10-project.html" class="active"><i class="fas fa-trophy"></i> Lesson 10</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 1 · Semester 1 · Midterm
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-trophy"></i> Lesson 10 · Final Project</span>
+        <h1>Final Project: Real-Life Algorithm with Abstraction</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            This is your chance to <strong>put everything together</strong>! You'll choose a real-life problem,
+            use <strong>abstraction</strong> to focus on what matters, design a complete
+            <strong>algorithm</strong> with pseudocode or a flowchart, <strong>test</strong> it, and
+            <strong>present</strong> your work to the class.
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-lightbulb"></i> Abstraction</span>
+            <span class="chip sky"><i class="fas fa-gears"></i> Algorithm Design</span>
+            <span class="chip red"><i class="fas fa-person-chalkboard"></i> Present Your Work</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/final-project-hero.png"
+            alt="Hero banner showing a student proudly presenting their algorithm project with posters, charts, and pseudocode displayed"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — A student proudly presenting their algorithm project, with posters, charts, and pseudocode displayed behind them. Empowering, celebratory illustration. Recommended size: 1000 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== PROJECT OVERVIEW ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-diagram-project"></i> Project Overview</div>
+        <p>
+            Your mission is to <strong>design an algorithm</strong> for a real-life problem. Along the way,
+            you'll use <strong>everything you've learned</strong> in this unit:
+        </p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">🔍</span>
+                <h3>Abstraction</h3>
+                <p>Focus on the essential details. Ignore the rest.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">📝</span>
+                <h3>Problem Statement</h3>
+                <p>Write a clear statement with goal, input, output, and constraints.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">📋</span>
+                <h3>Algorithm Design</h3>
+                <p>Write the steps in the correct order.</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">💻</span>
+                <h3>Pseudocode or Flowchart</h3>
+                <p>Present your algorithm in a clear format.</p>
+            </div>
+            <div class="term-card honey">
+                <span class="term-emoji">🧪</span>
+                <h3>Testing</h3>
+                <p>Test with different inputs, including edge cases.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">🎤</span>
+                <h3>Presentation</h3>
+                <p>Explain your work clearly to the class.</p>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Key idea:</strong> This project isn't just about solving a problem — it's about
+                <strong>showing your thinking</strong>. You'll explain <em>why</em> you chose the details you did.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== CHOOSING YOUR TOPIC ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-lightbulb"></i> Choosing Your Topic</div>
+        <p>
+            Here are <strong>8 project ideas</strong> to choose from. You can also propose your own topic —
+            just make sure it's a real-life problem that can be solved with an algorithm.
+        </p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">🪑</span>
+                <h3>1. Assembly Chairs</h3>
+                <p>How many chairs are needed for a school assembly?</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">🎨</span>
+                <h3>2. Painting a Wall</h3>
+                <p>How many paint cans are needed for a classroom wall?</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">🔲</span>
+                <h3>3. Tiling a Floor</h3>
+                <p>How many tiles are needed for a floor?</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">💧</span>
+                <h3>4. Water Bottles</h3>
+                <p>How many water bottles are needed for a school event?</p>
+            </div>
+            <div class="term-card honey">
+                <span class="term-emoji">♻️</span>
+                <h3>5. Recycling Station</h3>
+                <p>How to organize a recycling station at school.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">🎉</span>
+                <h3>6. Class Party</h3>
+                <p>How to plan a class party within a budget.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">🌱</span>
+                <h3>7. Watering the Garden</h3>
+                <p>How to water the school garden fairly.</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">🚦</span>
+                <h3>8. Traffic Flow</h3>
+                <p>How to arrange traffic flow at the school gate.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — PROJECT IDEAS
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/project-ideas.png"
+            alt="Eight illustrated cards showing the different project topic options, each with a small icon"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[Project Ideas]</strong> — Eight colorful cards showing the different project topic options, each with an icon and a short description. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== STEP 1 — PLANNING ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-pen-ruler"></i> Step 1 — Plan Your Project</div>
+        <p>
+            Before you start designing, plan carefully. Write your plan with these <strong>4 parts</strong>:
+        </p>
+
+        <ol class="step-list">
+            <li>
+                <strong>Problem statement.</strong><br>
+                Write your problem using the formula: <em>"We need to ___ using ___ to produce ___ while ___."</em>
+            </li>
+            <li>
+                <strong>Essential details.</strong><br>
+                List <strong>at least 5 essential details</strong> for your problem.
+            </li>
+            <li>
+                <strong>Non-essential details.</strong><br>
+                List <strong>at least 5 non-essential details</strong> you'll ignore.
+            </li>
+            <li>
+                <strong>Algorithm plan.</strong><br>
+                Will you use pseudocode, a flowchart, or both?
+            </li>
+        </ol>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Get approval first.</strong> Show your plan to your teacher before you start designing.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== STEP 2 — DESIGN ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-gears"></i> Step 2 — Design Your Algorithm</div>
+        <p>
+            Now design your algorithm. It must include:
+        </p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">💻</span>
+                <h3>Pseudocode OR Flowchart</h3>
+                <p>Write your algorithm in one (or both) of these formats.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">📋</span>
+                <h3>Clear Steps</h3>
+                <p>Use START and END. Include INPUT, calculations, and PRINT.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">🎯</span>
+                <h3>Variables</h3>
+                <p>Use variables so your algorithm works for different inputs.</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">⏫</span>
+                <h3>Rounding (if needed)</h3>
+                <p>Include ROUND UP if your answer needs whole numbers.</p>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Tip:</strong> If your algorithm has a decision (like "if it's raining"), use a
+                <strong>diamond</strong> in the flowchart and <strong>IF/ELSE</strong> in the pseudocode.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — ALGORITHM DESIGN
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/algorithm-design.png"
+            alt="A student designing an algorithm with pseudocode on one side and a flowchart on the other, both showing the same logic"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[Algorithm Design]</strong> — A student designing an algorithm with pseudocode on the left and a flowchart on the right. Focused, creative illustration. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== STEP 3 — TEST ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-flask"></i> Step 3 — Test Your Algorithm</div>
+        <p>
+            Test your algorithm with at least <strong>two examples</strong>. One should be a normal case,
+            and one should be an <strong>edge case</strong>.
+        </p>
+
+        <p>
+            Create a small <strong>debugging log</strong> like this:
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-tag"></i> Test</th>
+                    <th><i class="fas fa-arrow-right"></i> Input</th>
+                    <th><i class="fas fa-bullseye"></i> Expected</th>
+                    <th><i class="fas fa-check"></i> Actual</th>
+                    <th><i class="fas fa-wrench"></i> Fix</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Normal case</strong></td>
+                    <td>___</td>
+                    <td class="primary-col">___</td>
+                    <td class="secondary-col">___</td>
+                    <td>___</td>
+                </tr>
+                <tr>
+                    <td><strong>Edge case</strong></td>
+                    <td>___</td>
+                    <td class="primary-col">___</td>
+                    <td class="secondary-col">___</td>
+                    <td>___</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Did your algorithm break?</strong> That's okay — that's what testing is for!
+                Fix the bug and test again.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== STEP 4 — PRESENT ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-person-chalkboard"></i> Step 4 — Present Your Work</div>
+        <p>
+            Your presentation should last <strong>5 minutes</strong>. Include these <strong>5 parts</strong>:
+        </p>
+
+        <ol class="step-list">
+            <li>
+                <strong>Problem statement.</strong><br>
+                What problem are you solving? Why does it matter?
+            </li>
+            <li>
+                <strong>Essential vs non-essential details.</strong><br>
+                What did you focus on? What did you ignore? Why?
+            </li>
+            <li>
+                <strong>Your algorithm.</strong><br>
+                Show your pseudocode or flowchart. Explain the steps.
+            </li>
+            <li>
+                <strong>Your test results.</strong><br>
+                Show what happened when you tested it.
+            </li>
+            <li>
+                <strong>How abstraction helped.</strong><br>
+                Explain how focusing on essential details made your problem easier to solve.
+            </li>
+        </ol>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Presentation tips:</strong> Speak clearly. Point at your work when explaining.
+                Be ready to answer one question from the class.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — PRESENTATION IN ACTION
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/presentation-in-action.png"
+            alt="A student confidently presenting their algorithm project to the class, pointing at their flowchart on the board"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[Presentation in Action]</strong> — A student confidently presenting their algorithm project to the class, pointing at their flowchart. Warm, celebratory illustration. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== PROJECT RUBRIC ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-clipboard-check"></i> Project Rubric</div>
+        <p>
+            Your teacher will use this rubric to assess your project. Review it carefully before you present.
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-list"></i> Criteria</th>
+                    <th><i class="fas fa-star"></i> Excellent (4)</th>
+                    <th><i class="fas fa-check"></i> Good (3)</th>
+                    <th><i class="fas fa-circle"></i> Fair (2)</th>
+                    <th><i class="fas fa-times"></i> Needs Work (1)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Problem Statement</strong></td>
+                    <td class="primary-col">Clear goal, input, output, constraints</td>
+                    <td class="primary-col">Missing one part</td>
+                    <td class="primary-col">Missing two parts</td>
+                    <td class="primary-col">Unclear or missing</td>
+                </tr>
+                <tr>
+                    <td><strong>Essential Details</strong></td>
+                    <td class="secondary-col">5+ correct essential details</td>
+                    <td class="secondary-col">4 correct</td>
+                    <td class="secondary-col">3 correct</td>
+                    <td class="secondary-col">Fewer than 3</td>
+                </tr>
+                <tr>
+                    <td><strong>Non-Essential Details</strong></td>
+                    <td class="primary-col">5+ correctly ignored</td>
+                    <td class="primary-col">4 correct</td>
+                    <td class="primary-col">3 correct</td>
+                    <td class="primary-col">Fewer than 3</td>
+                </tr>
+                <tr>
+                    <td><strong>Algorithm Correctness</strong></td>
+                    <td class="secondary-col">Logical, complete, tested</td>
+                    <td class="secondary-col">Mostly correct</td>
+                    <td class="secondary-col">Some errors</td>
+                    <td class="secondary-col">Major errors</td>
+                </tr>
+                <tr>
+                    <td><strong>Clarity</strong></td>
+                    <td class="primary-col">Easy to follow</td>
+                    <td class="primary-col">Understandable</td>
+                    <td class="primary-col">Some confusion</td>
+                    <td class="primary-col">Confusing</td>
+                </tr>
+                <tr>
+                    <td><strong>Real-Life Connection</strong></td>
+                    <td class="secondary-col">Strong and practical</td>
+                    <td class="secondary-col">Good</td>
+                    <td class="secondary-col">Weak</td>
+                    <td class="secondary-col">Unrealistic</td>
+                </tr>
+                <tr>
+                    <td><strong>Presentation</strong></td>
+                    <td class="primary-col">Clear, confident, engaging</td>
+                    <td class="primary-col">Clear</td>
+                    <td class="primary-col">Somewhat clear</td>
+                    <td class="primary-col">Difficult to follow</td>
+                </tr>
+                <tr>
+                    <td><strong>Reflection</strong></td>
+                    <td class="secondary-col">Insightful and detailed</td>
+                    <td class="secondary-col">Good</td>
+                    <td class="secondary-col">Basic</td>
+                    <td class="secondary-col">Missing</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ========== ACTIVITY — PROJECT PLANNING SHEET ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Plan Your Project</h4>
+        <p>
+            Use this planning sheet to organize your project before you start. Write your answers in your notebook.
+        </p>
+
+        <p style="margin-top:1rem;"><strong>Part 1 — Project Basics</strong></p>
+        <ol>
+            <li>What is your <strong>project topic</strong>?</li>
+            <li>Why did you choose this topic?</li>
+            <li>Who is your <strong>audience</strong>? (class, school, family, community?)</li>
+        </ol>
+
+        <p style="margin-top:1rem;"><strong>Part 2 — Problem Statement</strong></p>
+        <p>Fill in the formula:</p>
+        <div class="formula-box" style="margin-top:0.8rem;">
+            <span class="formula-label">Your Problem Statement</span>
+            <div class="formula-text">
+                We need to <em>_____</em> using <em>_____</em> to produce <em>_____</em> while <em>_____</em>.
+            </div>
+        </div>
+
+        <p style="margin-top:1rem;"><strong>Part 3 — Essential and Non-Essential Details</strong></p>
+        <p>List your details:</p>
+        <ul>
+            <li><strong>5 essential details</strong> — what matters most?</li>
+            <li><strong>5 non-essential details</strong> — what will you ignore?</li>
+        </ul>
+
+        <p style="margin-top:1rem;"><strong>Part 4 — Algorithm &amp; Testing</strong></p>
+        <ol>
+            <li>Will you use <strong>pseudocode</strong>, a <strong>flowchart</strong>, or both?</li>
+            <li>What <strong>inputs</strong> will you test?</li>
+            <li>What is your expected <strong>output</strong>?</li>
+        </ol>
+
+        <p style="margin-top:1rem;"><strong>Part 5 — Reflection</strong></p>
+        <ol>
+            <li>How did <strong>abstraction</strong> make your problem easier to solve?</li>
+            <li>What was the <strong>hardest part</strong> of your project?</li>
+            <li>What would you <strong>improve</strong> if you had more time?</li>
+        </ol>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook:</p>
+        <ol>
+            <li>Why is <strong>abstraction</strong> important when designing an algorithm?</li>
+            <li>What are the <strong>four parts</strong> of a problem statement?</li>
+            <li>Why is it important to <strong>test</strong> an algorithm with different inputs?</li>
+            <li>What is an <strong>edge case</strong>, and why should you test for it?</li>
+            <li>How does using <strong>variables</strong> make your algorithm more powerful?</li>
+            <li>Why is it important to <strong>explain your work</strong> when presenting?</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            In this unit, you've learned to <strong>use abstraction</strong> to focus on what matters,
+            write <strong>clear problem statements</strong>, design <strong>algorithms</strong> with pseudocode
+            and flowcharts, and <strong>test and improve</strong> your work. Your final project brings all of
+            these skills together. Remember: a great algorithm isn't just about <em>what</em> you do —
+            it's about <strong>why</strong> you do it, and being able to explain it clearly.
+            <strong>Congratulations on completing Indicator 1!</strong>
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — CELEBRATION
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/celebration.png"
+            alt="A group of students celebrating the completion of their algorithm projects, holding up their work proudly"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Celebration]</strong> — A group of students celebrating the completion of their algorithm projects, holding their work up proudly. Warm, joyful illustration. Recommended size: 700 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Final Homework &amp; Reflection</div>
+        <p><strong>Part 1 — Complete your project:</strong></p>
+        <ul>
+            <li>Finish your algorithm design (pseudocode or flowchart).</li>
+            <li>Complete your test cases and debugging log.</li>
+            <li>Prepare your 5-minute presentation.</li>
+            <li>Practice your presentation with a partner or family member.</li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 2 — Write a reflection:</strong></p>
+        <p>Write a paragraph (5–6 sentences) answering:</p>
+        <ul>
+            <li><strong>What is the most important thing</strong> you learned in this unit?</li>
+            <li><strong>How did abstraction</strong> help you solve your problem?</li>
+            <li><strong>What was the hardest part</strong> of your project?</li>
+            <li><strong>What would you improve</strong> if you had more time?</li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 3 — Preview of Indicator 2:</strong></p>
+        <p>
+            In the next unit, you'll learn how to write programs in <strong>Python</strong> to solve math and
+            science problems. Think about what you already know — variables, if/else decisions, loops — and
+            get ready to bring your algorithms to life!
+        </p>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="lesson9-testing.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous: Lesson 9
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="lesson11-programming-intro.html" class="next-btn">
+            Next: Lesson 11 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-trophy"></i> Mathayom 1 (Grade 7) · Indicator 1 · Lesson 10 of 40 · <strong>Indicator 1 Complete!</strong>
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

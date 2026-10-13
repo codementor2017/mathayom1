@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 18 — BMI Calculation Program</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson18-bmi-calculation.html" class="active"><i class="fas fa-heart-pulse"></i> Lesson 18</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 2 · Semester 1 · Final
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-heart-pulse"></i> Lesson 18 · Indicator 2</span>
+        <h1>BMI Calculation Program</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            In this lesson, you'll build a <strong>real-world health tool</strong>: a
+            <strong>BMI (Body Mass Index) calculator</strong>. You'll use everything you've learned —
+            variables, conditions, and input validation — to write a program that calculates BMI and
+            tells the user their health category.
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-heart-pulse"></i> Health Science</span>
+            <span class="chip sky"><i class="fas fa-code"></i> Python</span>
+            <span class="chip red"><i class="fas fa-shield-halved"></i> Input Validation</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/bmi-hero.png"
+            alt="Hero banner showing a friendly scale and a height ruler, with BMI categories displayed in a colorful chart"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — A friendly scale and a height ruler, with BMI categories displayed as a colorful chart. Warm, health-themed illustration. Recommended size: 1000 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WARM-UP: WHAT IS BMI ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-circle-question"></i> Warm-Up: What is BMI?</div>
+        <p>
+            <strong>BMI</strong> stands for <strong>Body Mass Index</strong>. It's a number that helps
+            doctors and health professionals understand whether a person's weight is healthy for their height.
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">BMI Formula</span>
+            <div class="formula-text">
+                BMI = <em>weight (kg)</em> ÷ <em>height² (m²)</em>
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>BMI Categories:</strong></p>
+        <ul>
+            <li><strong>BMI &lt; 18.5:</strong> Underweight</li>
+            <li><strong>18.5 ≤ BMI &lt; 25:</strong> Normal</li>
+            <li><strong>25 ≤ BMI &lt; 30:</strong> Overweight</li>
+            <li><strong>BMI ≥ 30:</strong> Obese</li>
+        </ul>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Why does this matter?</strong> BMI helps people understand their health. But remember —
+                it's just one measure, and not perfect for athletes or growing children.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== THE BASIC BMI PROGRAM ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-code"></i> Build the Basic BMI Program</div>
+        <p>
+            Let's start with a simple version that just calculates BMI:
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">Python — Basic Version</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 0.95rem; text-align: left; line-height: 1.8;">
+                w = float(input("Weight (kg): "))<br>
+                h = float(input("Height (m): "))<br><br>
+                bmi = w / (h * h)<br><br>
+                print("BMI =", bmi)
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>Let's trace through with an example:</strong></p>
+        <ul>
+            <li>Weight = 50 kg, Height = 1.6 m</li>
+            <li>h² = 1.6 × 1.6 = 2.56</li>
+            <li>BMI = 50 ÷ 2.56 = <strong>19.5</strong></li>
+        </ul>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Why use <em>float</em> for both?</strong> Because weight and height can be decimals
+                (like 1.6 m or 52.5 kg). Using <em>float</em> makes the program work for everyone.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — BMI FORMULA IN ACTION
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/bmi-formula-example.png"
+            alt="A visual showing a person's height and weight, with the BMI formula applied step by step"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[BMI Formula in Action]</strong> — A person's height and weight shown next to the calculation, with each step labeled. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== ADDING BMI CATEGORIES ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-code-branch"></i> Adding BMI Categories</div>
+        <p>
+            A BMI number alone doesn't tell the user much. Let's add <strong>if/elif/else</strong> to
+            print the correct category:
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">Python — With Categories</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 0.9rem; text-align: left; line-height: 1.8;">
+                w = float(input("Weight (kg): "))<br>
+                h = float(input("Height (m): "))<br><br>
+                bmi = w / (h * h)<br>
+                print("BMI =", bmi)<br><br>
+                if bmi &lt; 18.5:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Category: Underweight")<br>
+                elif bmi &lt; 25:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Category: Normal")<br>
+                elif bmi &lt; 30:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Category: Overweight")<br>
+                else:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Category: Obese")
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>How the categories work:</strong></p>
+        <ul>
+            <li>If BMI is <strong>19.5</strong>: 19.5 &lt; 18.5 is False, 19.5 &lt; 25 is True → prints "Normal"</li>
+            <li>If BMI is <strong>15.0</strong>: 15.0 &lt; 18.5 is True → prints "Underweight"</li>
+            <li>If BMI is <strong>27.0</strong>: 27.0 &lt; 30 is True → prints "Overweight"</li>
+            <li>If BMI is <strong>35.0</strong>: All conditions False → prints "Obese"</li>
+        </ul>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — BMI CATEGORIES FLOWCHART
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/bmi-categories-flowchart.png"
+            alt="A flowchart showing the BMI category decision logic with diamonds at each threshold"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[BMI Categories Flowchart]</strong> — A flowchart with diamond decisions for each BMI threshold (18.5, 25, 30). Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== ADDING INPUT VALIDATION ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-shield-halved"></i> Adding Input Validation</div>
+        <p>
+            What happens if the user types a <strong>negative height</strong> or a <strong>zero height</strong>?
+            The program will either crash or give a wrong answer. Let's fix that!
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">Python — With Validation</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 0.9rem; text-align: left; line-height: 1.8;">
+                w = float(input("Weight (kg): "))<br>
+                h = float(input("Height (m): "))<br><br>
+                if h &lt;= 0:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Error: Height must be greater than zero!")<br>
+                elif w &lt;= 0:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Error: Weight must be greater than zero!")<br>
+                else:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;bmi = w / (h * h)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("BMI =", bmi)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;# ... categories
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Why validate?</strong> Because good programs don't crash on bad input —
+                they explain the problem and let the user try again.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ADDING A LOOP FOR MULTIPLE PEOPLE ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-rotate"></i> Adding a Loop for Multiple People</div>
+        <p>
+            What if you want to calculate BMI for <strong>3 friends</strong> in one run? Use a
+            <strong>for loop</strong>!
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">Python — With Loop</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 0.9rem; text-align: left; line-height: 1.8;">
+                for i in range(3):<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Person", i + 1)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;w = float(input("Weight (kg): "))<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;h = float(input("Height (m): "))<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;bmi = w / (h * h)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("BMI =", bmi)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print()
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>What this does:</strong></p>
+        <ul>
+            <li>The loop runs <strong>3 times</strong> (once for each person).</li>
+            <li>Each time, it asks for weight and height, then calculates and prints BMI.</li>
+            <li>The <code>print()</code> at the end adds a blank line, so the output is easier to read.</li>
+        </ul>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Try changing the number!</strong> Replace <code>range(3)</code> with <code>range(10)</code>
+                to calculate BMI for 10 people in one run.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — FULL BMI PROGRAM
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/full-bmi-program.png"
+            alt="A visual of the complete BMI program with variables, calculation, categories, validation, and a loop all labeled"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[Full BMI Program]</strong> — The complete BMI program with all features labeled: variables, calculation, categories, validation, and loop. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 1 — EXTEND THE BMI PROGRAM ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Extend the BMI Program</h4>
+        <p>
+            Work with a partner. Take the BMI program and add <strong>one</strong> (or more!) of these
+            extensions:
+        </p>
+
+        <div class="term-grid" style="margin-top:1rem;">
+            <div class="term-card honey">
+                <span class="term-emoji">📊</span>
+                <h3>Add Categories</h3>
+                <p>Add "Severely Underweight" (BMI &lt; 16) and "Severely Obese" (BMI ≥ 35).</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">💬</span>
+                <h3>Add Health Tips</h3>
+                <p>Print a helpful tip for each category. Example: "Eat more protein" or "Great job!"</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">🔄</span>
+                <h3>Add a Loop</h3>
+                <p>Let the user calculate BMI for many people until they type "quit".</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">💾</span>
+                <h3>Save Results</h3>
+                <p>Store each BMI in a list and print all of them at the end.</p>
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>Your program must:</strong></p>
+        <ul>
+            <li>Validate all inputs (positive numbers only).</li>
+            <li>Print the BMI and the category.</li>
+            <li>Test with <strong>at least 5 different inputs</strong>, including an edge case.</li>
+        </ul>
+    </div>
+
+    <!-- ========== ACTIVITY 2 — THINK ABOUT LIMITATIONS ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-lightbulb"></i> Activity — Think About Limitations</h4>
+        <p>
+            BMI is a useful tool, but it has <strong>limits</strong>. As a data scientist, you should
+            always think critically about the tools you use.
+        </p>
+
+        <p><strong>Consider these questions:</strong></p>
+        <ol>
+            <li>Why might an <strong>athlete</strong> have a high BMI but still be very healthy?</li>
+            <li>Why is BMI <strong>not a good measure</strong> for young children?</li>
+            <li>What other <strong>health measures</strong> might be more useful than BMI?</li>
+            <li>How could a program account for <strong>age or muscle mass</strong>?</li>
+        </ol>
+
+        <p style="margin-top:1rem;">
+            <strong>Write a short paragraph</strong> answering these questions in your notebook.
+            Discuss as a class what makes a health measure trustworthy.
+        </p>
+
+        <div class="tip-box" style="margin-top:1rem;">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Key idea:</strong> Every formula has assumptions and limits. Good programmers
+                and scientists know what those limits are.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook:</p>
+        <ol>
+            <li>What is the <strong>BMI formula</strong>? Write it out.</li>
+            <li>Name the <strong>four BMI categories</strong> and their ranges.</li>
+            <li>Why do we use <strong>float</strong> for weight and height?</li>
+            <li>Why is <strong>input validation</strong> important in this program?</li>
+            <li>How does adding a <strong>loop</strong> make the BMI program more useful?</li>
+            <li>What are <strong>two limitations</strong> of BMI as a health measure?</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            The <strong>BMI Calculator</strong> brings together everything you've learned:
+            <strong>variables</strong> to store weight and height, a <strong>formula</strong> to
+            calculate BMI, <strong>if/elif/else</strong> to categorize the result,
+            <strong>input validation</strong> to handle bad data, and <strong>loops</strong> to
+            process many people in one run. This is what real-world programs look like — a combination
+            of all the skills you've built. Next lesson, you'll learn how to <strong>test and debug</strong>
+            programs like this one, finding and fixing the bugs that hide in your code!
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — HEALTH TOOL IN ACTION
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/health-tool-in-action.png"
+            alt="A student confidently running their BMI calculator, showing the result and category to a friend"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Health Tool in Action]</strong> — A student confidently running their BMI calculator and showing the result to a friend. Warm, encouraging illustration. Recommended size: 700 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Homework</div>
+        <p><strong>Part 1 — BMI for a list of people:</strong></p>
+        <ul>
+            <li>Write a Python program that calculates BMI for <strong>5 people</strong>.</li>
+            <li>Use a <strong>for loop</strong> to ask for weight and height 5 times.</li>
+            <li>Store each BMI in a <strong>list</strong>.</li>
+            <li>After the loop, print all 5 BMIs and the <strong>average BMI</strong>.</li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 2 — Add health recommendations:</strong></p>
+        <ul>
+            <li>For each BMI category, print a specific health tip:
+                <ul>
+                    <li>Underweight: "Consider eating more nutritious food."</li>
+                    <li>Normal: "Great job! Keep up your healthy habits."</li>
+                    <li>Overweight: "Try to exercise for 30 minutes a day."</li>
+                    <li>Obese: "Talk to a doctor about a healthy plan."</li>
+                </ul>
+            </li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 3 — Reflect:</strong></p>
+        <ul>
+            <li>Write a short paragraph: <em>"What are two limitations of using BMI as a health measure?"</em></li>
+        </ul>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="lesson17-area-calculation.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous: Lesson 17
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="lesson19-testing-debugging.html" class="next-btn">
+            Next: Lesson 19 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Indicator 2 · Lesson 18 of 40
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

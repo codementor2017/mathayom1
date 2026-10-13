@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4 — Algorithms in Daily Life</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson4-algorithms.html" class="active"><i class="fas fa-shoe-prints"></i> Lesson 4</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 1 · Semester 1 · Midterm
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-shoe-prints"></i> Lesson 4 · Indicator 1</span>
+        <h1>Algorithms in Daily Life</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            Every day, you follow <strong>step-by-step instructions</strong> — brushing your teeth, making a
+            sandwich, walking to school. These step-by-step instructions are called <strong>algorithms</strong>.
+            In this lesson, you'll learn what makes a good algorithm and how to write one that anyone can follow.
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-list-ol"></i> Clear Steps</span>
+            <span class="chip sky"><i class="fas fa-shoe-prints"></i> Sequence &amp; Order</span>
+            <span class="chip red"><i class="fas fa-circle-check"></i> Finite &amp; Complete</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/algorithms-hero.png"
+            alt="Hero banner showing a student following a numbered step-by-step path through their morning routine, with arrows connecting each step"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — A student following a numbered path through their morning routine, with arrows connecting each step. Friendly, clear illustration. Recommended size: 1000 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WARM-UP: SEQUENCE GAME ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-puzzle-piece"></i> Warm-Up: Sequence Game</div>
+        <p>
+            Below are the steps for <strong>brushing your teeth</strong> — but they're all mixed up! Can you put them
+            in the correct order?
+        </p>
+
+        <ul>
+            <li>Pick up toothbrush</li>
+            <li>Put toothpaste on toothbrush</li>
+            <li>Open mouth</li>
+            <li>Brush teeth for 2 minutes</li>
+            <li>Rinse mouth</li>
+            <li>Clean toothbrush</li>
+            <li>Put toothbrush away</li>
+        </ul>
+
+        <p>
+            <strong>The correct order is:</strong>
+        </p>
+        <ol>
+            <li>Pick up toothbrush</li>
+            <li>Put toothpaste on toothbrush</li>
+            <li>Open mouth</li>
+            <li>Brush teeth for 2 minutes</li>
+            <li>Rinse mouth</li>
+            <li>Clean toothbrush</li>
+            <li>Put toothbrush away</li>
+        </ol>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>What if we change the order?</strong> If you "rinse mouth" before "put toothpaste on toothbrush,"
+                it wouldn't make sense. <strong>Order matters</strong> in algorithms!
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== WHAT IS AN ALGORITHM ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-list-ol"></i> What is an Algorithm?</div>
+
+        <div class="formula-box">
+            <span class="formula-label">Definition</span>
+            <div class="formula-text">
+                An <em>algorithm</em> is a clear, ordered set of steps<br>
+                to solve a problem or complete a task.
+            </div>
+        </div>
+
+        <p>Every good algorithm has <strong>four properties</strong>:</p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">🔍</span>
+                <h3>Clear Steps</h3>
+                <p>Each step is specific — no vague language like "walk a bit" or "cook for a while."</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">🛑</span>
+                <h3>Finite</h3>
+                <p>The algorithm has a clear <strong>end</strong>. It stops when the task is done.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">🔢</span>
+                <h3>Ordered</h3>
+                <p>Steps follow a specific <strong>sequence</strong>. Changing the order breaks the algorithm.</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">✅</span>
+                <h3>Produces a Result</h3>
+                <p>When followed correctly, the algorithm <strong>solves the problem</strong>.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — FOUR PROPERTIES
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/four-properties-algorithm.png"
+            alt="Four illustrated cards showing the four properties of a good algorithm: Clear Steps, Finite, Ordered, and Produces a Result"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[Four Properties]</strong> — Four illustrated cards, each with an icon and label: Clear, Finite, Ordered, Result. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== EXAMPLES OF ALGORITHMS ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-lightbulb"></i> Everyday Examples of Algorithms</div>
+        <p>
+            You already use algorithms all the time! Here are some examples:
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-tag"></i> Task</th>
+                    <th><i class="fas fa-list-ol"></i> Sample Steps</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>🍚 Cooking rice</strong></td>
+                    <td class="primary-col">Wash rice → Add water → Turn on cooker → Wait → Serve</td>
+                </tr>
+                <tr>
+                    <td><strong>🧭 Walking to a friend's house</strong></td>
+                    <td class="primary-col">Walk straight → Turn left → Cross road → Ring bell</td>
+                </tr>
+                <tr>
+                    <td><strong>💻 Logging into a computer</strong></td>
+                    <td class="primary-col">Turn on → Enter username → Enter password → Press Enter</td>
+                </tr>
+                <tr>
+                    <td><strong>🍞 Making a sandwich</strong></td>
+                    <td class="primary-col">Get bread → Add filling → Close → Cut → Serve</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Every algorithm uses abstraction</strong> — we only include the steps that matter,
+                and skip the ones that don't (like "use a blue plate" or "hum a song").
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — EVERYDAY ALGORITHMS
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/everyday-algorithms.png"
+            alt="Four illustrated panels showing daily tasks as step-by-step algorithms: cooking rice, walking to a friend's house, logging into a computer, and making a sandwich"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[Everyday Algorithms]</strong> — Four illustrated panels showing step-by-step daily tasks. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== BAD ALGORITHM VS GOOD ALGORITHM ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-triangle-exclamation"></i> Bad Algorithm vs Good Algorithm</div>
+        <p>
+            Let's compare a bad algorithm and a good one for the same task:
+        </p>
+
+        <div class="question-compare">
+            <div class="q-card bad">
+                <span class="q-label">❌ Bad Algorithm</span>
+                <h4>"Cook rice. Eat."</h4>
+                <p><strong>What's missing?</strong> No steps in between! How do you cook rice?
+                    How long? How much water? This isn't a real algorithm.</p>
+            </div>
+            <div class="q-card good">
+                <span class="q-label">✅ Good Algorithm</span>
+                <h4>"Wash rice, add 2 cups water, cook for 20 minutes, serve."</h4>
+                <p><strong>Why it's good:</strong> Clear steps, specific amounts, ordered sequence, and a clear end result.</p>
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>A good algorithm should be:</strong></p>
+        <ul>
+            <li><strong>Specific</strong> — no vague words</li>
+            <li><strong>Complete</strong> — no steps missing</li>
+            <li><strong>Ordered</strong> — steps in the right sequence</li>
+            <li><strong>Testable</strong> — someone else can follow it and succeed</li>
+        </ul>
+    </div>
+
+    <!-- ========== GUIDED PRACTICE: MAKING A SANDWICH ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-bread-slice"></i> Guided Practice: Making a Tuna Sandwich</div>
+        <p>
+            Let's write the algorithm together for <strong>"Make a tuna sandwich."</strong>
+        </p>
+
+        <ol class="step-list">
+            <li><strong>Wash hands.</strong> (Important for hygiene!)</li>
+            <li><strong>Take two slices of bread.</strong></li>
+            <li><strong>Open the tuna can.</strong></li>
+            <li><strong>Mix tuna with mayonnaise.</strong></li>
+            <li><strong>Spread tuna on one slice of bread.</strong></li>
+            <li><strong>Put the other slice on top.</strong></li>
+            <li><strong>Cut the sandwich in half.</strong></li>
+            <li><strong>Serve.</strong></li>
+        </ol>
+
+        <p style="margin-top:1.5rem;">
+            <strong>Now let's think about abstraction:</strong>
+        </p>
+        <ul>
+            <li><strong>Which steps are essential?</strong> All of them! They're all necessary to make the sandwich.</li>
+            <li><strong>Which details can be ignored?</strong></li>
+        </ul>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Essential:</strong> "Wash hands" — it protects your health.<br>
+                <strong>Non-essential:</strong> "Use a blue plate" — the color doesn't affect whether the sandwich
+                is made correctly.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — MAKING A SANDWICH
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/sandwich-algorithm.png"
+            alt="A step-by-step visual showing the process of making a tuna sandwich, from washing hands to serving"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[Making a Sandwich]</strong> — A step-by-step visual of making a tuna sandwich, with 8 numbered panels. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 1 — WRITE AN ALGORITHM ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Write a Daily Task Algorithm</h4>
+        <p>
+            Work in groups of <strong>3–4 students</strong>. Choose <strong>one</strong> daily task below and
+            write an algorithm with <strong>6–10 clear steps</strong>.
+        </p>
+
+        <div class="term-grid" style="margin-top:1rem;">
+            <div class="term-card honey">
+                <span class="term-emoji">🌅</span>
+                <h3>Option A</h3>
+                <p>Morning routine before school</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">📚</span>
+                <h3>Option B</h3>
+                <p>Going to the library to borrow a book</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">💻</span>
+                <h3>Option C</h3>
+                <p>Logging into a school computer</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">🌱</span>
+                <h3>Option D</h3>
+                <p>Watering a plant</p>
+            </div>
+            <div class="term-card honey">
+                <span class="term-emoji">🎒</span>
+                <h3>Option E</h3>
+                <p>Preparing a school bag</p>
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>Your algorithm must include:</strong></p>
+        <ul>
+            <li><strong>6–10 clear steps</strong></li>
+            <li>A clear <strong>beginning</strong> and <strong>end</strong></li>
+            <li>Only <strong>essential steps</strong> (use abstraction!)</li>
+            <li>A list of <strong>3 non-essential details</strong> you ignored</li>
+        </ul>
+
+        <p style="margin-top:1rem;">
+            <strong>Then:</strong> Swap your algorithm with another group. Try to follow their algorithm
+            exactly. Does it work? Are any steps unclear?
+        </p>
+    </div>
+
+    <!-- ========== ACTIVITY 2 — TEST AND IMPROVE ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-lightbulb"></i> Activity — Test and Improve</h4>
+        <p>
+            When you swap algorithms with another group, write down:
+        </p>
+
+        <ol>
+            <li>One step that was <strong>unclear</strong> or confusing.</li>
+            <li>One step that seemed to be <strong>missing</strong>.</li>
+            <li>One <strong>non-essential detail</strong> they correctly ignored.</li>
+            <li>One <strong>suggestion</strong> to make their algorithm better.</li>
+        </ol>
+
+        <p style="margin-top:1rem;">
+            Then, use their feedback to <strong>improve your own algorithm</strong>. Write down the changes you made.
+        </p>
+
+        <div class="tip-box" style="margin-top:1rem;">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Remember:</strong> Testing an algorithm is how you find errors and improve it.
+                Good programmers test their work — again and again.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook:</p>
+        <ol>
+            <li>What is an <strong>algorithm</strong>?</li>
+            <li>Name the <strong>four properties</strong> of a good algorithm.</li>
+            <li>Why does <strong>order matter</strong> in an algorithm?</li>
+            <li>What's wrong with this algorithm: <em>"Cook rice. Eat."</em></li>
+            <li>Give <strong>one example</strong> of an algorithm you use every day.</li>
+            <li>How does <strong>abstraction</strong> help us write better algorithms?</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            An <strong>algorithm</strong> is a clear, ordered set of steps to solve a problem. Good algorithms have
+            <strong>four properties</strong>: clear steps, finite (they end), ordered, and they produce a result.
+            When you write an algorithm, use <strong>abstraction</strong> — include only the essential steps.
+            Next lesson, you'll learn how to write algorithms in two special ways:
+            <strong>pseudocode</strong> and <strong>flowcharts</strong>.
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — TESTING THE ALGORITHM
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/testing-algorithm.png"
+            alt="Two students testing each other's algorithms, one following the steps while the other observes and takes notes"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Testing the Algorithm]</strong> — Two students testing each other's algorithms, one following the steps and the other taking notes. Recommended size: 700 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Homework</div>
+        <p><strong>Part 1 — Write an algorithm for a household chore:</strong></p>
+        <ul>
+            <li>Choose one chore: washing dishes, sweeping the floor, feeding a pet, or similar.</li>
+            <li>Write an algorithm with <strong>6–10 clear steps</strong>.</li>
+            <li>Include a <strong>beginning</strong> and an <strong>end</strong>.</li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 2 — Identify non-essential details:</strong></p>
+        <ul>
+            <li>Write down <strong>3 non-essential details</strong> you deliberately ignored.</li>
+            <li>Explain why each one doesn't affect the task.</li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 3 — Test it:</strong></p>
+        <ul>
+            <li>Ask a family member to follow your algorithm exactly. Did they succeed?</li>
+            <li>Write down <strong>one improvement</strong> you would make.</li>
+        </ul>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="lesson3-problem.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous: Lesson 3
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="lesson5-pseudocode.html" class="next-btn">
+            Next: Lesson 5 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Indicator 1 · Lesson 4 of 40
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

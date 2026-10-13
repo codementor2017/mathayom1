@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 7 — Case Study: Turf-Laying Problem</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson7-turf.html" class="active"><i class="fas fa-seedling"></i> Lesson 7</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 1 · Semester 1 · Midterm
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-seedling"></i> Lesson 7 · Indicator 1</span>
+        <h1>Case Study: Turf-Laying Problem</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            It's time to put everything together! In this lesson, you'll solve a <strong>real-world problem</strong>:
+            how many pieces of turf do we need to cover a lawn? You'll use <strong>abstraction</strong> to focus
+            on the essential details, <strong>area formulas</strong> to calculate, and <strong>rounding</strong> to
+            give a practical answer.
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-calculator"></i> Area Calculation</span>
+            <span class="chip sky"><i class="fas fa-arrows-turn-to-dots"></i> Unit Conversion</span>
+            <span class="chip red"><i class="fas fa-circle-up"></i> Rounding Up</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/turf-hero.png"
+            alt="Hero banner showing a lawn with a grid of turf pieces laid over it, and a student with a calculator working out how many pieces are needed"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — A lawn with a grid of turf pieces laid over it, and a student with a calculator working out how many pieces are needed. Friendly, focused illustration. Recommended size: 1000 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WARM-UP: AREA REVIEW ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-rotate-left"></i> Warm-Up: Area Review</div>
+        <p>
+            Before we start, let's review the <strong>area formula</strong> for a rectangle:
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">Area Formula</span>
+            <div class="formula-text">
+                Area = <em>length</em> × <em>width</em>
+            </div>
+        </div>
+
+        <p>
+            <strong>Quick example:</strong> A rectangle is 4 m long and 3 m wide. What is its area?
+        </p>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Answer:</strong> Area = 4 m × 3 m = <strong>12 m²</strong>
+            </div>
+        </div>
+
+        <p>
+            <strong>What unit do we use for area?</strong> We use <strong>square units</strong> — like cm², m²,
+            or km². That's because area is 2-dimensional (length × length).
+        </p>
+    </div>
+
+    <!-- ========== THE TURF PROBLEM ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-seedling"></i> Presenting the Turf Problem</div>
+
+        <p>
+            Here's our problem:
+        </p>
+
+        <div class="tip-box">
+            <span class="tip-icon">🌱</span>
+            <div class="tip-text">
+                <strong>"You want to lay turf in a lawn. One piece of turf is 50 cm wide and 50 cm long.
+                How many pieces do you need?"</strong>
+            </div>
+        </div>
+
+        <p><strong>Wait — is this enough information?</strong> No! We're missing something important.</p>
+
+        <p>
+            What information is missing? <strong>The size of the lawn!</strong>
+        </p>
+
+        <p>
+            Now, let's add it: <strong>"The lawn is 5 m long and 4 m wide."</strong>
+        </p>
+
+        <p><strong>What are the essential details?</strong></p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">✅</span>
+                <h3>Essential</h3>
+                <ul style="margin-left:1.2rem; margin-top:0.5rem;">
+                    <li>Lawn size: <strong>5 m × 4 m</strong></li>
+                    <li>Turf piece size: <strong>50 cm × 50 cm</strong></li>
+                    <li>Shape: <strong>rectangle</strong></li>
+                    <li>Units: <strong>m and cm</strong></li>
+                </ul>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">❌</span>
+                <h3>Non-Essential</h3>
+                <ul style="margin-left:1.2rem; margin-top:0.5rem;">
+                    <li>Color of the grass</li>
+                    <li>Brand of the turf</li>
+                    <li>Weather on the day</li>
+                    <li>Who plants it</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Abstraction in action:</strong> We focus only on what matters for the problem —
+                the sizes and units. Everything else is non-essential.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — THE TURF PROBLEM
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/turf-problem.png"
+            alt="A lawn shown with dimensions 5m x 4m, and a single turf piece shown as 50cm x 50cm"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[The Turf Problem]</strong> — A lawn (5 m × 4 m) with a single turf piece (50 cm × 50 cm) shown next to it. Clear labels with dimensions. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== GUIDED SOLVE ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-list-ol"></i> Guided Solve — Step by Step</div>
+        <p>
+            Let's solve the problem step by step. We'll use the <strong>5-step method</strong>:
+        </p>
+
+        <ol class="step-list">
+            <li>
+                <strong>Convert units.</strong><br>
+                The lawn is in meters. The turf is in centimeters. Convert them all to <strong>meters</strong>.<br>
+                50 cm = <strong>0.5 m</strong><br>
+                So one turf piece is <strong>0.5 m × 0.5 m</strong>.
+            </li>
+            <li>
+                <strong>Calculate lawn area.</strong><br>
+                Area = length × width = 5 m × 4 m = <strong>20 m²</strong>
+            </li>
+            <li>
+                <strong>Calculate one turf piece area.</strong><br>
+                Area = length × width = 0.5 m × 0.5 m = <strong>0.25 m²</strong>
+            </li>
+            <li>
+                <strong>Divide to find the number of pieces.</strong><br>
+                Number of pieces = Lawn area ÷ Piece area<br>
+                = 20 ÷ 0.25 = <strong>80 pieces</strong>
+            </li>
+            <li>
+                <strong>Round up if needed.</strong><br>
+                In this example, 80 is a whole number, so no rounding needed.<br>
+                <strong>Answer: 80 pieces of turf.</strong>
+            </li>
+        </ol>
+
+        <div class="formula-box">
+            <span class="formula-label">Summary Formula</span>
+            <div class="formula-text">
+                Pieces needed = <em>Lawn area</em> ÷ <em>Turf piece area</em>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — STEP-BY-STEP SOLUTION
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/turf-solution-steps.png"
+            alt="A step-by-step visual showing the five steps to solve the turf problem: convert units, calculate lawn area, calculate piece area, divide, and round up"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[Step-by-Step Solution]</strong> — The five steps of the solution, each with a small visual. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== ROUNDING UP ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-circle-up"></i> Rounding Up — Why and When?</div>
+        <p>
+            Sometimes the answer is not a whole number. For example, what if the lawn was <strong>5.1 m × 4 m</strong>?
+        </p>
+
+        <ol class="step-list">
+            <li>
+                <strong>Convert:</strong> 50 cm = 0.5 m
+            </li>
+            <li>
+                <strong>Lawn area:</strong> 5.1 m × 4 m = <strong>20.4 m²</strong>
+            </li>
+            <li>
+                <strong>Piece area:</strong> 0.5 m × 0.5 m = <strong>0.25 m²</strong>
+            </li>
+            <li>
+                <strong>Divide:</strong> 20.4 ÷ 0.25 = <strong>81.6 pieces</strong>
+            </li>
+            <li>
+                <strong>Round up!</strong> We can't buy 81.6 pieces. We need <strong>82 pieces</strong>.
+            </li>
+        </ol>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Why round up?</strong> We can't buy a <em>part</em> of a turf piece.
+                If we round down to 81, the lawn won't be fully covered. So we always
+                <strong>round up</strong> — even if the decimal is small.
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;">
+            <strong>Examples of rounding up:</strong>
+        </p>
+        <ul>
+            <li>81.6 → <strong>82 pieces</strong></li>
+            <li>80.1 → <strong>81 pieces</strong></li>
+            <li>80.9 → <strong>81 pieces</strong></li>
+            <li>80.0 → <strong>80 pieces</strong> (already a whole number)</li>
+        </ul>
+    </div>
+
+    <!-- ========== ACTIVITY 1 — GROUP PRACTICE ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Group Practice</h4>
+        <p>
+            Work in groups of <strong>3–4 students</strong>. Your group will get a different lawn size.
+            Solve the problem using the <strong>same 5 steps</strong>.
+        </p>
+
+        <div class="term-grid" style="margin-top:1rem;">
+            <div class="term-card honey">
+                <span class="term-emoji">1️⃣</span>
+                <h3>Group 1</h3>
+                <p>Lawn: <strong>6 m × 4 m</strong></p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">2️⃣</span>
+                <h3>Group 2</h3>
+                <p>Lawn: <strong>7 m × 3 m</strong></p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">3️⃣</span>
+                <h3>Group 3</h3>
+                <p>Lawn: <strong>5 m × 5 m</strong></p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">4️⃣</span>
+                <h3>Group 4</h3>
+                <p>Lawn: <strong>8 m × 2.5 m</strong></p>
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>Your group must:</strong></p>
+        <ul>
+            <li>Show <strong>all work</strong> (conversions, areas, division, rounding).</li>
+            <li>Identify the <strong>essential details</strong> for your problem.</li>
+            <li>Identify <strong>3 non-essential details</strong> that you ignored.</li>
+            <li>Write a <strong>final answer</strong> in a full sentence (with units).</li>
+        </ul>
+
+        <p style="margin-top:1rem;">
+            When finished, share your answer with the class. Compare your methods.
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — GROUP PRACTICE
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/turf-group-practice.png"
+            alt="Students working in groups with rulers and calculators to solve different turf problems"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[Group Practice]</strong> — Students working in groups with rulers, calculators, and notebooks to solve different turf problems. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== COMMON MISTAKE: FORGETTING TO CONVERT ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-triangle-exclamation"></i> Common Mistake: Forgetting to Convert</div>
+        <p>
+            One of the most common mistakes is <strong>forgetting to convert units</strong>.
+            Let's see what happens if we forget:
+        </p>
+
+        <p><strong>Wrong approach:</strong></p>
+        <ul>
+            <li>Lawn area: 5 m × 4 m = <strong>20 m²</strong></li>
+            <li>Turf piece area: 50 cm × 50 cm = <strong>2,500 cm²</strong></li>
+            <li>Divide: 20 ÷ 2,500 = <strong>0.008 pieces</strong> 🤔</li>
+        </ul>
+
+        <p>
+            That answer makes no sense! Why? Because we mixed <strong>m²</strong> with <strong>cm²</strong>.
+            You can't divide 20 m² by 2,500 cm² — those are different units!
+        </p>
+
+        <p><strong>Correct approach:</strong> Always convert to the same unit first.</p>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Golden rule:</strong> Units are <strong>essential</strong>. Always check that all
+                measurements are in the <strong>same unit</strong> before calculating.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 2 — DIFFERENT PROBLEM ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-lightbulb"></i> Activity — Same Method, Different Problem</h4>
+        <p>
+            The turf problem uses the same method as many other real-world problems. Solve these:
+        </p>
+
+        <p><strong>Problem A — Tile floor:</strong></p>
+        <ul>
+            <li>A floor is <strong>4 m × 3 m</strong>.</li>
+            <li>One tile is <strong>40 cm × 40 cm</strong>.</li>
+            <li>How many tiles are needed?</li>
+        </ul>
+
+        <p><strong>Problem B — Painting a wall:</strong></p>
+        <ul>
+            <li>A wall is <strong>6 m × 2.5 m</strong>.</li>
+            <li>One can of paint covers <strong>5 m²</strong>.</li>
+            <li>How many cans are needed?</li>
+        </ul>
+
+        <p><strong>Problem C — Paving a path:</strong></p>
+        <ul>
+            <li>A path is <strong>10 m × 1.2 m</strong>.</li>
+            <li>One paver is <strong>30 cm × 30 cm</strong>.</li>
+            <li>How many pavers are needed?</li>
+        </ul>
+
+        <p style="margin-top:1rem;">
+            <strong>For each problem:</strong> Show your 5 steps — convert, calculate areas, divide, and round up.
+        </p>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook:</p>
+        <ol>
+            <li>What is the formula for the <strong>area</strong> of a rectangle?</li>
+            <li>What unit do we use for <strong>area</strong>?</li>
+            <li>Why do we need to <strong>convert units</strong> before calculating?</li>
+            <li>If the answer is 81.6 turf pieces, how many pieces do we actually buy? Why?</li>
+            <li>What are the <strong>essential details</strong> for the turf problem?</li>
+            <li>What happens if we <strong>forget to convert</strong> the turf size from cm to m?</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            To solve the turf problem (and many real-world problems), follow these <strong>5 steps</strong>:
+            <strong>1)</strong> Convert all units, <strong>2)</strong> calculate the total area,
+            <strong>3)</strong> calculate the piece area, <strong>4)</strong> divide, and
+            <strong>5)</strong> round up if needed. Remember: <strong>units are essential</strong> —
+            always convert before calculating. And when the answer isn't a whole number,
+            <strong>always round up</strong> because you can't buy a partial piece.
+            Next lesson, you'll turn this into a <strong>complete algorithm</strong> with pseudocode and a flowchart!
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — ROUNDING UP
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/rounding-up.png"
+            alt="An illustration showing 81.6 turf pieces rounded up to 82, with a visual of one partial piece becoming a whole piece"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Rounding Up]</strong> — A visual showing 81.6 pieces rounded up to 82, with a partial piece becoming a whole piece. Friendly, clear illustration. Recommended size: 700 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Homework</div>
+        <p><strong>Part 1 — Solve a tile-floor problem:</strong></p>
+        <ul>
+            <li>A floor is <strong>4 m × 3 m</strong>.</li>
+            <li>One tile is <strong>40 cm × 40 cm</strong>.</li>
+            <li>How many tiles are needed?</li>
+        </ul>
+        <p style="margin-top:0.8rem;">
+            Use the <strong>5-step method</strong>:
+        </p>
+        <ol>
+            <li>Convert units to meters</li>
+            <li>Calculate floor area</li>
+            <li>Calculate tile area</li>
+            <li>Divide floor area by tile area</li>
+            <li>Round up to the nearest whole number</li>
+        </ol>
+        <p style="margin-top:0.8rem;"><strong>Show all your work.</strong></p>
+
+        <p style="margin-top:0.8rem;"><strong>Part 2 — Try a new problem:</strong></p>
+        <ul>
+            <li>Create your own problem, similar to the turf problem, using a different shape or different units.</li>
+            <li>Write the essential details, solve it using the 5 steps, and write your final answer.</li>
+            <li>Bring your problem to the next lesson — we'll use it as a class example!</li>
+        </ul>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="lesson6-variables.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous: Lesson 6
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="lesson8-design.html" class="next-btn">
+            Next: Lesson 8 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Indicator 1 · Lesson 7 of 40
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

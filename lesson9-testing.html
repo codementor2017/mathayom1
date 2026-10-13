@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 9 — Testing, Edge Cases, and Improvement</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson9-testing.html" class="active"><i class="fas fa-bug"></i> Lesson 9</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 1 · Semester 1 · Midterm
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-bug"></i> Lesson 9 · Indicator 1</span>
+        <h1>Testing, Edge Cases, and Improvement</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            Even a well-designed algorithm can break in <strong>special situations</strong> — called
+            <strong>edge cases</strong>. In this lesson, you'll learn how to <strong>test</strong> your
+            algorithm with tricky inputs, find <strong>errors</strong>, and <strong>improve</strong> your work
+            like a real programmer.
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-flask"></i> Test Cases</span>
+            <span class="chip sky"><i class="fas fa-triangle-exclamation"></i> Edge Cases</span>
+            <span class="chip red"><i class="fas fa-wrench"></i> Debug &amp; Improve</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/testing-hero.png"
+            alt="Hero banner showing a student as a 'bug detective' examining an algorithm with a magnifying glass, spotting a small bug inside the code"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — A student as a "bug detective" examining an algorithm with a magnifying glass, spotting a small bug inside the code. Friendly, investigative illustration. Recommended size: 1000 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WARM-UP: FIND THE BUG ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-bug"></i> Warm-Up: Find the Bug</div>
+        <p>
+            Look at this algorithm from Lesson 8. There's a <strong>bug</strong> (a mistake) — can you find it?
+        </p>
+
+        <div class="formula-box" style="border-color:#C0392B; background: linear-gradient(145deg, #FFF5F4, #FDE8E6);">
+            <span class="formula-label" style="background: linear-gradient(135deg, #C0392B, #A02D22);">Buggy Algorithm</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 1rem; text-align: left; line-height: 1.8;">
+                START<br>
+                &nbsp;&nbsp;INPUT width, length<br>
+                &nbsp;&nbsp;lawn_area = width × length<br>
+                &nbsp;&nbsp;pieces = lawn_area ÷ 0.25<br>
+                &nbsp;&nbsp;PRINT pieces<br>
+                END
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>What is missing?</strong> 🤔</p>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>The bug:</strong> The <strong>ROUND UP</strong> step is missing! Without it, if the
+                answer is 80.4, the algorithm would print 80.4 — which is not a valid number of turf pieces.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== WHAT ARE EDGE CASES ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-triangle-exclamation"></i> What Are Edge Cases?</div>
+        <p>
+            An <strong>edge case</strong> is a situation that is <strong>at the limit</strong> of what an
+            algorithm can handle. It's a special case that might break the algorithm or give a wrong answer.
+        </p>
+        <p>
+            Edge cases help us find <strong>bugs</strong> we didn't notice before. Testing with normal cases
+            (like 5 m × 4 m) isn't enough — we need to try <strong>tricky cases</strong> too.
+        </p>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Why test edge cases?</strong> Because real-world problems don't always follow the rules.
+                Testing with edge cases makes our algorithm <strong>robust</strong> — able to handle anything.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== EDGE CASES FOR THE TURF PROBLEM ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-list-check"></i> Edge Cases for the Turf Problem</div>
+        <p>
+            Here are <strong>6 edge cases</strong> we should test for the turf algorithm:
+        </p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">🎯</span>
+                <h3>1. Exact Fit</h3>
+                <p>Lawn area divides evenly by 0.25. Example: <strong>5 m × 4 m = 20 m²</strong>. 20 ÷ 0.25 = 80 exactly.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">📐</span>
+                <h3>2. Extra Space</h3>
+                <p>Lawn area does not divide evenly. Example: <strong>5.1 m × 4 m = 20.4 m²</strong>. 20.4 ÷ 0.25 = 81.6 → round up to 82.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">🔲</span>
+                <h3>3. Odd Shape</h3>
+                <p>An L-shaped lawn. Example: <strong>6 m × 4 m minus 2 m × 2 m</strong>. Requires different calculation.</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">📏</span>
+                <h3>4. Unit Mismatch</h3>
+                <p>Lawn in cm, turf in m — or vice versa. Must convert before calculating.</p>
+            </div>
+            <div class="term-card honey">
+                <span class="term-emoji">🐜</span>
+                <h3>5. Very Small Lawn</h3>
+                <p><strong>1 m × 1 m</strong> = 1 m². 1 ÷ 0.25 = 4 pieces. Does it still work?</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">🏟️</span>
+                <h3>6. Very Large Lawn</h3>
+                <p><strong>100 m × 100 m</strong> = 10,000 m². 10,000 ÷ 0.25 = 40,000 pieces. Large numbers — still work?</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — EDGE CASES
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/edge-cases.png"
+            alt="Six illustrated cards showing different edge cases for the turf problem: exact fit, extra space, odd shape, unit mismatch, very small, very large"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[Edge Cases]</strong> — Six illustrated cards, each showing one edge case with a small visual. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== TESTING: EXACT FIT ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-flask"></i> Test 1: Exact Fit</div>
+        <p>
+            <strong>Input:</strong> Lawn = 5 m × 4 m = 20 m²
+        </p>
+
+        <ol class="step-list">
+            <li>lawn_area = 5 × 4 = 20 m²</li>
+            <li>piece_area = 0.5 × 0.5 = 0.25 m²</li>
+            <li>pieces = 20 ÷ 0.25 = <strong>80</strong></li>
+            <li>ROUND UP: 80 is already a whole number → stays <strong>80</strong></li>
+            <li><strong>Output: 80 pieces</strong> ✅</li>
+        </ol>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Exact fit:</strong> No rounding needed. The algorithm works perfectly here.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== TESTING: EXTRA SPACE ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-flask"></i> Test 2: Extra Space (Rounding Needed)</div>
+        <p>
+            <strong>Input:</strong> Lawn = 5.1 m × 4 m = 20.4 m²
+        </p>
+
+        <ol class="step-list">
+            <li>lawn_area = 5.1 × 4 = 20.4 m²</li>
+            <li>piece_area = 0.25 m²</li>
+            <li>pieces = 20.4 ÷ 0.25 = <strong>81.6</strong></li>
+            <li>ROUND UP: 81.6 → <strong>82</strong></li>
+            <li><strong>Output: 82 pieces</strong> ✅</li>
+        </ol>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Rounding is essential:</strong> Without it, the algorithm would print 81.6,
+                which is not a valid number of turf pieces.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== TESTING: UNIT MISMATCH ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-flask"></i> Test 3: Unit Mismatch</div>
+        <p>
+            <strong>Input:</strong> Lawn = 500 cm × 400 cm. Turf = 50 cm × 50 cm.
+        </p>
+
+        <ol class="step-list">
+            <li>lawn_area = 500 cm × 400 cm = <strong>200,000 cm²</strong></li>
+            <li>piece_area = 50 cm × 50 cm = <strong>2,500 cm²</strong></li>
+            <li>pieces = 200,000 ÷ 2,500 = <strong>80</strong></li>
+            <li>ROUND UP: 80 → <strong>80</strong></li>
+            <li><strong>Output: 80 pieces</strong> ✅</li>
+        </ol>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Both approaches work!</strong> Whether we use meters or centimeters,
+                the answer is the same — as long as we're <strong>consistent</strong> with our units.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — TESTING THE ALGORITHM
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/turf-testing.png"
+            alt="A visual showing the turf algorithm being tested with three different inputs, with checkmarks for each successful test"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[Testing the Algorithm]</strong> — Three test cases shown side by side with the algorithm's output and checkmarks. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== THE DEBUGGING LOG ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-clipboard-list"></i> The Debugging Log</div>
+        <p>
+            A <strong>debugging log</strong> is a table where you record each test. It helps you find and fix errors.
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-tag"></i> Test</th>
+                    <th><i class="fas fa-arrow-right"></i> Input</th>
+                    <th><i class="fas fa-bullseye"></i> Expected</th>
+                    <th><i class="fas fa-check"></i> Actual</th>
+                    <th><i class="fas fa-wrench"></i> Fix</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Normal</strong></td>
+                    <td>5 m × 4 m</td>
+                    <td class="primary-col">80</td>
+                    <td class="secondary-col">80 ✅</td>
+                    <td>None needed</td>
+                </tr>
+                <tr>
+                    <td><strong>Extra space</strong></td>
+                    <td>5.1 m × 4 m</td>
+                    <td class="primary-col">82</td>
+                    <td class="secondary-col">81.6 ❌</td>
+                    <td>Add ROUND UP</td>
+                </tr>
+                <tr>
+                    <td><strong>Unit mismatch</strong></td>
+                    <td>500 cm × 400 cm</td>
+                    <td class="primary-col">80</td>
+                    <td class="secondary-col">80 ✅</td>
+                    <td>None needed</td>
+                </tr>
+                <tr>
+                    <td><strong>Very small</strong></td>
+                    <td>1 m × 1 m</td>
+                    <td class="primary-col">4</td>
+                    <td class="secondary-col">4 ✅</td>
+                    <td>None needed</td>
+                </tr>
+                <tr>
+                    <td><strong>Very large</strong></td>
+                    <td>100 m × 100 m</td>
+                    <td class="primary-col">40,000</td>
+                    <td class="secondary-col">40,000 ✅</td>
+                    <td>None needed</td>
+                </tr>
+                <tr>
+                    <td><strong>Zero width</strong></td>
+                    <td>0 m × 5 m</td>
+                    <td class="primary-col">0 or error</td>
+                    <td class="secondary-col">0 ✅</td>
+                    <td>Maybe add warning</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Found a bug!</strong> Test #2 showed that we need to add the ROUND UP step.
+                This is exactly why we test edge cases.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — DEBUGGING LOG
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/debugging-log.png"
+            alt="A debugging log table with test cases, expected results, actual results, and fixes recorded"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[Debugging Log]</strong> — A sample debugging log table with several test cases, showing how to record what worked and what needed fixing. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== FIXING THE ALGORITHM ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-wrench"></i> Fixing the Algorithm</div>
+        <p>
+            Once we found the bug (missing ROUND UP), we need to <strong>improve the algorithm</strong>.
+        </p>
+
+        <p><strong>Before (buggy):</strong></p>
+        <div class="formula-box" style="border-color:#C0392B;">
+            <span class="formula-label" style="background: linear-gradient(135deg, #C0392B, #A02D22);">❌ Buggy</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 0.95rem; text-align: left; line-height: 1.8;">
+                START<br>
+                &nbsp;&nbsp;INPUT width, length<br>
+                &nbsp;&nbsp;lawn_area = width × length<br>
+                &nbsp;&nbsp;pieces = lawn_area ÷ 0.25<br>
+                &nbsp;&nbsp;PRINT pieces<br>
+                END
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>After (fixed):</strong></p>
+        <div class="formula-box" style="border-color:#5B8C3E;">
+            <span class="formula-label" style="background: linear-gradient(135deg, #5B8C3E, #3D6B28);">✅ Fixed</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 0.95rem; text-align: left; line-height: 1.8;">
+                START<br>
+                &nbsp;&nbsp;INPUT width, length<br>
+                &nbsp;&nbsp;lawn_area = width × length<br>
+                &nbsp;&nbsp;pieces = lawn_area ÷ 0.25<br>
+                &nbsp;&nbsp;<strong>ROUND UP pieces</strong> ← added<br>
+                &nbsp;&nbsp;PRINT pieces<br>
+                END
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Debugging is a normal part of programming.</strong> Even professional programmers
+                test their code many times before it works perfectly.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 1 — TEST AND DEBUG ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Test and Debug</h4>
+        <p>
+            Work in groups of <strong>4 students</strong>. Use the debugging log below to test the
+            turf algorithm with these <strong>5 test cases</strong>:
+        </p>
+
+        <table class="score-table" style="margin-top:1rem;">
+            <thead>
+                <tr>
+                    <th>Case</th>
+                    <th>Lawn Dimensions</th>
+                    <th>Expected</th>
+                    <th>Actual</th>
+                    <th>Error?</th>
+                    <th>Fix</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1</strong></td>
+                    <td>4 m × 5 m</td>
+                    <td>___</td>
+                    <td>___</td>
+                    <td>___</td>
+                    <td>___</td>
+                </tr>
+                <tr>
+                    <td><strong>2</strong></td>
+                    <td>5.1 m × 4 m</td>
+                    <td>___</td>
+                    <td>___</td>
+                    <td>___</td>
+                    <td>___</td>
+                </tr>
+                <tr>
+                    <td><strong>3</strong></td>
+                    <td>500 cm × 400 cm</td>
+                    <td>___</td>
+                    <td>___</td>
+                    <td>___</td>
+                    <td>___</td>
+                </tr>
+                <tr>
+                    <td><strong>4</strong></td>
+                    <td>L-shaped: 6 m × 4 m minus 2 m × 2 m</td>
+                    <td>___</td>
+                    <td>___</td>
+                    <td>___</td>
+                    <td>___</td>
+                </tr>
+                <tr>
+                    <td><strong>5</strong></td>
+                    <td>1 m × 1 m</td>
+                    <td>___</td>
+                    <td>___</td>
+                    <td>___</td>
+                    <td>___</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p style="margin-top:1.5rem;"><strong>Your group must:</strong></p>
+        <ol>
+            <li>Run the algorithm for each case.</li>
+            <li>Record the expected and actual results.</li>
+            <li>Circle any errors you find.</li>
+            <li>Write down how to fix each error.</li>
+        </ol>
+
+        <div class="tip-box" style="margin-top:1rem;">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Hint for Case 4:</strong> An L-shaped lawn needs to be split into two rectangles,
+                or the missing part must be subtracted from the full rectangle.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 2 — PEER TEST ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-lightbulb"></i> Activity — Peer Test — Try to Break It!</h4>
+        <p>
+            Now it's time for a challenge: <strong>exchange algorithms with another group</strong> and try
+            to <strong>break theirs</strong> with a new edge case.
+        </p>
+
+        <p><strong>Your mission:</strong></p>
+        <ol>
+            <li>Read the other group's algorithm carefully.</li>
+            <li>Come up with <strong>one new edge case</strong> they haven't tested.</li>
+            <li>Run their algorithm on your edge case.</li>
+            <li>Does it work? Or does it break?</li>
+            <li>If it breaks, tell them <strong>how to fix it</strong>.</li>
+        </ol>
+
+        <p style="margin-top:1rem;">
+            <strong>Ideas for edge cases to try:</strong>
+        </p>
+        <ul>
+            <li>A lawn with a very long but narrow shape (like 50 m × 0.5 m)</li>
+            <li>A lawn measured in millimeters</li>
+            <li>A very tiny lawn (0.5 m × 0.5 m)</li>
+            <li>A lawn with a hole (donut shape)</li>
+            <li>Lawn with decimal dimensions (3.75 m × 4.25 m)</li>
+        </ul>
+
+        <div class="tip-box" style="margin-top:1rem;">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Why do we do this?</strong> Because finding bugs is how we make algorithms stronger.
+                When someone breaks your algorithm, they're helping you improve it.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook:</p>
+        <ol>
+            <li>What is an <strong>edge case</strong>? Why are edge cases important?</li>
+            <li>Name <strong>three edge cases</strong> for the turf problem.</li>
+            <li>What is a <strong>debugging log</strong>? What does it help you do?</li>
+            <li>We found a bug in the algorithm. What was missing? How do we fix it?</li>
+            <li>Why do we always <strong>round up</strong> when buying turf?</li>
+            <li>Why is testing a normal part of writing algorithms?</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            Testing with <strong>edge cases</strong> is how we find <strong>bugs</strong> and
+            <strong>improve</strong> our algorithms. Use a <strong>debugging log</strong> to record
+            what you tested, what you expected, what actually happened, and how you fixed it.
+            Remember: even the best algorithms need to be tested with normal cases, boundary cases, and
+            unexpected inputs. Debugging isn't failure — it's a normal part of building great solutions.
+            Next lesson, you'll bring everything together in your <strong>Final Project</strong>!
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — DEBUGGING IN ACTION
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/debugging-in-action.png"
+            alt="A student carefully examining their algorithm with a checklist, marking errors and writing fixes in a debugging log"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Debugging in Action]</strong> — A student carefully examining their algorithm with a checklist, writing fixes in a debugging log. Focused, professional illustration. Recommended size: 700 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Homework</div>
+        <p><strong>Part 1 — Write a new edge case:</strong></p>
+        <ul>
+            <li>Create <strong>one new edge case</strong> for the turf problem that we didn't cover in class.</li>
+            <li>Describe the input and what the algorithm would do.</li>
+            <li>Would the algorithm handle it correctly? If not, how would you fix it?</li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 2 — Build a debugging log:</strong></p>
+        <ul>
+            <li>Use the algorithm you designed in Lesson 8's homework.</li>
+            <li>Test it with <strong>3 different inputs</strong> (one normal, one exact fit, one edge case).</li>
+            <li>Create a <strong>debugging log</strong> to record your results.</li>
+            <li>If you find any bugs, fix them and describe what you changed.</li>
+        </ul>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="lesson8-design.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous: Lesson 8
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="lesson10-project.html" class="next-btn">
+            Next: Lesson 10 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Indicator 1 · Lesson 9 of 40
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

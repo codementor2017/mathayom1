@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 13 — Conditions (if/else) for Decision Making</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson13-conditions.html" class="active"><i class="fas fa-code-branch"></i> Lesson 13</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 2 · Semester 1 · Final
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-code-branch"></i> Lesson 13 · Indicator 2</span>
+        <h1>Conditions (if/else) for Decision Making</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            So far, your programs just follow steps in order. But what if a program needs to
+            <strong>make a decision</strong>? For example: "If a student's BMI is too high, print a warning."
+            In this lesson, you'll learn how to use <strong>if, elif, and else</strong> in Python to make your
+            programs smart.
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-code-branch"></i> if / elif / else</span>
+            <span class="chip sky"><i class="fas fa-scale-balanced"></i> Comparisons</span>
+            <span class="chip red"><i class="fas fa-heart-pulse"></i> BMI Categories</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/conditions-hero.png"
+            alt="Hero banner showing a fork in the road with a signpost, one path labeled 'IF' and the other 'ELSE', with a friendly robot at the fork"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — A fork in the road with a signpost: one path labeled "IF" and the other "ELSE," with a friendly robot at the fork deciding which way to go. Recommended size: 1000 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WARM-UP: DECISIONS IN DAILY LIFE ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-circle-question"></i> Warm-Up: Decisions in Daily Life</div>
+        <p>
+            You make decisions all day long. Think about this one:
+        </p>
+
+        <div class="tip-box">
+            <span class="tip-icon">☔</span>
+            <div class="tip-text">
+                <strong>"If it rains, I'll take an umbrella. Otherwise, I'll wear a hat."</strong>
+            </div>
+        </div>
+
+        <p>
+            We can write this decision using symbols:
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">Decision</span>
+            <div class="formula-text">
+                <em>IF</em> rain <em>THEN</em> take umbrella <em>ELSE</em> wear hat
+            </div>
+        </div>
+
+        <p>
+            This is a <strong>condition</strong> — a decision that programs can make too!
+        </p>
+    </div>
+
+    <!-- ========== WHAT ARE CONDITIONS ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-code-branch"></i> What Are Conditions?</div>
+
+        <div class="formula-box">
+            <span class="formula-label">Definition</span>
+            <div class="formula-text">
+                A <em>condition</em> is a test that is either <em>True</em> or <em>False</em>.<br>
+                Programs use conditions to <em>make decisions</em>.
+            </div>
+        </div>
+
+        <p>
+            In Python, we write conditions with <strong>if</strong>, <strong>elif</strong>, and <strong>else</strong>:
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">Python Syntax</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 1rem; text-align: left; line-height: 1.8;">
+                if <em>condition</em>:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;# do something<br>
+                elif <em>another_condition</em>:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;# do something else<br>
+                else:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;# do this if nothing else is true
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Remember:</strong> Only <strong>one</strong> branch runs. Python checks each condition
+                in order, top to bottom, and stops as soon as one is True.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — IF/ELIF/ELSE STRUCTURE
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/if-elif-else-structure.png"
+            alt="A visual showing the structure of if/elif/else in Python, with arrows flowing from top to bottom and stopping as soon as a condition is True"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[if / elif / else Structure]</strong> — A flowchart showing how Python checks each condition in order and stops as soon as one is True. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== COMPARISON OPERATORS ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-scale-balanced"></i> Comparison Operators</div>
+        <p>
+            To build conditions, we use <strong>comparison operators</strong>. These compare two values and
+            return <strong>True</strong> or <strong>False</strong>:
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-symbols"></i> Operator</th>
+                    <th><i class="fas fa-tag"></i> Meaning</th>
+                    <th><i class="fas fa-lightbulb"></i> Example</th>
+                    <th><i class="fas fa-check"></i> Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>&gt;</strong></td>
+                    <td class="primary-col">Greater than</td>
+                    <td class="secondary-col">5 &gt; 3</td>
+                    <td><strong>True</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>&lt;</strong></td>
+                    <td class="primary-col">Less than</td>
+                    <td class="secondary-col">5 &lt; 3</td>
+                    <td><strong>False</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>&gt;=</strong></td>
+                    <td class="primary-col">Greater than or equal to</td>
+                    <td class="secondary-col">5 &gt;= 5</td>
+                    <td><strong>True</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>&lt;=</strong></td>
+                    <td class="primary-col">Less than or equal to</td>
+                    <td class="secondary-col">4 &lt;= 3</td>
+                    <td><strong>False</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>==</strong></td>
+                    <td class="primary-col">Equal to</td>
+                    <td class="secondary-col">5 == 5</td>
+                    <td><strong>True</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>!=</strong></td>
+                    <td class="primary-col">Not equal to</td>
+                    <td class="secondary-col">5 != 3</td>
+                    <td><strong>True</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Watch out:</strong> <em>==</em> (double equals) is for <strong>comparison</strong>.
+                <em>=</em> (single equals) is for <strong>assignment</strong>. Mixing them up is one of the
+                most common mistakes in programming!
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== SIMPLE EXAMPLE: POSITIVE OR NEGATIVE ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-lightbulb"></i> Simple Example: Positive, Negative, or Zero?</div>
+        <p>
+            Here's a Python program that checks if a number is positive, negative, or zero:
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">Python Program</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 1rem; text-align: left; line-height: 1.8;">
+                num = float(input("Enter a number: "))<br><br>
+                if num &gt; 0:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Positive")<br>
+                elif num &lt; 0:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Negative")<br>
+                else:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Zero")
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;">
+            <strong>Let's trace through the logic:</strong>
+        </p>
+        <ul>
+            <li>If the user enters <strong>5</strong>: 5 &gt; 0 is True → prints "Positive"</li>
+            <li>If the user enters <strong>-3</strong>: -3 &gt; 0 is False, then -3 &lt; 0 is True → prints "Negative"</li>
+            <li>If the user enters <strong>0</strong>: 0 &gt; 0 is False, 0 &lt; 0 is False → prints "Zero"</li>
+        </ul>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Notice:</strong> The <em>else</em> block only runs if <strong>all</strong> previous
+                conditions are False.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — POSITIVE/NEGATIVE/ZERO DECISION
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/positive-negative-decision.png"
+            alt="A flowchart showing the logic for checking if a number is positive, negative, or zero"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[Positive/Negative/Zero Decision]</strong> — A flowchart with diamond decisions showing how the program checks the number and prints the correct result. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== GUIDED PRACTICE: BMI CATEGORIES ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-heart-pulse"></i> Guided Practice: BMI Categories</div>
+        <p>
+            Let's write a program that calculates <strong>BMI</strong> and prints the correct category.
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">BMI Formula</span>
+            <div class="formula-text">
+                BMI = <em>weight (kg)</em> ÷ <em>height² (m²)</em>
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>BMI Categories:</strong></p>
+        <ul>
+            <li><strong>BMI &lt; 18.5:</strong> Underweight</li>
+            <li><strong>18.5 ≤ BMI &lt; 25:</strong> Normal</li>
+            <li><strong>25 ≤ BMI &lt; 30:</strong> Overweight</li>
+            <li><strong>BMI ≥ 30:</strong> Obese</li>
+        </ul>
+
+        <p style="margin-top:1.5rem;"><strong>The Python program:</strong></p>
+
+        <div class="formula-box">
+            <span class="formula-label">Python Program</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 0.95rem; text-align: left; line-height: 1.8;">
+                weight = float(input("Enter weight (kg): "))<br>
+                height = float(input("Enter height (m): "))<br>
+                bmi = weight / (height * height)<br><br>
+                print("BMI =", bmi)<br><br>
+                if bmi &lt; 18.5:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Underweight")<br>
+                elif bmi &lt; 25:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Normal")<br>
+                elif bmi &lt; 30:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Overweight")<br>
+                else:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Obese")
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>Test with sample values:</strong></p>
+        <ul>
+            <li>Weight = 50, Height = 1.6 → BMI = 19.5 → <strong>Normal</strong></li>
+            <li>Weight = 40, Height = 1.6 → BMI = 15.6 → <strong>Underweight</strong></li>
+            <li>Weight = 70, Height = 1.7 → BMI = 24.2 → <strong>Normal</strong></li>
+            <li>Weight = 85, Height = 1.7 → BMI = 29.4 → <strong>Overweight</strong></li>
+            <li>Weight = 100, Height = 1.7 → BMI = 34.6 → <strong>Obese</strong></li>
+        </ul>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Notice how the conditions flow:</strong> If BMI is 19.5, the program checks
+                <em>bmi &lt; 18.5</em> (False), then <em>bmi &lt; 25</em> (True) → prints "Normal" and stops.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — BMI CATEGORIES FLOWCHART
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/bmi-flowchart.png"
+            alt="A flowchart showing the BMI categories decision logic with diamond decisions for each threshold"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[BMI Categories Flowchart]</strong> — A flowchart showing how BMI is calculated and compared to thresholds, with diamonds for each decision. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 1 — CONDITIONS IN SCIENCE ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Conditions in Science</h4>
+        <p>
+            Work with a partner. Choose <strong>one</strong> of the problems below and write a Python program
+            using <strong>if/elif/else</strong>.
+        </p>
+
+        <div class="term-grid" style="margin-top:1rem;">
+            <div class="term-card honey">
+                <span class="term-emoji">🧪</span>
+                <h3>Acid, Neutral, or Base</h3>
+                <p>pH &lt; 7 → Acid<br>pH == 7 → Neutral<br>pH &gt; 7 → Base</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">🚗</span>
+                <h3>Speed Check</h3>
+                <p>speed &gt; 100 → "Too fast!"<br>speed &gt; 60 → "Safe"<br>speed &lt;= 60 → "Slow"</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">📝</span>
+                <h3>Grade Checker</h3>
+                <p>score ≥ 80 → "A"<br>score ≥ 70 → "B"<br>score ≥ 60 → "C"<br>else → "F"</p>
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>Your program must include:</strong></p>
+        <ol>
+            <li>At least <strong>one if statement</strong>.</li>
+            <li>At least <strong>one elif statement</strong>.</li>
+            <li>At least <strong>one else statement</strong>.</li>
+            <li>Test with <strong>at least 3 different values</strong>.</li>
+        </ol>
+    </div>
+
+    <!-- ========== ACTIVITY 2 — ADD MORE CATEGORIES ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-lightbulb"></i> Activity — Add More Categories</h4>
+        <p>
+            Take the BMI program from the Guided Practice section and <strong>improve it</strong>:
+        </p>
+        <ol>
+            <li>Add a category for <strong>"Severely Obese"</strong> (BMI ≥ 35).</li>
+            <li>Add a category for <strong>"Severely Underweight"</strong> (BMI &lt; 16).</li>
+            <li>Print a <strong>helpful tip</strong> for each category (like "Eat more healthy food" or "Great job! Keep it up.").</li>
+        </ol>
+
+        <p style="margin-top:1rem;">
+            Test your new program with different values. Does everything print correctly?
+        </p>
+
+        <div class="tip-box" style="margin-top:1rem;">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Remember:</strong> Order matters! Put the <strong>smaller thresholds first</strong>,
+                so the program can check them in order.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook:</p>
+        <ol>
+            <li>What is a <strong>condition</strong> in programming?</li>
+            <li>What is the difference between <strong>if</strong>, <strong>elif</strong>, and <strong>else</strong>?</li>
+            <li>Name <strong>three comparison operators</strong> and what they mean.</li>
+            <li>What is the difference between <strong>=</strong> and <strong>==</strong>?</li>
+            <li>Write a condition to check if a number is <strong>greater than 100</strong>.</li>
+            <li>Why is the <strong>order of conditions</strong> important in an if/elif/else block?</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            <strong>Conditions</strong> let programs make decisions. In Python, we use <strong>if</strong>
+            (first condition), <strong>elif</strong> (additional conditions), and <strong>else</strong>
+            (the fallback). Comparison operators like <strong>&gt;, &lt;, &gt;=, &lt;=, ==, !=</strong> are
+            used to build conditions. Remember: only <strong>one</strong> branch runs — Python checks
+            each condition in order and stops as soon as one is True. Next lesson, you'll learn about
+            <strong>loops (for/while)</strong> — how programs repeat steps without writing them many times!
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — MAKING DECISIONS
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/making-decisions.png"
+            alt="A student watching their Python program make a decision, with the correct branch highlighted"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Making Decisions]</strong> — A student watching their Python program make a decision, with the correct branch highlighted. Friendly, focused illustration. Recommended size: 700 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Homework</div>
+        <p><strong>Part 1 — Write a program to check a triangle:</strong></p>
+        <ul>
+            <li>Ask the user for three side lengths of a triangle.</li>
+            <li>Check if the triangle is <strong>valid</strong>: the sum of any two sides must be greater than the third.</li>
+            <li>Print "Valid triangle" or "Not a valid triangle".</li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 2 — Improve the BMI program:</strong></p>
+        <ul>
+            <li>Add at least <strong>two more categories</strong> (like "Severely Underweight" or "Severely Obese").</li>
+            <li>Print a <strong>helpful tip</strong> for each category.</li>
+            <li>Test with <strong>5 different values</strong>.</li>
+        </ul>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="lesson12-variables-datatypes.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous: Lesson 12
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="lesson14-loops.html" class="next-btn">
+            Next: Lesson 14 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Indicator 2 · Lesson 13 of 40
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

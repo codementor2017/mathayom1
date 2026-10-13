@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 16 — Motion Equation Program</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson16-motion-equation.html" class="active"><i class="fas fa-rocket"></i> Lesson 16</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 2 · Semester 1 · Final
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-rocket"></i> Lesson 16 · Indicator 2</span>
+        <h1>Motion Equation Program</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            Physics gives us formulas that describe how the world works. In this lesson, you'll write a
+            <strong>Python program</strong> to solve the <strong>motion equation</strong>:
+            <strong>s = ut + ½at²</strong>. You'll use variables, conditions, and loops to make
+            your program <strong>powerful and flexible</strong>.
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-rocket"></i> Physics</span>
+            <span class="chip sky"><i class="fas fa-code"></i> Python</span>
+            <span class="chip red"><i class="fas fa-flask"></i> Test &amp; Debug</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/motion-equation-hero.png"
+            alt="Hero banner showing a rocket launching upward with the equation s = ut + ½at² written alongside it"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — A rocket launching upward with the motion equation "s = ut + ½at²" written alongside it. Exciting, science-themed illustration. Recommended size: 1000 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WARM-UP: PHYSICS REVIEW ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-flask"></i> Warm-Up: Physics Review</div>
+        <p>
+            Let's review the <strong>motion equation</strong> before we write the program:
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">Motion Equation</span>
+            <div class="formula-text">
+                s = <em>u</em> × <em>t</em> + ½ × <em>a</em> × <em>t²</em>
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;">Here's what each variable means:</p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">📏</span>
+                <h3>s = Displacement</h3>
+                <p>How far the object has moved, in <strong>meters (m)</strong>.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">🚀</span>
+                <h3>u = Initial Velocity</h3>
+                <p>The starting speed of the object, in <strong>m/s</strong>.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">⏱️</span>
+                <h3>t = Time</h3>
+                <p>How long the object has been moving, in <strong>seconds (s)</strong>.</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">⚡</span>
+                <h3>a = Acceleration</h3>
+                <p>How quickly the velocity changes, in <strong>m/s²</strong>.</p>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>What does this formula calculate?</strong> Given an object's starting velocity (u),
+                acceleration (a), and time (t), it tells you <strong>how far</strong> the object has traveled (s).
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== BUILD THE PROGRAM ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-code"></i> Build the Program</div>
+        <p>
+            Let's write the Python program step by step:
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">Python Program</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 1rem; text-align: left; line-height: 1.8;">
+                u = float(input("Initial velocity (m/s): "))<br>
+                a = float(input("Acceleration (m/s²): "))<br>
+                t = float(input("Time (s): "))<br><br>
+                s = u * t + 0.5 * a * t * t<br><br>
+                print("Displacement =", s, "m")
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>Let's break it down:</strong></p>
+        <ul>
+            <li><strong>Line 1:</strong> Ask the user for the initial velocity (u).</li>
+            <li><strong>Line 2:</strong> Ask the user for the acceleration (a).</li>
+            <li><strong>Line 3:</strong> Ask the user for the time (t).</li>
+            <li><strong>Line 5:</strong> Calculate displacement using the formula.</li>
+            <li><strong>Line 7:</strong> Print the result with units.</li>
+        </ul>
+
+        <p style="margin-top:1.5rem;"><strong>Sample calculation:</strong></p>
+        <p>
+            If u = 0, a = 9.8, and t = 2:
+        </p>
+        <ul>
+            <li>s = 0 × 2 + 0.5 × 9.8 × 2 × 2</li>
+            <li>s = 0 + 0.5 × 9.8 × 4</li>
+            <li>s = 0 + 19.6 = <strong>19.6 m</strong></li>
+        </ul>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                This is exactly what happens when you drop an object from rest (u = 0) and it falls
+                for 2 seconds. Gravity accelerates it at 9.8 m/s². After 2 seconds, it has fallen 19.6 meters.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — MOTION EQUATION EXAMPLE
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/motion-equation-example.png"
+            alt="A visual showing the motion equation with the sample values substituted in, next to an illustration of a falling ball"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[Motion Equation Example]</strong> — The motion equation with sample values plugged in, next to an illustration of a ball falling under gravity. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== ADDING CONDITIONS ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-code-branch"></i> Adding Conditions</div>
+        <p>
+            Our program works, but what if the answer is <strong>negative</strong>? A negative displacement
+            means the object moved <strong>backwards</strong>. Let's add a condition to check:
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">Python with Condition</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 0.95rem; text-align: left; line-height: 1.8;">
+                u = float(input("Initial velocity (m/s): "))<br>
+                a = float(input("Acceleration (m/s²): "))<br>
+                t = float(input("Time (s): "))<br><br>
+                s = u * t + 0.5 * a * t * t<br><br>
+                print("Displacement =", s, "m")<br><br>
+                if s &lt; 0:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Object moved backwards.")<br>
+                else:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Object moved forwards.")
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Why add this check?</strong> Because we want the program to <strong>explain</strong>
+                the result, not just print a number. A negative displacement means the object ended up
+                <em>behind</em> where it started.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ADDING A LOOP ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-rotate"></i> Adding a Loop</div>
+        <p>
+            What if we want to see how displacement changes over time?
+            Let's use a <strong>for loop</strong> to calculate displacement at multiple times:
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">Python with Loop</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 0.95rem; text-align: left; line-height: 1.8;">
+                u = float(input("Initial velocity (m/s): "))<br>
+                a = float(input("Acceleration (m/s²): "))<br><br>
+                for i in range(5):<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;t = float(input("Time (s): "))<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;s = u * t + 0.5 * a * t * t<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("At t =", t, "s, displacement =", s, "m")
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;">
+            This program asks for <strong>5 different times</strong> and calculates the displacement for each one.
+            It's perfect for creating a table of results or a graph.
+        </p>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Try it with these values:</strong> u = 5, a = 2. Then use times 1, 2, 3, 4, 5.
+                You'll see the object speeding up over time.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — CONDITION AND LOOP VERSION
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/motion-equation-condition-loop.png"
+            alt="A flowchart showing the motion equation program with a loop for multiple times and a condition to check for negative displacement"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[With Condition and Loop]</strong> — A flowchart showing the enhanced version of the program with a loop and a decision. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== TESTING THE PROGRAM ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-flask"></i> Testing the Program</div>
+        <p>
+            Testing is essential! Let's try the program with different inputs:
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-tag"></i> Test</th>
+                    <th>u (m/s)</th>
+                    <th>a (m/s²)</th>
+                    <th>t (s)</th>
+                    <th><i class="fas fa-check"></i> Expected</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Falling from rest</strong></td>
+                    <td>0</td>
+                    <td>9.8</td>
+                    <td>2</td>
+                    <td class="primary-col">19.6 m</td>
+                </tr>
+                <tr>
+                    <td><strong>Moving at constant speed</strong></td>
+                    <td>5</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td class="secondary-col">15.0 m</td>
+                </tr>
+                <tr>
+                    <td><strong>Speeding up</strong></td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td class="primary-col">32.0 m</td>
+                </tr>
+                <tr>
+                    <td><strong>Slowing down</strong></td>
+                    <td>10</td>
+                    <td>-2</td>
+                    <td>3</td>
+                    <td class="secondary-col">21.0 m</td>
+                </tr>
+                <tr>
+                    <td><strong>Moving backwards</strong></td>
+                    <td>0</td>
+                    <td>-5</td>
+                    <td>2</td>
+                    <td class="primary-col">-10.0 m</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p style="margin-top:1.5rem;">
+            Run your program with each test case. Does it give the expected results?
+            If not, check your formula and make sure units match.
+        </p>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Notice the 4th test:</strong> A negative acceleration means the object slows down.
+                The 5th test: a very negative acceleration can make the object move <strong>backwards</strong>.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — TESTING THE PROGRAM
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/testing-motion-program.png"
+            alt="A student testing their motion equation program with different inputs, checking results against a table"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[Testing the Program]</strong> — A student testing their motion equation program with multiple inputs, comparing results to a table of expected values. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== ACTIVITY 1 — MODIFY THE PROGRAM ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Modify the Program</h4>
+        <p>
+            Work with a partner. Take the original motion equation program and <strong>modify it</strong>
+            to do <strong>one</strong> of these things:
+        </p>
+
+        <div class="term-grid" style="margin-top:1rem;">
+            <div class="term-card honey">
+                <span class="term-emoji">⚡</span>
+                <h3>Option A</h3>
+                <p>Calculate <strong>final velocity</strong> instead: v = u + a × t.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">📊</span>
+                <h3>Option B</h3>
+                <p>Print a <strong>table of time and displacement</strong> for t = 1 to 5 seconds.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">🚫</span>
+                <h3>Option C</h3>
+                <p>Handle the case where <strong>time is zero or negative</strong> — print a helpful message.</p>
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>Your modified program must:</strong></p>
+        <ul>
+            <li>Use clear variable names.</li>
+            <li>Include at least one <strong>condition</strong> or <strong>loop</strong>.</li>
+            <li>Print the result with <strong>correct units</strong>.</li>
+            <li>Work for <strong>at least 3 different inputs</strong>.</li>
+        </ul>
+    </div>
+
+    <!-- ========== ACTIVITY 2 — EXPLORE WITH VARIATIONS ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-lightbulb"></i> Activity — Explore with Variations</h4>
+        <p>
+            Try running your program with these <strong>scenarios</strong> and record the results:
+        </p>
+
+        <ol>
+            <li>
+                <strong>Astronaut on the Moon:</strong> a = 1.6 m/s² (Moon's gravity), u = 0, t = 5.
+                How far does she fall?
+            </li>
+            <li>
+                <strong>Astronaut on Earth:</strong> a = 9.8 m/s², u = 0, t = 5.
+                How much farther?
+            </li>
+            <li>
+                <strong>Car accelerating:</strong> u = 0, a = 3, t = 8.
+                How far did the car go?
+            </li>
+            <li>
+                <strong>Car braking:</strong> u = 20, a = -5, t = 3.
+                What happens?
+            </li>
+        </ol>
+
+        <p style="margin-top:1rem;">
+            <strong>Reflect:</strong> What patterns do you notice? How does changing each variable
+            affect the displacement?
+        </p>
+
+        <div class="tip-box" style="margin-top:1rem;">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Interesting observation:</strong> Displacement grows <strong>quadratically</strong> with time.
+                Doubling time quadruples displacement (if a ≠ 0).
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook:</p>
+        <ol>
+            <li>What does the <strong>motion equation</strong> calculate?</li>
+            <li>Write the motion equation and explain each variable.</li>
+            <li>What happens when you plug <strong>u = 0, a = 9.8, t = 2</strong> into the equation?</li>
+            <li>Why do we add a condition to check if <strong>s &lt; 0</strong>?</li>
+            <li>What does a <strong>loop</strong> add to the program?</li>
+            <li>Why is it important to include <strong>units</strong> in the output?</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            The <strong>motion equation</strong> (s = ut + ½at²) is a perfect problem for a Python program.
+            By combining <strong>variables</strong> (u, a, t, s), <strong>conditions</strong> (checking if
+            displacement is negative), and <strong>loops</strong> (repeating calculations for different times),
+            you can build a powerful tool that solves physics problems automatically. Always
+            <strong>test your program</strong> with different inputs to make sure it works correctly.
+            Next lesson, you'll build a similar program to calculate the <strong>area of different shapes</strong>!
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — MOTION PROGRAM IN ACTION
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/motion-program-in-action.png"
+            alt="A student confidently running their motion equation program, with a graph showing displacement increasing over time"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Motion Program in Action]</strong> — A student confidently running their motion equation program, with a graph showing displacement increasing over time. Focused, scientific illustration. Recommended size: 700 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Homework</div>
+        <p><strong>Part 1 — Calculate time to reach a displacement:</strong></p>
+        <ul>
+            <li>Rearrange the motion equation to solve for <strong>t</strong> when u = 0.</li>
+            <li>Hint: s = ½at² → t = √(2s / a)</li>
+            <li>Write a Python program that:
+                <ul>
+                    <li>Asks the user for the displacement (s) and acceleration (a).</li>
+                    <li>Calculates the time (t).</li>
+                    <li>Prints the result with units.</li>
+                </ul>
+            </li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 2 — Extend the motion program:</strong></p>
+        <ul>
+            <li>Add a <strong>while loop</strong> that keeps asking for time values until the user enters <code>-1</code>.</li>
+            <li>Each time, calculate and print the displacement.</li>
+            <li>Test it with several values.</li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 3 — Reflect:</strong></p>
+        <ul>
+            <li>Write a short paragraph: <em>"How did using a loop make the motion program more useful?"</em></li>
+        </ul>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="lesson15-stepbystep.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous: Lesson 15
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="lesson17-area-calculation.html" class="next-btn">
+            Next: Lesson 17 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Indicator 2 · Lesson 16 of 40
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

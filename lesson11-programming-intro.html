@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 11 — Introduction to Programming and Algorithms</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="particles"></div>
+
+    <div class="bg-shape s1"></div>
+    <div class="bg-shape s2"></div>
+    <div class="bg-shape s3"></div>
+    <div class="bg-shape s4"></div>
+
+<div class="wrapper">
+
+    <!-- ========== TOP NAV ========== -->
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="lesson11-programming-intro.html" class="active"><i class="fas fa-code"></i> Lesson 11</a>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i> Indicator 2 · Semester 1 · Final
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+        <span class="lesson-badge"><i class="fas fa-code"></i> Lesson 11 · Indicator 2</span>
+        <h1>Introduction to Programming and Algorithms</h1>
+        <p class="lead">
+            <i class="fas fa-lightbulb"></i>
+            Welcome to <strong>Indicator 2</strong>! In this unit, you'll learn how to write
+            <strong>real computer programs</strong> in a language called <strong>Python</strong>.
+            But before we write code, we need to understand two important ideas:
+            <strong>what is a program?</strong> and <strong>what is an algorithm?</strong>
+        </p>
+        <div class="chip-row">
+            <span class="chip"><i class="fas fa-clock"></i> 100 minutes</span>
+            <span class="chip forest"><i class="fas fa-laptop-code"></i> Programming</span>
+            <span class="chip sky"><i class="fas fa-list-ol"></i> Algorithms</span>
+            <span class="chip red"><i class="fas fa-calculator"></i> Math &amp; Science</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 1 — HERO BANNER
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame1">
+        <img
+            id="img1"
+            src="/images/programming-intro-hero.png"
+            alt="Hero banner showing a student at a computer writing code, with math and science symbols floating around"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 1</span>
+            <strong>[Hero Banner]</strong> — A student at a computer writing code, with math and science symbols floating around. Warm, welcoming illustration. Recommended size: 1000 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WARM-UP: WHAT IS A PROGRAM? ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-circle-question"></i> Warm-Up: What is a Program?</div>
+        <p>
+            Think about the apps and machines you use that solve a problem:
+        </p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">🧮</span>
+                <h3>Calculator App</h3>
+                <p>You enter numbers and an operation. It gives you the answer.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">🌤️</span>
+                <h3>Weather App</h3>
+                <p>It takes data from the internet and shows you the forecast.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">🎮</span>
+                <h3>Video Game</h3>
+                <p>It responds to your button presses and keeps the score.</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">📱</span>
+                <h3>Chat App</h3>
+                <p>It sends your message to a friend and shows their reply.</p>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>A program</strong> is a set of instructions that a computer follows to solve a problem.
+                <strong>Input</strong> goes in, the program <strong>processes</strong> it, and
+                <strong>output</strong> comes out.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== WHAT IS A PROGRAM ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-laptop-code"></i> What is a Program?</div>
+
+        <div class="formula-box">
+            <span class="formula-label">Definition</span>
+            <div class="formula-text">
+                A <em>program</em> is a set of instructions that a computer follows to solve a problem.
+            </div>
+        </div>
+
+        <p>
+            Every program has <strong>three parts</strong>:
+        </p>
+
+        <div class="term-grid">
+            <div class="term-card honey">
+                <span class="term-emoji">📥</span>
+                <h3>1. Input</h3>
+                <p>Information the program receives. Example: numbers from the user.</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">⚙️</span>
+                <h3>2. Process</h3>
+                <p>The steps the program does with the input. Example: multiply two numbers.</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">📤</span>
+                <h3>3. Output</h3>
+                <p>The result the program shows. Example: display the answer.</p>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Input → Process → Output.</strong> Every program — from a calculator to a video game —
+                follows this pattern.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 2 — INPUT → PROCESS → OUTPUT
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame forest reveal-scale" id="frame2">
+        <img
+            id="img2"
+            src="/images/input-process-output.png"
+            alt="A diagram showing Input going into a Process box and Output coming out, with example values"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 2</span>
+            <strong>[Input → Process → Output]</strong> — A clear diagram showing the three parts of a program with example values. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== WHAT IS AN ALGORITHM ========== -->
+    <div class="content-card sky reveal">
+        <div class="section-title sky"><i class="fas fa-list-ol"></i> What is an Algorithm?</div>
+
+        <div class="formula-box">
+            <span class="formula-label">Definition</span>
+            <div class="formula-text">
+                An <em>algorithm</em> is a clear, ordered set of steps to solve a problem.
+            </div>
+        </div>
+
+        <p>
+            You already learned about algorithms in Indicator 1! Here's a simple example:
+        </p>
+
+        <p><strong>Algorithm — Find the area of a rectangle:</strong></p>
+
+        <ol class="step-list">
+            <li><strong>Input</strong> length and width.</li>
+            <li><strong>Multiply</strong> length × width.</li>
+            <li><strong>Output</strong> the area.</li>
+        </ol>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Algorithms are the plan.</strong> <strong>Programs are the plan written in code.</strong>
+                You can think of the algorithm as the recipe, and the program as the finished dish.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ALGORITHMS IN MATH & SCIENCE ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-calculator"></i> Algorithms in Math &amp; Science</div>
+        <p>
+            Many math and science problems can be solved with programs. Here are some examples:
+        </p>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-tag"></i> Problem</th>
+                    <th><i class="fas fa-list-ol"></i> Algorithm (Steps)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Area of a rectangle</strong></td>
+                    <td class="primary-col">Input length and width → Multiply → Output area</td>
+                </tr>
+                <tr>
+                    <td><strong>Speed from distance &amp; time</strong></td>
+                    <td class="primary-col">Input distance, time → Divide → Output speed</td>
+                </tr>
+                <tr>
+                    <td><strong>Convert Celsius to Fahrenheit</strong></td>
+                    <td class="primary-col">Input Celsius → (C × 9/5) + 32 → Output Fahrenheit</td>
+                </tr>
+                <tr>
+                    <td><strong>Force (F = ma)</strong></td>
+                    <td class="primary-col">Input mass, acceleration → Multiply → Output force</td>
+                </tr>
+                <tr>
+                    <td><strong>Volume of a cube</strong></td>
+                    <td class="primary-col">Input side length → side × side × side → Output volume</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Every one of these can be written as a program.</strong>
+                Once you learn to write code, you can automate these calculations.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 3 — ALGORITHMS IN MATH & SCIENCE
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame red reveal-scale" id="frame3">
+        <img
+            id="img3"
+            src="/images/algorithms-math-science.png"
+            alt="Illustrations of different math and science problems that can be solved with algorithms: area, speed, temperature conversion, force, volume"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 3</span>
+            <strong>[Algorithms in Math &amp; Science]</strong> — Five small illustrations of problems that can be solved with programs. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== SAME ALGORITHM IN DIFFERENT LANGUAGES ========== -->
+    <div class="content-card reveal">
+        <div class="section-title"><i class="fas fa-language"></i> Same Algorithm, Different Languages</div>
+        <p>
+            An algorithm can be written in <strong>any programming language</strong>. Here's the same algorithm
+            (area of a rectangle) written in <strong>Python</strong>:
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">Python Code</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 1rem; text-align: left; line-height: 1.8;">
+                length = float(input("Enter length: "))<br>
+                width = float(input("Enter width: "))<br>
+                area = length * width<br>
+                print("Area =", area)
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;">
+            Let's break it down line by line:
+        </p>
+
+        <ul>
+            <li><strong>Line 1:</strong> Ask the user for the length. The user types a number.</li>
+            <li><strong>Line 2:</strong> Ask the user for the width.</li>
+            <li><strong>Line 3:</strong> Multiply length × width and store it in <em>area</em>.</li>
+            <li><strong>Line 4:</strong> Print the result.</li>
+        </ul>
+
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Key idea:</strong> The <strong>algorithm</strong> is the same in every language.
+                The <strong>program</strong> is just the algorithm written in a specific language.
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 4 — PYTHON CODE EXAMPLE
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame sky reveal-scale" id="frame4">
+        <img
+            id="img4"
+            src="/images/python-code-example.png"
+            alt="A visual of Python code for calculating the area of a rectangle, with each line labeled and explained"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 4</span>
+            <strong>[Python Code Example]</strong> — The Python program for the rectangle area, with each line labeled: input, input, process, output. Recommended size: 900 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== GUIDED PRACTICE: FROM PROBLEM TO STEPS ========== -->
+    <div class="content-card forest reveal">
+        <div class="section-title forest"><i class="fas fa-graduation-cap"></i> Guided Practice: From Problem to Steps</div>
+        <p>
+            Let's write an algorithm together for a simple science problem:
+            <strong>"Calculate speed given distance and time."</strong>
+        </p>
+
+        <p><strong>Step-by-step algorithm:</strong></p>
+        <ol class="step-list">
+            <li><strong>Input</strong> the distance traveled.</li>
+            <li><strong>Input</strong> the time it took.</li>
+            <li><strong>Calculate</strong> speed = distance ÷ time.</li>
+            <li><strong>Output</strong> the speed.</li>
+        </ol>
+
+        <p style="margin-top:1.5rem;"><strong>The same algorithm in pseudocode:</strong></p>
+        <div class="formula-box">
+            <span class="formula-label">Pseudocode</span>
+            <div class="formula-text" style="font-family: 'Courier New', monospace; font-size: 1rem; text-align: left; line-height: 1.8;">
+                START<br>
+                &nbsp;&nbsp;INPUT distance, time<br>
+                &nbsp;&nbsp;speed = distance ÷ time<br>
+                &nbsp;&nbsp;PRINT speed<br>
+                END
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>Second problem — Convert Celsius to Fahrenheit:</strong></p>
+        <p>
+            Formula: <strong>F = (C × 9/5) + 32</strong>
+        </p>
+        <ol class="step-list">
+            <li><strong>Input</strong> Celsius temperature.</li>
+            <li><strong>Calculate</strong> F = (C × 9/5) + 32.</li>
+            <li><strong>Output</strong> the Fahrenheit temperature.</li>
+        </ol>
+    </div>
+
+    <!-- ========== ACTIVITY 1 — WRITE YOUR OWN ALGORITHM ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-puzzle-piece"></i> Your Turn — Write Your Own Algorithm</h4>
+        <p>
+            Work with a partner. Choose <strong>one</strong> of the problems below and write a step-by-step
+            algorithm and pseudocode.
+        </p>
+
+        <div class="term-grid" style="margin-top:1rem;">
+            <div class="term-card honey">
+                <span class="term-emoji">📐</span>
+                <h3>Perimeter of a Square</h3>
+                <p>Perimeter = side × 4</p>
+            </div>
+            <div class="term-card forest">
+                <span class="term-emoji">📊</span>
+                <h3>Average of 3 Scores</h3>
+                <p>Average = (score1 + score2 + score3) ÷ 3</p>
+            </div>
+            <div class="term-card sky">
+                <span class="term-emoji">⚙️</span>
+                <h3>Force from Mass &amp; Acceleration</h3>
+                <p>F = mass × acceleration</p>
+            </div>
+            <div class="term-card red">
+                <span class="term-emoji">📦</span>
+                <h3>Volume of a Cube</h3>
+                <p>Volume = side × side × side</p>
+            </div>
+        </div>
+
+        <p style="margin-top:1.5rem;"><strong>Your algorithm should:</strong></p>
+        <ol>
+            <li>Have clear <strong>Input</strong> steps.</li>
+            <li>Have a clear <strong>Process</strong> step (calculation).</li>
+            <li>Have a clear <strong>Output</strong> step.</li>
+            <li>Be written as <strong>pseudocode</strong> with START and END.</li>
+        </ol>
+    </div>
+
+    <!-- ========== ACTIVITY 2 — SHARE AND DISCUSS ========== -->
+    <div class="activity-box reveal">
+        <h4><i class="fas fa-lightbulb"></i> Activity — Share and Discuss</h4>
+        <p>
+            After you finish, swap your work with another pair. Review their algorithm carefully.
+        </p>
+
+        <p><strong>Ask each other:</strong></p>
+        <ol>
+            <li>Is the algorithm <strong>clear</strong>? Can someone follow it exactly?</li>
+            <li>Is the <strong>order</strong> correct?</li>
+            <li>Are the <strong>inputs</strong>, <strong>processes</strong>, and <strong>outputs</strong> all present?</li>
+            <li>Are there any <strong>missing steps</strong>?</li>
+        </ol>
+
+        <p style="margin-top:1rem;">
+            Discuss with the class:
+        </p>
+        <ul>
+            <li>Why is <strong>step-by-step problem solving</strong> efficient?</li>
+            <li>What is the difference between an <strong>algorithm</strong> and a <strong>program</strong>?</li>
+        </ul>
+
+        <div class="tip-box" style="margin-top:1rem;">
+            <span class="tip-icon">💡</span>
+            <div class="tip-text">
+                <strong>Key insight:</strong> Clear steps → efficient solution. Writing the algorithm
+                <em>before</em> writing the code saves time and prevents mistakes.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== CHECK YOUR UNDERSTANDING ========== -->
+    <div class="check-box reveal">
+        <h4><i class="fas fa-circle-question"></i> Check Your Understanding</h4>
+        <p style="color:#7A2420; font-weight:600; margin-bottom:0.7rem;">Answer these questions in your notebook:</p>
+        <ol>
+            <li>What is a <strong>program</strong>? What are its three parts?</li>
+            <li>What is an <strong>algorithm</strong>? How is it different from a program?</li>
+            <li>Name <strong>two math problems</strong> that can be solved with a program.</li>
+            <li>Name <strong>two science problems</strong> that can be solved with a program.</li>
+            <li>Write the <strong>algorithm</strong> for finding the area of a rectangle.</li>
+            <li>Why is it useful to write the algorithm <strong>before</strong> writing the program?</li>
+        </ol>
+    </div>
+
+    <!-- ========== TAKEAWAY ========== -->
+    <div class="takeaway reveal-scale">
+        <h3><i class="fas fa-star"></i> Key Takeaway</h3>
+        <p>
+            A <strong>program</strong> is a set of instructions a computer follows. Every program has three
+            parts: <strong>Input</strong>, <strong>Process</strong>, and <strong>Output</strong>. An
+            <strong>algorithm</strong> is the plan — a clear, ordered set of steps. You can write an algorithm
+            in <strong>any</strong> language (pseudocode, Python, Java, etc.). Next lesson, you'll learn about
+            <strong>variables and data types</strong> in Python — the building blocks of any program!
+        </p>
+    </div>
+
+    <!-- ============================================================
+         IMAGE 5 — ALGORITHM TO PROGRAM
+         👉 Replace src="" with your image URL
+         ============================================================ -->
+    <div class="image-frame reveal-scale" id="frame5">
+        <img
+            id="img5"
+            src="/images/algorithm-to-program.png"
+            alt="A visual showing an algorithm (as a recipe) being transformed into a program (as finished code) with an arrow connecting them"
+            onload="this.parentElement.classList.add('has-image')"
+            onerror="this.parentElement.classList.remove('has-image')"
+        >
+        <div class="image-caption">
+            <span class="img-badge">Image 5</span>
+            <strong>[Algorithm to Program]</strong> — An algorithm shown as a recipe on the left, an arrow in the middle, and a program shown as finished code on the right. Recommended size: 700 × 400 px.
+        </div>
+    </div>
+
+    <!-- ========== HOMEWORK ========== -->
+    <div class="content-card red reveal">
+        <div class="section-title red"><i class="fas fa-house-laptop"></i> Homework</div>
+        <p><strong>Part 1 — Write an algorithm for a science problem:</strong></p>
+        <ul>
+            <li>Choose a science problem (for example: density = mass ÷ volume, or pressure = force ÷ area).</li>
+            <li>Write the algorithm in <strong>3–5 clear steps</strong>.</li>
+            <li>Write the same algorithm in <strong>pseudocode</strong> (with START and END).</li>
+        </ul>
+        <p style="margin-top:0.8rem;"><strong>Part 2 — Compare algorithms and programs:</strong></p>
+        <ul>
+            <li>Write a short paragraph: <em>"What is the difference between an algorithm and a program?"</em></li>
+            <li>Give one example of each.</li>
+        </ul>
+    </div>
+
+    <!-- ========== FOOTER NAV ========== -->
+    <div class="footer-nav">
+        <a href="lesson10-project.html" class="prev-btn">
+            <i class="fas fa-arrow-left"></i> Previous: Lesson 10
+        </a>
+        <a href="index.html" class="home-btn-foot">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="lesson12-variables-datatypes.html" class="next-btn">
+            Next: Lesson 12 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-graduation-cap"></i> Mathayom 1 (Grade 7) · Indicator 2 · Lesson 11 of 40
+    </div>
+
+</div>
+
+<!-- Shared JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
